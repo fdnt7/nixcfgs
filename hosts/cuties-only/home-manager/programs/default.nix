@@ -15,6 +15,7 @@
     ./nixvim.nix
     ./rebuild.nix
     ./ripgrep.nix
+    ./ssh.nix
     ./starship.nix
     ./yazi
     ./zoxide.nix
