@@ -46,8 +46,8 @@ with lib; {
 
           set -o pipefail
           if "${nhCfg.package}/bin/nh" os switch --ask | "${coreutils}/tee" "$o"; then
-            # Strip ANSI escapes for commit msg
-            ${pkgs.gnused}/bin/sed -r "s/\x1B\[[0-9;]*[A-Za-z]//g" "$o" > "$cleaned"
+            # Strip ANSI escapes (colors + cursor movement) for commit msg
+            ${pkgs.colorized-logs}/bin/ansi2txt < "$o" > "$cleaned"
 
             # Success: amend commit with contents of 'o', then open editor for final tweaks
             "${git}" log -1 --pretty=%B > "$msg"
