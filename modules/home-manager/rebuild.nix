@@ -31,11 +31,13 @@ with lib; {
 
           # 1) Format and show diff; only page if needed, requiring user input then.
           "${pkgs.nix}/bin/nix" fmt .
-          "${git}" diff --color=always
-
-          # 2) Stage and make a non-interactive commit
           "${git}" add .
           "${git}" commit --allow-empty -m "type(${cfg.hostName}): message"
+
+          # 2) Stage and make a non-interactive commit
+          "${git}" diff --color=always
+          "${git}" add .
+          "${git}" commit --amend --no-edit
 
           # 3) Run nh; tee stdout to file 'o' while still printing to real stdout
           o="$(${coreutils}/mktemp -t rebuild-nh.XXXXXX)"
