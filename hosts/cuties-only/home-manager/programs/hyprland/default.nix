@@ -94,7 +94,6 @@
         "pin, class:^(Xdg-desktop-portal-gtk)$"
         "pin, class:^(xdg-desktop-portal-gtk)$"
 
-        "workspace 1, class:^(brave-browser(-nightly)?)$"
         "workspace 1, class:^(firefox)$"
         "workspace 1, class:^(zen-beta)$"
         "workspace 1, class:^(Vivaldi-stable)$"

@@ -43,8 +43,9 @@
       gtl = "git stash list";
       gtp = "git stash pop";
       gv = "git revert";
-      ge = "git reset";
-      geh = "git reset --hard";
+      gr = "git reset";
+      grh = "git reset --hard";
+      ge = "git rebase";
       # no 'go' because go is a programming language
       gov = "git remote -v";
       goh = "git remote show";
