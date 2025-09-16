@@ -1,5 +1,12 @@
-{outputs, ...}: {
+{
+  nixcfgs,
+  outputs,
+  ...
+}: {
   imports = [outputs.homeManagerModules.rebuild];
 
-  programs.rebuild.enable = true;
+  programs.rebuild = with nixcfgs; {
+    enable = true;
+    hostName = hostName;
+  };
 }
