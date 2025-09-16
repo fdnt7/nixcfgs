@@ -1,0 +1,7 @@
+keys:
+  - &admin_fdnt age14w56rvyhtfqvvtdd2rtg00xs2m6zssz5x7qfqcjyac9edwfucs2st5mmjm
+creation_rules:
+  - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
+    key_groups:
+    - age:
+      - *admin_fdnt
