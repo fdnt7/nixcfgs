@@ -46,6 +46,7 @@
       gr = "git reset";
       grh = "git reset --hard";
       ge = "git rebase";
+      gei = "git rebase -i";
       # no 'go' because go is a programming language
       gov = "git remote -v";
       goh = "git remote show";
