@@ -39,16 +39,20 @@ with lib; {
 
           # 3) Run nh; tee stdout to file 'o' while still printing to real stdout
           o="$(${coreutils}/mktemp -t rebuild-nh.XXXXXX)"
+          cleaned="$(${coreutils}/mktemp -t rebuild-clean.XXXXXX)"
           msg="$(${coreutils}/mktemp -t rebuild-msg.XXXXXX)"
           cleanup() { "${coreutils}/rm" -f "$o" "$msg"; }
           trap cleanup EXIT
 
           set -o pipefail
           if "${nhCfg.package}/bin/nh" os switch --ask | "${coreutils}/tee" "$o"; then
+            # Strip ANSI escapes for commit msg
+            ${pkgs.gnused}/bin/sed -r "s/\x1B\[[0-9;]*[A-Za-z]//g" "$o" > "$cleaned"
+
             # Success: amend commit with contents of 'o', then open editor for final tweaks
             "${git}" log -1 --pretty=%B > "$msg"
             echo >> "$msg"
-            "${coreutils}/cat" "$o" >> "$msg"
+            "${coreutils}/cat" "$cleaned" >> "$msg"
 
             "${git}" commit --amend -F "$msg"
             "${git}" commit --amend
