@@ -25,6 +25,7 @@
     ./nixpkgs.nix
     ./packages
     ./programs
+    ./services
     ./sops.nix
     ./systemd.nix
     ./xdg.nix
