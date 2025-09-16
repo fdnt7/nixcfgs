@@ -22,8 +22,9 @@ my other hosts.
 - Extensive utilisation of [Nix flakes](https://nixos.wiki/wiki/Flakes)
 - Modular home configuration file management with 
   [`home-manager`](https://github.com/nix-community/home-manager)
-- Full single [`BTRFS`](https://gitlab.com/cryptsetup/cryptsetup) partition disk 
-  encryption using [`cryptsetup`](https://gitlab.com/cryptsetup/cryptsetup)
+- Full single [`Btrfs`](https://docs.kernel.org/filesystems/btrfs.html) 
+  partition disk encryption using 
+  [`cryptsetup`](https://gitlab.com/cryptsetup/cryptsetup)
 - Opt-in root persistence with 
   [`impermanence`](https://github.com/nix-community/impermanence) where the root
   subvolume is cleared on every boot
