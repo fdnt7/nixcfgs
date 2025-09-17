@@ -25,6 +25,7 @@
       gu = "git pull";
       gur = "git pull --rebase";
       gl = "git log";
+      glo = "git log --oneline";
       gd = "git diff";
       ga = "git add";
       "ga." = "git add .";
