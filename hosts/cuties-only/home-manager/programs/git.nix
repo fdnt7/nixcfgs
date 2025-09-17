@@ -39,6 +39,7 @@
       gbm = "git branch -m";
       gw = "git switch";
       gwc = "git switch -c";
+      gwm = "git switch main";
       gh = "git show";
       gt = "git stash";
       gtl = "git stash list";
@@ -55,6 +56,7 @@
       gos = "git remote set-url";
       goa = "git remote add";
       gor = "git remote remove";
+      gk = "git checkout";
     };
   };
 
