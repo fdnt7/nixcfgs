@@ -55,12 +55,17 @@ with lib; {
 
           set -o pipefail
 
-          if ${script} -qc '"${nhCfg.package}/bin/nh" os switch --ask' "$o" &&
-            ${ansi2txt} < "$o" |
-            ${sed} -n '/^<<< \/run\/current-system$/,/^DIFF: .*$\|^> No version or size changes\.$/p' > "$cleaned";
-            then
+          # Run nh via script, log to $o
+          ${script} -qc '"${nhCfg.package}/bin/nh" os switch --ask' "$o"
 
-            # Success: amend commit with contents of 'o', then open editor for final tweaks
+          # Extract nh exit code from the log footer
+          nh_status="$("${pkgs.gnugrep}/bin/grep" -o 'COMMAND_EXIT_CODE="[0-9]\+"' "$o" | ${sed} 's/.*="\([0-9]\+\)"/\1/')"
+
+          if [ "$nh_status" -eq 0 ]; then
+            # Success branch
+            ${ansi2txt} < "$o" |
+              ${sed} -n '/^<<< \/run\/current-system$/,/^DIFF: .*$\|^> No version or size changes\.$/p' > "$cleaned"
+
             ${git} log -1 --pretty=%B > "$msg"
             echo >> "$msg"
             ${cat} "$cleaned" >> "$msg"
@@ -68,8 +73,8 @@ with lib; {
             ${git} commit --amend -F "$msg"
             ${git} commit --amend
           else
-            # Failure: undo the last commit and make the working tree dirty again
-            ${git} reset --mixed HEAD^
+            # Failure branch: undo last commit
+            ${git} reset --mixed @^
             exit 1
           fi
         '')
