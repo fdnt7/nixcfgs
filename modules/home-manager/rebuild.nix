@@ -57,7 +57,7 @@ with lib; {
 
           if ${script} -qc '"${nhCfg.package}/bin/nh" os switch --ask' "$o" &&
             ${ansi2txt} < "$o" |
-            ${sed} -En '/^<<< \/run\/current-system$/,/^(DIFF: .*$|> No version or size changes\.)$/p';
+            ${sed} -n '/^<<< \/run\/current-system$/,/^DIFF: .*$\|^> No version or size changes\.$/p' > "$cleaned";
             then
 
             # Success: amend commit with contents of 'o', then open editor for final tweaks
