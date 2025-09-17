@@ -1,4 +1,3 @@
-{...}: {
-  imports = [./jetbrains-mono-nerd-font.nix];
-  fonts.fontconfig.enable = true;
+{
+  imports = [./fontconfig.nix ./jetbrains-mono-nerd-font.nix];
 }
