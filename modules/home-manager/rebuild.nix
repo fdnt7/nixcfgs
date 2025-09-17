@@ -88,8 +88,8 @@ with lib; {
             ${sed} -n '/• Updated input/{N;N;p}' > $cleaned
 
           echo "chore(flake.lock): update" >> "$msg"
-          ${cat} "$cleaned" >> "$msg"
           echo >> "$msg"
+          ${cat} "$cleaned" >> "$msg"
           ${git} add flake.lock
           ${git} commit -F "$msg"
         '')
