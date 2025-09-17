@@ -31,47 +31,47 @@ with lib; {
         rm = "\"${coreutils}/rm\"";
       in [
         (pkgs.writeShellScriptBin "rebuild" ''
-               set -euo pipefail
+          set -euo pipefail
 
-               # Work in the flake directory
-               cd ${flake}
+          # Work in the flake directory
+          cd ${flake}
 
-               # 1) Format and show diff; only page if needed, requiring user input then.
-               ${git} add .
-               ${git} commit --allow-empty -m "type(${cfg.hostName}): message"
-               "${pkgs.nix}/bin/nix" fmt .
+          # 1) Format and show diff; only page if needed, requiring user input then.
+          ${git} add .
+          ${git} commit --allow-empty -m "type(${cfg.hostName}): message"
+          "${pkgs.nix}/bin/nix" fmt .
 
-               # 2) Stage and make a non-interactive commit
-               ${git} add .
-               ${git} commit --amend --no-edit
-               ${git} diff --color=always @^
+          # 2) Stage and make a non-interactive commit
+          ${git} add .
+          ${git} commit --amend --no-edit
+          ${git} diff --color=always @^
 
-               # 3) Run nh; tee stdout to file 'o' while still printing to real stdout
-               o="$(${mktemp} -t rebuild-nh.XXXXXX)"
-               cleaned="$(${mktemp} -t rebuild-clean.XXXXXX)"
-               msg="$(${mktemp} -t rebuild-msg.XXXXXX)"
-               cleanup() { ${rm} -f "$o" "$cleaned" "$msg"; }
-               trap cleanup EXIT
+          # 3) Run nh; tee stdout to file 'o' while still printing to real stdout
+          o="$(${mktemp} -t rebuild-nh.XXXXXX)"
+          cleaned="$(${mktemp} -t rebuild-clean.XXXXXX)"
+          msg="$(${mktemp} -t rebuild-msg.XXXXXX)"
+          cleanup() { ${rm} -f "$o" "$cleaned" "$msg"; }
+          trap cleanup EXIT
 
-               set -o pipefail
+          set -o pipefail
 
-               if ${script} -qc '"${nhCfg.package}/bin/nh" os switch --ask' "$o" &&
-                 ${ansi2txt} < "$o" |
-          ${sed} -En '/^<<< \/run\/current-system$/,/^(DIFF: .*$|> No version or size changes\.)$/p';
-          then
+          if ${script} -qc '"${nhCfg.package}/bin/nh" os switch --ask' "$o" &&
+            ${ansi2txt} < "$o" |
+            ${sed} -En '/^<<< \/run\/current-system$/,/^(DIFF: .*$|> No version or size changes\.)$/p';
+            then
 
-                 # Success: amend commit with contents of 'o', then open editor for final tweaks
-                 ${git} log -1 --pretty=%B > "$msg"
-                 echo >> "$msg"
-                 ${cat} "$cleaned" >> "$msg"
+            # Success: amend commit with contents of 'o', then open editor for final tweaks
+            ${git} log -1 --pretty=%B > "$msg"
+            echo >> "$msg"
+            ${cat} "$cleaned" >> "$msg"
 
-                 ${git} commit --amend -F "$msg"
-                 ${git} commit --amend
-               else
-                 # Failure: undo the last commit and make the working tree dirty again
-                 ${git} reset --mixed HEAD^
-                 exit 1
-               fi
+            ${git} commit --amend -F "$msg"
+            ${git} commit --amend
+          else
+            # Failure: undo the last commit and make the working tree dirty again
+            ${git} reset --mixed HEAD^
+            exit 1
+          fi
         '')
 
         (pkgs.writeShellScriptBin "update" ''
