@@ -47,10 +47,10 @@ with lib; {
           trap cleanup EXIT
 
           set -o pipefail
-          if "${nhCfg.package}/bin/nh" os switch --ask |
-            "${coreutils}/tee" >("${pkgs.gnugrep}/bin/grep" -v $'\r' > "$o"); then
-            # Strip ANSI escapes (colors + cursor movement) for commit msg
-            ${pkgs.colorized-logs}/bin/ansi2txt < "$o" > "$cleaned"
+
+          if "${pkgs.util-linux}/bin/script" -qc '"${nhCfg.package}/bin/nh" os switch --ask' "$o" &&
+            "${pkgs.colorized-logs}/bin/ansi2txt" < "$o" |
+            "${pkgs.gnused}/bin/sed" -n '/^<<< \/run\/current-system$/,/^DIFF: .*$/p' > "$cleaned"; then
 
             # Success: amend commit with contents of 'o', then open editor for final tweaks
             "${git}" log -1 --pretty=%B > "$msg"
