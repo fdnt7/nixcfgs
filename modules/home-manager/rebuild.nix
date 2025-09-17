@@ -47,15 +47,10 @@ with lib; {
           trap cleanup EXIT
 
           set -o pipefail
-          if "${nhCfg.package}/bin/nh" os switch --ask | "${coreutils}/tee" "$o"; then
-            # Normalize stdout for commit message:
-            #  - drop ALL ANSI CSI sequences (colors, cursor moves, erase-line, etc.)
-            #  - convert lone CRs to newlines so overprints become separate lines
-            "${pkgs.perl}/bin/perl" -0777 -pe '
-              s/\e\[[0-9;?]*[ -\/]*[@-~]//g;  # strip CSI sequences
-              s/\r(?!\n)/\n/g;                 # CR not followed by LF -> newline
-              s/\r//g;                         # drop any remaining CR
-            ' "$o" > "$cleaned"
+          if "${nhCfg.package}/bin/nh" os switch --ask |
+            "${coreutils}/tee" >("${pkgs.gnugrep}/bin/grep" -v $'\r' > "$0"); then
+            # Strip ANSI escapes (colors + cursor movement) for commit msg
+            ${pkgs.colorized-logs}/bin/ansi2txt < "$o" > "$cleaned"
 
             # Success: amend commit with contents of 'o', then open editor for final tweaks
             "${git}" log -1 --pretty=%B > "$msg"
