@@ -85,7 +85,6 @@ with lib; {
           o="$(${mktemp} -t update-nh.XXXXXX)"
           cleaned="$(${mktemp} -t update-clean.XXXXXX)"
           msg="$(${mktemp} -t update-msg.XXXXXX)"
-          msg2="$(${mktemp} -t update-msg2.XXXXXX)"
           cleanup() { ${rm} -f "$o" "$cleaned" "$msg"; }
           trap cleanup EXIT
 
@@ -98,9 +97,10 @@ with lib; {
           else
             echo "chore(flake.lock): update" >> "$msg"
             echo >> "$msg"
+            ${cat} "$cleaned" >> "$msg"
+            echo >> "$msg"
             ${git} add flake.lock
             ${git} commit -F "$msg"
-            ${cat} "$cleaned" >> "$msg2"
 
             # Run nh via script, log to $o
             ${script} -qc '"${nhCfg.package}/bin/nh" os switch --ask' "$o"
@@ -116,8 +116,6 @@ with lib; {
               ${git} log -1 --pretty=%B > "$msg"
               echo >> "$msg"
               ${cat} "$cleaned" >> "$msg"
-              echo >> "$msg"
-              ${cat} "$msg2" >> "$msg"
 
               ${git} commit --amend -F "$msg"
             else
