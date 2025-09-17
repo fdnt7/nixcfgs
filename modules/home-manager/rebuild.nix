@@ -38,7 +38,7 @@ with lib; {
 
           # 1) Format and show diff; only page if needed, requiring user input then.
           ${git} add .
-          ${git} commit --allow-empty -m "type(${cfg.hostName}): message"
+          ${git} commit -m "type(${cfg.hostName}): message"
           "${pkgs.nix}/bin/nix" fmt .
 
           # 2) Stage and make a non-interactive commit
