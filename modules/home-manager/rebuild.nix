@@ -30,14 +30,14 @@ with lib; {
           cd "${nhCfg.flake}"
 
           # 1) Format and show diff; only page if needed, requiring user input then.
-          "${pkgs.nix}/bin/nix" fmt .
           "${git}" add .
           "${git}" commit --allow-empty -m "type(${cfg.hostName}): message"
+          "${pkgs.nix}/bin/nix" fmt .
 
           # 2) Stage and make a non-interactive commit
-          "${git}" diff --color=always
           "${git}" add .
           "${git}" commit --amend --no-edit
+          "${git}" diff --color=always @^
 
           # 3) Run nh; tee stdout to file 'o' while still printing to real stdout
           o="$(${coreutils}/mktemp -t rebuild-nh.XXXXXX)"
@@ -48,7 +48,7 @@ with lib; {
 
           set -o pipefail
           if "${nhCfg.package}/bin/nh" os switch --ask |
-            "${coreutils}/tee" >("${pkgs.gnugrep}/bin/grep" -v $'\r' > "$0"); then
+            "${coreutils}/tee" >("${pkgs.gnugrep}/bin/grep" -v $'\r' > "$o"); then
             # Strip ANSI escapes (colors + cursor movement) for commit msg
             ${pkgs.colorized-logs}/bin/ansi2txt < "$o" > "$cleaned"
 
