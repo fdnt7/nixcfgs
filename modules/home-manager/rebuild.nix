@@ -19,54 +19,84 @@ with lib; {
   in
     mkIf cfg.enable {
       home.packages = let
-        git = "${programsCfg.git.package}/bin/git";
+        git = "\"${programsCfg.git.package}/bin/git\"";
         nhCfg = programsCfg.nh;
         coreutils = "${pkgs.coreutils}/bin";
+        script = "\"${pkgs.util-linux}/bin/script\"";
+        ansi2txt = "\"${pkgs.colorized-logs}/bin/ansi2txt\"";
+        sed = "\"${pkgs.gnused}/bin/sed\"";
+        flake = "\"${nhCfg.flake}\"";
+        cat = "\"${coreutils}/cat\"";
+        mktemp = "${coreutils}/mktemp";
+        rm = "\"${coreutils}/rm\"";
       in [
         (pkgs.writeShellScriptBin "rebuild" ''
           set -euo pipefail
 
           # Work in the flake directory
-          cd "${nhCfg.flake}"
+          cd ${flake}
 
           # 1) Format and show diff; only page if needed, requiring user input then.
-          "${git}" add .
-          "${git}" commit --allow-empty -m "type(${cfg.hostName}): message"
+          ${git} add .
+          ${git} commit --allow-empty -m "type(${cfg.hostName}): message"
           "${pkgs.nix}/bin/nix" fmt .
 
           # 2) Stage and make a non-interactive commit
-          "${git}" add .
-          "${git}" commit --amend --no-edit
-          "${git}" diff --color=always @^
+          ${git} add .
+          ${git} commit --amend --no-edit
+          ${git} diff --color=always @^
 
           # 3) Run nh; tee stdout to file 'o' while still printing to real stdout
-          o="$(${coreutils}/mktemp -t rebuild-nh.XXXXXX)"
-          cleaned="$(${coreutils}/mktemp -t rebuild-clean.XXXXXX)"
-          msg="$(${coreutils}/mktemp -t rebuild-msg.XXXXXX)"
-          cleanup() { "${coreutils}/rm" -f "$o" "$cleaned" "$msg"; }
+          o="$(${mktemp} -t rebuild-nh.XXXXXX)"
+          cleaned="$(${mktemp} -t rebuild-clean.XXXXXX)"
+          msg="$(${mktemp} -t rebuild-msg.XXXXXX)"
+          cleanup() { ${rm} -f "$o" "$cleaned" "$msg"; }
           trap cleanup EXIT
 
           set -o pipefail
 
-          if "${pkgs.util-linux}/bin/script" -qc '"${nhCfg.package}/bin/nh" os switch --ask' "$o" &&
-            "${pkgs.colorized-logs}/bin/ansi2txt" < "$o" |
-            "${pkgs.gnused}/bin/sed" -n '/^<<< \/run\/current-system$/,/^DIFF: .*$/p' > "$cleaned"; then
+          if ${script} -qc '"${nhCfg.package}/bin/nh" os switch --ask' "$o" &&
+            ${ansi2txt} < "$o" |
+            ${sed} -n '/^<<< \/run\/current-system$/,/^DIFF: .*$/p' > "$cleaned"; then
 
             # Success: amend commit with contents of 'o', then open editor for final tweaks
-            "${git}" log -1 --pretty=%B > "$msg"
+            ${git} log -1 --pretty=%B > "$msg"
             echo >> "$msg"
-            "${coreutils}/cat" "$cleaned" >> "$msg"
+            ${cat} "$cleaned" >> "$msg"
 
-            "${git}" commit --amend -F "$msg"
-            "${git}" commit --amend
+            ${git} commit --amend -F "$msg"
+            ${git} commit --amend
           else
             # Failure: undo the last commit and make the working tree dirty again
-            "${git}" reset --mixed HEAD^
+            ${git} reset --mixed HEAD^
             exit 1
           fi
         '')
+
+        (pkgs.writeShellScriptBin "update" ''
+          cd ${flake}
+
+          o="$(${mktemp} -t update-nh.XXXXXX)"
+          cleaned="$(${mktemp} -t update-clean.XXXXXX)"
+          msg="$(${mktemp} -t update-msg.XXXXXX)"
+          cleanup() { ${rm} -f "$o" "$cleaned" "$msg"; }
+          trap cleanup EXIT
+
+          ${script} -qc 'nix flake update' $o &&
+            ${ansi2txt} < $o |
+            ${sed} -n '/• Updated input/{N;N;p}' > $cleaned
+
+          ${cat} "$cleaned" >> "$msg"
+          echo "chore(flake.lock): update" >> "$msg"
+          echo >> "$msg"
+          ${git} add flake.lock
+          ${git} commit -F "$msg"
+        '')
       ];
 
-      programs.fish.shellAbbrs.a = "rebuild";
+      programs.fish.shellAbbrs = {
+        a = "rebuild";
+        u = "update";
+      };
     };
 }
