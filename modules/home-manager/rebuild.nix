@@ -120,7 +120,7 @@ with lib; {
               ${git} commit --amend -F "$msg"
             else
               # Failure branch: undo last commit
-              ${git} restore -s @^ flake.lock
+              ${git} reset --hard @^
               exit 1
             fi
           fi
