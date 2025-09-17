@@ -85,6 +85,7 @@ with lib; {
           o="$(${mktemp} -t update-nh.XXXXXX)"
           cleaned="$(${mktemp} -t update-clean.XXXXXX)"
           msg="$(${mktemp} -t update-msg.XXXXXX)"
+          msg2="$(${mktemp} -t update-msg2.XXXXXX)"
           cleanup() { ${rm} -f "$o" "$cleaned" "$msg"; }
           trap cleanup EXIT
 
@@ -92,11 +93,39 @@ with lib; {
             ${ansi2txt} < $o |
             ${sed} -n '/• Updated input/{N;N;p}' > $cleaned
 
-          echo "chore(flake.lock): update" >> "$msg"
-          echo >> "$msg"
-          ${cat} "$cleaned" >> "$msg"
-          ${git} add flake.lock
-          ${git} commit -F "$msg"
+          if ${git} diff --quiet -- flake.lock; then
+            echo "No changes in flake.lock, skipping commit."
+          else
+            echo "chore(flake.lock): update" >> "$msg"
+            echo >> "$msg"
+            ${git} add flake.lock
+            ${git} commit -F "$msg"
+            ${cat} "$cleaned" >> "$msg2"
+
+            # Run nh via script, log to $o
+            ${script} -qc '"${nhCfg.package}/bin/nh" os switch --ask' "$o"
+
+            # Extract nh exit code from the log footer
+            nh_status="$("${pkgs.gnugrep}/bin/grep" -o 'COMMAND_EXIT_CODE="[0-9]\+"' "$o" | ${sed} 's/.*="\([0-9]\+\)"/\1/')"
+
+            if [ "$nh_status" -eq 0 ]; then
+              # Success branch
+              ${ansi2txt} < "$o" |
+                ${sed} -n '/^<<< \/run\/current-system$/,/^DIFF: .*$\|^> No version or size changes\.$/p' > "$cleaned"
+
+              ${git} log -1 --pretty=%B > "$msg"
+              echo >> "$msg"
+              ${cat} "$cleaned" >> "$msg"
+              echo >> "$msg"
+              ${cat} "$msg2" >> "$msg"
+
+              ${git} commit --amend -F "$msg"
+            else
+              # Failure branch: undo last commit
+              ${git} reset --mixed @^
+              exit 1
+            fi
+          fi
         '')
       ];
 
