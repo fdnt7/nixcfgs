@@ -86,8 +86,8 @@ with lib; {
             ${ansi2txt} < $o |
             ${sed} -n '/• Updated input/{N;N;p}' > $cleaned
 
-          ${cat} "$cleaned" >> "$msg"
           echo "chore(flake.lock): update" >> "$msg"
+          ${cat} "$cleaned" >> "$msg"
           echo >> "$msg"
           ${git} add flake.lock
           ${git} commit -F "$msg"
