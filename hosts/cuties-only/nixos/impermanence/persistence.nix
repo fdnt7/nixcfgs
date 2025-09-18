@@ -15,7 +15,6 @@ with nixcfgs; {
   environment.persistence.${persist} = {
     directories = [
       # "/etc/nixos"
-      "/etc/NetworkManager/system-connections"
       #"/etc/secureboot"
       "/var/db/sudo"
 
