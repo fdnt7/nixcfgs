@@ -1,0 +1,26 @@
+* {
+  all: unset; /* Unsets everything so you can style everything from scratch */
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 12px;
+}
+
+window#waybar {
+  background-color: rgba(0,0,0,1);
+}
+
+/* combined rules as without it, the `battery.warning` styling below
+ * takes precedence even while charging. the desired styling is:
+ * charging must always be green, no matter the battery states */
+#battery.charging,
+#battery.charging.warning,
+#battery.charging.critical {
+  color: rgba(0,255,0,1);
+}
+
+#battery.warning {
+  color: rgba(255,255,0,1);
+}
+
+#battery.critical {
+  color: rgba(255,0,0,1);
+}

@@ -17,6 +17,7 @@
     ./ripgrep.nix
     ./ssh.nix
     ./starship.nix
+    ./waybar
     ./yazi
     ./zoxide.nix
   ];
