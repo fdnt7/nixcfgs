@@ -11,7 +11,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland.url = "github:hyprwm/Hyprland";
+    # hyprland-plugins is broken. pinning hyprland for a workaround
+    # ref: https://github.com/hyprwm/hyprland-plugins/issues/483#issuecomment-3313158394
+
+    #hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "github:hyprwm/Hyprland/91f592a87509436dc6f6ea7b3d6705ed7c5af046";
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
