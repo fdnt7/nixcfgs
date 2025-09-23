@@ -170,14 +170,11 @@
           #fn+f3 o
           "            , XF86Launch4          , exec, uwsm-app --" #fn+f4
           #fn+f5 -
-          "$mod Shift_L, s                    , exec, uwsm-app -- grimblast --notify copysave area" #fn+f6
+
           "$mod        , p                    , exec, uwsm-app --" #fn+f9
 
           #fn+f11 o
           #fn+f12 -
-
-          "    , Print, exec, uwsm-app -- grimblast --notify copysave screen"
-          "$mod, Print, exec, uwsm-app -- grimblast --notify copysave active"
 
           "$mod SHIFT, q, exec, uwsm-app -- qr"
 

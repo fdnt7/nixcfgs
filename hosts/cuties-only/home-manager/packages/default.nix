@@ -3,6 +3,7 @@
     ./brave.nix
     ./brightnessctl.nix
     ./devenv.nix
+    ./grimblast.nix
     ./nix-your-shell.nix
   ];
 
