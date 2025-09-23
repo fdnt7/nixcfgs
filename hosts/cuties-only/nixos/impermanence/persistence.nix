@@ -21,6 +21,8 @@ with nixcfgs; {
       "/var/lib/nixos"
       "/var/lib/systemd/backlight"
       "/var/lib/bluetooth"
+      "/var/lib/tailscale"
+      "/etc/mullvad-vpn"
 
       {
         directory = flake;
