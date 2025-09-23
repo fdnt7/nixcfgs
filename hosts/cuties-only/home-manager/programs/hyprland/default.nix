@@ -133,7 +133,6 @@
         "workspace special:chat, class:^(discord)$"
         "workspace special:chat, class:^(de.shorsh.discord-screenaudio)$"
 
-        "workspace special:music, class:^(spotify)$"
         "workspace special:music, class:^(pavucontrol)$"
 
         "workspace special:scratch, class:^(Alacritty)$"
@@ -219,7 +218,6 @@
 
           "$mod, c, centerwindow"
 
-          "$mod ALT, s, exec, uwsm-app -- spotify"
           "$mod ALT, f, exec, uwsm-app -- dolphin"
           "$mod ALT, m, exec, uwsm-app -- mscore"
           "$mod ALT, z, exec, uwsm-app -- zed"

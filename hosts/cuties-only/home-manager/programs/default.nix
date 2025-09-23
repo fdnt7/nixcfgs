@@ -16,6 +16,7 @@
     ./rebuild.nix
     ./ripgrep.nix
     ./rofi.nix
+    ./spicetify.nix
     ./ssh.nix
     ./starship.nix
     ./waybar
