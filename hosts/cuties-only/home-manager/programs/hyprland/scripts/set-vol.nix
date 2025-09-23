@@ -1,4 +1,5 @@
 {pkgs}: let
+  bc = "${pkgs.bc}/bin/bc";
   VOL = import ../../../scripts/vol.nix {inherit pkgs;};
 in
   pkgs.writeShellScript "set-vol" ''
@@ -43,5 +44,5 @@ in
 
     # Set volume and send to wob
     wpctl set-volume "$DEVICE" "$VOLUME_CHANGE" &&
-    echo "$(${VOL} "$DEVICE_TYPE")*100/1" | bc > "$XDG_RUNTIME_DIR/wob.sock"
+    echo "$(${VOL} "$DEVICE_TYPE")*100/1" | ${bc} > "$XDG_RUNTIME_DIR/wob.sock"
   ''

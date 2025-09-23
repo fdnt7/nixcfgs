@@ -1,4 +1,5 @@
 {pkgs}: let
+  bc = "${pkgs.bc}/bin/bc";
   VOL = import ../../../scripts/vol.nix {inherit pkgs;};
 in
   pkgs.writeShellScript "toggle-mute" ''
@@ -21,7 +22,7 @@ in
     if [[ $(${VOL} $1 -m) == "0" ]]; then
       VOLUME="100 red"
     else
-      VOLUME=$(echo $(${VOL} $1)*100/1 | bc)
+      VOLUME=$(echo $(${VOL} $1)*100/1 | ${bc})
     fi
 
     wpctl set-mute "$DEVICE" toggle

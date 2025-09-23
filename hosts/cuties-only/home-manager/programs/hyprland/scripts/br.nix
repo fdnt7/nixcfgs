@@ -1,4 +1,5 @@
 {pkgs}: let
+  bc = "${pkgs.bc}/bin/bc";
   BRIGHTNESSCTL = "${pkgs.brightnessctl}/bin/brightnessctl";
 in
   pkgs.writeShellScript "br" ''
@@ -43,7 +44,7 @@ in
             fi
             new_brightness=$(calc_brightness $new_step)
             ${BRIGHTNESSCTL} set $new_brightness
-            echo "100*$new_step/$STEPS" | bc > $XDG_RUNTIME_DIR/wob.sock
+            echo "100*$new_step/$STEPS" | ${bc} > $XDG_RUNTIME_DIR/wob.sock
             #echo "Step $new_step/$STEPS: $new_brightness/$max"
             ;;
         "d"|"down")
@@ -54,7 +55,7 @@ in
             fi
             new_brightness=$(calc_brightness $new_step)
             ${BRIGHTNESSCTL} set $new_brightness
-            echo "100*$new_step/$STEPS" | bc > $XDG_RUNTIME_DIR/wob.sock
+            echo "100*$new_step/$STEPS" | ${bc} > $XDG_RUNTIME_DIR/wob.sock
             #echo "Step $new_step/$STEPS: $new_brightness/$max"
             ;;
         "")
