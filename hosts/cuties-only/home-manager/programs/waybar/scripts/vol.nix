@@ -1,5 +1,5 @@
 {pkgs}: let
-  bc = pkgs.bc.outPath;
+  bc = "${pkgs.bc}/bin/bc";
   vol = import ../../../scripts/vol.nix {inherit pkgs;};
   volSrc = "${vol} src";
   volSink = "${vol} sink";
