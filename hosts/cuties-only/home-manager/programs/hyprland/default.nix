@@ -139,7 +139,6 @@
       layerrule = [
         "blur, notifications"
         "ignorezero, notifications"
-        "noanim, wob"
       ];
 
       "$mod" = "SUPER";
