@@ -190,10 +190,6 @@
         [
           "            , XF86AudioMicMute     , exec, uwsm-app -- toggle-mute src"
 
-          # waybar gets out-of-sync between hidden/shown states very
-          # often, so this remedies it as a reset bind.
-          "            , XF86Launch3          , exec, uwsm-app -- pkill -SIGUSR1 waybar"
-
           "            , XF86AudioMute        , exec, uwsm-app -- toggle-mute sink" #fn+f1
           #fn+f2 o
           #fn+f3 o
