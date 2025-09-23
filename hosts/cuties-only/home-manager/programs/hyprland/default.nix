@@ -3,6 +3,8 @@
   pkgs,
   ...
 }: {
+  imports = [./no-gaps-when-only.nix];
+
   nix.settings = {
     extra-substituters = ["https://hyprland.cachix.org"];
     extra-trusted-substituters = ["https://hyprland.cachix.org"];
@@ -74,13 +76,6 @@
         enabled = "$LAPTOP_TOUCHPAD_ENABLED";
       };
 
-      workspace = [
-        # `no_gaps_when_only`
-        "w[t1], gapsout:0, gapsin:0"
-        "w[tg1], gapsout:0, gapsin:0"
-        "f[1], gapsout:0, gapsin:0"
-      ];
-
       windowrulev2 = [
         # Ignore maximize requests from apps. You'll probably like this.
         "suppressevent maximize, class:.*"
@@ -146,14 +141,6 @@
         "workspace special:scratch, class:^(org.wezfurlong.wezterm)$"
         "workspace special:scratch, class:^(foot)$"
         "workspace special:scratch, class:^(kitty)$"
-
-        # `no_gaps_when_only`
-        "bordersize 0, floating:0, onworkspace:w[t1]"
-        "rounding 0, floating:0, onworkspace:w[t1]"
-        "bordersize 0, floating:0, onworkspace:w[tg1]"
-        "rounding 0, floating:0, onworkspace:w[tg1]"
-        "bordersize 0, floating:0, onworkspace:f[1]"
-        "rounding 0, floating:0, onworkspace:f[1]"
       ];
 
       layerrule = [
@@ -182,8 +169,6 @@
 
         "            , XF86AudioLowerVolume , exec, set-vol sink d"
         "            , XF86AudioRaiseVolume , exec, set-vol sink u"
-        "            , xf86monbrightnessdown, exec, br d" #fn+f7
-        "            , xf86monbrightnessup  , exec, br u" #fn+f8
       ];
 
       bind =
