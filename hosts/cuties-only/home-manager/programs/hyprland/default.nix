@@ -3,7 +3,13 @@
   pkgs,
   ...
 }: {
-  imports = [./no-gaps-when-only.nix ./set-vol.nix ./toggle-mute.nix ./touchpad.nix];
+  imports = [
+    ./no-gaps-when-only.nix
+    ./set-vol.nix
+    ./showleds.nix
+    ./toggle-mute.nix
+    ./touchpad.nix
+  ];
 
   nix.settings = {
     extra-substituters = ["https://hyprland.cachix.org"];
@@ -270,10 +276,6 @@
 
       bindrt = [
         #"$mod, SUPER_L, exec, ${bar0}"
-
-        "MOD2, Num_Lock , exec, uwsm-app -- showleds n"
-        #"CAPS, Caps_Lock, exec, uwsm-app -- showleds c" # doesn't work due to caps:escape_shifted_capslock
-        #"CAPS SHIFT, Shift_L, exec, uwsm-app -- showleds c" # only seems to work sometimes
       ];
 
       plugin = {
