@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: {
-  imports = [./no-gaps-when-only.nix];
+  imports = [./no-gaps-when-only.nix ./touchpad.nix];
 
   nix.settings = {
     extra-substituters = ["https://hyprland.cachix.org"];
@@ -27,7 +27,6 @@
         repeat_rate = 40;
         repeat_delay = 200;
         follow_mouse = 1;
-        touchpad.natural_scroll = true;
         sensitivity = 0;
         accel_profile = "flat";
       };
@@ -68,12 +67,6 @@
           "layers, 1, 2.5, default, fade"
           "fadeLayers, 1, 2.5, default"
         ];
-      };
-
-      "$LAPTOP_TOUCHPAD_ENABLED" = false;
-      device = {
-        name = "asuf1204:00-2808:0202-touchpad";
-        enabled = "$LAPTOP_TOUCHPAD_ENABLED";
       };
 
       windowrulev2 = [
@@ -182,7 +175,7 @@
           #fn+f5 -
           "$mod Shift_L, s                    , exec, uwsm-app -- grimblast --notify copysave area" #fn+f6
           "$mod        , p                    , exec, uwsm-app --" #fn+f9
-          "            , XF86TouchPadToggle   , exec, uwsm-app -- toggle-touchpad" #fn+f10
+
           #fn+f11 o
           #fn+f12 -
 
