@@ -9,8 +9,9 @@
       xdgDataHome = config.xdg.dataHome;
       xdgStateHome = config.xdg.stateHome;
     in {
-      PYTHON_HISTORY = "${xdgDataHome}/python/history";
+      CARGO_HOME = "${xdgDataHome}/cargo";
       HISTFILE = "${xdgStateHome}/bash/history";
+      PYTHON_HISTORY = "${xdgDataHome}/python/history";
     };
   };
 
