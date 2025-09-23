@@ -18,6 +18,7 @@
     # inputs.hardware.nixosModules.common-ssd
 
     # You can also split up your configuration and import pieces of it here:
+    ./bluetooth.nix
     ./home-manager.nix
     ./impermanence
     ./networking.nix

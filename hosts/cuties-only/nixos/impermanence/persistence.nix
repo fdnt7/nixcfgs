@@ -20,6 +20,7 @@ with nixcfgs; {
 
       "/var/lib/nixos"
       "/var/lib/systemd/backlight"
+      "/var/lib/bluetooth"
 
       {
         directory = flake;

@@ -106,7 +106,6 @@
         "float, class:^(Muse Sounds Manager)$"
         "float, class:^(pavucontrol)$"
         "float, class:^(nm-connection-editor)$"
-        "float, class:^(.blueman-manager-wrapped)$"
 
         # this doesn't automatically float for whatever reasons but
         # the capitalised `Xdg-...` does.
