@@ -25,6 +25,7 @@
     ./nix.nix
     ./nixpkgs.nix
     ./programs
+    ./services
     ./sops.nix
     ./time.nix
     ./users.nix
