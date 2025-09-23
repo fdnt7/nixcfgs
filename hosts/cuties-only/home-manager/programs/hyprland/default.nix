@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: {
-  imports = [./no-gaps-when-only.nix ./toggle-mute.nix ./touchpad.nix];
+  imports = [./no-gaps-when-only.nix ./set-vol.nix ./toggle-mute.nix ./touchpad.nix];
 
   nix.settings = {
     extra-substituters = ["https://hyprland.cachix.org"];
@@ -159,9 +159,6 @@
 
         "$mod, Tab, layoutmsg, move +col"
         "$mod SHIFT, Tab, layoutmsg, move -col"
-
-        "            , XF86AudioLowerVolume , exec, set-vol sink d"
-        "            , XF86AudioRaiseVolume , exec, set-vol sink u"
       ];
 
       bind =
