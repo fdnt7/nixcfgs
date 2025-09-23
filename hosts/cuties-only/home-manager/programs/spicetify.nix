@@ -15,7 +15,7 @@
   };
 
   wayland.windowManager.hyprland.settings = {
-    windowrulev2 = ["workspace special:music, class:^(spotify)$"];
+    windowrulev2 = ["workspace special:music, class:^(Spotify)$"];
     bind = ["$mod ALT, s, exec, uwsm-app -- spotify"];
   };
 }
