@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: {
-  imports = [./no-gaps-when-only.nix ./touchpad.nix];
+  imports = [./no-gaps-when-only.nix ./toggle-mute.nix ./touchpad.nix];
 
   nix.settings = {
     extra-substituters = ["https://hyprland.cachix.org"];
@@ -166,9 +166,6 @@
 
       bind =
         [
-          "            , XF86AudioMicMute     , exec, uwsm-app -- toggle-mute src"
-
-          "            , XF86AudioMute        , exec, uwsm-app -- toggle-mute sink" #fn+f1
           #fn+f2 o
           #fn+f3 o
           "            , XF86Launch4          , exec, uwsm-app --" #fn+f4
