@@ -28,6 +28,7 @@
     ./sops.nix
     ./time.nix
     ./users.nix
+    ./vpn.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
