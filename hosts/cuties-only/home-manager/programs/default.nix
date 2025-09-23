@@ -10,6 +10,7 @@
     ./git.nix
     ./home-manager.nix
     ./hyprland
+    ./mullvad-vpn.nix
     ./nh.nix
     ./nix-index.nix
     ./nixvim.nix
