@@ -21,6 +21,7 @@
     # ./nvim.nix
     ./appearance
     ./fonts
+    ./github.nix
     ./nix-community.nix
     ./nixpkgs.nix
     ./packages
@@ -28,6 +29,7 @@
     ./services
     ./sops.nix
     ./systemd.nix
+    ./wakatime.nix
     ./xdg.nix
   ];
 
