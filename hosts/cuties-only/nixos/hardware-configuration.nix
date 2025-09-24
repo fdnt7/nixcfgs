@@ -42,6 +42,19 @@
       options = ["subvol=${subvol}" "compress=zstd" "noatime"];
     };
 
+    mkNtfs = uuid: {
+      device = "/dev/disk/by-uuid/${uuid}";
+      fsType = "ntfs";
+      options = [
+        "rw"
+        "uid=1000"
+        "gid=100"
+        "dmask=0022"
+        "fmask=0133"
+        "windows_names"
+      ];
+    };
+
     neededForBoot = {neededForBoot = true;};
   in
     with nixcfgs; {
@@ -57,18 +70,8 @@
       ${persist} = (mkBtrfs persistVol) // neededForBoot;
       "/var/log" = (mkBtrfs "log") // neededForBoot;
 
-      "/mnt/data" = {
-        device = "/dev/disk/by-uuid/78C68019C67FD63A";
-        fsType = "ntfs";
-        options = [
-          "rw"
-          "uid=1000"
-          "gid=100"
-          "dmask=0022"
-          "fmask=0133"
-          "windows_names"
-        ];
-      };
+      "/mnt/data" = mkNtfs "78C68019C67FD63A";
+      "/mnt/win" = mkNtfs "5E723E82723E5EC9";
     };
 
   swapDevices = [
