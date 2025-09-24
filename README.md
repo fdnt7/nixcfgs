@@ -35,6 +35,16 @@ my other hosts.
 - Hopefully a best practice compliant configuration structure with idiomatic nix
   usage as a language.
 
+## Prerequisites
+
+Before installation, these directories and files must be present:
+
+- `/persist/nixcfgs` - the flake directory
+- `/persist/usr/share/fonts/seguiemj.ttf` - Windows 11's Segoe UI Emoji font
+- `/persist/var/lib/sops-nix/key.txt` - the key file for sops
+
+Optionally, edit the attributes of `nixcfgs` in `flake.nix` as seen fit.
+
 ## Attributions
 
 - [@Misterio77](https://github.com/Misterio77)’s 
