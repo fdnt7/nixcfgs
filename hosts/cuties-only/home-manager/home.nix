@@ -28,7 +28,6 @@
     ./services
     ./sops.nix
     ./systemd.nix
-    ./wakatime.nix
     ./xdg.nix
   ];
 

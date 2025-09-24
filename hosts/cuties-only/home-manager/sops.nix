@@ -1,10 +1,14 @@
 {
   config,
   inputs,
+  lib,
   nixcfgs,
   ...
 }: let
-  githubPat = "home-manager/nix/settings/extra-access-tokens/github-pat";
+  sopsSecrets = config.sops.secrets;
+  homeManager = "home-manager";
+  githubPat = "${homeManager}/nix/settings/extra-access-tokens/github-pat";
+  wakatimeApiKey = "${homeManager}/wakatime/api_key";
 in {
   imports = [inputs.sops-nix.homeManagerModules.sops];
 
@@ -14,12 +18,19 @@ in {
 
     age.keyFile = nixcfgs.sopsAgeKeyFile;
 
-    # this is not no-op;
+    # these are not no-op;
     # `secrets.<key> = {};` tells sops-nix to use it
-    secrets.${githubPat} = {};
+    secrets = {
+      ${githubPat} = {};
+      "${wakatimeApiKey}" = {};
+    };
   };
 
   systemd.user.services.mbsync.unitConfig.After = ["sops-nix.service"];
 
-  nix.extraOptions = "!include ${config.sops.secrets.${githubPat}.path}";
+  nix.extraOptions = "!include ${sopsSecrets.${githubPat}.path}";
+
+  xdg.configFile."wakatime".text = lib.generators.toINI {} {
+    settings.api_key_vault_cmd = "cat ${sopsSecrets.${wakatimeApiKey}.path}";
+  };
 }
