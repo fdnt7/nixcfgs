@@ -1,16 +1,11 @@
-{
-  outputs,
-  pkgs,
-  ...
-}: {
-  home.packages = [
-    #inputs.tsutsumi.packages.${pkgs.system}.wakatime-ls
-    pkgs.discord-presence-lsp
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    discord-presence-lsp
   ];
   programs.zed-editor = {
     enable = true;
     extensions = [
-      #"wakatime"
+      "wakatime"
       "discord-presence"
       "catppuccin"
       "sql"
