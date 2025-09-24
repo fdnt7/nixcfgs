@@ -2,5 +2,6 @@
 # You can build them using 'nix build .#example'
 pkgs: {
   # example = pkgs.callPackage ./example { };
-  discord-presence-lsp = pkgs.callPackage ./discord-precense-lsp.nix {};
+  zed-discord-presence = pkgs.callPackage ./zed-discord-presence.nix {};
+  zed-wakatime = pkgs.callPackage ./zed-wakatime.nix {};
 }

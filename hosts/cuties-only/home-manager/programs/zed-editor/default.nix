@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    discord-presence-lsp
+    zed-discord-presence
+    zed-wakatime
   ];
   programs.zed-editor = {
     enable = true;
