@@ -1,11 +1,11 @@
 {
-  inputs,
+  outputs,
   pkgs,
   ...
 }: {
   home.packages = [
     #inputs.tsutsumi.packages.${pkgs.system}.wakatime-ls
-    (pkgs.callPackage ./discord-presence.nix {})
+    pkgs.discord-presence-lsp
   ];
   programs.zed-editor = {
     enable = true;
