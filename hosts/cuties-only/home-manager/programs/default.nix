@@ -22,6 +22,7 @@
     ./starship.nix
     ./waybar
     ./yazi
+    ./zed-editor
     ./zen-browser.nix
     ./zoxide.nix
   ];
