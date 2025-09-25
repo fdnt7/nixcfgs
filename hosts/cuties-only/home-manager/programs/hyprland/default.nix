@@ -139,11 +139,6 @@
         "workspace special:scratch, class:^(kitty)$"
       ];
 
-      layerrule = [
-        "blur, notifications"
-        "ignorezero, notifications"
-      ];
-
       "$mod" = "SUPER";
       "$sws_1" = "grave";
       "$sws_2" = "minus";
