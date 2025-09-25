@@ -2,7 +2,7 @@
   programs = {
     btop = {
       enable = true;
-      settings.theme_backgroundd = false;
+      settings.theme_background = false;
     };
     fish.shellAbbrs.bt = "btop";
   };
