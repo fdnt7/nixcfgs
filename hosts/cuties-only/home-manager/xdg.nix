@@ -2,12 +2,13 @@
   config,
   pkgs,
   ...
-}: {
+}: let
+  configXdg = config.xdg;
+  xdgDataHome = configXdg.dataHome;
+in {
   home = {
     packages = [pkgs.xdg-ninja];
     sessionVariables = let
-      configXdg = config.xdg;
-      xdgDataHome = configXdg.dataHome;
       xdgStateHome = configXdg.stateHome;
       xdgConfigHome = configXdg.configHome;
     in {
@@ -33,4 +34,6 @@
       };
     };
   };
+
+  programs.fish.shellAliases.wget = "wget --hsts-file=${xdgDataHome}/wget-hsts";
 }
