@@ -14,6 +14,7 @@ in {
     in {
       CARGO_HOME = "${xdgDataHome}/cargo";
       HISTFILE = "${xdgStateHome}/bash/history";
+      PSQL_HISTORY = "${xdgStateHome}/psql_history";
       PYTHON_HISTORY = "${xdgDataHome}/python/history";
       WAKATIME_HOME = "${xdgConfigHome}/wakatime";
     };
