@@ -7,9 +7,9 @@
   programs.eza = {
     enable = true;
     enableFishIntegration = true;
-    colors = "auto";
+    colors = "always";
     git = true;
-    icons = "auto";
+    icons = "always";
 
     extraOptions = ["-lah" "--group-directories-first" "--colour-scale"];
   };
