@@ -38,10 +38,7 @@
     };
 
     nixvim = {
-      # nixvim is broken: `error: atopile cannot be found in pkgs`.
-      # https://github.com/nix-community/nixvim/issues/3780
-
-      url = "github:nix-community/nixvim/8e2bbc6b0bcec4154e3c18f20c6da1ba6caa7810";
+      url = "github:nix-community/nixvim";
       # If you are not running an unstable channel of nixpkgs, select the corresponding branch of nixvim.
       # url = "github:nix-community/nixvim/nixos-25.05";
 
