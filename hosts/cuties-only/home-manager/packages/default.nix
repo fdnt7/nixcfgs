@@ -14,6 +14,7 @@
     kdePackages.okular
     muse-sounds-manager
     musescore
+    osu-lazer-bin
     tenacity
   ];
 }
