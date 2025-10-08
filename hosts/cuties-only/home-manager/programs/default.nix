@@ -13,6 +13,7 @@
     ./mullvad-vpn.nix
     ./nh.nix
     ./nix-index.nix
+    ./nixcord.nix
     ./nixvim.nix
     ./rebuild.nix
     ./ripgrep.nix
