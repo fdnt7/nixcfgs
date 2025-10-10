@@ -16,5 +16,6 @@
     musescore
     osu-lazer-bin
     tenacity
+    prismlauncher
   ];
 }
