@@ -1,3 +1,6 @@
 {
-  imports = [./solaar.nix];
+  imports = [
+    ./asus-linux.nix
+    ./solaar.nix
+  ];
 }
