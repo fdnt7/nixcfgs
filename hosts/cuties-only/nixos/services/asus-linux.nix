@@ -1,5 +1,6 @@
 {
   services = {
+    power-profiles-daemon.enable = true;
     supergfxd = {
       enable = true;
     };
