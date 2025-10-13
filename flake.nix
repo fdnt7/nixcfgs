@@ -4,6 +4,8 @@
   inputs = {
     catppuccin.url = "github:catppuccin/nix";
 
+    devenv.url = "github:cachix/devenv";
+
     # Home manager
     # home-manager.url = "github:nix-community/home-manager/release-23.11";
     home-manager = {
@@ -29,8 +31,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixcord.
-    url = "github:kaylorben/nixcord";
+    nixcord.url = "github:kaylorben/nixcord";
 
     # Nixpkgs
     # nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
