@@ -5,6 +5,7 @@
     ./devenv.nix
     ./grimblast.nix
     ./nix-your-shell.nix
+    ./winboat.nix
   ];
 
   # Add stuff for your user as you see fit:

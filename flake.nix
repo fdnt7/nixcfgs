@@ -63,6 +63,8 @@
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
+    winboat.url = "github:TibixDev/winboat";
+
     yazi.url = "github:sxyazi/yazi";
 
     zen-browser = {
