@@ -4,7 +4,7 @@
   ...
 }: {
   home.packages = [
-    pkgs.freerdp;
+    pkgs.freerdp
 
     inputs.winboat.packages.${pkgs.stdenv.hostPlatform.system}.winboat
   ];
