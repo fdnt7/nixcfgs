@@ -1,10 +1,11 @@
 # This is your system's configuration file.
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
 {
-  inputs,
-  outputs,
-  lib,
   config,
+  inputs,
+  lib,
+  nixcfgs,
+  outputs,
   pkgs,
   ...
 }: {
@@ -34,7 +35,7 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
-  ];
+  ] ++ lib.optional nixcfgs.enableWinboat ./docker.nix;
 
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.UTF-8";
