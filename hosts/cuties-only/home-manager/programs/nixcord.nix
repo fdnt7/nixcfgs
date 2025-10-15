@@ -78,5 +78,7 @@
       };
     };
     vesktop.enable = true;
+
+    discord.openASAR.enable = false; # openasar broken rn
   };
 }
