@@ -39,7 +39,7 @@ my other hosts.
 
 Before installation, these directories and files must be present:
 
-- `/persist/nixcfgs` - the flake directory
+- `/persist/etc/nixcfgs` - the flake directory
 - `/persist/usr/share/fonts/seguiemj.ttf` - Windows 11's Segoe UI Emoji font
 - `/persist/var/lib/sops-nix/key.txt` - the key file for sops
 
