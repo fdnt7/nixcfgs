@@ -19,7 +19,7 @@
           owner = "yazi-rs";
           repo = "plugins";
           rev = "9a52857eac61ede58d11c06ca813c3fa63fe3609";
-          hash = ""
+          hash = "sha256-YM53SsE10wtMqI1JGa4CqZbAgr7h62MZ5skEdAavOVA=";
         };
       in {
         full-border = "${repo}/full-border.yazi";

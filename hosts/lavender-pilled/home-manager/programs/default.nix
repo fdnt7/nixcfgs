@@ -6,7 +6,7 @@
     ./nh.nix
     ./rebuild.nix
     ./starship.nix
-    ./yazi.nix
+    ./yazi
   ];
 
   # Enable home-manager and git
