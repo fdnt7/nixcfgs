@@ -1,8 +1,10 @@
 {
   imports = [
+    ./direnv.nix
     ./eza.nix
-    ./git.nix
     ./fish.nix
+    ./git.nix
+    ./neovim.nix
     ./nh.nix
     ./rebuild.nix
     ./starship.nix
