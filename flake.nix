@@ -147,7 +147,7 @@
             persistVol = "persist";
             persist = "/${persistVol}";
             sopsAgeKeyFile = "${persist}/var/lib/sops-nix/key.txt";
-	    githubUname = "fdnt7";
+            githubUname = "fdnt7";
           };
         };
 
