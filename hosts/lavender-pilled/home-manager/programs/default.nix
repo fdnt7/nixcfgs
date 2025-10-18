@@ -9,6 +9,7 @@
     ./rebuild.nix
     ./starship.nix
     ./yazi
+    ./zed-editor.nix
   ];
 
   # Enable home-manager and git
