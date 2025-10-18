@@ -21,6 +21,13 @@
 
     impermanence.url = "github:nix-community/impermanence";
 
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.4.2";
+
+      # Optional but recommended to limit the size of your system closure.
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -32,6 +39,8 @@
     };
 
     nixcord.url = "github:kaylorben/nixcord";
+
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     # Nixpkgs
     # nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
@@ -113,35 +122,52 @@
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = let
-      nixcfgs = rec {
-        name = "nixcfgs";
-        uname = "fdnt";
-        gname = name;
-        hostName = "cuties-only";
-        flake = "/etc/${name}";
-        persistVol = "persist";
-        persist = "/${persistVol}";
-        sopsAgeKeyFile = "${persist}/var/lib/sops-nix/key.txt";
-        enableWinBoat = true;
+      hostConfigs = {
+        cuties-only = {
+          nixcfgs = rec {
+            name = "nixcfgs";
+            uname = "fdnt";
+            gname = name;
+            hostName = "cuties-only";
+            flake = "/etc/${name}";
+            persistVol = "persist";
+            persist = "/${persistVol}";
+            sopsAgeKeyFile = "${persist}/var/lib/sops-nix/key.txt";
+            enableWinBoat = true;
+          };
+        };
+
+        lavender-pilled = {
+          nixcfgs = rec {
+            name = "nixcfgs";
+            uname = "fdl";
+            gname = name;
+            hostName = "lavender-pilled";
+            flake = "/etc/${name}";
+            persistVol = "persist";
+            persist = "/${persistVol}";
+            sopsAgeKeyFile = "${persist}/var/lib/sops-nix/key.txt";
+	    githubUname = "fdnt7";
+          };
+        };
+
+        # Add more hosts here...
       };
     in
-      with nixcfgs;
-        {
-          ${hostName} = nixpkgs.lib.nixosSystem {
-            specialArgs = {inherit inputs nixcfgs outputs;};
+      builtins.mapAttrs (
+        hostName: cfg:
+          nixpkgs.lib.nixosSystem {
+            specialArgs = {
+              inherit inputs outputs;
+              nixcfgs = cfg.nixcfgs;
+            };
+
             modules = [
-              # > Our main nixos configuration file <
               ./hosts/${hostName}/nixos/configuration.nix
             ];
-          };
-        }
-        // nixpkgs.lib.genAttrs
-        ["estrogen-fuelled" "autism-inside"]
-        (name:
-          nixpkgs.lib.nixosSystem {
-            specialArgs = {inherit inputs outputs;};
-            modules = [./hosts/${name}/nixos/configuration.nix];
-          });
+          }
+      )
+      hostConfigs;
 
     # use home-manager as a nixos module to comply with impermanence
 

@@ -3,5 +3,8 @@
 {
   # List your module files here
   # my-module = import ./my-module.nix;
+  impermanence = import ./impermanence.nix;
+  persistence = import ./persistence.nix;
   mullvad-tailscale = import ./mullvad-tailscale.nix;
+  secrets = import ./secrets.nix;
 }
