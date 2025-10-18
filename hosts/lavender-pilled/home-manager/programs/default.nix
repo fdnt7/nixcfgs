@@ -1,5 +1,6 @@
 {
   imports = [
+    ./eza.nix
     ./git.nix
     ./fish.nix
     ./nh.nix
