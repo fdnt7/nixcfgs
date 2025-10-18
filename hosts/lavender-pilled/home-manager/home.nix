@@ -20,6 +20,7 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
     ./fonts
+    ./neovim.nix
     ./nix-your-shell.nix
     ./nixpkgs.nix
     ./packages.nix
