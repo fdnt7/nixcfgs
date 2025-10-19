@@ -1,6 +1,14 @@
-{pkgs ? import <nixpkgs> {}}:
+{
+  pkgs ? import <nixpkgs> { },
+}:
 pkgs.mkShell {
-  packages = [
-    pkgs.nixd
-  ];
+  packages =
+    let
+      inherit (pkgs) nixd nixfmt nixfmt-tree;
+    in
+    [
+      nixd
+      nixfmt
+      nixfmt-tree
+    ];
 }
