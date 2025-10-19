@@ -1,5 +1,6 @@
 {
   imports = [
+    ./devenv.nix
     ./direnv.nix
     ./eza.nix
     ./fish.nix
