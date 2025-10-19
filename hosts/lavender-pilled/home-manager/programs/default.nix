@@ -9,6 +9,7 @@
     ./nh.nix
     ./nix-your-shell.nix
     ./rebuild.nix
+    ./spotify.nix
     ./starship.nix
     ./yazi
     ./zed-editor.nix
