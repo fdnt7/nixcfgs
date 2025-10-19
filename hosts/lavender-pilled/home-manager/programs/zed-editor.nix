@@ -1,9 +1,13 @@
 { pkgs, ... }:
 {
-  home.packages = with pkgs; [
-    zed-discord-presence
-    # zed-wakatime
-  ];
+  home.packages =
+    let
+      inherit (pkgs) zed-discord-presence;
+    in
+    [
+      zed-discord-presence
+      # zed-wakatime
+    ];
   programs.zed-editor = {
     enable = true;
     extensions = [

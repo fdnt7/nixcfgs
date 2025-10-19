@@ -4,12 +4,23 @@
   pkgs,
   ...
 }:
-with lib;
+let
+  inherit (lib)
+    mkEnableOption
+    mkOption
+    types
+    mkIf
+    ;
+in
 {
   options.programs.rebuild = {
     enable = mkEnableOption "rebuild helper script";
     hostName = mkOption {
-      type = with types; either singleLineStr path;
+      type =
+        let
+          inherit (types) either singleLineStr path;
+        in
+        either singleLineStr path;
       description = "The name of the machine.";
     };
   };
