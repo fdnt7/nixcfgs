@@ -5,7 +5,7 @@
   ...
 }: let
   inherit (lib) mkIf mkEnableOption mkMerge mkOption types;
-  inherit (types) str bool;
+  inherit (types) str;
   cfg = config.persist;
 in {
   imports = [inputs.impermanence.nixosModules.impermanence];

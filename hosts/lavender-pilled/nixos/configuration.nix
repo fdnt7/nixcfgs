@@ -4,14 +4,6 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 {
-  config,
-  inputs,
-  lib,
-  nixcfgs,
-  outputs,
-  pkgs,
-  ...
-}: {
   # You can import other NixOS modules here
   imports = [
     # If you want to use modules your own flake exports (from modules/nixos):
