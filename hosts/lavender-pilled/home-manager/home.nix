@@ -1,6 +1,7 @@
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
-{nixcfgs, ...}: {
+{ nixcfgs, ... }:
+{
   # You can import other home-manager modules here
   imports = [
     # If you want to use modules your own flake exports (from modules/home-manager):
@@ -19,13 +20,15 @@
     ./systemd.nix
   ];
 
-  home = let
-    inherit (nixcfgs) uname;
-  in {
-    username = uname;
-    homeDirectory = "/home/${uname}";
+  home =
+    let
+      inherit (nixcfgs) uname;
+    in
+    {
+      username = uname;
+      homeDirectory = "/home/${uname}";
 
-    # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-    stateVersion = "25.11";
-  };
+      # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
+      stateVersion = "25.11";
+    };
 }

@@ -2,7 +2,8 @@
   inputs,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     ./no-gaps-when-only.nix
     ./set-vol.nix
@@ -12,9 +13,11 @@
   ];
 
   nix.settings = {
-    extra-substituters = ["https://hyprland.cachix.org"];
-    extra-trusted-substituters = ["https://hyprland.cachix.org"];
-    extra-trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+    extra-substituters = [ "https://hyprland.cachix.org" ];
+    extra-trusted-substituters = [ "https://hyprland.cachix.org" ];
+    extra-trusted-public-keys = [
+      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+    ];
   };
 
   wayland.windowManager.hyprland = {
@@ -22,9 +25,12 @@
     package = null;
     portalPackage = null;
     systemd.enable = false;
-    plugins = with inputs.hyprland-plugins.packages.${pkgs.system}; [hyprscrolling];
+    plugins = with inputs.hyprland-plugins.packages.${pkgs.system}; [ hyprscrolling ];
     settings = {
-      monitor = ["eDP-2,preferred,auto,1" ",preferred,auto,1,mirror,eDP-2"];
+      monitor = [
+        "eDP-2,preferred,auto,1"
+        ",preferred,auto,1,mirror,eDP-2"
+      ];
 
       input = {
         kb_layout = "us,th";
@@ -158,106 +164,107 @@
         "$mod SHIFT, Tab, layoutmsg, move -col"
       ];
 
-      bind =
-        [
-          #fn+f2 o
-          #fn+f3 o
-          "            , XF86Launch4          , exec, uwsm-app --" #fn+f4
-          #fn+f5 -
+      bind = [
+        #fn+f2 o
+        #fn+f3 o
+        "            , XF86Launch4          , exec, uwsm-app --" # fn+f4
+        #fn+f5 -
 
-          "$mod        , p                    , exec, uwsm-app --" #fn+f9
+        "$mod        , p                    , exec, uwsm-app --" # fn+f9
 
-          #fn+f11 o
-          #fn+f12 -
+        #fn+f11 o
+        #fn+f12 -
 
-          "$mod SHIFT, q, exec, uwsm-app -- qr"
+        "$mod SHIFT, q, exec, uwsm-app -- qr"
 
-          "$mod, w, killactive"
-          "$mod, e, swapnext"
-          "$mod SHIFT, e, swapnext, prev"
-          "$mod, r, exec, uwsm-app -- rofi -show run -show-icons"
-          "$mod, t, pseudo"
-          "$mod           , y, cyclenext, tiled"
-          "$mod SHIFT     , y, cyclenext, prev tiled"
-          "$mod CTRL      , y, cyclenext, floating"
-          "$mod CTRL SHIFT, y, cyclenext, prev floating"
+        "$mod, w, killactive"
+        "$mod, e, swapnext"
+        "$mod SHIFT, e, swapnext, prev"
+        "$mod, r, exec, uwsm-app -- rofi -show run -show-icons"
+        "$mod, t, pseudo"
+        "$mod           , y, cyclenext, tiled"
+        "$mod SHIFT     , y, cyclenext, prev tiled"
+        "$mod CTRL      , y, cyclenext, floating"
+        "$mod CTRL SHIFT, y, cyclenext, prev floating"
 
-          "$mod, u, layoutmsg, promote"
+        "$mod, u, layoutmsg, promote"
 
-          "$mod, i, pin"
-          "$mod, bracketleft , alterzorder, bottom"
-          "$mod, bracketright, alterzorder, top"
+        "$mod, i, pin"
+        "$mod, bracketleft , alterzorder, bottom"
+        "$mod, bracketright, alterzorder, top"
 
-          "$mod, a, exec, uwsm-app -- rofi -show drun -show-icons"
-          "$mod, s, togglesplit"
-          "$mod, f, togglefloating"
-          "$mod SHIFT, f, fullscreen"
+        "$mod, a, exec, uwsm-app -- rofi -show drun -show-icons"
+        "$mod, s, togglesplit"
+        "$mod, f, togglefloating"
+        "$mod SHIFT, f, fullscreen"
 
-          "$mod, h, layoutmsg, focus l"
-          "$mod, j, layoutmsg, focus d"
-          "$mod, k, layoutmsg, focus u"
-          "$mod, l, layoutmsg, focus r"
+        "$mod, h, layoutmsg, focus l"
+        "$mod, j, layoutmsg, focus d"
+        "$mod, k, layoutmsg, focus u"
+        "$mod, l, layoutmsg, focus r"
 
-          "$mod SHIFT, h, layoutmsg, movewindowto l"
-          "$mod SHIFT, j, layoutmsg, movewindowto d"
-          "$mod SHIFT, k, layoutmsg, movewindowto u"
-          "$mod SHIFT, l, layoutmsg, movewindowto r"
+        "$mod SHIFT, h, layoutmsg, movewindowto l"
+        "$mod SHIFT, j, layoutmsg, movewindowto d"
+        "$mod SHIFT, k, layoutmsg, movewindowto u"
+        "$mod SHIFT, l, layoutmsg, movewindowto r"
 
-          "$mod CTRL SHIFT, h, layoutmsg, fit tobeg"
-          "$mod CTRL SHIFT, l, layoutmsg, fit toend"
+        "$mod CTRL SHIFT, h, layoutmsg, fit tobeg"
+        "$mod CTRL SHIFT, l, layoutmsg, fit toend"
 
-          "$mod, semicolon, exec, uwsm-app -- lock"
-          "$mod CTRL, s, exec, uwsm-app -- swww-next"
+        "$mod, semicolon, exec, uwsm-app -- lock"
+        "$mod CTRL, s, exec, uwsm-app -- swww-next"
 
-          "$mod, c, centerwindow"
+        "$mod, c, centerwindow"
 
-          "$mod ALT, f, exec, uwsm-app -- dolphin"
-          "$mod ALT, m, exec, uwsm-app -- mscore"
-          "$mod ALT, z, exec, uwsm-app -- zed"
-          "$mod ALT, c, exec, uwsm-app -- code"
-          "$mod ALT, v, exec, uwsm-app -- mullvad-gui"
-          "$mod ALT, x, exec, uwsm-app -- xournalpp"
+        "$mod ALT, f, exec, uwsm-app -- dolphin"
+        "$mod ALT, m, exec, uwsm-app -- mscore"
+        "$mod ALT, z, exec, uwsm-app -- zed"
+        "$mod ALT, c, exec, uwsm-app -- code"
+        "$mod ALT, v, exec, uwsm-app -- mullvad-gui"
+        "$mod ALT, x, exec, uwsm-app -- xournalpp"
 
-          "$mod, Return , exec, uwsm-app -- $term"
-          "$mod, Shift_R, exec, uwsm-app -- $term_alt"
+        "$mod, Return , exec, uwsm-app -- $term"
+        "$mod, Shift_R, exec, uwsm-app -- $term_alt"
 
-          "$mod, mouse_down, workspace, e+1"
-          "$mod, mouse_up, workspace, e-1"
+        "$mod, mouse_down, workspace, e+1"
+        "$mod, mouse_up, workspace, e-1"
 
-          "$mod      , $sws_1, togglespecialworkspace, scratch"
-          "$mod CTRL , $sws_1, movetoworkspace       , special:scratch"
-          "$mod SHIFT, $sws_1, movetoworkspacesilent, special:scratch"
-          "$mod      , $sws_2, togglespecialworkspace, minimised"
-          "$mod CTRL , $sws_2, movetoworkspace       , special:minimised"
-          "$mod SHIFT, $sws_2, movetoworkspacesilent, special:minimised"
-          "$mod      , $sws_3, togglespecialworkspace, music"
-          "$mod CTRL , $sws_3, movetoworkspace       , special:music"
-          "$mod SHIFT, $sws_3, movetoworkspacesilent, special:music"
-          "$mod      , $sws_4, togglespecialworkspace, chat"
-          "$mod CTRL , $sws_4, movetoworkspace       , special:chat"
-          "$mod SHIFT, $sws_4, movetoworkspacesilent, special:chat"
+        "$mod      , $sws_1, togglespecialworkspace, scratch"
+        "$mod CTRL , $sws_1, movetoworkspace       , special:scratch"
+        "$mod SHIFT, $sws_1, movetoworkspacesilent, special:scratch"
+        "$mod      , $sws_2, togglespecialworkspace, minimised"
+        "$mod CTRL , $sws_2, movetoworkspace       , special:minimised"
+        "$mod SHIFT, $sws_2, movetoworkspacesilent, special:minimised"
+        "$mod      , $sws_3, togglespecialworkspace, music"
+        "$mod CTRL , $sws_3, movetoworkspace       , special:music"
+        "$mod SHIFT, $sws_3, movetoworkspacesilent, special:music"
+        "$mod      , $sws_4, togglespecialworkspace, chat"
+        "$mod CTRL , $sws_4, movetoworkspace       , special:chat"
+        "$mod SHIFT, $sws_4, movetoworkspacesilent, special:chat"
 
-          "$mod, v, exec, uwsm-app -- vpn"
+        "$mod, v, exec, uwsm-app -- vpn"
 
-          "$mod, o, exec, uwsm-app -- uwsm-app -- xdg-open $(wl-paste)"
+        "$mod, o, exec, uwsm-app -- uwsm-app -- xdg-open $(wl-paste)"
 
-          #", SUPER_L, exec, ${bar} 1"
-        ]
-        ++ (
-          builtins.concatLists (builtins.genList (
-              x: let
-                ws = let
-                  c = (x + 1) / 10;
-                in
-                  builtins.toString (x + 1 - (c * 10));
-              in [
-                "$mod      , ${ws}, workspace            , ${toString (x + 1)}"
-                "$mod CTRL , ${ws}, movetoworkspace      , ${toString (x + 1)}"
-                "$mod SHIFT, ${ws}, movetoworkspacesilent, ${toString (x + 1)}"
-              ]
-            )
-            10)
-        );
+        #", SUPER_L, exec, ${bar} 1"
+      ]
+      ++ (builtins.concatLists (
+        builtins.genList (
+          x:
+          let
+            ws =
+              let
+                c = (x + 1) / 10;
+              in
+              builtins.toString (x + 1 - (c * 10));
+          in
+          [
+            "$mod      , ${ws}, workspace            , ${toString (x + 1)}"
+            "$mod CTRL , ${ws}, movetoworkspace      , ${toString (x + 1)}"
+            "$mod SHIFT, ${ws}, movetoworkspacesilent, ${toString (x + 1)}"
+          ]
+        ) 10
+      ));
 
       bindm = [
         "$mod, mouse:272, movewindow"

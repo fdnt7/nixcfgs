@@ -3,12 +3,20 @@
   inputs,
   lib,
   ...
-}: let
-  inherit (lib) mkIf mkOption mkMerge mkEnableOption types;
+}:
+let
+  inherit (lib)
+    mkIf
+    mkOption
+    mkMerge
+    mkEnableOption
+    types
+    ;
   inherit (types) str path;
   cfg = config.secrets;
-in {
-  imports = [inputs.sops-nix.nixosModules.sops];
+in
+{
+  imports = [ inputs.sops-nix.nixosModules.sops ];
 
   options.secrets = {
     key = mkOption {
@@ -39,23 +47,27 @@ in {
 
   config = mkMerge [
     {
-      sops = let
-        inherit (cfg) file key;
-      in {
-        defaultSopsFile = file;
-        defaultSopsFormat = "yaml";
+      sops =
+        let
+          inherit (cfg) file key;
+        in
+        {
+          defaultSopsFile = file;
+          defaultSopsFormat = "yaml";
 
-        age.keyFile = key;
-      };
+          age.keyFile = key;
+        };
     }
 
-    (let
-      inherit (cfg.userPassword) enable name path;
-    in
+    (
+      let
+        inherit (cfg.userPassword) enable name path;
+      in
       mkIf enable {
         users.users.${name}.hashedPasswordFile = config.sops.secrets.${path}.path;
 
         sops.secrets.${path}.neededForUsers = true;
-      })
+      }
+    )
   ];
 }

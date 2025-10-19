@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   home.packages = with pkgs; [
     zed-discord-presence
     # zed-wakatime
@@ -53,7 +54,9 @@
       relative_line_numbers = true;
       lsp = {
         rust-analyzer = {
-          binary = {path_lookup = true;};
+          binary = {
+            path_lookup = true;
+          };
           initialization_options = {
             check = {
               command = "clippy";

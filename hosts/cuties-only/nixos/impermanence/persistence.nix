@@ -9,8 +9,9 @@
   nixcfgs,
   ...
 }:
-with nixcfgs; {
-  imports = [inputs.impermanence.nixosModules.impermanence];
+with nixcfgs;
+{
+  imports = [ inputs.impermanence.nixosModules.impermanence ];
 
   environment.persistence.${persist} = {
     directories = [

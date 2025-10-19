@@ -2,9 +2,11 @@
   inputs,
   pkgs,
   ...
-}: let
+}:
+let
   hyprlandPkgs = inputs.hyprland.packages;
-in {
+in
+{
   programs.hyprland = {
     enable = true;
     withUWSM = true; # recommended for most users

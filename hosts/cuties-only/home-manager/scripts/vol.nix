@@ -1,4 +1,4 @@
-{pkgs}:
+{ pkgs }:
 pkgs.writeShellScript "vol" ''
   # Parse command line arguments
   MUTE_FLAG=0

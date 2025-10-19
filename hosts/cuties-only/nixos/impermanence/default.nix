@@ -1,5 +1,6 @@
-{...}: {
-  imports = [./persistence.nix];
+{ ... }:
+{
+  imports = [ ./persistence.nix ];
 
   # currently, there is no way to permanently disable passphrase echoing
   # ref: https://github.com/systemd/systemd/issues/8495
@@ -8,14 +9,14 @@
     enable = true; # this enabled systemd support in stage1 - required for the below setup
     services.rollback = {
       description = "Rollback BTRFS root subvolume to a pristine state";
-      wantedBy = ["initrd.target"];
+      wantedBy = [ "initrd.target" ];
 
       # LUKS/TPM process. If you have named your device mapper something other
       # than 'enc', then @enc will have a different name. Adjust accordingly.
-      after = ["systemd-cryptsetup@enc.service"];
+      after = [ "systemd-cryptsetup@enc.service" ];
 
       # Before mounting the system root (/sysroot) during the early boot process
-      before = ["sysroot.mount"];
+      before = [ "sysroot.mount" ];
 
       unitConfig.DefaultDependencies = "no";
       serviceConfig.Type = "oneshot";

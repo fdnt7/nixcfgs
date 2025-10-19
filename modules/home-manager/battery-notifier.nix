@@ -19,7 +19,8 @@
   lib,
   ...
 }:
-with lib; let
+with lib;
+let
   cfg = config.services.battery-notifier;
 
   # This is the shell script that will be executed by the systemd service.
@@ -81,7 +82,8 @@ with lib; let
       echo "100" > "$STATE_FILE"
     fi
   '';
-in {
+in
+{
   # --- Module Options ---
   # This section defines the configuration options that users can set.
   options.services.battery-notifier = {
@@ -132,7 +134,7 @@ in {
         Unit = "battery-notifier.service";
       };
       Install = {
-        WantedBy = ["timers.target"];
+        WantedBy = [ "timers.target" ];
       };
     };
   };

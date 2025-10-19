@@ -18,5 +18,5 @@
     };
   };
 
-  wayland.windowManager.hyprland.settings.layerrule = ["noanim, wob"];
+  wayland.windowManager.hyprland.settings.layerrule = [ "noanim, wob" ];
 }

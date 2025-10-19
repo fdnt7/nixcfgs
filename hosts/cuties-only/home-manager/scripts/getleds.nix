@@ -1,4 +1,4 @@
-{pkgs}:
+{ pkgs }:
 pkgs.writeShellScript "getleds" ''
   # Check if argument is provided
   if [ $# -eq 0 ]; then

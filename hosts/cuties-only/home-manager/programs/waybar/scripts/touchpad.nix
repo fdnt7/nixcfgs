@@ -1,4 +1,4 @@
-{pkgs}:
+{ pkgs }:
 pkgs.writeShellScript "touchpad" ''
   STATUS_FILE="$XDG_RUNTIME_DIR/touchpad.status"
 

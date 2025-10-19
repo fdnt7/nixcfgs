@@ -2,22 +2,26 @@
   config,
   pkgs,
   ...
-}: let
+}:
+let
   configXdg = config.xdg;
   xdgDataHome = configXdg.dataHome;
-in {
+in
+{
   home = {
-    packages = [pkgs.xdg-ninja];
-    sessionVariables = let
-      xdgStateHome = configXdg.stateHome;
-      xdgConfigHome = configXdg.configHome;
-    in {
-      CARGO_HOME = "${xdgDataHome}/cargo";
-      HISTFILE = "${xdgStateHome}/bash/history";
-      PSQL_HISTORY = "${xdgStateHome}/psql_history";
-      PYTHON_HISTORY = "${xdgDataHome}/python/history";
-      WAKATIME_HOME = "${xdgConfigHome}/wakatime";
-    };
+    packages = [ pkgs.xdg-ninja ];
+    sessionVariables =
+      let
+        xdgStateHome = configXdg.stateHome;
+        xdgConfigHome = configXdg.configHome;
+      in
+      {
+        CARGO_HOME = "${xdgDataHome}/cargo";
+        HISTFILE = "${xdgStateHome}/bash/history";
+        PSQL_HISTORY = "${xdgStateHome}/psql_history";
+        PYTHON_HISTORY = "${xdgDataHome}/python/history";
+        WAKATIME_HOME = "${xdgConfigHome}/wakatime";
+      };
   };
 
   nix.settings.use-xdg-base-directories = true;

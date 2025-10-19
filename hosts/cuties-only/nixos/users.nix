@@ -3,10 +3,12 @@
   nixcfgs,
   pkgs,
   ...
-}: let
+}:
+let
   uname = nixcfgs.uname;
   hashedPassword = "nixos/users/users/0/hashedPassword";
-in {
+in
+{
   users = {
     users = {
       ${uname} = {
@@ -14,10 +16,13 @@ in {
         # openssh.authorizedKeys.keys = [
         # ];
         hashedPasswordFile = config.sops.secrets.${hashedPassword}.path;
-        extraGroups = ["wheel" "networkmanager"];
+        extraGroups = [
+          "wheel"
+          "networkmanager"
+        ];
       };
     };
-    groups.nixcfgs.members = [uname];
+    groups.nixcfgs.members = [ uname ];
   };
 
   sops.secrets.${hashedPassword}.neededForUsers = true;

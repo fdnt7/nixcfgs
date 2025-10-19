@@ -2,21 +2,23 @@
   nixcfgs,
   pkgs,
   ...
-}: let
+}:
+let
   inherit (nixcfgs) uname gname;
-in {
+in
+{
   users = {
     users = {
       ${uname} = {
         isNormalUser = true;
         openssh.authorizedKeys.keys = [
         ];
-        extraGroups = ["wheel"];
+        extraGroups = [ "wheel" ];
 
         shell = pkgs.fish;
       };
     };
-    groups.${gname}.members = [uname];
+    groups.${gname}.members = [ uname ];
   };
 
   secrets.userPassword = {

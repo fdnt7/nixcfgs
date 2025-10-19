@@ -4,7 +4,8 @@
   pkgs,
   ...
 }:
-with lib; let
+with lib;
+let
   # A shorthand for our module's configuration options.
   cfg = config.services.mullvad-tailscale;
 
@@ -48,11 +49,14 @@ with lib; let
     # This command deletes the entire table created by the rules above.
     delete table inet mullvad-ts
   '';
-in {
+in
+{
   # --- Module Options ---
   # This section defines the configuration options that users can set.
   options.services.mullvad-tailscale = {
-    enable = mkEnableOption (mdDoc "declarative nftables rules to exclude Tailscale traffic from Mullvad VPN.");
+    enable = mkEnableOption (
+      mdDoc "declarative nftables rules to exclude Tailscale traffic from Mullvad VPN."
+    );
   };
 
   # --- Module Configuration ---
