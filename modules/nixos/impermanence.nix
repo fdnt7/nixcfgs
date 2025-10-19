@@ -3,7 +3,7 @@
   lib,
   ...
 }: let
-  inherit (lib) mkEnableOption mkIf types;
+  inherit (lib) mkEnableOption mkIf;
   cfg = config.impermanence;
 in {
   options.impermanence.enable = mkEnableOption "Automatic rollback of Btrfs root subvolume during early boot.";
