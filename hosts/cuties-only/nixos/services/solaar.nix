@@ -1,5 +1,6 @@
-{inputs, ...}: {
-  imports = [inputs.solaar.nixosModules.default];
+{ inputs, ... }:
+{
+  imports = [ inputs.solaar.nixosModules.default ];
 
   services.solaar.enable = true;
 }

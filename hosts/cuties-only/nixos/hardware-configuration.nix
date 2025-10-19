@@ -8,7 +8,8 @@
   nixcfgs,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
@@ -16,18 +17,25 @@
   # Use the systemd-boot EFI boot loader.
   # boot.loader.systemd-boot.enable = true;
   boot = {
-    extraModulePackages = [];
+    extraModulePackages = [ ];
     initrd = {
-      availableKernelModules = ["nvme" "xhci_pci" "thunderbolt" "usbhid" "usb_storage" "sd_mod"];
-      kernelModules = [];
+      availableKernelModules = [
+        "nvme"
+        "xhci_pci"
+        "thunderbolt"
+        "usbhid"
+        "usb_storage"
+        "sd_mod"
+      ];
+      kernelModules = [ ];
       luks.devices."enc".device = "/dev/disk/by-uuid/0f683176-f3b5-43cb-9288-dc2d314a18ad";
     };
-    kernelModules = ["kvm-amd"];
+    kernelModules = [ "kvm-amd" ];
     kernelPackages = pkgs.linuxPackages_latest;
     loader = {
       grub = {
         enable = true;
-        devices = ["nodev"];
+        devices = [ "nodev" ];
         efiSupport = true;
         useOSProber = true;
       };
@@ -35,33 +43,44 @@
     };
   };
 
-  fileSystems = let
-    mkBtrfs = subvol: {
-      device = "/dev/disk/by-uuid/ea17de4e-4178-46e1-b6c9-504d5688f539";
-      fsType = "btrfs";
-      options = ["subvol=${subvol}" "compress=zstd" "noatime"];
-    };
+  fileSystems =
+    let
+      mkBtrfs = subvol: {
+        device = "/dev/disk/by-uuid/ea17de4e-4178-46e1-b6c9-504d5688f539";
+        fsType = "btrfs";
+        options = [
+          "subvol=${subvol}"
+          "compress=zstd"
+          "noatime"
+        ];
+      };
 
-    mkNtfs = uuid: {
-      device = "/dev/disk/by-uuid/${uuid}";
-      fsType = "ntfs";
-      options = [
-        "rw"
-        "uid=1000"
-        "gid=100"
-        "dmask=0022"
-        "fmask=0133"
-        "windows_names"
-      ];
-    };
+      mkNtfs = uuid: {
+        device = "/dev/disk/by-uuid/${uuid}";
+        fsType = "ntfs";
+        options = [
+          "rw"
+          "uid=1000"
+          "gid=100"
+          "dmask=0022"
+          "fmask=0133"
+          "windows_names"
+        ];
+      };
 
-    neededForBoot = {neededForBoot = true;};
-  in
-    with nixcfgs; {
+      neededForBoot = {
+        neededForBoot = true;
+      };
+    in
+    with nixcfgs;
+    {
       "/boot" = {
         device = "/dev/disk/by-uuid/A5D6-EBF3";
         fsType = "vfat";
-        options = ["fmask=0077" "dmask=0077"];
+        options = [
+          "fmask=0077"
+          "dmask=0077"
+        ];
       };
 
       "/" = mkBtrfs "root";
@@ -75,7 +94,7 @@
     };
 
   swapDevices = [
-    {device = "/dev/disk/by-uuid/46dcb03a-f311-44c5-984c-c73136c1679a";}
+    { device = "/dev/disk/by-uuid/46dcb03a-f311-44c5-984c-c73136c1679a"; }
   ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

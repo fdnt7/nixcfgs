@@ -9,7 +9,8 @@
   nixcfgs,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
 
@@ -20,24 +21,37 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.availableKernelModules = ["xhci_pci" "nvme"];
-  boot.initrd.kernelModules = [];
-  boot.kernelModules = ["kvm-intel"];
-  boot.extraModulePackages = [];
+  boot.initrd.availableKernelModules = [
+    "xhci_pci"
+    "nvme"
+  ];
+  boot.initrd.kernelModules = [ ];
+  boot.kernelModules = [ "kvm-intel" ];
+  boot.extraModulePackages = [ ];
 
-  fileSystems = let
-    mkBtrfs = subvol: {
-      device = "/dev/disk/by-uuid/161eadfd-317d-4c24-8037-6a7542e5740d";
-      fsType = "btrfs";
-      options = ["subvol=${subvol}" "compress=zstd" "noatime"];
-    };
-    neededForBoot = {neededForBoot = true;};
-  in
+  fileSystems =
+    let
+      mkBtrfs = subvol: {
+        device = "/dev/disk/by-uuid/161eadfd-317d-4c24-8037-6a7542e5740d";
+        fsType = "btrfs";
+        options = [
+          "subvol=${subvol}"
+          "compress=zstd"
+          "noatime"
+        ];
+      };
+      neededForBoot = {
+        neededForBoot = true;
+      };
+    in
     {
       "/boot" = {
         device = "/dev/disk/by-uuid/13FC-2CDA";
         fsType = "vfat";
-        options = ["fmask=0077" "dmask=0077"];
+        options = [
+          "fmask=0077"
+          "dmask=0077"
+        ];
       };
 
       "/" = mkBtrfs "root";
@@ -45,16 +59,19 @@
       "/nix" = mkBtrfs "nix";
       "/var/log" = (mkBtrfs "log") // neededForBoot;
     }
-    // (let
-      inherit (nixcfgs) persist persistVol;
-    in {
-      ${persist} = (mkBtrfs persistVol) // neededForBoot;
-    });
+    // (
+      let
+        inherit (nixcfgs) persist persistVol;
+      in
+      {
+        ${persist} = (mkBtrfs persistVol) // neededForBoot;
+      }
+    );
 
   boot.initrd.luks.devices."enc".device = "/dev/disk/by-uuid/4e470f57-9e0d-4ac8-8be8-0a336a805faf";
 
   swapDevices = [
-    {device = "/dev/disk/by-uuid/8f2ba4d1-802a-4956-83de-f24f8ee82e5d";}
+    { device = "/dev/disk/by-uuid/8f2ba4d1-802a-4956-83de-f24f8ee82e5d"; }
   ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

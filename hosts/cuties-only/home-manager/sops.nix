@@ -4,8 +4,9 @@
   lib,
   nixcfgs,
   ...
-}: {
-  imports = [inputs.sops-nix.homeManagerModules.sops];
+}:
+{
+  imports = [ inputs.sops-nix.homeManagerModules.sops ];
 
   sops = {
     defaultSopsFile = ../secrets/secrets.yaml;
@@ -14,5 +15,5 @@
     age.keyFile = nixcfgs.sopsAgeKeyFile;
   };
 
-  systemd.user.services.mbsync.unitConfig.After = ["sops-nix.service"];
+  systemd.user.services.mbsync.unitConfig.After = [ "sops-nix.service" ];
 }

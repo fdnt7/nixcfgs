@@ -2,8 +2,9 @@
   nixcfgs,
   outputs,
   ...
-}: {
-  imports = [outputs.homeManagerModules.rebuild];
+}:
+{
+  imports = [ outputs.homeManagerModules.rebuild ];
 
   programs.rebuild = {
     enable = true;

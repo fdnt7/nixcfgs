@@ -1,4 +1,4 @@
-{pkgs}:
+{ pkgs }:
 pkgs.rustPlatform.buildRustPackage rec {
   pname = "discord-presence-lsp";
   version = "ce2241b5c78d797155e316e2e6f399669595522d";

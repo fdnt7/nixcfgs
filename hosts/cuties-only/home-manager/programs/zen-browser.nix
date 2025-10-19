@@ -1,4 +1,5 @@
-{inputs, ...}: {
+{ inputs, ... }:
+{
   imports = [
     inputs.zen-browser.homeModules.beta
     # or inputs.zen-browser.homeModules.twilight
@@ -7,5 +8,5 @@
 
   programs.zen-browser.enable = true;
 
-  wayland.windowManager.hyprland.settings.windowrulev2 = ["workspace 1, class:^(zen-beta)$"];
+  wayland.windowManager.hyprland.settings.windowrulev2 = [ "workspace 1, class:^(zen-beta)$" ];
 }

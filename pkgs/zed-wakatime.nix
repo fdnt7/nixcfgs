@@ -1,4 +1,4 @@
-{pkgs}:
+{ pkgs }:
 pkgs.rustPlatform.buildRustPackage rec {
   pname = "wakatime-ls";
   version = "57e2c52a5f7133e028f97d8cbbac3b1479ed5088";

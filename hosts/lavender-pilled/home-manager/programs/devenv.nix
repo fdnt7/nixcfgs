@@ -1,5 +1,6 @@
-{outputs, ...}: {
-  imports = [outputs.homeManagerModules.devenv];
+{ outputs, ... }:
+{
+  imports = [ outputs.homeManagerModules.devenv ];
 
   programs.devenv = {
     enable = true;

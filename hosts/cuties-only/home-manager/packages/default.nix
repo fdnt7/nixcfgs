@@ -3,16 +3,16 @@
   nixcfgs,
   pkgs,
   ...
-}: {
-  imports =
-    [
-      ./brave.nix
-      ./brightnessctl.nix
-      ./devenv.nix
-      ./grimblast.nix
-      ./nix-your-shell.nix
-    ]
-    ++ lib.optional nixcfgs.enableWinBoat ./winboat.nix;
+}:
+{
+  imports = [
+    ./brave.nix
+    ./brightnessctl.nix
+    ./devenv.nix
+    ./grimblast.nix
+    ./nix-your-shell.nix
+  ]
+  ++ lib.optional nixcfgs.enableWinBoat ./winboat.nix;
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;

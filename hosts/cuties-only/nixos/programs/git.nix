@@ -1,4 +1,5 @@
-{nixcfgs, ...}: {
+{ nixcfgs, ... }:
+{
   programs.git = {
     enable = true;
     config = {

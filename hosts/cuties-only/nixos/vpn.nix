@@ -2,8 +2,9 @@
   nixcfgs,
   outputs,
   ...
-}: {
-  imports = [outputs.nixosModules.mullvad-tailscale];
+}:
+{
+  imports = [ outputs.nixosModules.mullvad-tailscale ];
   services = {
     tailscale.enable = true;
     mullvad-vpn.enable = true;
@@ -13,5 +14,8 @@
 
   networking.nftables.enable = true;
 
-  environment.persistence.${nixcfgs.persist}.directories = ["/etc/mullvad-vpn" "/var/lib/tailscale"];
+  environment.persistence.${nixcfgs.persist}.directories = [
+    "/etc/mullvad-vpn"
+    "/var/lib/tailscale"
+  ];
 }
