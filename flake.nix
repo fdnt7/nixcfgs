@@ -33,11 +33,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-your-shell = {
-      url = "github:MercuryTechnologies/nix-your-shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nixcord.url = "github:kaylorben/nixcord";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
