@@ -6,6 +6,7 @@
     ./git.nix
     ./neovim.nix
     ./nh.nix
+    ./nix-your-shell.nix
     ./rebuild.nix
     ./starship.nix
     ./yazi
