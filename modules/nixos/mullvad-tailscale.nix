@@ -4,8 +4,8 @@
   pkgs,
   ...
 }:
-with lib;
 let
+  inherit (lib) mkEnableOption mdDoc mkIf;
   # A shorthand for our module's configuration options.
   cfg = config.services.mullvad-tailscale;
 

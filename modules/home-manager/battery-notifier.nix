@@ -19,8 +19,14 @@
   lib,
   ...
 }:
-with lib;
 let
+  inherit (lib)
+    mkEnableOption
+    mkOption
+    types
+    mkIf
+    ;
+
   cfg = config.services.battery-notifier;
 
   # This is the shell script that will be executed by the systemd service.
