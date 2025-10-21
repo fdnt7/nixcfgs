@@ -6,4 +6,5 @@
   battery-notifier = import ./battery-notifier.nix;
   devenv = import ./devenv.nix;
   rebuild = import ./rebuild.nix;
+  secrets = import ./secrets.nix;
 }

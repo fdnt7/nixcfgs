@@ -13,9 +13,11 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
     ./fonts
+    ./nix.nix
     ./nixpkgs.nix
     ./packages.nix
     ./programs
+    ./secrets.nix
     ./services
     ./systemd.nix
   ];
