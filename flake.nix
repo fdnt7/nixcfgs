@@ -4,7 +4,8 @@
   inputs = {
     catppuccin.url = "github:catppuccin/nix";
 
-    devenv.url = "github:cachix/devenv";
+    # devenv.url = "github:cachix/devenv";
+    devenv.url = "github:cachix/devenv/v1.10";
 
     # Home manager
     # home-manager.url = "github:nix-community/home-manager/release-23.11";
