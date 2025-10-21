@@ -14,6 +14,7 @@
     ./starship.nix
     ./yazi
     ./zed-editor.nix
+    ./zoxide.nix
   ];
 
   # Enable home-manager and git
