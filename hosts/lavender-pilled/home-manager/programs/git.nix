@@ -1,17 +1,22 @@
 { nixcfgs, ... }:
 {
   programs = {
-    git = rec {
-      enable = true;
-      delta.enable = true;
-      userName = nixcfgs.githubUname;
-      userEmail = "43757589+${userName}@users.noreply.github.com";
-      signing = {
-        format = "ssh";
-        key = "~/.ssh/id_ed25519_github_${userName}_signing";
-        signByDefault = true;
+    git =
+      let
+        inherit (nixcfgs) githubUname;
+      in
+      {
+        enable = true;
+        settings.user = {
+          name = nixcfgs.githubUname;
+          email = "43757589+${githubUname}@users.noreply.github.com";
+        };
+        signing = {
+          format = "ssh";
+          key = "~/.ssh/id_ed25519_github_${githubUname}_signing";
+          signByDefault = true;
+        };
       };
-    };
 
     fish.shellAbbrs = {
       g = "git";
