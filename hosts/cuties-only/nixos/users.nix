@@ -1,7 +1,6 @@
 {
   config,
   nixcfgs,
-  pkgs,
   ...
 }:
 let
