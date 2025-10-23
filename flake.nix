@@ -70,6 +70,8 @@
 
     winboat.url = "github:TibixDev/winboat";
 
+    xdg-ninja.url = "github:b3nj5m1n/xdg-ninja";
+
     yazi.url = "github:sxyazi/yazi";
 
     zen-browser = {
