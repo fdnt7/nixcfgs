@@ -1,5 +1,8 @@
 {
   imports = [
+    ./android.nix
+    ./bash.nix
+    ./cargo.nix
     ./delta.nix
     ./devenv.nix
     ./direnv.nix
@@ -13,6 +16,7 @@
     ./spotify.nix
     ./starship.nix
     ./yazi
+    ./wget.nix
     ./zed-editor.nix
     ./zoxide.nix
   ];

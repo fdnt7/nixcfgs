@@ -6,7 +6,11 @@
   ...
 }:
 let
-  inherit (lib) mkEnableOption mkIf mkMerge;
+  inherit (lib)
+    mkEnableOption
+    mkIf
+    mkMerge
+    ;
   cfg = config.xdg-ninja;
 in
 {
@@ -16,70 +20,73 @@ in
       installPackage = mkEnableOption "installation of xdg-ninja";
     };
 
+    gtk.gtk2.useXdgBaseDirectories = mkEnableOption "usage of xdg base directories for gtk-2";
+
     nix.useXdgBaseDirectories = mkEnableOption "usage of xdg base directories for nix";
 
     programs = {
       android.useXdgBaseDirectories = mkEnableOption "usage of xdg base directories for android";
       bash.useXdgBaseDirectories = mkEnableOption "usage of xdg base directories for bash";
       cargo.useXdgBaseDirectories = mkEnableOption "usage of xdg base directories for cargo";
-      gtk-2.useXdgBaseDirectories = mkEnableOption "usage of xdg base directories for gtk-2";
       wget.useXdgBaseDirectories = mkEnableOption "usage of xdg base directories for wget";
     };
   };
 
-  config = mkIf cfg.enable (
-    mkMerge [
-      (mkIf cfg.installPackage)
-      {
-        home.packages = [
-          inputs.xdg-ninja.packages.${pkgs.stdenv.hostPlatform.system}.xdg-ninja
-        ];
-      }
+  config = mkIf cfg.enable (mkMerge [
+    (mkIf cfg.installPackage {
+      home.packages = [
+        inputs.xdg-ninja.packages.${pkgs.stdenv.hostPlatform.system}.xdg-ninja
+      ];
+    })
 
-      (mkIf cfg.nix.useXdgBaseDirectories)
-      {
-        nix.settings.use-xdg-base-directories = true;
-      }
-    ]
-    ++ (
+    (mkIf config.nix.useXdgBaseDirectories {
+      nix.settings.use-xdg-base-directories = true;
+    })
+
+    (mkIf config.xdg.enable (
       let
         inherit (config.xdg) dataHome stateHome configHome;
-        inherit (cfg.programs)
-          android
-          bash
-          cargo
-          gtk-2
-          wget
-          ;
       in
-      [
-        (mkIf android.useXdgBaseDirectories)
-        {
-          home.sessionVariables.ANDROID_USER_HOME = "${dataHome}/android";
-        }
+      mkMerge [
+        (
+          let
+            inherit (config.gtk.gtk2) enable useXdgBaseDirectories;
+          in
+          mkIf (enable && useXdgBaseDirectories) {
+            # home-manager already provides this
+            # it's equivalent to `home.sessionVariables.GTK2_RC_FILES = <cfg>;`
+            gtk.gtk2.configLocation = "${configHome}/gtk-2.0/gtkrc";
+          }
+        )
 
-        (mkIf bash.useXdgBaseDirectories)
-        {
-          home.sessionVariables.HISTFILE = "${stateHome}/bash/history";
-        }
+        (
+          let
+            inherit (config.programs)
+              android
+              bash
+              cargo
+              wget
+              ;
+          in
+          mkMerge [
+            (mkIf android.useXdgBaseDirectories {
+              home.sessionVariables.ANDROID_USER_HOME = "${dataHome}/android";
+            })
 
-        (mkIf cargo.useXdgBaseDirectories)
-        {
-          home.sessionVariables.CARGO_HOME = "${dataHome}/cargo";
-        }
+            (mkIf bash.useXdgBaseDirectories {
+              home.sessionVariables.HISTFILE = "${stateHome}/bash/history";
+            })
 
-        (mkIf gtk-2.useXdgBaseDirectories)
-        {
-          # home-manager already provides this
-          # it's equivalent to `home.sessionVariables.GTK2_RC_FILES = <cfg>;`
-          gtk.gtk2.configLocation = "${configHome}/gtk-2.0/gtkrc";
-        }
+            (mkIf cargo.useXdgBaseDirectories {
+              home.sessionVariables.CARGO_HOME = "${dataHome}/cargo";
+            })
 
-        (mkIf wget.useXdgBaseDirectories)
-        {
-          programs.fish.shellAliases.wget = "wget --hsts-file=${dataHome}/wget-hsts";
-        }
+            (mkIf wget.useXdgBaseDirectories {
+              programs.fish.shellAliases.wget = "wget --hsts-file=${dataHome}/wget-hsts";
+            })
+          ]
+        )
       ]
-    )
-  );
+    ))
+  ]);
 }

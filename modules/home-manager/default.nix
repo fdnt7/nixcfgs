@@ -7,4 +7,5 @@
   devenv = import ./devenv.nix;
   rebuild = import ./rebuild.nix;
   secrets = import ./secrets.nix;
+  xdg-ninja = import ./xdg-ninja.nix;
 }

@@ -20,6 +20,8 @@
     ./secrets.nix
     ./services
     ./systemd.nix
+    ./xdg.nix
+    ./xdg-ninja.nix
   ];
 
   home =

@@ -1,0 +1,3 @@
+{
+  programs.cargo.useXdgBaseDirectories = true;
+}
