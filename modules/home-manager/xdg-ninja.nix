@@ -48,15 +48,17 @@ in
         inherit (config.xdg) dataHome stateHome configHome;
       in
       mkMerge [
-        (
-          let
-            inherit (config.gtk.gtk2) enable useXdgBaseDirectories;
-          in
-          mkIf (enable && useXdgBaseDirectories) {
-            # home-manager already provides this
-            # it's equivalent to `home.sessionVariables.GTK2_RC_FILES = <cfg>;`
-            gtk.gtk2.configLocation = "${configHome}/gtk-2.0/gtkrc";
-          }
+        (mkIf (config.gtk.gtk2.useXdgBaseDirectories) {
+          home.sessionVariables.GTK2_RC_FILES = "${configHome}/gtk-2.0/gtkrc";
+        }
+          # let
+          #   inherit (config.gtk) enable gtk2;
+          # in
+          # mkIf (enable && gtk2.enable && gtk2.useXdgBaseDirectories) {
+          #   # home-manager already provides this
+          #   # it's equivalent to `home.sessionVariables.GTK2_RC_FILES = <cfg>;`
+          #   gtk.gtk2.configLocation = "${configHome}/gtk-2.0/gtkrc";
+          # }
         )
 
         (
