@@ -12,6 +12,7 @@
     ./neovim.nix
     ./nh.nix
     ./nix-your-shell.nix
+    ./python.nix
     ./rebuild.nix
     ./spotify.nix
     ./starship.nix

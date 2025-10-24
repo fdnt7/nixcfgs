@@ -1,0 +1,3 @@
+{
+  programs.python.useXdgBaseDirectories = true;
+}

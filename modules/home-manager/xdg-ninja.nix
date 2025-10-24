@@ -28,6 +28,7 @@ in
       android.useXdgBaseDirectories = mkEnableOption "usage of xdg base directories for android";
       bash.useXdgBaseDirectories = mkEnableOption "usage of xdg base directories for bash";
       cargo.useXdgBaseDirectories = mkEnableOption "usage of xdg base directories for cargo";
+      python.useXdgBaseDirectories = mkEnableOption "usage of xdg base directories for python";
       wget.useXdgBaseDirectories = mkEnableOption "usage of xdg base directories for wget";
     };
   };
@@ -81,6 +82,10 @@ in
 
             (mkIf cargo.useXdgBaseDirectories {
               home.sessionVariables.CARGO_HOME = "${dataHome}/cargo";
+            })
+
+            (mkIf cargo.useXdgBaseDirectories {
+              home.sessionVariables.PYTHONSTARTUP = "${configHome}/python/pythonrc";
             })
 
             (mkIf wget.useXdgBaseDirectories {
