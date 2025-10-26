@@ -14,6 +14,7 @@
     ./nix-your-shell.nix
     ./python.nix
     ./rebuild.nix
+    ./ripgrep.nix
     ./spotify.nix
     ./starship.nix
     ./yazi
