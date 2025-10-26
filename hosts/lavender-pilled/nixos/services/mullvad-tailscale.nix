@@ -1,4 +1,4 @@
-{ outputs, ... }:
+{ outputs, pkgs, ... }:
 {
   imports = [ outputs.nixosModules.mullvad-tailscale ];
 
@@ -8,7 +8,10 @@
 
   # recommended
   services = {
-    mullvad-vpn.enable = true;
+    mullvad-vpn = {
+      enable = true;
+      package = pkgs.mullvad-vpn;
+    };
     resolved.enable = true;
   };
 
