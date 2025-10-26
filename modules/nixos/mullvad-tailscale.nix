@@ -62,22 +62,26 @@ in
   # --- Module Configuration ---
   # This section defines the system configuration that will be applied if the module is enabled.
   config = mkIf cfg.enable {
-    # Assertions check for required dependencies and provide helpful error messages.
+    # --- Assertions: strict requirements ---
     assertions = [
       {
         assertion = config.services.tailscale.enable;
         message = "services.mullvad-tailscale requires services.tailscale to be enabled.";
       }
       {
-        # The Mullvad client's DNS features integrate with systemd-resolved.
-        assertion = config.services.resolved.enable;
-        message = "services.mullvad-tailscale is designed to work with systemd-resolved. Please enable services.resolved.";
-      }
-      {
         assertion = config.networking.nftables.enable;
         message = "services.mullvad-tailscale requires networking.nftables to be enabled.";
       }
     ];
+
+    # --- Warnings: recommended integrations ---
+    warnings =
+      (lib.optional (!config.services.resolved.enable)
+        "services.mullvad-tailscale works best with systemd-resolved enabled, as Mullvad’s DNS integration expects it."
+      )
+      ++ (lib.optional (!config.services.mullvad-vpn.enable)
+        "services.mullvad-tailscale is most useful when services.mullvad-vpn is enabled, since the rules mark connections for Mullvad's policy routing."
+      );
 
     # This is the declarative way to create a systemd "drop-in" file.
     # It modifies the tailscaled service unit.

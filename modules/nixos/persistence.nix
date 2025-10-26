@@ -51,6 +51,8 @@ in
     secureboot = mkEnableOption "Secure boot keys persistence";
 
     tailscale = mkEnableOption "Tailscale identity persistence";
+
+    mullvad-vpn = mkEnableOption "Mullvad VPN states persistence";
   };
 
   config = mkMerge [
@@ -82,6 +84,10 @@ in
 
     (mkIf cfg.tailscale {
       environment.persistence.${cfg.root}.directories = [ "/var/lib/tailscale" ];
+    })
+
+    (mkIf cfg.mullvad-vpn {
+      environment.persistence.${cfg.root}.directories = [ "/etc/mullvad-vpn" ];
     })
 
     (mkIf cfg.flake.enable {
