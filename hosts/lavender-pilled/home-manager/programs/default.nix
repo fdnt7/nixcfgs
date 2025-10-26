@@ -12,6 +12,8 @@
     ./mullvad-vpn.nix
     ./neovim.nix
     ./nh.nix
+    ./nix-index.nix
+    ./nix-index-database.nix
     ./nix-your-shell.nix
     ./python.nix
     ./rebuild.nix
