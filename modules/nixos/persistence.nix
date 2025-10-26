@@ -49,6 +49,8 @@ in
     };
 
     secureboot = mkEnableOption "Secure boot keys persistence";
+
+    tailscale = mkEnableOption "Tailscale identity persistence";
   };
 
   config = mkMerge [
@@ -76,6 +78,10 @@ in
 
     (mkIf cfg.secureboot {
       environment.persistence.${cfg.root}.directories = [ config.boot.lanzaboote.pkiBundle ];
+    })
+
+    (mkIf cfg.tailscale {
+      environment.persistence.${cfg.root}.directories = [ "/var/lib/tailscale" ];
     })
 
     (mkIf cfg.flake.enable {

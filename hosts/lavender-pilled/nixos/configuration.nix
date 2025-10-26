@@ -27,6 +27,7 @@
     ./programs
     ./secrets.nix
     ./secureboot.nix
+    ./services
     ./sound.nix
     ./sudo.nix
     ./time.nix
