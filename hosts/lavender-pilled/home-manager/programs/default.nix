@@ -9,6 +9,7 @@
     ./eza.nix
     ./fish.nix
     ./git.nix
+    ./mullvad-vpn.nix
     ./neovim.nix
     ./nh.nix
     ./nix-your-shell.nix

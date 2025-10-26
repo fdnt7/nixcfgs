@@ -12,6 +12,8 @@
     resolved.enable = true;
   };
 
+  services.mullvad-tailscale.enable = true;
+
   persist = {
     tailscale = true;
     mullvad-vpn = true;
