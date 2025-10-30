@@ -62,8 +62,7 @@
     solaar = {
       #url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz"; # For latest stable version
       #url = "https://flakehub.com/f/Svenum/Solaar-Flake/0.1.1.tar.gz"; # uncomment line for solaar version 1.1.13
-      #url = "github:Svenum/Solaar-Flake/main"; # Uncomment line for latest unstable version
-      url = "github:fdnt7/Solaar-Flake/hotfix/wrap-g-apps-hook-3"; # https://github.com/Svenum/Solaar-Flake/issues/13
+      url = "github:Svenum/Solaar-Flake/main"; # Uncomment line for latest unstable version
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

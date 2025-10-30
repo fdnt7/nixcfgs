@@ -1346,16 +1346,16 @@
         "snowfall-lib": "snowfall-lib"
       },
       "locked": {
-        "lastModified": 1761832984,
+        "lastModified": 1761840426,
         "narHash": "sha256-CprKgnLGKpNB0leamU9hw+ZgocRAsEFevyqIuY0FSiY=",
-        "owner": "fdnt7",
+        "owner": "Svenum",
         "repo": "Solaar-Flake",
-        "rev": "cd056b7f43629605de295170b427d7a65d4419b2",
+        "rev": "7b5e221d60195d77fda5c2d69087f7cd1b8d3c20",
         "type": "github"
       },
       "original": {
-        "owner": "fdnt7",
-        "ref": "hotfix/wrap-g-apps-hook-3",
+        "owner": "Svenum",
+        "ref": "main",
         "repo": "Solaar-Flake",
         "type": "github"
       }
