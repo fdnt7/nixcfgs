@@ -83,6 +83,11 @@
     };
   };
 
+  # https://github.com/nix-community/lanzaboote/issues/485
+  inputs.lanzaboote.inputs.rust-overlay.follows = "rust-overlay";
+  inputs.rust-overlay.url = "github:oxalica/rust-overlay";
+  inputs.rust-overlay.inputs.nixpkgs.follows = "nixpkgs";
+
   outputs =
     {
       self,
