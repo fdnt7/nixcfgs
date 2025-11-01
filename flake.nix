@@ -68,8 +68,6 @@
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
-    winboat.url = "github:TibixDev/winboat";
-
     xdg-ninja.url = "github:b3nj5m1n/xdg-ninja";
 
     yazi.url = "github:sxyazi/yazi";
