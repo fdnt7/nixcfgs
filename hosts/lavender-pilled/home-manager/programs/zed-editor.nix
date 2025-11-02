@@ -16,6 +16,8 @@
       "sql"
       "nix"
       "typst"
+      "basedpyright"
+      "ruff"
     ];
 
     userKeymaps = [
