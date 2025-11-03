@@ -23,7 +23,7 @@
     impermanence.url = "github:nix-community/impermanence";
 
     lanzaboote = {
-      url = "github:nix-community/lanzaboote/v0.4.2";
+      url = "github:nix-community/lanzaboote/cbe4178bf694a9081d51e8ac55e5baadc1d4fa40";
 
       # Optional but recommended to limit the size of your system closure.
       inputs.nixpkgs.follows = "nixpkgs";
@@ -79,11 +79,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-
-  # https://github.com/nix-community/lanzaboote/issues/485
-  inputs.lanzaboote.inputs.rust-overlay.follows = "rust-overlay";
-  inputs.rust-overlay.url = "github:oxalica/rust-overlay";
-  inputs.rust-overlay.inputs.nixpkgs.follows = "nixpkgs";
 
   outputs =
     {
