@@ -50,14 +50,14 @@
         permissionsViewer.enable = true;
         platformIndicators = {
           enable = true;
-          badges = false;
+          profiles = false;
           messages = false;
         };
         relationshipNotifier.enable = true;
         roleColorEverywhere.enable = true;
         shikiCodeblocks = {
           enable = true;
-          theme = "https://raw.githubusercontent.com/shikijs/textmate-grammars-themes/refs/heads/main/packages/tm-themes/themes/catppuccin-mocha.json";
+          theme = "https://raw.githubusercontent.com/shikijs/textmate-grammars-themes/ecd9fb1b4a38381df95048c19cf9b8bdcbb1ec09/packages/tm-themes/themes/catppuccin-mocha.json";
         };
         serverInfo.enable = true;
         showHiddenThings.enable = true;
