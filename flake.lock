@@ -987,6 +987,7 @@
       "original": {
         "owner": "kaylorben",
         "repo": "nixcord",
+        "rev": "c8f47894134a4984acd319e66c4384eb1ff886e2",
         "type": "github"
       }
     },
