@@ -2,11 +2,11 @@
 {
   home.packages =
     let
-      inherit (pkgs) zed-discord-presence;
+      inherit (pkgs) zed-discord-presence zed-wakatime;
     in
     [
       zed-discord-presence
-      # zed-wakatime
+      zed-wakatime
     ];
   programs.zed-editor = {
     enable = true;
