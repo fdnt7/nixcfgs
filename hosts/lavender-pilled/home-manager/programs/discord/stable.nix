@@ -80,6 +80,6 @@
     };
     vesktop.enable = true;
 
-    discord.openASAR.enable = false; # openasar broken rn
+    discord.openASAR.enable = true;
   };
 }
