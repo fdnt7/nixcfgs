@@ -1,14 +1,14 @@
 { pkgs }:
 pkgs.rustPlatform.buildRustPackage rec {
   pname = "discord-presence-lsp";
-  version = "ce2241b5c78d797155e316e2e6f399669595522d";
-  cargoHash = "sha256-1lcnw79UURe7LUuV2q9+CwUzVxG34J6cAxIgORbjLnU=";
+  version = "e6f41ae3cbd2a7fcde1001a746422cdc673df8f3";
+  cargoHash = "sha256-HNyxaiX+nHnWqu3TZmNbmazT9GkQTukbHTz+7kJXEDo=";
 
   src = pkgs.fetchFromGitHub {
     owner = "xhyrom";
     repo = "zed-discord-presence";
     rev = version;
-    hash = "sha256-3sG5FKaa2x+aeRIq4tyKgoLSUTbt5YjXbN6eXf6A8tA=";
+    hash = "sha256-7CDR4gMFKg5dWgy8zgPt0vz3vkUH8ZXrbnRq84wKD7w=";
   };
 
   cargoBuildFlags = "--package discord-presence-lsp";
