@@ -6,7 +6,7 @@
     ./delta.nix
     ./devenv.nix
     ./direnv.nix
-    ./discord.nix
+    ./discord
     ./eza.nix
     ./fish.nix
     ./git.nix

@@ -7,16 +7,11 @@
     let
       inherit (pkgs)
         brave
-        wl-clipboard
         xournalpp
-        discord-canary
         ;
     in
     [
       brave
-      wl-clipboard
       xournalpp
-
-      (discord-canary.override { withOpenASAR = true; })
     ];
 }

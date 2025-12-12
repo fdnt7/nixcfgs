@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 {
   imports = [ inputs.nixvim.homeModules.nixvim ];
 
@@ -18,4 +18,6 @@
       textwidth = 80;
     };
   };
+
+  home.packages = [ pkgs.wl-clipboard ];
 }
