@@ -56,12 +56,10 @@
       buffer_font_size = 12;
       buffer_font_family = "JetBrainsMono Nerd Font";
       vim_mode = true;
-      relative_line_numbers = true;
+      relative_line_numbers = "enabled";
+
       lsp = {
         rust-analyzer = {
-          binary = {
-            path_lookup = true;
-          };
           initialization_options = {
             check = {
               command = "clippy";
