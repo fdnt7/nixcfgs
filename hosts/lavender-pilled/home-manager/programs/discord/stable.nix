@@ -13,7 +13,7 @@
         };
         #automodContext.enable = true; # native to discord now
         callTimer.enable = true;
-        clearURLs.enable = true;
+        clearUrLs.enable = true; # https://github.com/FlameFlag/nixcord/issues/149
         copyEmojiMarkdown.enable = true;
         dontRoundMyTimestamps.enable = true;
         expressionCloner.enable = true;
