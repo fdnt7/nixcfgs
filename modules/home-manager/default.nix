@@ -4,6 +4,7 @@
   # List your module files here
   # my-module = import ./my-module.nix;
   battery-notifier = import ./battery-notifier.nix;
+  development = import ./development.nix;
   devenv = import ./devenv.nix;
   rebuild = import ./rebuild.nix;
   secrets = import ./secrets.nix;
