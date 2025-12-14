@@ -12,7 +12,7 @@
   programs = {
     yazi = {
       enable = true;
-      package = inputs.yazi.packages.${pkgs.system}.default;
+      package = inputs.yazi.packages.${pkgs.stdenv.hostPlatform.system}.default;
       enableFishIntegration = true;
       initLua = ./init.lua;
       plugins =

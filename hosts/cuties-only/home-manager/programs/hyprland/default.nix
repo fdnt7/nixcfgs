@@ -25,7 +25,9 @@
     package = null;
     portalPackage = null;
     systemd.enable = false;
-    plugins = with inputs.hyprland-plugins.packages.${pkgs.system}; [ hyprscrolling ];
+    plugins = with inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}; [
+      hyprscrolling
+    ];
     settings = {
       monitor = [
         "eDP-2,preferred,auto,1"
