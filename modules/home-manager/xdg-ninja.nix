@@ -68,6 +68,7 @@ in
               android
               bash
               cargo
+              python
               wget
               ;
           in
@@ -84,7 +85,7 @@ in
               home.sessionVariables.CARGO_HOME = "${dataHome}/cargo";
             })
 
-            (mkIf cargo.useXdgBaseDirectories {
+            (mkIf python.useXdgBaseDirectories {
               home.sessionVariables.PYTHONSTARTUP = "${configHome}/python/pythonrc";
             })
 
