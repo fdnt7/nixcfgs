@@ -12,10 +12,11 @@ monorepo. Over time, it will also include the NixOS configurations for all of
 my other hosts.
 
 > [!WARNING]
-> Migration of [`cuties-only`](https://github.com/fdnt7/nix-config) is currently
-> in progress. The setup is functional but still missing some features. 
-> In the meantime, [`autism-inside`](https://github.com/fdnt7/autism-inside) 
-> and other hosts (e.g. `estrogen-fuelled`) have not yet begun migration.
+> Migration of [`cuties-only`](https://github.com/fdnt7/nix-config) has ceased
+> as I no longer have access to the hardware. The setup is functional but still 
+> missing some features. In the meantime, 
+> [`autism-inside`](https://github.com/fdnt7/autism-inside) and other hosts 
+> (e.g. `estrogen-fuelled`) have not yet begun migration.
 
 ## Features
 
