@@ -55,4 +55,3 @@ Optionally, edit the attributes of `nixcfgs` in `flake.nix` as seen fit.
 heavily inspired the structure of my own configuration.
 - [@NotAShelf](https://github.com/notashelf)'s guide on 
 [Full Disk Encryption and Impermanence on NixOS](https://notashelf.dev/posts/impermanence).
-
