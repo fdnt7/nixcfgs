@@ -83,6 +83,14 @@
           enabled = true;
         };
       };
+      languages = {
+        Nix = {
+          language_servers = [
+            "nixd"
+            "!nil"
+          ];
+        };
+      };
     };
   };
 }
