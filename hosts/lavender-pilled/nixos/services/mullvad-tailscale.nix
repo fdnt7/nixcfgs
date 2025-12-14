@@ -1,6 +1,6 @@
-{ outputs, pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
-  imports = [ outputs.nixosModules.mullvad-tailscale ];
+  imports = [ inputs.self.nixosModules.mullvad-tailscale ];
 
   # required
   networking.nftables.enable = true;

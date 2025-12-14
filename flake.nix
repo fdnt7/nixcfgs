@@ -87,7 +87,6 @@
       ...
     }@inputs:
     let
-      inherit (self) outputs;
       # Supported systems for your flake packages, shell, etc.
       systems = [
         "aarch64-linux"
@@ -158,7 +157,7 @@
           hostName: cfg:
           nixpkgs.lib.nixosSystem {
             specialArgs = {
-              inherit inputs outputs;
+              inherit inputs;
               nixcfgs = cfg.nixcfgs;
             };
 
@@ -175,7 +174,7 @@
       # homeConfigurations = {
       #   "your-username@your-hostname" = home-manager.lib.homeManagerConfiguration {
       #     pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-      #     extraSpecialArgs = {inherit inputs outputs;};
+      #     extraSpecialArgs = {inherit inputs;};
       #     modules = [
       #       # > Our main home-manager configuration file <
       #       ./home-manager/home.nix

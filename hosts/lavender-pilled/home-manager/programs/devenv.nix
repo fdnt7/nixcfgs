@@ -1,6 +1,6 @@
-{ outputs, ... }:
+{ inputs, ... }:
 {
-  imports = [ outputs.homeManagerModules.devenv ];
+  imports = [ inputs.self.homeManagerModules.devenv ];
 
   programs.devenv = {
     enable = true;

@@ -1,9 +1,9 @@
 {
-  outputs,
+  inputs,
   ...
 }:
 {
-  imports = [ outputs.homeManagerModules.xdg-ninja ];
+  imports = [ inputs.self.homeManagerModules.xdg-ninja ];
 
   xdg-ninja = {
     enable = true;

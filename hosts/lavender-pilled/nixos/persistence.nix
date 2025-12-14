@@ -1,10 +1,10 @@
 {
+  inputs,
   nixcfgs,
-  outputs,
   ...
 }:
 {
-  imports = [ outputs.nixosModules.persistence ];
+  imports = [ inputs.self.nixosModules.persistence ];
 
   persist =
     let

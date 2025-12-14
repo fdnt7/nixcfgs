@@ -1,10 +1,10 @@
 {
+  inputs,
   nixcfgs,
-  outputs,
   ...
 }:
 {
-  imports = [ outputs.homeManagerModules.secrets ];
+  imports = [ inputs.self.homeManagerModules.secrets ];
 
   secrets = {
     enable = true;

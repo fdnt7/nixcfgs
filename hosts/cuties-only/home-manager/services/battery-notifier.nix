@@ -1,6 +1,6 @@
-{ outputs, ... }:
+{ inputs, ... }:
 {
-  imports = [ outputs.homeManagerModules.battery-notifier ];
+  imports = [ inputs.self.homeManagerModules.battery-notifier ];
 
   services.battery-notifier.enable = true;
 }

@@ -1,10 +1,10 @@
 {
+  inputs,
   nixcfgs,
-  outputs,
   ...
 }:
 {
-  imports = [ outputs.nixosModules.secrets ];
+  imports = [ inputs.self.nixosModules.secrets ];
 
   secrets = {
     file = ../secrets/secrets.yaml;

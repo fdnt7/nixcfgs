@@ -1,10 +1,10 @@
 {
+  inputs,
   nixcfgs,
-  outputs,
   ...
 }:
 {
-  imports = [ outputs.homeManagerModules.rebuild ];
+  imports = [ inputs.self.homeManagerModules.rebuild ];
 
   programs.rebuild = {
     enable = true;

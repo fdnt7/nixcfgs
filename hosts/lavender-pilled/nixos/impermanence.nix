@@ -1,6 +1,6 @@
-{ outputs, ... }:
+{ inputs, ... }:
 {
-  imports = [ outputs.nixosModules.impermanence ];
+  imports = [ inputs.self.nixosModules.impermanence ];
 
   impermanence.enable = true;
 }
