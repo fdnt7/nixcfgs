@@ -34,7 +34,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixcord.url = "github:kaylorben/nixcord/c8f47894134a4984acd319e66c4384eb1ff886e2";
+    nixcord.url = "github:kaylorben/nixcord";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
