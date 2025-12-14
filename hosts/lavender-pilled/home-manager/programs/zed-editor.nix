@@ -1,13 +1,5 @@
 { pkgs, ... }:
 {
-  home.packages =
-    let
-      inherit (pkgs) zed-discord-presence zed-wakatime;
-    in
-    [
-      zed-discord-presence
-      zed-wakatime
-    ];
   programs.zed-editor = {
     enable = true;
     extensions = [
@@ -18,6 +10,14 @@
       "typst"
       "ruff"
     ];
+    extraPackages =
+      let
+        inherit (pkgs) zed-discord-presence zed-wakatime;
+      in
+      [
+        zed-discord-presence
+        zed-wakatime
+      ];
 
     userKeymaps = [
       {
