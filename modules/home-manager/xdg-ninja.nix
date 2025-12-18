@@ -46,7 +46,12 @@ in
 
     (mkIf config.xdg.enable (
       let
-        inherit (config.xdg) dataHome stateHome configHome;
+        inherit (config.xdg)
+          dataHome
+          stateHome
+          configHome
+          cacheHome
+          ;
       in
       mkMerge [
         (mkIf (config.gtk.gtk2.useXdgBaseDirectories) {
@@ -86,7 +91,11 @@ in
             })
 
             (mkIf python.useXdgBaseDirectories {
-              home.sessionVariables.PYTHONSTARTUP = "${configHome}/python/pythonrc";
+              home.sessionVariables = {
+                PYTHON_HISTORY = "${stateHome}/python_history";
+                PYTHONPYCACHEPREFIX = "${cacheHome}/python";
+                PYTHONUSERBASE = "${dataHome}/python";
+              };
             })
 
             (mkIf wget.useXdgBaseDirectories {
