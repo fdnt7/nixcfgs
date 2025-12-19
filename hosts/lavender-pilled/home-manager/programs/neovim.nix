@@ -14,7 +14,6 @@
       number = true;
       relativenumber = true;
       shiftwidth = 2;
-      textwidth = 80;
     };
     extraPackages = [ pkgs.wl-clipboard ];
   };
