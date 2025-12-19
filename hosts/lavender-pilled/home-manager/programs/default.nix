@@ -10,6 +10,7 @@
     ./eza.nix
     ./fish.nix
     ./git.nix
+    ./man.nix
     ./mullvad-vpn.nix
     ./neovim.nix
     ./nh.nix
