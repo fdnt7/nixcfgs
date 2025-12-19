@@ -17,7 +17,6 @@
       shiftwidth = 2;
       textwidth = 80;
     };
+    extraPackages = [ pkgs.wl-clipboard ];
   };
-
-  home.packages = [ pkgs.wl-clipboard ];
 }
