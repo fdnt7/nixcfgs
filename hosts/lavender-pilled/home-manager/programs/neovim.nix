@@ -13,7 +13,6 @@
     opts = {
       number = true;
       relativenumber = true;
-      termguicolors = true;
       shiftwidth = 2;
       textwidth = 80;
     };
