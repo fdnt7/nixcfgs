@@ -887,15 +887,16 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1766247060,
-        "narHash": "sha256-DjPT/hE0L6av+ZWN2Dj8FOXRABM8WiR2PWJKu6PuePU=",
-        "owner": "kaylorben",
+        "lastModified": 1766259141,
+        "narHash": "sha256-uT7DDEj81oBxPwB12AMeVNVNHeteTrr194QLKXx8YPs=",
+        "owner": "fdnt7",
         "repo": "nixcord",
-        "rev": "6c0a9e5cae6fb61a52198f5f73cd52941ebebb8b",
+        "rev": "9ffe5851b719e7b269aea94a138c0d3180099ac4",
         "type": "github"
       },
       "original": {
-        "owner": "kaylorben",
+        "owner": "fdnt7",
+        "ref": "chore/pnpm-deprecation-cleanup",
         "repo": "nixcord",
         "type": "github"
       }
