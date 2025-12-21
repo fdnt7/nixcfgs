@@ -83,7 +83,6 @@
 
   outputs =
     {
-      self,
       nixpkgs,
       ...
     }@inputs:
