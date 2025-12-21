@@ -22,8 +22,9 @@
     ./ripgrep.nix
     ./spotify.nix
     ./starship.nix
-    ./yazi
+    ./wakatime.nix
     ./wget.nix
+    ./yazi
     ./zed-editor.nix
     ./zoxide.nix
   ];

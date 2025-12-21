@@ -1,0 +1,3 @@
+{
+  programs.wakatime.useXdgBaseDirectories = true;
+}

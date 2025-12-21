@@ -29,6 +29,7 @@ in
       bash.useXdgBaseDirectories = mkEnableOption "usage of xdg base directories for bash";
       cargo.useXdgBaseDirectories = mkEnableOption "usage of xdg base directories for cargo";
       python.useXdgBaseDirectories = mkEnableOption "usage of xdg base directories for python";
+      wakatime.useXdgBaseDirectories = mkEnableOption "usage of xdg base directories for wakatime";
       wget.useXdgBaseDirectories = mkEnableOption "usage of xdg base directories for wget";
     };
   };
@@ -74,6 +75,7 @@ in
               bash
               cargo
               python
+              wakatime
               wget
               ;
           in
@@ -100,6 +102,10 @@ in
 
             (mkIf wget.useXdgBaseDirectories {
               programs.fish.shellAliases.wget = "wget --hsts-file=${dataHome}/wget-hsts";
+            })
+
+            (mkIf wakatime.useXdgBaseDirectories {
+              home.sessionVariables.WAKATIME_HOME = "${configHome}/wakatime";
             })
           ]
         )
