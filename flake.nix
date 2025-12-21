@@ -68,7 +68,8 @@
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
-    xdg-ninja.url = "github:b3nj5m1n/xdg-ninja";
+    # xdg-ninja.url = "github:b3nj5m1n/xdg-ninja";
+    xdg-ninja.url = "github:fdnt7/xdg-ninja/feature/codex";
 
     yazi.url = "github:sxyazi/yazi";
 

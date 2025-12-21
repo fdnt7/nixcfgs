@@ -1367,15 +1367,16 @@
         "nixpkgs": "nixpkgs_7"
       },
       "locked": {
-        "lastModified": 1762034431,
-        "narHash": "sha256-VpMSMWwYD0GIPtAuSkdG417RxSx6XCRh09IMrLDOi6A=",
-        "owner": "b3nj5m1n",
+        "lastModified": 1766329127,
+        "narHash": "sha256-a8HEvzej+dMPRRQGi638uK/zx9VtT5B50Ut1cX+Kx/M=",
+        "owner": "fdnt7",
         "repo": "xdg-ninja",
-        "rev": "cb09ebd6479e276070a55fcffae9a5320bc52ed5",
+        "rev": "9dcbf0a938ac5a4cbc77ab95a1a1620242690192",
         "type": "github"
       },
       "original": {
-        "owner": "b3nj5m1n",
+        "owner": "fdnt7",
+        "ref": "feature/codex",
         "repo": "xdg-ninja",
         "type": "github"
       }
