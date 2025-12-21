@@ -3,6 +3,7 @@
     ./android.nix
     ./bash.nix
     ./cargo.nix
+    ./codex.nix
     ./delta.nix
     ./devenv.nix
     ./direnv.nix

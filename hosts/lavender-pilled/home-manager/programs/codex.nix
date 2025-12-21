@@ -1,0 +1,3 @@
+{
+  programs.codex.useXdgBaseDirectories = true;
+}

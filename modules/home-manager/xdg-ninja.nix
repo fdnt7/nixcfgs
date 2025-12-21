@@ -28,6 +28,7 @@ in
       android.useXdgBaseDirectories = mkEnableOption "usage of xdg base directories for android";
       bash.useXdgBaseDirectories = mkEnableOption "usage of xdg base directories for bash";
       cargo.useXdgBaseDirectories = mkEnableOption "usage of xdg base directories for cargo";
+      codex.useXdgBaseDirectories = mkEnableOption "usage of xdg base directories for codex";
       python.useXdgBaseDirectories = mkEnableOption "usage of xdg base directories for python";
       wakatime.useXdgBaseDirectories = mkEnableOption "usage of xdg base directories for wakatime";
       wget.useXdgBaseDirectories = mkEnableOption "usage of xdg base directories for wget";
@@ -74,6 +75,7 @@ in
               android
               bash
               cargo
+              codex
               python
               wakatime
               wget
@@ -90,6 +92,16 @@ in
 
             (mkIf cargo.useXdgBaseDirectories {
               home.sessionVariables.CARGO_HOME = "${dataHome}/cargo";
+            })
+
+            (mkIf codex.useXdgBaseDirectories {
+              home.sessionVariables.CODEX_HOME = "${configHome}/codex";
+            })
+
+            (mkIf python.useXdgBaseDirectories {
+              home.sessionVariables.PYTHON_HISTORY = "${stateHome}/python_history";
+              home.sessionVariables.PYTHONPYCACHEPREFIX = "${cacheHome}/python";
+              home.sessionVariables.PYTHONUSERBASE = "${dataHome}/python";
             })
 
             (mkIf python.useXdgBaseDirectories {
