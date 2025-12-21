@@ -34,8 +34,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # nixcord.url = "github:kaylorben/nixcord";
-    nixcord.url = "github:fdnt7/nixcord/chore/pnpm-deprecation-cleanup";
+    nixcord.url = "github:kaylorben/nixcord";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
