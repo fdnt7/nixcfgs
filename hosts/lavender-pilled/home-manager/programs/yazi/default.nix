@@ -32,6 +32,13 @@
           show_hidden = true;
         };
       };
+      theme = {
+        mgr = {
+          preview_hovered = {
+            reversed = true;
+          };
+        };
+      };
     };
     fish.shellAbbrs.l = "yy";
   };
