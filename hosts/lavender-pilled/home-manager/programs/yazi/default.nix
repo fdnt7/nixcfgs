@@ -34,6 +34,16 @@
       };
       theme = {
         indicator.preview.reversed = true;
+        status = {
+          sep_left = {
+            open = "";
+            close = "";
+          };
+          sep_right = {
+            open = "";
+            close = "";
+          };
+        };
       };
     };
     fish.shellAbbrs.l = "yy";
