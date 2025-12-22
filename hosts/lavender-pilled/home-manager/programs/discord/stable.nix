@@ -13,7 +13,7 @@
         };
         #automodContext.enable = true; # native to discord now
         callTimer.enable = true;
-        clearUrLs.enable = true; # https://github.com/FlameFlag/nixcord/issues/149
+        ClearURLs.enable = true; # TODO: look into why C is capitalised
         copyEmojiMarkdown.enable = true;
         dontRoundMyTimestamps.enable = true;
         expressionCloner.enable = true;
