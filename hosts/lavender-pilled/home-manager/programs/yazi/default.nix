@@ -33,11 +33,7 @@
         };
       };
       theme = {
-        mgr = {
-          preview_hovered = {
-            reversed = true;
-          };
-        };
+        indicator.preview.reversed = true;
       };
     };
     fish.shellAbbrs.l = "yy";
