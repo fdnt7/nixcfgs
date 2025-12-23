@@ -101,7 +101,7 @@ in
             })
 
             (mkIf nodejs.useXdgBaseDirectories {
-              home.sessionVariables.NODE_REPL_HISTORY = "${dataHome}/node_repl_history";
+              home.sessionVariables.NODE_REPL_HISTORY = "${stateHome}/node_repl_history";
             })
 
             (mkIf python.useXdgBaseDirectories {
