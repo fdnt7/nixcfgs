@@ -29,6 +29,7 @@ in
       bash.useXdgBaseDirectories = mkEnableOption "usage of xdg base directories for bash";
       cargo.useXdgBaseDirectories = mkEnableOption "usage of xdg base directories for cargo";
       codex.useXdgBaseDirectories = mkEnableOption "usage of xdg base directories for codex";
+      nodejs.useXdgBaseDirectories = mkEnableOption "usage of xdg base directories for nodejs";
       python.useXdgBaseDirectories = mkEnableOption "usage of xdg base directories for python";
       wakatime.useXdgBaseDirectories = mkEnableOption "usage of xdg base directories for wakatime";
       wget.useXdgBaseDirectories = mkEnableOption "usage of xdg base directories for wget";
@@ -77,6 +78,7 @@ in
               cargo
               codex
               python
+              nodejs
               wakatime
               wget
               ;
@@ -96,6 +98,10 @@ in
 
             (mkIf codex.useXdgBaseDirectories {
               home.sessionVariables.CODEX_HOME = "${configHome}/codex";
+            })
+
+            (mkIf nodejs.useXdgBaseDirectories {
+              home.sessionVariables.NODE_REPL_HISTORY = "${dataHome}/node_repl_history";
             })
 
             (mkIf python.useXdgBaseDirectories {

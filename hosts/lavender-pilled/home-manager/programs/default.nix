@@ -18,6 +18,7 @@
     ./nix-index.nix
     ./nix-index-database.nix
     ./nix-your-shell.nix
+    ./nodejs.nix
     ./python.nix
     ./rebuild.nix
     ./ripgrep.nix
