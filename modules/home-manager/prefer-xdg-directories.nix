@@ -32,7 +32,13 @@
       home.sessionVariables.PYTHONPYCACHEPREFIX = "${cacheHome}/python";
       home.sessionVariables.PYTHONUSERBASE = "${dataHome}/python";
 
-      programs.fish.shellAliases.wget = "wget --hsts-file=${dataHome}/wget-hsts";
+      programs.fish = {
+        shellInit = ''
+          if type -q wget
+              alias wget="wget --hsts-file=${dataHome}/wget-hsts"
+          end
+        '';
+      };
 
       home.sessionVariables.WAKATIME_HOME = "${configHome}/wakatime";
     };
