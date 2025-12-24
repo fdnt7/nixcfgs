@@ -6,6 +6,7 @@
     ./discord
     ./eza.nix
     ./fish.nix
+    ./foot.nix
     ./git.nix
     ./man.nix
     ./mullvad-vpn.nix
