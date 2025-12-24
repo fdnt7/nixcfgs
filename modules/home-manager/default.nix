@@ -6,7 +6,7 @@
   battery-notifier = import ./battery-notifier.nix;
   development = import ./development.nix;
   devenv = import ./devenv.nix;
+  prefer-xdg-directories = import ./prefer-xdg-directories.nix;
   rebuild = import ./rebuild.nix;
   secrets = import ./secrets.nix;
-  xdg-ninja = import ./xdg-ninja.nix;
 }

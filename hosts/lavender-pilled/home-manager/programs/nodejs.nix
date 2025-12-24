@@ -1,3 +1,0 @@
-{
-  programs.nodejs.useXdgBaseDirectories = true;
-}

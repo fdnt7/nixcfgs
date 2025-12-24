@@ -1,3 +1,0 @@
-{
-  programs.wget.useXdgBaseDirectories = true;
-}

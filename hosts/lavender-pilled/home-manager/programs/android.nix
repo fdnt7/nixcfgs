@@ -1,3 +1,0 @@
-{
-  programs.android.useXdgBaseDirectories = true;
-}

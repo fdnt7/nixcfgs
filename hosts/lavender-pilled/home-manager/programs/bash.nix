@@ -1,3 +1,0 @@
-{
-  programs.bash.useXdgBaseDirectories = true;
-}

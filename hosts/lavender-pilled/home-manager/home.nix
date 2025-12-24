@@ -14,7 +14,6 @@
     # ./nvim.nix
     ./development.nix
     ./fonts
-    ./gtk.nix
     ./nix.nix
     ./nixpkgs.nix
     ./packages.nix
@@ -23,7 +22,6 @@
     ./services
     ./systemd.nix
     ./xdg.nix
-    ./xdg-ninja.nix
   ];
 
   home =
