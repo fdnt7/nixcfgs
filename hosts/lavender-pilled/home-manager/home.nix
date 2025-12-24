@@ -17,6 +17,7 @@
     ./nix.nix
     ./nixpkgs.nix
     ./packages.nix
+    ./prefer-xdg-directories.nix
     ./programs
     ./secrets.nix
     ./services
