@@ -12,6 +12,7 @@ let
     mkEnableOption
     types
     concatStringsSep
+    generators
     ;
   inherit (types) str path listOf;
   cfg = config.secrets;
@@ -39,6 +40,16 @@ in
         type = listOf str;
         default = [ "home-manager/nix/extraOptions/extra-access-tokens/0" ];
         description = "List of secret keys (paths in SOPS) to manage as nix access tokens.";
+      };
+    };
+
+    wakatimeApiKey = {
+      enable = mkEnableOption "Wakatime API key";
+
+      path = mkOption {
+        type = str;
+        default = "home-manager/programs/wakatime/apiKey";
+        description = "Path to the Wakatime API key file";
       };
     };
   };
@@ -77,5 +88,18 @@ in
         nix.extraOptions = includeLines;
       }
     ))
+
+    (
+      let
+        inherit (cfg.wakatimeApiKey) enable path;
+      in
+      mkIf enable {
+        sops.secrets.${path} = { };
+
+        xdg.configFile."wakatime/.wakatime.cfg".text = generators.toINI { } {
+          settings.api_key_vault_cmd = "cat ${config.sops.secrets.${path}.path}";
+        };
+      }
+    )
   ]);
 }
