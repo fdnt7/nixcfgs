@@ -7,5 +7,5 @@ in
 
   fonts.fontconfig.defaultFonts.monospace = [ nerdFontsJetbrainsMonoFamily ];
 
-  programs.foot.settings.main.font = "${nerdFontsJetbrainsMonoFamily}:size=11";
+  programs.foot.settings.main.font = "${nerdFontsJetbrainsMonoFamily}:size=9";
 }
