@@ -13,6 +13,7 @@ let
     types
     concatStringsSep
     generators
+    removePrefix
     ;
   inherit (types) str path listOf;
   cfg = config.secrets;
@@ -91,15 +92,24 @@ in
 
     (
       let
-        inherit (cfg.wakatimeApiKey) enable path;
+        inherit (cfg) wakatimeApiKey;
       in
-      mkIf enable {
-        sops.secrets.${path} = { };
+      mkIf wakatimeApiKey.enable (
+        let
+          xdgConfigHome = removePrefix config.home.homeDirectory config.xdg.configHome;
+          configDir = if config.home.preferXdgDirectories then "${xdgConfigHome}/wakatime" else ".wakatime";
+          inherit (wakatimeApiKey) path;
+        in
+        {
+          sops.secrets.${path} = { };
 
-        xdg.configFile."wakatime/.wakatime.cfg".text = generators.toINI { } {
-          settings.api_key_vault_cmd = "cat ${config.sops.secrets.${path}.path}";
-        };
-      }
+          home.file."${configDir}/.wakatime.cfg" = {
+            text = generators.toINI { } {
+              settings.api_key_vault_cmd = "cat ${config.sops.secrets.${path}.path}";
+            };
+          };
+        }
+      )
     )
   ]);
 }
