@@ -1,8 +1,8 @@
 {
   nix.settings = {
-    extra-substituters = [ "https://catppuccin.cachix.org" ];
+    extra-substituters = [ "https://nix-community.cachix.org" ];
     extra-trusted-public-keys = [
-      "catppuccin.cachix.org-1:noG/4HkbhJb+lUAdKrph6LaozJvAeEEZj4N732IysmU="
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
     ];
   };
 }
