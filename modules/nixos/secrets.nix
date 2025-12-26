@@ -12,7 +12,8 @@ let
     mkEnableOption
     types
     ;
-  inherit (types) str path;
+  tPath = types.path;
+  inherit (types) str;
   cfg = config.secrets;
 in
 {
@@ -25,7 +26,7 @@ in
     };
 
     file = mkOption {
-      type = path;
+      type = tPath;
       description = "SOPS secrets file";
     };
 
@@ -61,12 +62,14 @@ in
 
     (
       let
-        inherit (cfg.userPassword) enable name path;
+        pwdCfg = cfg.userPassword;
+        pwdPath = pwdCfg.path;
+        inherit (pwdCfg) enable name;
       in
       mkIf enable {
-        users.users.${name}.hashedPasswordFile = config.sops.secrets.${path}.path;
+        users.users.${name}.hashedPasswordFile = config.sops.secrets.${pwdPath}.path;
 
-        sops.secrets.${path}.neededForUsers = true;
+        sops.secrets.${pwdPath}.neededForUsers = true;
       }
     )
   ];
