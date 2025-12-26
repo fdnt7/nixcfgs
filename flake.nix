@@ -36,6 +36,8 @@
 
     nixcord.url = "github:kaylorben/nixcord";
 
+    nixd.url = "github:nix-community/nixd";
+
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     # Nixpkgs
