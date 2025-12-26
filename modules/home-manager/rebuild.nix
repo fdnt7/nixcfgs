@@ -18,9 +18,9 @@ in
     hostName = mkOption {
       type =
         let
-          inherit (types) either singleLineStr path;
+          inherit (types) either singleLineStr;
         in
-        either singleLineStr path;
+        either singleLineStr builtins.path;
       description = "The name of the machine.";
     };
   };

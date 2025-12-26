@@ -89,9 +89,9 @@
           "hyprland/workspaces" =
             let
               numericalIcons = builtins.listToAttrs (
-                builtins.map (n: {
-                  name = builtins.toString n;
-                  value = builtins.toString n + " ";
+                map (n: {
+                  name = toString n;
+                  value = toString n + " ";
                 }) (builtins.genList (n: n + 1) 9)
               ); # Generates a list [1, 2, ..., 9]
             in

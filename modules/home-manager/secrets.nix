@@ -11,11 +11,11 @@ let
     mkMerge
     mkEnableOption
     types
-    concatStringsSep
     generators
     removePrefix
     ;
-  inherit (types) str path listOf;
+  inherit (types) str listOf;
+  tPath = types.path; # `builtins.path` != `lib.types.path`
   cfg = config.secrets;
 in
 {
@@ -30,7 +30,7 @@ in
     };
 
     file = mkOption {
-      type = path;
+      type = tPath;
       description = "SOPS secrets file";
     };
 
@@ -80,7 +80,7 @@ in
             value = { };
           }) cfg.nixAccessTokens.paths
         );
-        includeLines = concatStringsSep "\n" (
+        includeLines = builtins.concatStringsSep "\n" (
           map (p: "!include ${config.sops.secrets.${p}.path}") cfg.nixAccessTokens.paths
         );
       in
@@ -98,14 +98,14 @@ in
         let
           xdgConfigHome = removePrefix config.home.homeDirectory config.xdg.configHome;
           configDir = if config.home.preferXdgDirectories then "${xdgConfigHome}/wakatime" else ".wakatime";
-          inherit (wakatimeApiKey) path;
+          keyPath = wakatimeApiKey.path;
         in
         {
-          sops.secrets.${path} = { };
+          sops.secrets.${keyPath} = { };
 
           home.file."${configDir}/.wakatime.cfg" = {
             text = generators.toINI { } {
-              settings.api_key_vault_cmd = "cat ${config.sops.secrets.${path}.path}";
+              settings.api_key_vault_cmd = "cat ${config.sops.secrets.${keyPath}.path}";
             };
           };
         }
