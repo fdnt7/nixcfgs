@@ -15,6 +15,7 @@
     ./development.nix
     ./fonts
     ./nix.nix
+    ./nix-community.nix
     ./nixpkgs.nix
     ./packages.nix
     ./prefer-xdg-directories.nix
