@@ -2,10 +2,10 @@
   description = "My NixOS configuration files";
 
   inputs = {
-    catppuccin.url = "github:catppuccin/nix";
+    # catppuccin.url = "github:catppuccin/nix";
 
     # devenv.url = "github:cachix/devenv";
-    devenv.url = "github:cachix/devenv/v1.11.2";
+    devenv.url = "github:cachix/devenv/v1.11.2"; # using binary cache
 
     # Home manager
     # home-manager.url = "github:nix-community/home-manager/release-23.11";
@@ -14,13 +14,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland.url = "github:hyprwm/Hyprland";
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
+    # hyprland.url = "github:hyprwm/Hyprland";
+    # hyprland-plugins = {
+    #   url = "github:hyprwm/hyprland-plugins";
+    #   inputs.hyprland.follows = "hyprland";
+    # };
 
-    impermanence.url = "github:nix-community/impermanence";
+    impermanence.url = "github:nix-community/impermanence"; # no nixpkgs
 
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v1.0.0";
@@ -34,11 +34,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixcord.url = "github:kaylorben/nixcord";
+    nixcord = {
+      url = "github:kaylorben/nixcord";
+      inputs.nixpkgs.follows = "nixpkgs"; # should be safe
+    };
 
-    nixd.url = "github:nix-community/nixd";
+    nixd.url = "github:nix-community/nixd"; # using binary cache
 
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master"; # no nixpkgs
 
     # Nixpkgs
     # nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
@@ -68,19 +71,22 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-
-    # xdg-ninja.url = "github:b3nj5m1n/xdg-ninja";
-    xdg-ninja.url = "github:fdnt7/xdg-ninja/feature/codex";
-
-    yazi.url = "github:sxyazi/yazi";
-
-    zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
-      # IMPORTANT: we're using "libgbm" and is only available in unstable so ensure
-      # to have it up-to-date or simply don't specify the nixpkgs input
-      inputs.nixpkgs.follows = "nixpkgs";
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs"; # should be safe
     };
+
+    # # xdg-ninja.url = "github:b3nj5m1n/xdg-ninja";
+    # xdg-ninja.url = "github:fdnt7/xdg-ninja/feature/codex";
+
+    yazi.url = "github:sxyazi/yazi"; # using binary cache
+
+    # zen-browser = {
+    #   url = "github:0xc000022070/zen-browser-flake";
+    #   # IMPORTANT: we're using "libgbm" and is only available in unstable so ensure
+    #   # to have it up-to-date or simply don't specify the nixpkgs input
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs =
