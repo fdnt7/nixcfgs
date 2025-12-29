@@ -39,7 +39,7 @@
       inputs.nixpkgs.follows = "nixpkgs"; # should be safe
     };
 
-    nixd.url = "github:nix-community/nixd"; # using binary cache
+    # nixd.url = "github:nix-community/nixd"; # using binary cache
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master"; # no nixpkgs
 

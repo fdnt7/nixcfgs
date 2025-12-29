@@ -18,10 +18,10 @@ in
   config = mkIf cfg.enable (mkMerge [
     (
       let
-        nixd = inputs.nixd.packages.${pkgs.stdenv.hostPlatform.system}.default;
+        inherit (pkgs) nixd nixfmt;
         extraPackages = [
           nixd
-          pkgs.nixfmt
+          nixfmt
         ];
       in
       mkIf cfg.nix.enable {
