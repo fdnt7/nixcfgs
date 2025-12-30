@@ -77,7 +77,7 @@
     };
 
     stm32cubeide = {
-      url = "github:fdnt7/stm32cubeide-nix";
+      url = "github:fdnt7/stm32cubeide.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
