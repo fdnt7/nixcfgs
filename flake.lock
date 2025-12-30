@@ -214,6 +214,24 @@
         "type": "github"
       }
     },
+    "flake-utils_3": {
+      "inputs": {
+        "systems": "systems_5"
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
     "git-hooks": {
       "inputs": {
         "flake-compat": [
@@ -563,6 +581,7 @@
         "solaar": "solaar",
         "sops-nix": "sops-nix",
         "spicetify-nix": "spicetify-nix",
+        "stm32cubeide": "stm32cubeide",
         "yazi": "yazi"
       }
     },
@@ -671,6 +690,27 @@
         "type": "github"
       }
     },
+    "stm32cubeide": {
+      "inputs": {
+        "flake-utils": "flake-utils_2",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1767111029,
+        "narHash": "sha256-xgcPeNEnYHTWf2PLQkk7yCu6Y4HHkgVntuF7tQ+gvHs=",
+        "owner": "fdnt7",
+        "repo": "stm32cubeide-nix",
+        "rev": "cd9dcf1827ed659c919fb465cec856d9a8b76e76",
+        "type": "github"
+      },
+      "original": {
+        "owner": "fdnt7",
+        "repo": "stm32cubeide-nix",
+        "type": "github"
+      }
+    },
     "systems": {
       "locked": {
         "lastModified": 1681028828,
@@ -731,6 +771,21 @@
         "type": "github"
       }
     },
+    "systems_5": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
     "utils": {
       "inputs": {
         "flake-utils": "flake-utils"
@@ -752,7 +807,7 @@
     },
     "yazi": {
       "inputs": {
-        "flake-utils": "flake-utils_2",
+        "flake-utils": "flake-utils_3",
         "nixpkgs": "nixpkgs_3",
         "rust-overlay": "rust-overlay_2"
       },
