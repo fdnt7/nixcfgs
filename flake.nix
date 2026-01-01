@@ -76,10 +76,10 @@
       inputs.nixpkgs.follows = "nixpkgs"; # should be safe
     };
 
-    stm32cubeide = {
-      url = "github:fdnt7/stm32cubeide.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # stm32cubeide = {
+    #   url = "github:fdnt7/stm32cubeide.nix";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     # # xdg-ninja.url = "github:b3nj5m1n/xdg-ninja";
     # xdg-ninja.url = "github:fdnt7/xdg-ninja/feature/codex";
