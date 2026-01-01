@@ -563,6 +563,7 @@
         "solaar": "solaar",
         "sops-nix": "sops-nix",
         "spicetify-nix": "spicetify-nix",
+        "stm32cubeide": "stm32cubeide",
         "yazi": "yazi"
       }
     },
@@ -668,6 +669,26 @@
       "original": {
         "owner": "Gerg-L",
         "repo": "spicetify-nix",
+        "type": "github"
+      }
+    },
+    "stm32cubeide": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1767293615,
+        "narHash": "sha256-2+oi4h4qJOTC2Ls+XDAu8udwiL2QHcmv837CyvRJlUA=",
+        "owner": "fdnt7",
+        "repo": "stm32cubeide.nix",
+        "rev": "889bc58b72968ee88ee5e8fd98eac7fdea137d48",
+        "type": "github"
+      },
+      "original": {
+        "owner": "fdnt7",
+        "repo": "stm32cubeide.nix",
         "type": "github"
       }
     },

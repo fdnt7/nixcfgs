@@ -1,5 +1,5 @@
 {
-  # inputs,
+  inputs,
   pkgs,
   ...
 }:
@@ -17,6 +17,6 @@
     [
       brave
       xournalpp
-      # inputs.stm32cubeide.packages.${pkgs.stdenv.hostPlatform.system}.default
+      inputs.stm32cubeide.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
 }
