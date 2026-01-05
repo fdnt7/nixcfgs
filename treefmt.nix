@@ -3,6 +3,10 @@
   projectRootFile = "flake.nix";
 
   programs = {
+    biome = {
+      enable = true;
+      includes = [ "*.jsonc" ];
+    };
     nixfmt.enable = true;
     prettier = {
       enable = true;
