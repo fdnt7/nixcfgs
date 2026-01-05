@@ -7,6 +7,7 @@
     prettier = {
       enable = true;
       includes = [
+        "*.css"
         "*.md"
         "*.yaml"
       ];
