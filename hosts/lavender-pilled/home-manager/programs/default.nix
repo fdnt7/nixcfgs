@@ -1,5 +1,6 @@
 {
   imports = [
+    ./brave.nix
     ./delta.nix
     ./devenv.nix
     ./direnv.nix
@@ -19,7 +20,9 @@
     ./ripgrep.nix
     ./spotify.nix
     ./starship.nix
+    ./stm32cubeide.nix
     ./wakatime.nix
+    ./xournalpp.nix
     ./yazi
     ./zed-editor.nix
     ./zoxide.nix
