@@ -150,19 +150,21 @@
       nixosConfigurations =
         let
           hostConfigs = {
-            cuties-only = {
-              nixcfgs = rec {
-                name = "nixcfgs";
-                uname = "fdnt";
-                gname = name;
-                hostName = "cuties-only";
-                flake = "/etc/${name}";
-                persistVol = "persist";
-                persist = "/${persistVol}";
-                sopsAgeKeyFile = "${persist}/var/lib/sops-nix/key.txt";
-                enableWinBoat = true;
-              };
-            };
+            # migration ceased - more on `README.md`
+
+            # cuties-only = {
+            #   nixcfgs = rec {
+            #     name = "nixcfgs";
+            #     uname = "fdnt";
+            #     gname = name;
+            #     hostName = "cuties-only";
+            #     flake = "/etc/${name}";
+            #     persistVol = "persist";
+            #     persist = "/${persistVol}";
+            #     sopsAgeKeyFile = "${persist}/var/lib/sops-nix/key.txt";
+            #     enableWinBoat = true;
+            #   };
+            # };
 
             lavender-pilled = {
               nixcfgs = rec {
