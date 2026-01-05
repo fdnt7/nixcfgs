@@ -3,9 +3,14 @@
   projectRootFile = "flake.nix";
 
   programs = {
-    mdformat.enable = true;
     nixfmt.enable = true;
+    prettier = {
+      enable = true;
+      includes = [
+        "*.md"
+        "*.yaml"
+      ];
+    };
     stylua.enable = true;
-    yamlfmt.enable = true;
   };
 }
