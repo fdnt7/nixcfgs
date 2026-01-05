@@ -78,12 +78,12 @@
 
     stm32cubeide = {
       url = "github:fdnt7/stm32cubeide.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs"; # should be safe
     };
 
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs"; # should be safe
     };
 
     # # xdg-ninja.url = "github:b3nj5m1n/xdg-ninja";
