@@ -53,6 +53,8 @@ in
     tailscale = mkEnableOption "Tailscale identity persistence";
 
     mullvad-vpn = mkEnableOption "Mullvad VPN states persistence";
+
+    power-profiles-daemon = mkEnableOption "Power Profiles Daemon persistence";
   };
 
   config = mkMerge [
@@ -88,6 +90,10 @@ in
 
     (mkIf cfg.mullvad-vpn {
       environment.persistence.${cfg.root}.directories = [ "/etc/mullvad-vpn" ];
+    })
+
+    (mkIf cfg.power-profiles-daemon {
+      environment.persistence.${cfg.root}.directories = [ "/var/lib/power-profiles-daemon" ];
     })
 
     (mkIf cfg.flake.enable {
