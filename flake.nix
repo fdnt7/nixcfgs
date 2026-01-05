@@ -81,6 +81,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # # xdg-ninja.url = "github:b3nj5m1n/xdg-ninja";
     # xdg-ninja.url = "github:fdnt7/xdg-ninja/feature/codex";
 
@@ -111,6 +116,11 @@
       # This is a function that generates an attribute by calling a function you
       # pass to it, with each system as an argument
       forAllSystems = nixpkgs.lib.genAttrs systems;
+
+      # Eval the treefmt modules from ./treefmt.nix
+      treefmtEval = forAllSystems (
+        system: inputs.treefmt-nix.lib.evalModule nixpkgs.legacyPackages.${system} ./treefmt.nix
+      );
     in
     {
       # Your custom packages
@@ -119,7 +129,12 @@
       # Formatter for your nix files, available through 'nix fmt'
       # Other options beside 'alejandra' include 'nixpkgs-fmt'
       # formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
-      formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-tree);
+      formatter = forAllSystems (system: treefmtEval.${system}.config.build.wrapper);
+
+      # for `nix flake check`
+      checks = forAllSystems (system: {
+        formatting = treefmtEval.${system}.config.build.check inputs.self;
+      });
 
       # Your custom packages and modifications, exported as overlays
       overlays = import ./overlays { inherit inputs; };
