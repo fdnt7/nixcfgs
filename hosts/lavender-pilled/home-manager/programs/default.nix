@@ -6,6 +6,7 @@
     ./direnv.nix
     ./discord
     ./eza.nix
+    ./fastfetch
     ./fish.nix
     ./foot.nix
     ./git.nix
