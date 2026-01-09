@@ -21,7 +21,6 @@
     ./ripgrep.nix
     ./spotify.nix
     ./starship.nix
-    ./stm32cubeide.nix
     ./wakatime.nix
     ./xournalpp.nix
     ./yazi

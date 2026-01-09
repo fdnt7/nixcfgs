@@ -76,11 +76,6 @@
       inputs.nixpkgs.follows = "nixpkgs"; # should be safe
     };
 
-    stm32cubeide = {
-      url = "github:fdnt7/stm32cubeide.nix";
-      inputs.nixpkgs.follows = "nixpkgs"; # should be safe
-    };
-
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs"; # should be safe
