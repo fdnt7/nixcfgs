@@ -700,11 +700,11 @@
         "systems": "systems_3"
       },
       "locked": {
-        "lastModified": 1768107098,
-        "narHash": "sha256-mSthw4k7jkB5S8+NYZwrQFItLj+17Se7Wn0pIfdASbc=",
+        "lastModified": 1768656845,
+        "narHash": "sha256-xNlXMyn7yc3Z/NOsz4NchO7gWFwsoCvtJ26pys4s2/M=",
         "owner": "Gerg-L",
         "repo": "spicetify-nix",
-        "rev": "2e40e07527f9d724b1578f0af590ab345e836ec3",
+        "rev": "8bd7e49d5ac62756bee6e4b02221fb96bfc3c99a",
         "type": "github"
       },
       "original": {
@@ -819,11 +819,11 @@
         "rust-overlay": "rust-overlay_2"
       },
       "locked": {
-        "lastModified": 1768626685,
-        "narHash": "sha256-uAOGvTGR4Aqak/Lm2YvMiNNQwFdAVlwlux3itsJxxwM=",
+        "lastModified": 1768662188,
+        "narHash": "sha256-W2CpdBFWcNTg5QXpTEeSa2OK7t+1GKbgaW4hxcoo2uQ=",
         "owner": "sxyazi",
         "repo": "yazi",
-        "rev": "756964b10a91f908f8234c29ed18ba07d9c63fe9",
+        "rev": "a38a5e6377f64f8a39c87ec8fac1170a112117e1",
         "type": "github"
       },
       "original": {
