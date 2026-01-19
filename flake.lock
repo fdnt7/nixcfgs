@@ -447,6 +447,7 @@
       "original": {
         "owner": "kaylorben",
         "repo": "nixcord",
+        "rev": "02c730b57b8ef16c62624a3410ef724d014c58db",
         "type": "github"
       }
     },

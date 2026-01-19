@@ -35,7 +35,7 @@
     };
 
     nixcord = {
-      url = "github:kaylorben/nixcord";
+      url = "github:kaylorben/nixcord/02c730b57b8ef16c62624a3410ef724d014c58db";
       inputs.nixpkgs.follows = "nixpkgs"; # should be safe
     };
 
