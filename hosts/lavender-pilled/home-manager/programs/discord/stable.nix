@@ -31,8 +31,8 @@
         mentionAvatars.enable = true;
         messageClickActions = {
           enable = true;
-          enableDoubleClickToEdit = false;
-          enableDoubleClickToReply = false;
+          doubleClickAction = "none";
+          doubleClickOthersAction = "react";
         };
         messageLatency.enable = true;
         messageLogger = {
