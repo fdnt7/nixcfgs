@@ -31,8 +31,8 @@
         mentionAvatars.enable = true;
         messageClickActions = {
           enable = true;
-          doubleClickAction = "none";
-          doubleClickOthersAction = "react";
+          enableDoubleClickToEdit = false;
+          enableDoubleClickToReply = false;
         };
         messageLatency.enable = true;
         messageLogger = {
@@ -57,7 +57,11 @@
         roleColorEverywhere.enable = true;
         shikiCodeblocks = {
           enable = true;
-          theme = "https://raw.githubusercontent.com/shikijs/textmate-grammars-themes/bc5436518111d87ea58eb56d97b3f9bec30e6b83/packages/tm-themes/themes/catppuccin-mocha.json";
+          theme =
+            let
+              ref = "2d87559c7601a928b9f7e0f0dda243d2fb6d4499";
+            in
+            "https://raw.githubusercontent.com/shikijs/textmate-grammars-themes/${ref}/packages/tm-themes/themes/catppuccin-mocha.json";
         };
         serverInfo.enable = true;
         showHiddenThings.enable = true;
