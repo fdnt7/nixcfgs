@@ -5,5 +5,6 @@
   development = {
     enable = true;
     nix.enable = true;
+    python.enable = true;
   };
 }
