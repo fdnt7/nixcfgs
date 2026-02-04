@@ -71,7 +71,7 @@
         };
         tinymist = {
           settings = {
-            exportPdf = "onSave";
+            exportPdf = "onType";
             outputPath = "$dir/$name";
           };
         };
