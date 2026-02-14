@@ -2,5 +2,8 @@
 {
   imports = [ inputs.solaar.nixosModules.default ];
 
-  services.solaar.enable = true;
+  services.solaar = {
+    enable = true;
+    window = "only";
+  };
 }
