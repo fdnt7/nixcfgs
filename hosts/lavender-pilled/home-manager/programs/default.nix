@@ -12,6 +12,7 @@
     ./git.nix
     ./man.nix
     ./mullvad-vpn.nix
+    ./musescore.nix
     ./neovim.nix
     ./nh.nix
     ./nix-index.nix
