@@ -1,4 +1,5 @@
 {
+  config,
   inputs,
   pkgs,
   ...
@@ -45,7 +46,8 @@
           };
         };
       };
+      shellWrapperName = "y";
     };
-    fish.shellAbbrs.l = "yy";
+    fish.shellAbbrs.l = config.programs.yazi.shellWrapperName;
   };
 }
