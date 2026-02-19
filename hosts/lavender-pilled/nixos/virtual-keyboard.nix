@@ -1,4 +1,4 @@
 { pkgs, ... }:
 {
-  environment.systemPackages = [ pkgs.maliit-keyboard ];
+  environment.systemPackages = [ pkgs.kdePackages.plasma-keyboard ];
 }
