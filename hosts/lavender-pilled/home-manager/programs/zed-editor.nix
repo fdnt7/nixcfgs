@@ -9,6 +9,7 @@
       "nix"
       "typst"
       "ruff"
+      "lean4"
     ];
     extraPackages =
       let
