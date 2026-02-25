@@ -26,6 +26,8 @@
 
       home.sessionVariables.CODEX_HOME = "${configHome}/codex";
 
+      home.sessionVariables.ELAN_HOME = "${dataHome}/elan";
+
       home.sessionVariables.NODE_REPL_HISTORY = "${stateHome}/node_repl_history";
 
       home.sessionVariables.PYTHON_HISTORY = "${stateHome}/python_history";
