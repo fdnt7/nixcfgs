@@ -291,11 +291,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1771851181,
-        "narHash": "sha256-gFgE6mGUftwseV3DUENMb0k0EiHd739lZexPo5O/sdQ=",
+        "lastModified": 1772060133,
+        "narHash": "sha256-VuyRptb8v1lVGMlLp4/1vRX3Efwec0CN0S6mKmDPzLg=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "9a4b494b1aa1b93d8edf167f46dc8e0c0011280c",
+        "rev": "ce9b6e52500a0ea0ec48f0bbf6d7a3e431d9dfa4",
         "type": "github"
       },
       "original": {
@@ -679,11 +679,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1771889317,
-        "narHash": "sha256-YV17Q5lEU0S9ppw08Y+cs4eEQJBuc79AzblFoHORLMU=",
+        "lastModified": 1772048434,
+        "narHash": "sha256-/wA0OaH6kZ/pFA+nXR/tvg5oupOmEDmMS5us79JT60o=",
         "owner": "Mic92",
         "repo": "sops-nix",
-        "rev": "b027513c32e5b39b59f64626b87fbe168ae02094",
+        "rev": "334daa7c273dd8bf7a0cd370e4e16022b64e55e9",
         "type": "github"
       },
       "original": {
@@ -819,11 +819,11 @@
         "rust-overlay": "rust-overlay_2"
       },
       "locked": {
-        "lastModified": 1771844464,
-        "narHash": "sha256-ZohGiPk/nqEaKkdix3BzNSCpGEIsBprIY0cunVsbWuE=",
+        "lastModified": 1772086680,
+        "narHash": "sha256-rP8ioAAqzD6ViffS8EdyqcpKU73EO5QUaAvkSVpoODU=",
         "owner": "sxyazi",
         "repo": "yazi",
-        "rev": "8b773a62a546411b7c75cd5af60663ab09fbd278",
+        "rev": "05aeae3b09e0a4e3bdc299c06d09e7ae1d46ce06",
         "type": "github"
       },
       "original": {
