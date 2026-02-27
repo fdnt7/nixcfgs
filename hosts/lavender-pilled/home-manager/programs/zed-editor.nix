@@ -10,6 +10,8 @@
       "typst"
       "ruff"
       "lean4"
+      "toml"
+      "git_firefly"
     ];
     extraPackages =
       let
