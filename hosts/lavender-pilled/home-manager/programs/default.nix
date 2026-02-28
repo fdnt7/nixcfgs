@@ -19,6 +19,7 @@
     ./nix-index.nix
     ./nix-index-database.nix
     ./nix-your-shell.nix
+    ./osu.nix
     ./rebuild.nix
     ./ripgrep.nix
     ./spotify.nix
