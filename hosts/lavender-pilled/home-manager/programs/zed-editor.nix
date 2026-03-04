@@ -11,7 +11,7 @@
       "ruff"
       "lean4"
       "toml"
-      "git_firefly"
+      "git-firefly"
     ];
     extraPackages =
       let
