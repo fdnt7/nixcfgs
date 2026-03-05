@@ -15,6 +15,7 @@
         "*.md"
         "*.yaml"
       ];
+      settings.proseWrap = "always";
     };
     stylua.enable = true;
   };

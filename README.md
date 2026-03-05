@@ -8,9 +8,10 @@ My NixOS configurations.
 This repository consolidates my previous per-host configuration files
 ([`cuties-only`](https://github.com/fdnt7/nix-config) and
 [`autism-inside`](https://github.com/fdnt7/autism-inside)) into a single
-monorepo. Over time, it will also include the NixOS configurations for all of
-my other hosts.
+monorepo. Over time, it will also include the NixOS configurations for all of my
+other hosts.
 
+<!-- prettier-ignore -->
 > [!WARNING]
 > Migration of [`cuties-only`](https://github.com/fdnt7/nix-config) has ceased
 > as I no longer have access to the hardware. The setup is functional but still
