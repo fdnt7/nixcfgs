@@ -5,7 +5,7 @@
     # catppuccin.url = "github:catppuccin/nix";
 
     # devenv.url = "github:cachix/devenv";
-    devenv.url = "github:cachix/devenv/v1.11.2"; # using binary cache
+    devenv.url = "github:cachix/devenv/v2.0.3"; # using binary cache
 
     # Home manager
     # home-manager.url = "github:nix-community/home-manager/release-23.11";
