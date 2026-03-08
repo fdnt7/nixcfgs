@@ -11,6 +11,7 @@
     ./fish.nix
     ./foot.nix
     ./git.nix
+    ./haruna.nix
     ./man.nix
     ./mullvad-vpn.nix
     ./musescore.nix
