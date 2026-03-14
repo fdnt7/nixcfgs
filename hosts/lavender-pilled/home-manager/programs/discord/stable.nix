@@ -46,7 +46,6 @@
         newGuildSettings.enable = true;
         noOnboardingDelay.enable = true;
         noUnblockToJump.enable = true;
-        normalizeMessageLinks.enable = true;
         permissionsViewer.enable = true;
         platformIndicators = {
           enable = true;
