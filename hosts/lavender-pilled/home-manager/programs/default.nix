@@ -2,6 +2,7 @@
   imports = [
     ./brave.nix
     ./claude-code.nix
+    ./codex.nix
     ./delta.nix
     ./devenv.nix
     ./direnv.nix
