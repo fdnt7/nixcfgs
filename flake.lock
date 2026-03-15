@@ -921,11 +921,11 @@
         "rust-overlay": "rust-overlay_2"
       },
       "locked": {
-        "lastModified": 1773404924,
-        "narHash": "sha256-HczaRbfStxmt83umm0Eiie8ECdUELPAcoH/q/DdYpss=",
+        "lastModified": 1773559138,
+        "narHash": "sha256-ZOEABQupsxZoMureDvrS5zg59DENjrEM1oRcfA4ctk0=",
         "owner": "sxyazi",
         "repo": "yazi",
-        "rev": "fa1ee46edce52e0d3bc0c4179b9d65ca46b1efbd",
+        "rev": "d22c96b69ced5571bd73c38585d4c48401ee3abd",
         "type": "github"
       },
       "original": {
