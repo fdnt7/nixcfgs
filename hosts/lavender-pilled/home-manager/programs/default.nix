@@ -21,6 +21,7 @@
     ./nix-index-database.nix
     ./nix-your-shell.nix
     ./osu.nix
+    ./packet-tracer.nix
     ./pdfpc.nix
     ./rebuild.nix
     ./ripgrep.nix
