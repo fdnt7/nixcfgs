@@ -41,6 +41,7 @@ in
       grep = "${pkgs.gnugrep}/bin/grep";
       sed = "${pkgs.gnused}/bin/sed";
       mktemp = "${coreutils}/mktemp";
+      date = "${coreutils}/date";
       rm = "${coreutils}/rm";
       cat = "${coreutils}/cat";
       realpath = "${coreutils}/realpath";
@@ -57,6 +58,7 @@ in
         grep_bin='${grep}'
         sed_bin='${sed}'
         cat_bin='${cat}'
+        date_bin='${date}'
         realpath_bin='${realpath}'
         empty_nvd='No version or size changes'
         host_name='${cfg.hostName}'
@@ -169,11 +171,15 @@ in
           local note_file=$3
           local rev=$4
           local existing_note_file=$5
+          local rebuilt_at
+
+          rebuilt_at="$("$date_bin" --iso-8601=seconds)"
 
           {
             printf '%s\n' "$subject"
             printf '\n'
             "$cat_bin" "$body_file"
+            printf '\n\nRebuilt-at: %s\n' "$rebuilt_at"
           } > "$note_file"
 
           if "$git_bin" notes show "$rev" > "$existing_note_file" 2>/dev/null; then
