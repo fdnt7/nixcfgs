@@ -64,14 +64,36 @@ in
         empty_nvd='No version or size changes'
         host_name='${cfg.hostName}'
         notes_ref='${rebuildNotesRef}'
+        helper_name=helper
+
+        if [ -t 2 ] && [ -z "''${NO_COLOR-}" ]; then
+          helper_info_color="$(printf '\033[1;36m')"
+          helper_error_color="$(printf '\033[1;31m')"
+          helper_reset_color="$(printf '\033[0m')"
+        else
+          helper_info_color=
+          helper_error_color=
+          helper_reset_color=
+        fi
+
+        helper_log() {
+          local color=$1
+          shift
+
+          printf '%b[%s]%b %s\n' "$color" "$helper_name" "$helper_reset_color" "$*" >&2
+        }
 
         die() {
-          printf '%s\n' "$1" >&2
+          helper_log "$helper_error_color" "$1"
           exit 1
         }
 
         info() {
-          printf '%s\n' "$1" >&2
+          helper_log "$helper_info_color" "$1"
+        }
+
+        error() {
+          helper_log "$helper_error_color" "$1"
         }
 
         strip_script_envelope() {
@@ -244,6 +266,7 @@ in
           set -euo pipefail
 
           ${commonShell}
+          helper_name=rebuild
 
           cd '${flake}'
 
@@ -329,19 +352,19 @@ in
               exit 0
             fi
 
-            printf 'Refusing to rebuild from a dirty tree because the changed paths cross unsupported boundaries.\n' >&2
+            error "Refusing to rebuild from a dirty tree because the changed paths cross unsupported boundaries."
 
             if [ "$other_host_seen" -eq 1 ]; then
-              printf 'Only hosts/%s/ may be touched for host-local dirty rebuilds.\n' "$host_name" >&2
+              error "Only hosts/$host_name/ may be touched for host-local dirty rebuilds."
             fi
 
             if [ "$host_seen" -eq 1 ] && [ "$non_host_seen" -eq 1 ]; then
-              printf 'Current-host changes cannot be mixed with paths outside hosts/.\n' >&2
+              error "Current-host changes cannot be mixed with paths outside hosts/."
             fi
 
-            printf 'Changed paths:\n' >&2
+            error "Changed paths:"
             while IFS= read -r path; do
-              printf '  %s\n' "$path" >&2
+              error "  $path"
             done < "$changed_paths"
 
             exit 1
@@ -363,6 +386,7 @@ in
           set -euo pipefail
 
           ${commonShell}
+          helper_name=update
 
           cd '${flake}'
 
@@ -421,9 +445,9 @@ in
           extract_changed_paths > "$changed_paths"
 
           if [ "$("$awk_bin" 'END { print NR }' "$changed_paths")" -ne 1 ] || ! "$grep_bin" -Fxq 'flake.lock' "$changed_paths"; then
-            printf 'nix flake update changed more than flake.lock:\n' >&2
+            error "nix flake update changed more than flake.lock:"
             while IFS= read -r path; do
-              printf '  %s\n' "$path" >&2
+              error "  $path"
             done < "$changed_paths"
             exit 1
           fi
