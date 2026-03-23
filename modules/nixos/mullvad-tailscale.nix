@@ -77,7 +77,7 @@ in
     # --- Warnings: recommended integrations ---
     warnings =
       (lib.optional (!config.services.resolved.enable)
-        "services.mullvad-tailscale works best with systemd-resolved enabled, as Mullvad’s DNS integration expects it."
+        "services.mullvad-tailscale works best with systemd-resolved enabled, as Mullvad's DNS integration expects it."
       )
       ++ (lib.optional (!config.services.mullvad-vpn.enable)
         "services.mullvad-tailscale is most useful when services.mullvad-vpn is enabled, since the rules mark connections for Mullvad's policy routing."

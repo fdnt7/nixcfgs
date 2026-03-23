@@ -97,7 +97,7 @@ git notes --ref=refs/notes/rebuild/<hostname> show HEAD
 
 ## Attributions
 
-- [@Misterio77](https://github.com/Misterio77)’s
+- [@Misterio77](https://github.com/Misterio77)'s
   [starter config template](https://github.com/Misterio77/nix-starter-configs)
   (standard version) and
   [personal configurations](https://github.com/Misterio77/nix-config/), which
