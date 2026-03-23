@@ -7,9 +7,9 @@
 let
   inherit (lib)
     mkEnableOption
+    mkIf
     mkOption
     types
-    mkIf
     ;
 in
 {
@@ -29,118 +29,381 @@ in
     let
       programsCfg = config.programs;
       cfg = programsCfg.rebuild;
+
+      git = "${programsCfg.git.package}/bin/git";
+      nh = "${programsCfg.nh.package}/bin/nh";
+      nix = "${pkgs.nix}/bin/nix";
+      coreutils = "${pkgs.coreutils}/bin";
+      script = "${pkgs.util-linux}/bin/script";
+      ansi2txt = "${pkgs.colorized-logs}/bin/ansi2txt";
+      awk = "${pkgs.gawk}/bin/awk";
+      cmp = "${pkgs.diffutils}/bin/cmp";
+      grep = "${pkgs.gnugrep}/bin/grep";
+      sed = "${pkgs.gnused}/bin/sed";
+      mktemp = "${coreutils}/mktemp";
+      rm = "${coreutils}/rm";
+      cat = "${coreutils}/cat";
+      realpath = "${coreutils}/realpath";
+      flake = "${programsCfg.nh.flake}";
+
+      commonShell = ''
+        git_bin='${git}'
+        nh_bin='${nh}'
+        nix_bin='${nix}'
+        script_bin='${script}'
+        ansi2txt_bin='${ansi2txt}'
+        awk_bin='${awk}'
+        cmp_bin='${cmp}'
+        grep_bin='${grep}'
+        sed_bin='${sed}'
+        cat_bin='${cat}'
+        realpath_bin='${realpath}'
+        empty_nvd='No version or size changes'
+        host_name='${cfg.hostName}'
+
+        die() {
+          printf '%s\n' "$1" >&2
+          exit 1
+        }
+
+        info() {
+          printf '%s\n' "$1" >&2
+        }
+
+        strip_script_envelope() {
+          "$ansi2txt_bin" < "$1" |
+            "$sed_bin" \
+              -e '/^Script started on /d' \
+              -e '/^Script done on /d' \
+              -e 's/\r$//'
+        }
+
+        extract_nvd_output() {
+          local raw_log=$1
+          local out_file=$2
+
+          strip_script_envelope "$raw_log" |
+            "$awk_bin" -v empty="$empty_nvd" '
+              /^>? ?No version or size changes\.$/ {
+                print empty
+                found = 1
+                exit
+              }
+
+              /^<<< \/run\/current-system$/ {
+                capture = 1
+              }
+
+              capture {
+                print
+                found = 1
+
+                if (/^DIFF: /) {
+                  exit
+                }
+              }
+
+              END {
+                if (!found) {
+                  exit 1
+                }
+              }
+            ' > "$out_file" || die "Failed to parse the nh package diff output."
+        }
+
+        nvd_output_is_nonempty() {
+          ! "$grep_bin" -Fxq "$empty_nvd" "$1"
+        }
+
+        extract_changed_paths() {
+          "$git_bin" status --porcelain=v1 --untracked-files=all |
+            while IFS= read -r line; do
+              path="''${line:3}"
+
+              case "$path" in
+                *" -> "*)
+                  printf '%s\n' "''${path%% -> *}"
+                  printf '%s\n' "''${path##* -> }"
+                  ;;
+                *)
+                  printf '%s\n' "$path"
+                  ;;
+              esac
+            done |
+            "$awk_bin" 'NF && !seen[$0]++'
+        }
+
+        extract_commit_type() {
+          local rev=$1
+          local subject
+          local commit_type
+
+          subject="$("$git_bin" log -1 --pretty=%s "$rev")"
+
+          commit_type="$(
+            printf '%s\n' "$subject" |
+              "$sed_bin" -En 's/^([A-Za-z0-9_-]+)(\([^)]+\))?(!)?:[[:space:]].*$/\1/p'
+          )"
+
+          if [ -n "$commit_type" ]; then
+            printf '%s\n' "$commit_type"
+            return 0
+          fi
+
+          die "Can't infer a conventional-commit type from: $subject"
+        }
+
+        append_nvd_to_head_commit() {
+          local nvd_file=$1
+          local msg_file=$2
+
+          "$git_bin" log -1 --pretty=%B > "$msg_file"
+          printf '\n' >> "$msg_file"
+          "$cat_bin" "$nvd_file" >> "$msg_file"
+          "$git_bin" commit --amend -F "$msg_file" >/dev/null
+        }
+
+        write_git_note() {
+          local subject=$1
+          local body_file=$2
+          local note_file=$3
+          local rev=$4
+          local existing_note_file=$5
+
+          {
+            printf '%s\n' "$subject"
+            printf '\n'
+            "$cat_bin" "$body_file"
+          } > "$note_file"
+
+          if "$git_bin" notes show "$rev" > "$existing_note_file" 2>/dev/null; then
+            if "$cmp_bin" -s "$existing_note_file" "$note_file"; then
+              return 0
+            fi
+
+            "$git_bin" notes add -f -F "$note_file" "$rev" >/dev/null 2>&1
+            return 0
+          fi
+
+          "$git_bin" notes add -F "$note_file" "$rev" >/dev/null
+        }
+
+        run_build_and_deploy() {
+          local out_link=$1
+          local build_log=$2
+          local nvd_file=$3
+          local built_toplevel
+
+          if ! "$script_bin" -eqfc "\"$nh_bin\" os build --diff always --out-link \"$out_link\"" "$build_log"; then
+            return 1
+          fi
+
+          extract_nvd_output "$build_log" "$nvd_file"
+
+          built_toplevel="$("$realpath_bin" "$out_link")"
+          info "Activating the built generation with nh os switch --ask."
+          "$nh_bin" os switch --ask --diff never "$built_toplevel"
+        }
+      '';
     in
     mkIf cfg.enable {
-      home.packages =
-        let
-          git = "\"${programsCfg.git.package}/bin/git\"";
-          nhCfg = programsCfg.nh;
-          coreutils = "${pkgs.coreutils}/bin";
-          script = "\"${pkgs.util-linux}/bin/script\"";
-          ansi2txt = "\"${pkgs.colorized-logs}/bin/ansi2txt\"";
-          sed = "\"${pkgs.gnused}/bin/sed\"";
-          flake = "\"${nhCfg.flake}\"";
-          cat = "\"${coreutils}/cat\"";
-          mktemp = "${coreutils}/mktemp";
-          rm = "\"${coreutils}/rm\"";
-        in
-        [
-          (pkgs.writeShellScriptBin "rebuild" ''
-            set -euo pipefail
+      home.packages = [
+        (pkgs.writeShellScriptBin "rebuild" ''
+          set -euo pipefail
 
-            # Work in the flake directory
-            cd ${flake}
+          ${commonShell}
 
-            # 1) Format and show diff; only page if needed, requiring user input then.
-            ${git} add .
-            ${git} commit -m "type(${cfg.hostName}): message"
-            "${pkgs.nix}/bin/nix" fmt .
+          cd '${flake}'
 
-            # 2) Stage and make a non-interactive commit
-            ${git} add .
-            ${git} commit --amend --no-edit
-            ${git} diff --color=always @^
+          temp_dir="$(${mktemp} -d -t rebuild.XXXXXX)"
+          build_log="$temp_dir/build.log"
+          changed_paths="$temp_dir/changed-paths"
+          nvd_file="$temp_dir/nvd.txt"
+          msg_file="$temp_dir/msg.txt"
+          note_file="$temp_dir/note.txt"
+          existing_note_file="$temp_dir/existing-note.txt"
+          cleanup() {
+            '${rm}' -rf "$temp_dir"
+          }
+          trap cleanup EXIT
 
-            # 3) Run nh; tee stdout to file 'o' while still printing to real stdout
-            o="$(${mktemp} -t rebuild-nh.XXXXXX)"
-            cleaned="$(${mktemp} -t rebuild-clean.XXXXXX)"
-            msg="$(${mktemp} -t rebuild-msg.XXXXXX)"
-            cleanup() { ${rm} -f "$o" "$cleaned" "$msg"; }
-            trap cleanup EXIT
+          if "$git_bin" status --porcelain=v1 --untracked-files=all | "$grep_bin" -q .; then
+            host_seen=0
+            other_host_seen=0
+            non_host_seen=0
 
-            set -o pipefail
+            extract_changed_paths > "$changed_paths"
 
-            # Run nh via script, log to $o
-            ${script} -qc '"${nhCfg.package}/bin/nh" os switch --ask' "$o"
+            while IFS= read -r path; do
+              case "$path" in
+                "hosts/$host_name/"*)
+                  host_seen=1
+                  ;;
+                hosts/*)
+                  other_host_seen=1
+                  ;;
+                *)
+                  non_host_seen=1
+                  ;;
+              esac
+            done < "$changed_paths"
 
-            # Extract nh exit code from the log footer
-            nh_status="$("${pkgs.gnugrep}/bin/grep" -o 'COMMAND_EXIT_CODE="[0-9]\+"' "$o" | ${sed} 's/.*="\([0-9]\+\)"/\1/')"
+            if [ "$host_seen" -eq 1 ] && [ "$other_host_seen" -eq 0 ] && [ "$non_host_seen" -eq 0 ]; then
+              {
+                printf 'FIXME_type(%s): FIXME_desc\n' "$host_name"
+                printf '\n'
+              } > "$msg_file"
 
-            if [ "$nh_status" -eq 0 ]; then
-              # Success branch
-              ${ansi2txt} < "$o" |
-                ${sed} -n '/^<<< \/run\/current-system$/,/^DIFF: .*$\|^> No version or size changes\.$/p' > "$cleaned"
+              "$git_bin" add -A
+              "$git_bin" commit -F "$msg_file" >/dev/null
 
-              ${git} log -1 --pretty=%B > "$msg"
-              echo >> "$msg"
-              ${cat} "$cleaned" >> "$msg"
-
-              ${git} commit --amend -F "$msg"
-              ${git} commit --amend
-            else
-              # Failure branch: undo last commit
-              ${git} reset --mixed @^
-              exit 1
-            fi
-          '')
-
-          (pkgs.writeShellScriptBin "update" ''
-            cd ${flake}
-
-            o="$(${mktemp} -t update-nh.XXXXXX)"
-            cleaned="$(${mktemp} -t update-clean.XXXXXX)"
-            msg="$(${mktemp} -t update-msg.XXXXXX)"
-            cleanup() { ${rm} -f "$o" "$cleaned" "$msg"; }
-            trap cleanup EXIT
-
-            ${script} -qc 'nix flake update' $o &&
-              ${ansi2txt} < $o |
-              ${sed} -n '/• Updated input/{N;N;p}' > $cleaned
-
-            if ${git} diff --quiet -- flake.lock; then
-              echo "No changes in flake.lock, skipping commit."
-            else
-              echo "chore(flake.lock): update" >> "$msg"
-              echo >> "$msg"
-              ${cat} "$cleaned" >> "$msg"
-              echo >> "$msg"
-              ${git} add flake.lock
-              ${git} commit -F "$msg"
-
-              # Run nh via script, log to $o
-              ${script} -qc '"${nhCfg.package}/bin/nh" os switch --ask' "$o"
-
-              # Extract nh exit code from the log footer
-              nh_status="$("${pkgs.gnugrep}/bin/grep" -o 'COMMAND_EXIT_CODE="[0-9]\+"' "$o" | ${sed} 's/.*="\([0-9]\+\)"/\1/')"
-
-              if [ "$nh_status" -eq 0 ]; then
-                # Success branch
-                ${ansi2txt} < "$o" |
-                  ${sed} -n '/^<<< \/run\/current-system$/,/^DIFF: .*$\|^> No version or size changes\.$/p' > "$cleaned"
-
-                ${git} log -1 --pretty=%B > "$msg"
-                echo >> "$msg"
-                ${cat} "$cleaned" >> "$msg"
-
-                ${git} commit --amend -F "$msg"
-              else
-                # Failure branch: undo last commit
-                ${git} reset --hard @^
-                exit 1
+              if ! run_build_and_deploy "$temp_dir/result" "$build_log" "$nvd_file"; then
+                "$git_bin" reset --mixed HEAD^ >/dev/null
+                die "Rebuild failed. Restored the dirty tree."
               fi
+
+              if nvd_output_is_nonempty "$nvd_file"; then
+                append_nvd_to_head_commit "$nvd_file" "$msg_file"
+              fi
+
+              "$git_bin" commit --amend
+              exit 0
             fi
-          '')
-        ];
+
+            if [ "$host_seen" -eq 0 ] && [ "$other_host_seen" -eq 0 ] && [ "$non_host_seen" -eq 1 ]; then
+              printf 'FIXME_type(FIXME_scope): FIXME_desc\n' > "$msg_file"
+
+              "$git_bin" add -A
+              "$git_bin" commit -F "$msg_file" >/dev/null
+
+              if ! run_build_and_deploy "$temp_dir/result" "$build_log" "$nvd_file"; then
+                "$git_bin" reset --mixed HEAD^ >/dev/null
+                die "Rebuild failed. Restored the dirty tree."
+              fi
+
+              "$git_bin" commit --amend
+              commit_type="$(extract_commit_type HEAD)"
+              write_git_note "$commit_type($host_name): rebuild" "$nvd_file" "$note_file" HEAD "$existing_note_file"
+              exit 0
+            fi
+
+            printf 'Refusing to rebuild from a dirty tree because the changed paths cross unsupported boundaries.\n' >&2
+
+            if [ "$other_host_seen" -eq 1 ]; then
+              printf 'Only hosts/%s/ may be touched for host-local dirty rebuilds.\n' "$host_name" >&2
+            fi
+
+            if [ "$host_seen" -eq 1 ] && [ "$non_host_seen" -eq 1 ]; then
+              printf 'Current-host changes cannot be mixed with paths outside hosts/.\n' >&2
+            fi
+
+            printf 'Changed paths:\n' >&2
+            while IFS= read -r path; do
+              printf '  %s\n' "$path" >&2
+            done < "$changed_paths"
+
+            exit 1
+          fi
+
+          if ! run_build_and_deploy "$temp_dir/result" "$build_log" "$nvd_file"; then
+            die "Rebuild failed."
+          fi
+
+          if ! nvd_output_is_nonempty "$nvd_file" && "$git_bin" notes show HEAD >/dev/null 2>&1; then
+            info "No rebuild was needed; keeping the existing note on HEAD."
+            exit 0
+          fi
+
+          commit_type="$(extract_commit_type HEAD)"
+          write_git_note "$commit_type($host_name): rebuild" "$nvd_file" "$note_file" HEAD "$existing_note_file"
+        '')
+
+        (pkgs.writeShellScriptBin "update" ''
+          set -euo pipefail
+
+          ${commonShell}
+
+          cd '${flake}'
+
+          temp_dir="$(${mktemp} -d -t update.XXXXXX)"
+          update_log="$temp_dir/update.log"
+          update_output="$temp_dir/update-output.txt"
+          changed_paths="$temp_dir/changed-paths"
+          build_log="$temp_dir/build.log"
+          nvd_file="$temp_dir/nvd.txt"
+          msg_file="$temp_dir/msg.txt"
+          note_file="$temp_dir/note.txt"
+          existing_note_file="$temp_dir/existing-note.txt"
+          cleanup() {
+            '${rm}' -rf "$temp_dir"
+          }
+          trap cleanup EXIT
+
+          if "$git_bin" status --porcelain=v1 --untracked-files=all | "$grep_bin" -q .; then
+            die "update only commits flake.lock, so it must start from a clean git tree."
+          fi
+
+          if ! "$script_bin" -eqfc "\"$nix_bin\" flake update" "$update_log"; then
+            die "nix flake update failed."
+          fi
+
+          strip_script_envelope "$update_log" |
+            "$awk_bin" '
+              /^• / {
+                capture = 1
+                found = 1
+                print
+                next
+              }
+
+              capture && /^[[:space:]]+/ {
+                print
+                next
+              }
+
+              capture {
+                capture = 0
+              }
+
+              END {
+                if (!found) {
+                  exit 1
+                }
+              }
+            ' > "$update_output" || strip_script_envelope "$update_log" > "$update_output"
+
+          if "$git_bin" diff --quiet -- flake.lock; then
+            info "flake.lock is already up to date."
+            exit 0
+          fi
+
+          extract_changed_paths > "$changed_paths"
+
+          if [ "$("$awk_bin" 'END { print NR }' "$changed_paths")" -ne 1 ] || ! "$grep_bin" -Fxq 'flake.lock' "$changed_paths"; then
+            printf 'nix flake update changed more than flake.lock:\n' >&2
+            while IFS= read -r path; do
+              printf '  %s\n' "$path" >&2
+            done < "$changed_paths"
+            exit 1
+          fi
+
+          {
+            printf 'build(flake.lock): update\n'
+            printf '\n'
+            "$cat_bin" "$update_output"
+          } > "$msg_file"
+
+          "$git_bin" add flake.lock
+          "$git_bin" commit -F "$msg_file" >/dev/null
+
+          if ! run_build_and_deploy "$temp_dir/result" "$build_log" "$nvd_file"; then
+            "$git_bin" reset --mixed HEAD^ >/dev/null
+            die "Rebuild failed. Restored the flake.lock update to the working tree."
+          fi
+
+          write_git_note "build($host_name): apply flake.lock update" "$nvd_file" "$note_file" HEAD "$existing_note_file"
+        '')
+      ];
 
       programs.fish.shellAbbrs = {
         a = "rebuild";
