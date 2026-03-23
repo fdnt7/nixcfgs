@@ -119,6 +119,14 @@ in
           ! "$grep_bin" -Fxq "$empty_nvd" "$1"
         }
 
+        should_skip_activation_for_existing_note() {
+          local nvd_file=$1
+          local rev=''${2-}
+
+          [ -n "$rev" ] || return 1
+          ! nvd_output_is_nonempty "$nvd_file" && "$git_bin" notes --ref="$notes_ref" show "$rev" >/dev/null 2>&1
+        }
+
         extract_changed_paths() {
           "$git_bin" status --porcelain=v1 --untracked-files=all |
             while IFS= read -r line; do
@@ -207,6 +215,7 @@ in
           local out_link=$1
           local build_log=$2
           local nvd_file=$3
+          local note_rev=''${4-}
           local built_toplevel
 
           if ! "$script_bin" -eqfc "\"$nh_bin\" os build --diff always --out-link \"$out_link\"" "$build_log"; then
@@ -214,6 +223,11 @@ in
           fi
 
           extract_nvd_output "$build_log" "$nvd_file"
+
+          if should_skip_activation_for_existing_note "$nvd_file" "$note_rev"; then
+            info "No rebuild was needed and this host already has a note on $note_rev; skipping activation."
+            return 0
+          fi
 
           built_toplevel="$("$realpath_bin" "$out_link")"
           info "Activating the built generation with nh os switch --ask."
@@ -277,7 +291,7 @@ in
                 die "Formatting failed. Restored the dirty tree."
               fi
 
-              if ! run_build_and_deploy "$temp_dir/result" "$build_log" "$nvd_file"; then
+              if ! run_build_and_deploy "$temp_dir/result" "$build_log" "$nvd_file" HEAD; then
                 "$git_bin" reset --mixed HEAD^ >/dev/null
                 die "Rebuild failed. Restored the dirty tree."
               fi
@@ -301,7 +315,7 @@ in
                 die "Formatting failed. Restored the dirty tree."
               fi
 
-              if ! run_build_and_deploy "$temp_dir/result" "$build_log" "$nvd_file"; then
+              if ! run_build_and_deploy "$temp_dir/result" "$build_log" "$nvd_file" HEAD; then
                 "$git_bin" reset --mixed HEAD^ >/dev/null
                 die "Rebuild failed. Restored the dirty tree."
               fi
@@ -330,11 +344,11 @@ in
             exit 1
           fi
 
-          if ! run_build_and_deploy "$temp_dir/result" "$build_log" "$nvd_file"; then
+          if ! run_build_and_deploy "$temp_dir/result" "$build_log" "$nvd_file" HEAD; then
             die "Rebuild failed."
           fi
 
-          if ! nvd_output_is_nonempty "$nvd_file" && "$git_bin" notes --ref="$notes_ref" show HEAD >/dev/null 2>&1; then
+          if should_skip_activation_for_existing_note "$nvd_file" HEAD; then
             info "No rebuild was needed; keeping the existing note on HEAD."
             exit 0
           fi
