@@ -218,6 +218,8 @@ in
           local note_rev=''${4-}
           local built_toplevel
 
+          activation_was_skipped=0
+
           if ! "$script_bin" -eqfc "\"$nh_bin\" os build --diff always --out-link \"$out_link\"" "$build_log"; then
             return 1
           fi
@@ -225,6 +227,7 @@ in
           extract_nvd_output "$build_log" "$nvd_file"
 
           if should_skip_activation_for_existing_note "$nvd_file" "$note_rev"; then
+            activation_was_skipped=1
             info "No rebuild was needed and this host already has a note on $note_rev; skipping activation."
             return 0
           fi
@@ -348,8 +351,7 @@ in
             die "Rebuild failed."
           fi
 
-          if should_skip_activation_for_existing_note "$nvd_file" HEAD; then
-            info "No rebuild was needed; keeping the existing note on HEAD."
+          if [ "$activation_was_skipped" -eq 1 ]; then
             exit 0
           fi
 
