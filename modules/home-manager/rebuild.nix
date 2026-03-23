@@ -46,6 +46,7 @@ in
       cat = "${coreutils}/cat";
       realpath = "${coreutils}/realpath";
       flake = "${programsCfg.nh.flake}";
+      rebuildNotesRef = "refs/notes/rebuild/${cfg.hostName}";
 
       commonShell = ''
         git_bin='${git}'
@@ -62,6 +63,7 @@ in
         realpath_bin='${realpath}'
         empty_nvd='No version or size changes'
         host_name='${cfg.hostName}'
+        notes_ref='${rebuildNotesRef}'
 
         die() {
           printf '%s\n' "$1" >&2
@@ -182,16 +184,16 @@ in
             printf '\n\nRebuilt-at: %s\n' "$rebuilt_at"
           } > "$note_file"
 
-          if "$git_bin" notes show "$rev" > "$existing_note_file" 2>/dev/null; then
+          if "$git_bin" notes --ref="$notes_ref" show "$rev" > "$existing_note_file" 2>/dev/null; then
             if "$cmp_bin" -s "$existing_note_file" "$note_file"; then
               return 0
             fi
 
-            "$git_bin" notes add -f -F "$note_file" "$rev" >/dev/null 2>&1
+            "$git_bin" notes --ref="$notes_ref" add -f -F "$note_file" "$rev" >/dev/null 2>&1
             return 0
           fi
 
-          "$git_bin" notes add -F "$note_file" "$rev" >/dev/null
+          "$git_bin" notes --ref="$notes_ref" add -F "$note_file" "$rev" >/dev/null
         }
 
         format_and_preview_dirty_commit() {
@@ -332,7 +334,7 @@ in
             die "Rebuild failed."
           fi
 
-          if ! nvd_output_is_nonempty "$nvd_file" && "$git_bin" notes show HEAD >/dev/null 2>&1; then
+          if ! nvd_output_is_nonempty "$nvd_file" && "$git_bin" notes --ref="$notes_ref" show HEAD >/dev/null 2>&1; then
             info "No rebuild was needed; keeping the existing note on HEAD."
             exit 0
           fi
