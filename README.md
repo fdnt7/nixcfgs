@@ -47,6 +47,54 @@ Before installation, these directories and files must be present:
 
 Optionally, edit the attributes of `nixcfgs` in `flake.nix` as seen fit.
 
+## Rebuild Workflow
+
+This repo exposes two helper commands through Home Manager:
+
+- `rebuild`
+- `update`
+
+`rebuild` is the main apply command.
+
+- In a clean worktree, it rebuilds the current host and writes a rebuild note to
+  `refs/notes/rebuild/<hostname>`.
+- In a dirty worktree, it only accepts two cases:
+  - changes only under `hosts/<hostname>/`
+  - changes only outside `hosts/`
+- For dirty rebuilds, it formats the repo with `nix fmt .`, amends a temporary
+  `FIXME_*` commit, shows the resulting diff, runs `nh os build`, then applies
+  the built generation with `nh os switch --ask`.
+- If the rebuild produces non-empty `nvd` output for a host-local dirty rebuild,
+  that output is appended to the temporary commit body before opening the editor
+  for the final amend.
+- For clean rebuilds and non-host dirty rebuilds, the rebuild result is stored
+  as a git note with a `Rebuilt-at:` footer.
+
+`update` is the flake-lock update helper.
+
+- It requires a clean worktree.
+- It runs `nix flake update`.
+- It refuses to continue unless only `flake.lock` changed.
+- It commits the lockfile update as `build(flake.lock): update`, rebuilds the
+  current host, and records the rebuild result in a git note.
+
+Rebuild notes are written to `refs/notes/rebuild/<hostname>`, not to the default
+`refs/notes/commits`.
+
+If you want plain `git log` to show them in this repo, add the notes ref to the
+local Git config once:
+
+```bash
+git config --local --add notes.displayRef refs/notes/rebuild/<hostname>
+```
+
+Or inspect them ad hoc with:
+
+```bash
+git log --notes=refs/notes/rebuild/<hostname>
+git notes --ref=refs/notes/rebuild/<hostname> show HEAD
+```
+
 ## Attributions
 
 - [@Misterio77](https://github.com/Misterio77)’s
