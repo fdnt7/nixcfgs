@@ -188,6 +188,13 @@ in
           "$git_bin" notes add -F "$note_file" "$rev" >/dev/null
         }
 
+        format_and_preview_dirty_commit() {
+          "$nix_bin" fmt .
+          "$git_bin" add -A
+          "$git_bin" commit --amend --no-edit >/dev/null
+          "$git_bin" diff --color=always HEAD^
+        }
+
         run_build_and_deploy() {
           local out_link=$1
           local build_log=$2
@@ -257,6 +264,11 @@ in
               "$git_bin" add -A
               "$git_bin" commit -F "$msg_file" >/dev/null
 
+              if ! format_and_preview_dirty_commit; then
+                "$git_bin" reset --mixed HEAD^ >/dev/null
+                die "Formatting failed. Restored the dirty tree."
+              fi
+
               if ! run_build_and_deploy "$temp_dir/result" "$build_log" "$nvd_file"; then
                 "$git_bin" reset --mixed HEAD^ >/dev/null
                 die "Rebuild failed. Restored the dirty tree."
@@ -275,6 +287,11 @@ in
 
               "$git_bin" add -A
               "$git_bin" commit -F "$msg_file" >/dev/null
+
+              if ! format_and_preview_dirty_commit; then
+                "$git_bin" reset --mixed HEAD^ >/dev/null
+                die "Formatting failed. Restored the dirty tree."
+              fi
 
               if ! run_build_and_deploy "$temp_dir/result" "$build_log" "$nvd_file"; then
                 "$git_bin" reset --mixed HEAD^ >/dev/null
