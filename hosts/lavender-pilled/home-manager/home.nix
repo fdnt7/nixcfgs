@@ -31,11 +31,11 @@
 
   home =
     let
-      inherit (nixcfgs) uname;
+      inherit (nixcfgs) uname homeDirectory;
     in
     {
       username = uname;
-      homeDirectory = "/home/${uname}";
+      homeDirectory = homeDirectory;
 
       # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
       stateVersion = "25.11";
