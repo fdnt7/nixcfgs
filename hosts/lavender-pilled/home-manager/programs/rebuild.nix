@@ -9,5 +9,9 @@
   programs.rebuild = {
     enable = true;
     hostName = nixcfgs.hostName;
+    ssh-agent = {
+      enable = true;
+      key = nixcfgs.gitSigningKey;
+    };
   };
 }

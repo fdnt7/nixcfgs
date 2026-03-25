@@ -13,7 +13,7 @@
         };
         signing = {
           format = "ssh";
-          key = "~/.ssh/id_ed25519_github_${githubUname}_signing";
+          key = nixcfgs.gitSigningKey;
           signByDefault = true;
         };
       };
