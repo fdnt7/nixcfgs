@@ -414,6 +414,10 @@ in
 
           strip_script_envelope "$update_log" |
             "$awk_bin" '
+              {
+                sub(/\r.*/, "")
+              }
+
               /^• / {
                 capture = 1
                 found = 1
@@ -421,7 +425,7 @@ in
                 next
               }
 
-              capture && /^[[:space:]]+/ {
+              capture && (/^    / || /^  → /) {
                 print
                 next
               }
