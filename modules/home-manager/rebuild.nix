@@ -23,12 +23,27 @@ in
         either singleLineStr builtins.path;
       description = "The name of the machine.";
     };
+    "ssh-agent" = {
+      enable = mkEnableOption "ssh-agent integration for rebuild and update";
+      key = mkOption {
+        type = with types; nullOr singleLineStr;
+        default = null;
+        example = "/home/alice/.ssh/id_ed25519";
+        description = ''
+          Path string to the private SSH key that must already be available in
+          ssh-agent before rebuild or update may continue. `~` is expanded at
+          runtime against `$HOME`.
+        '';
+      };
+    };
   };
 
   config =
     let
       programsCfg = config.programs;
       cfg = programsCfg.rebuild;
+      sshAgentCfg = cfg."ssh-agent";
+      sshAgentKey = if sshAgentCfg.key == null then "" else sshAgentCfg.key;
 
       inherit (pkgs)
         nix
@@ -39,6 +54,7 @@ in
         gnugrep
         gnused
         coreutils
+        openssh
         writeShellApplication
         ;
       commonRuntimeInputs = [
@@ -52,6 +68,7 @@ in
         gnugrep
         gnused
         coreutils
+        openssh
       ];
       flake = "${programsCfg.nh.flake}";
       rebuildNotesRef = "refs/notes/rebuild/${cfg.hostName}";
@@ -60,6 +77,8 @@ in
         empty_nvd='No version or size changes'
         host_name='${cfg.hostName}'
         notes_ref='${rebuildNotesRef}'
+        ssh_agent_integration_enabled=${if sshAgentCfg.enable then "1" else "0"}
+        ssh_agent_key_config=${lib.escapeShellArg sshAgentKey}
         helper_name=helper
 
         if [ -t 2 ] && [ -z "''${NO_COLOR-}" ]; then
@@ -90,6 +109,71 @@ in
 
         error() {
           helper_log "$helper_error_color" "$1"
+        }
+
+        expand_home_path() {
+          case "$1" in
+            ~)
+              printf '%s\n' "$HOME"
+              ;;
+            ~/*)
+              printf '%s/%s\n' "$HOME" "''${1#~/}"
+              ;;
+            *)
+              printf '%s\n' "$1"
+              ;;
+          esac
+        }
+
+        ensure_ssh_agent_key_loaded() {
+          local key_path
+          local public_key_path
+          local response
+
+          [ "$ssh_agent_integration_enabled" -eq 1 ] || return 0
+
+          key_path="$(expand_home_path "$ssh_agent_key_config")"
+          [ -n "$key_path" ] || die "programs.rebuild.ssh-agent.key must be set when ssh-agent integration is enabled."
+
+          if [ ! -S "''${SSH_AUTH_SOCK-}" ]; then
+            die "SSH agent integration is enabled, but SSH_AUTH_SOCK is not set to a live agent socket."
+          fi
+
+          if [ ! -r "$key_path" ]; then
+            die "Configured SSH private key does not exist or is not readable: $key_path"
+          fi
+
+          public_key_path="$key_path.pub"
+
+          if [ ! -r "$public_key_path" ]; then
+            die "Configured SSH key requires a readable public key alongside it: $public_key_path"
+          fi
+
+          if ssh-add -T "$public_key_path" >/dev/null 2>&1; then
+            return 0
+          fi
+
+          info "Required SSH key is not loaded into ssh-agent: $key_path"
+
+          if [ ! -t 0 ] || [ ! -t 1 ]; then
+            die "Load it first with: ssh-add $key_path"
+          fi
+
+          printf '%b[%s]%b Load it into ssh-agent now with ssh-add? [Y/n] ' \
+            "$helper_info_color" \
+            "$helper_name" \
+            "$helper_reset_color" >&2
+          IFS= read -r response
+
+          case "$response" in
+            "" | [Yy] | [Yy][Ee][Ss])
+              ssh-add "$key_path" || die "ssh-add failed for $key_path"
+              ssh-add -T "$public_key_path" >/dev/null 2>&1 || die "ssh-agent still does not report the configured key as usable: $key_path"
+              ;;
+            *)
+              die "Aborted because the configured SSH key is not loaded into ssh-agent."
+              ;;
+          esac
         }
 
         strip_script_envelope() {
@@ -262,6 +346,13 @@ in
       '';
     in
     mkIf cfg.enable {
+      assertions = [
+        {
+          assertion = !sshAgentCfg.enable || sshAgentCfg.key != null;
+          message = "programs.rebuild.ssh-agent.key must be set when programs.rebuild.ssh-agent.enable is true.";
+        }
+      ];
+
       home.packages = [
         (writeShellApplication {
           name = "rebuild";
@@ -273,6 +364,7 @@ in
             helper_name=rebuild
 
             cd '${flake}'
+            ensure_ssh_agent_key_loaded
 
             temp_dir="$(mktemp -d -t rebuild.XXXXXX)"
             build_log="$temp_dir/build.log"
@@ -398,6 +490,7 @@ in
             helper_name=update
 
             cd '${flake}'
+            ensure_ssh_agent_key_loaded
 
             temp_dir="$(mktemp -d -t update.XXXXXX)"
             update_log="$temp_dir/update.log"
