@@ -30,17 +30,28 @@ in
       programsCfg = config.programs;
       cfg = programsCfg.rebuild;
 
+      inherit (pkgs)
+        nix
+        util-linux
+        colorized-logs
+        gawk
+        diffutils
+        gnugrep
+        gnused
+        coreutils
+        writeShellApplication
+        ;
       commonRuntimeInputs = [
         programsCfg.git.package
         programsCfg.nh.package
-        pkgs.nix
-        pkgs.util-linux
-        pkgs.colorized-logs
-        pkgs.gawk
-        pkgs.diffutils
-        pkgs.gnugrep
-        pkgs.gnused
-        pkgs.coreutils
+        nix
+        util-linux
+        colorized-logs
+        gawk
+        diffutils
+        gnugrep
+        gnused
+        coreutils
       ];
       flake = "${programsCfg.nh.flake}";
       rebuildNotesRef = "refs/notes/rebuild/${cfg.hostName}";
@@ -252,7 +263,7 @@ in
     in
     mkIf cfg.enable {
       home.packages = [
-        (pkgs.writeShellApplication {
+        (writeShellApplication {
           name = "rebuild";
           runtimeInputs = commonRuntimeInputs;
           text = ''
@@ -377,7 +388,7 @@ in
           '';
         })
 
-        (pkgs.writeShellApplication {
+        (writeShellApplication {
           name = "update";
           runtimeInputs = commonRuntimeInputs;
           text = ''
