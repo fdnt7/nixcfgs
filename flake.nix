@@ -172,7 +172,8 @@
                 persist = "/${persistVol}";
                 sopsAgeKeyFile = "${persist}/var/lib/sops-nix/key.txt";
                 githubUname = "fdnt7";
-                gitSigningKey = "~/.ssh/id_ed25519_github_${githubUname}_signing";
+                homeDirectory = "/home/${uname}";
+                gitSigningKey = "${homeDirectory}/.ssh/id_ed25519_github_${githubUname}_signing";
               };
             };
 
