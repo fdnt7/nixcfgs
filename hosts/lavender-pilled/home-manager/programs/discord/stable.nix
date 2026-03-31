@@ -9,7 +9,7 @@
         anonymiseFileNames = {
           enable = true;
           anonymiseByDefault = true;
-          #randomisedLength = 7;
+          randomisedLength = 128;
         };
         #automodContext.enable = true; # native to discord now
         callTimer.enable = true;
