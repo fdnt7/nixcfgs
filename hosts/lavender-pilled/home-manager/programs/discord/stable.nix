@@ -2,8 +2,35 @@
 {
   imports = [ inputs.nixcord.homeModules.nixcord ];
 
-  programs.nixcord = {
+  programs.discord = {
     enable = true;
+    settings = {
+      BACKGROUND_COLOR = "#121214";
+      DANGEROUS_ENABLE_DEVTOOLS_ONLY_ENABLE_IF_YOU_KNOW_WHAT_YOURE_DOING = true;
+      IS_MAXIMIZED = true;
+      IS_MINIMIZED = false;
+      # SKIP_HOST_UPDATE = true; # `true` by default by home-manager
+      WINDOW_BOUNDS = {
+        height = 500;
+        width = 940;
+        x = 736;
+        y = 0;
+      };
+      asyncVideoInputDeviceInit = false;
+      chromiumSwitches = { };
+      enableHardwareAcceleration = true;
+      enableLibOpenH264Electron = false;
+      offloadAdmControls = true;
+      openH264Enabled = true;
+      openasar = {
+        setup = true;
+      };
+      trayBalloonShown = true;
+    };
+  };
+
+  programs.nixcord = {
+    enable = false;
     config = {
       plugins = {
         anonymiseFileNames = {
