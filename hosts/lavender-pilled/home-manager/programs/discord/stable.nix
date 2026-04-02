@@ -3,7 +3,7 @@
   imports = [ inputs.nixcord.homeModules.nixcord ];
 
   programs.discord = {
-    enable = true;
+    enable = false;
     settings = {
       BACKGROUND_COLOR = "#121214";
       DANGEROUS_ENABLE_DEVTOOLS_ONLY_ENABLE_IF_YOU_KNOW_WHAT_YOURE_DOING = true;
@@ -30,7 +30,7 @@
   };
 
   programs.nixcord = {
-    enable = false;
+    enable = true;
     config = {
       plugins = {
         anonymiseFileNames = {
