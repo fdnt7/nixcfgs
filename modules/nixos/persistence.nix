@@ -99,7 +99,10 @@ in
     })
 
     (mkIf cfg.libvirt {
-      environment.persistence.${cfg.root}.directories = [ "/var/lib/libvirt" ];
+      environment.persistence.${cfg.root} = {
+        directories = [ "/var/lib/libvirt" ];
+        files = [ "/var/lib/systemd/credential.secret" ];
+      };
     })
 
     (mkIf cfg.flake.enable {
