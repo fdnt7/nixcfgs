@@ -6,6 +6,7 @@
     networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
     hostName = nixcfgs.hostName; # Define your hostname.
+    firewall.trustedInterfaces = [ "virbr0" ];
   };
 
   # Configure network proxy if necessary
