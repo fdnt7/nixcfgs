@@ -62,6 +62,12 @@ in
   };
 
   config = mkMerge [
+    {
+      warnings = lib.optional (cfg.backlight && cfg.systemd) ''
+        persist.backlight is redundant when persist.systemd is enabled.
+      '';
+    }
+
     (mkIf cfg.networkmanager {
       environment.persistence.${cfg.root}.directories = [
         "/etc/NetworkManager/system-connections"
