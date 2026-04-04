@@ -1,3 +1,3 @@
 {
-  persist.backlight = true;
+  persist.systemd = true;
 }
