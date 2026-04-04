@@ -30,6 +30,8 @@ in
 
     backlight = mkEnableOption "Systemd Backlight persistence";
 
+    systemd = mkEnableOption "Systemd state persistence";
+
     nixos = mkEnableOption "NixOS libraries persistence";
 
     sudo = mkEnableOption "Sudo database persistence";
@@ -74,6 +76,10 @@ in
       environment.persistence.${cfg.root}.directories = [ "/var/lib/systemd/backlight" ];
     })
 
+    (mkIf cfg.systemd {
+      environment.persistence.${cfg.root}.directories = [ "/var/lib/systemd" ];
+    })
+
     (mkIf cfg.sudo {
       environment.persistence.${cfg.root}.directories = [ "/var/db/sudo" ];
     })
@@ -99,10 +105,7 @@ in
     })
 
     (mkIf cfg.libvirt {
-      environment.persistence.${cfg.root} = {
-        directories = [ "/var/lib/libvirt" ];
-        files = [ "/var/lib/systemd/credential.secret" ];
-      };
+      environment.persistence.${cfg.root}.directories = [ "/var/lib/libvirt" ];
     })
 
     (mkIf cfg.flake.enable {
