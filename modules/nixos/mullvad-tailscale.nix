@@ -5,7 +5,12 @@
   ...
 }:
 let
-  inherit (lib) mkEnableOption mdDoc mkIf;
+  inherit (lib)
+    mkEnableOption
+    mdDoc
+    mkIf
+    optionalString
+    ;
   # A shorthand for our module's configuration options.
   cfg = config.services.mullvad-tailscale;
 
@@ -20,6 +25,10 @@ let
         type route hook output priority 0; policy accept;
         ip daddr 100.64.0.0/10 ct mark set 0x00000f41 meta mark set 0x6d6f6c65;
         ip6 daddr fd7a:115c:a1e0::/48 ct mark set 0x00000f41 meta mark set 0x6d6f6c65;
+        ${optionalString config.virtualisation.libvirtd.enable ''
+          # Exclude host<->guest traffic on libvirt's default bridge from Mullvad.
+          oifname "virbr0" ct mark set 0x00000f41 meta mark set 0x6d6f6c65;
+        ''}
       }
 
       # FIX for incoming connections:
@@ -31,6 +40,10 @@ let
         # The 'mangle' priority (-150) is standard for this kind of packet modification.
         type filter hook prerouting priority mangle; policy accept;
         iifname "tailscale0" ct mark set 0x00000f41 meta mark set 0x6d6f6c65;
+        ${optionalString config.virtualisation.libvirtd.enable ''
+          # Exclude libvirt guest traffic before Mullvad can drop DHCP or forwarded packets.
+          iifname "virbr0" ct mark set 0x00000f41 meta mark set 0x6d6f6c65;
+        ''}
       }
 
       # Exclude Tailscale's MagicDNS resolver (100.100.100.100) from Mullvad.
