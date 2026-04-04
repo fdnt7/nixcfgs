@@ -63,6 +63,12 @@ in
 
   config = mkMerge [
     {
+      assertions = [
+        {
+          assertion = !cfg.libvirt || cfg.systemd;
+          message = "persist.libvirt requires persist.systemd to be enabled.";
+        }
+      ];
       warnings = lib.optional (cfg.backlight && cfg.systemd) ''
         persist.backlight is redundant when persist.systemd is enabled.
       '';
