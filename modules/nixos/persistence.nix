@@ -55,6 +55,8 @@ in
     mullvad-vpn = mkEnableOption "Mullvad VPN states persistence";
 
     power-profiles-daemon = mkEnableOption "Power Profiles Daemon persistence";
+
+    libvirt = mkEnableOption "libvirt state persistence";
   };
 
   config = mkMerge [
@@ -94,6 +96,10 @@ in
 
     (mkIf cfg.power-profiles-daemon {
       environment.persistence.${cfg.root}.directories = [ "/var/lib/power-profiles-daemon" ];
+    })
+
+    (mkIf cfg.libvirt {
+      environment.persistence.${cfg.root}.directories = [ "/var/lib/libvirt" ];
     })
 
     (mkIf cfg.flake.enable {
