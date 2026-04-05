@@ -6,5 +6,6 @@
   impermanence = import ./impermanence.nix;
   persistence = import ./persistence.nix;
   mullvad-tailscale = import ./mullvad-tailscale.nix;
+  mullvad-tailscale-split-tunnel = import ./mullvad-tailscale-split-tunnel.nix;
   secrets = import ./secrets.nix;
 }
