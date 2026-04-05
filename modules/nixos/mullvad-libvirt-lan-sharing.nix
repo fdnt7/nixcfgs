@@ -8,27 +8,35 @@ let
   inherit (lib)
     mdDoc
     mkEnableOption
+    getExe
     mkIf
     ;
   cfg = config.services.mullvad-libvirt-lan-sharing;
   mullvadCfg = config.services.mullvad-vpn;
 
-  enableLanSharing = pkgs.writeShellScript "mullvad-libvirt-lan-sharing" ''
-    set -eu
+  enableLanSharing = pkgs.writeShellApplication {
+    name = "mullvad-libvirt-lan-sharing";
+    runtimeInputs = [
+      mullvadCfg.package
+      pkgs.coreutils
+    ];
+    text = ''
+      set -euo pipefail
 
-    i=0
-    while [ "$i" -lt 30 ]; do
-      if ${mullvadCfg.package}/bin/mullvad lan get >/dev/null 2>&1; then
-        exec ${mullvadCfg.package}/bin/mullvad lan set allow
-      fi
+      i=0
+      while [ "$i" -lt 30 ]; do
+        if mullvad lan get >/dev/null 2>&1; then
+          exec mullvad lan set allow
+        fi
 
-      i=$((i + 1))
-      ${pkgs.coreutils}/bin/sleep 1
-    done
+        i=$((i + 1))
+        sleep 1
+      done
 
-    echo "mullvad daemon did not become ready in time" >&2
-    exit 1
-  '';
+      echo "mullvad daemon did not become ready in time" >&2
+      exit 1
+    '';
+  };
 in
 {
   options.services.mullvad-libvirt-lan-sharing.enable = mkEnableOption (
@@ -47,6 +55,8 @@ in
       }
     ];
 
-    systemd.services.mullvad-daemon.serviceConfig.ExecStartPost = lib.mkAfter [ enableLanSharing ];
+    systemd.services.mullvad-daemon.serviceConfig.ExecStartPost = lib.mkAfter [
+      (getExe enableLanSharing)
+    ];
   };
 }
