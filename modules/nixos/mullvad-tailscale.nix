@@ -55,7 +55,7 @@ let
     }
   '';
 
-  # The nftables command to clean up the rules when tailscaled stops.
+  # The nftables command to clean up the rules when the helper service stops.
   mullvad-ts-cleanup-rules = pkgs.writeText "mullvad-ts-cleanup.rules" ''
     #!/usr/sbin/nft -f
 
@@ -96,15 +96,20 @@ in
         "services.mullvad-tailscale is most useful when services.mullvad-vpn is enabled, since the rules mark connections for Mullvad's policy routing."
       );
 
-    # This is the declarative way to create a systemd "drop-in" file.
-    # It modifies the tailscaled service unit.
-    systemd.services.tailscaled.serviceConfig = {
-      # ExecStartPre runs this command before starting the main tailscaled process.
-      # We use the full path to the nft binary from the nftables package and the path to our rules file in the Nix store.
-      ExecStartPre = "${pkgs.nftables}/bin/nft -f ${mullvad-ts-rules}";
+    # Mullvad resets its firewall state during daemon startup, so loading the
+    # exemption rules from tailscaled is too early.
+    systemd.services.mullvad-tailscale-rules = {
+      description = "Apply nftables rules that exempt Tailscale and libvirt from Mullvad";
+      wantedBy = lib.optional config.services.mullvad-vpn.enable "mullvad-daemon.service";
+      after = lib.optional config.services.mullvad-vpn.enable "mullvad-daemon.service";
+      partOf = lib.optional config.services.mullvad-vpn.enable "mullvad-daemon.service";
 
-      # ExecStopPost runs this command after the main tailscaled process has stopped.
-      ExecStopPost = "${pkgs.nftables}/bin/nft -f ${mullvad-ts-cleanup-rules}";
+      serviceConfig = {
+        Type = "oneshot";
+        RemainAfterExit = true;
+        ExecStart = "${pkgs.nftables}/bin/nft -f ${mullvad-ts-rules}";
+        ExecStop = "-${pkgs.nftables}/bin/nft -f ${mullvad-ts-cleanup-rules}";
+      };
     };
   };
 }
