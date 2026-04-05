@@ -67,44 +67,25 @@ let
     fi
   '';
 
-  applyPolicyRule = pkgs.writeShellScript "mullvad-ts-apply-policy-rule" ''
+  mullvadStateGuard = pkgs.writeShellScript "mullvad-ts-state-guard" ''
     set -eu
 
+    mullvad_bin=${config.services.mullvad-vpn.package}/bin/mullvad
     ip_bin=${pkgs.iproute2}/bin/ip
-    grep_bin=${pkgs.gnugrep}/bin/grep
-    route_table=${toString tailscaleRouteTable}
-
-    while "$ip_bin" -4 rule show | "$grep_bin" -Fq "to 100.64.0.0/10 lookup $route_table"; do
-      "$ip_bin" -4 rule del to 100.64.0.0/10 lookup "$route_table"
-    done
-
-    exec "$ip_bin" -4 rule add pref 5205 to 100.64.0.0/10 lookup "$route_table"
-  '';
-
-  cleanupPolicyRule = pkgs.writeShellScript "mullvad-ts-cleanup-policy-rule" ''
-    set -eu
-
-    ip_bin=${pkgs.iproute2}/bin/ip
-    grep_bin=${pkgs.gnugrep}/bin/grep
-    route_table=${toString tailscaleRouteTable}
-
-    while "$ip_bin" -4 rule show | "$grep_bin" -Fq "to 100.64.0.0/10 lookup $route_table"; do
-      "$ip_bin" -4 rule del to 100.64.0.0/10 lookup "$route_table"
-    done
-  '';
-
-  applyMullvadOutputRule = pkgs.writeShellScript "mullvad-ts-apply-mullvad-output-rule" ''
-    set -eu
-
     nft_bin=${pkgs.nftables}/bin/nft
     grep_bin=${pkgs.gnugrep}/bin/grep
     sed_bin=${pkgs.gnused}/bin/sed
     head_bin=${pkgs.coreutils}/bin/head
     sleep_bin=${pkgs.coreutils}/bin/sleep
+    sort_bin=${pkgs.coreutils}/bin/sort
+    route_table=${toString tailscaleRouteTable}
     rule_comment="mullvad-ts-tailscale-ipv4"
 
-    i=0
-    while [ "$i" -lt 30 ]; do
+    cleanup_state() {
+      while "$ip_bin" -4 rule show | "$grep_bin" -Fq "to 100.64.0.0/10 lookup $route_table"; do
+        "$ip_bin" -4 rule del to 100.64.0.0/10 lookup "$route_table"
+      done
+
       if "$nft_bin" list chain inet mullvad output >/dev/null 2>&1; then
         while :; do
           handle=$(
@@ -120,44 +101,47 @@ let
 
           "$nft_bin" delete rule inet mullvad output handle "$handle"
         done
-
-        exec "$nft_bin" insert rule inet mullvad output position 0 ip daddr 100.64.0.0/10 accept comment "$rule_comment"
       fi
+    }
 
-      i=$((i + 1))
-      "$sleep_bin" 1
-    done
-
-    echo "warning: Mullvad output chain did not appear; skipping Tailscale IPv4 output allow rule" >&2
-    exit 0
-  '';
-
-  cleanupMullvadOutputRule = pkgs.writeShellScript "mullvad-ts-cleanup-mullvad-output-rule" ''
-    set -eu
-
-    nft_bin=${pkgs.nftables}/bin/nft
-    grep_bin=${pkgs.gnugrep}/bin/grep
-    sed_bin=${pkgs.gnused}/bin/sed
-    head_bin=${pkgs.coreutils}/bin/head
-    rule_comment="mullvad-ts-tailscale-ipv4"
-
-    if ! "$nft_bin" list chain inet mullvad output >/dev/null 2>&1; then
-      exit 0
-    fi
+    trap cleanup_state EXIT INT TERM
 
     while :; do
-      handle=$(
-        "$nft_bin" -a list chain inet mullvad output \
-          | "$grep_bin" -F "comment \"$rule_comment\"" \
-          | "$sed_bin" -n '1s/.*# handle \([0-9][0-9]*\)$/\1/p' \
-          | "$head_bin" -n 1
-      )
+      if "$mullvad_bin" status 2>/dev/null | "$grep_bin" -Fxq "Connected"; then
+        desired_pref=$(
+          "$ip_bin" rule show \
+            | "$grep_bin" -E 'lookup main suppress_prefixlength 0|fwmark 0x6d6f6c65 lookup 1836018789' \
+            | "$sed_bin" -n 's/:.*//p' \
+            | "$sort_bin" -n \
+            | "$head_bin" -n 1
+        )
 
-      if [ -z "$handle" ]; then
-        break
+        if [ -n "$desired_pref" ] && [ "$desired_pref" -gt 0 ]; then
+          desired_pref=$((desired_pref - 1))
+
+          current_pref=$(
+            "$ip_bin" -4 rule show \
+              | "$grep_bin" -F "to 100.64.0.0/10 lookup $route_table" \
+              | "$sed_bin" -n '1s/:.*//p'
+          )
+
+          if [ "$current_pref" != "$desired_pref" ]; then
+            while "$ip_bin" -4 rule show | "$grep_bin" -Fq "to 100.64.0.0/10 lookup $route_table"; do
+              "$ip_bin" -4 rule del to 100.64.0.0/10 lookup "$route_table"
+            done
+
+            "$ip_bin" -4 rule add pref "$desired_pref" to 100.64.0.0/10 lookup "$route_table"
+          fi
+        fi
+
+        if "$nft_bin" list chain inet mullvad output >/dev/null 2>&1; then
+          if ! "$nft_bin" -a list chain inet mullvad output | "$grep_bin" -Fq "comment \"$rule_comment\""; then
+            "$nft_bin" insert rule inet mullvad output position 0 ip daddr 100.64.0.0/10 accept comment "$rule_comment"
+          fi
+        fi
       fi
 
-      "$nft_bin" delete rule inet mullvad output handle "$handle"
+      "$sleep_bin" 2
     done
   '';
 in
@@ -197,15 +181,27 @@ in
     })
 
     (mkIf (cfg.enable && config.services.mullvad-vpn.enable) {
-      systemd.services.mullvad-daemon.serviceConfig = {
-        ExecStartPost = lib.mkAfter [
-          applyPolicyRule
-          applyMullvadOutputRule
+      systemd.services.mullvad-tailscale-split-tunnel = {
+        description = "Keep Tailscale split-tunnel rules aligned with Mullvad";
+        wantedBy = [ "multi-user.target" ];
+        wants = [
+          "mullvad-daemon.service"
+          "tailscaled.service"
         ];
-        ExecStopPost = lib.mkAfter [
-          cleanupPolicyRule
-          cleanupMullvadOutputRule
+        after = [
+          "mullvad-daemon.service"
+          "tailscaled.service"
         ];
+        partOf = [
+          "mullvad-daemon.service"
+          "tailscaled.service"
+        ];
+        serviceConfig = {
+          Type = "simple";
+          ExecStart = mullvadStateGuard;
+          Restart = "always";
+          RestartSec = 2;
+        };
       };
     })
   ];
