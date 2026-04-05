@@ -1,6 +1,6 @@
 { inputs, pkgs, ... }:
 {
-  imports = [ inputs.self.nixosModules.mullvad-tailscale ];
+  imports = [ inputs.self.nixosModules.mullvad-tailscale-split-tunnel ];
 
   # required
   networking.nftables.enable = true;
@@ -15,7 +15,7 @@
     resolved.enable = true;
   };
 
-  services.mullvad-tailscale.enable = true;
+  services.mullvad-tailscale-split-tunnel.enable = true;
 
   persist = {
     tailscale = true;
