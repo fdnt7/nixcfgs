@@ -62,6 +62,31 @@ let
     # This command deletes the entire table created by the rules above.
     delete table inet mullvad-ts
   '';
+
+  apply-mullvad-ts-rules = pkgs.writeShellScript "apply-mullvad-ts-rules" ''
+    set -eu
+
+    ${pkgs.nftables}/bin/nft -f ${mullvad-ts-cleanup-rules} >/dev/null 2>&1 || true
+    ${pkgs.nftables}/bin/nft -f ${mullvad-ts-rules}
+  '';
+
+  watch-mullvad-ts-rules = pkgs.writeShellScript "watch-mullvad-ts-rules" ''
+    set -eu
+
+    apply_rules() {
+      ${apply-mullvad-ts-rules}
+    }
+
+    apply_rules
+
+    while true; do
+      ${config.services.mullvad-vpn.package}/bin/mullvad status listen | while IFS= read -r _; do
+        apply_rules
+      done
+
+      sleep 1
+    done
+  '';
 in
 {
   # --- Module Options ---
@@ -96,19 +121,39 @@ in
         "services.mullvad-tailscale is most useful when services.mullvad-vpn is enabled, since the rules mark connections for Mullvad's policy routing."
       );
 
-    # Mullvad resets its firewall state during daemon startup, so loading the
-    # exemption rules from tailscaled is too early.
-    systemd.services.mullvad-tailscale-rules = {
+    # Mullvad can re-apply its firewall policy after startup, so a one-shot
+    # install is not sufficient. We re-apply the exemption rules whenever the
+    # tunnel state changes and when Mullvad settings are rewritten.
+    systemd.services.mullvad-tailscale-apply = mkIf config.services.mullvad-vpn.enable {
       description = "Apply nftables rules that exempt Tailscale and libvirt from Mullvad";
-      wantedBy = lib.optional config.services.mullvad-vpn.enable "mullvad-daemon.service";
-      after = lib.optional config.services.mullvad-vpn.enable "mullvad-daemon.service";
-      partOf = lib.optional config.services.mullvad-vpn.enable "mullvad-daemon.service";
-
       serviceConfig = {
         Type = "oneshot";
-        RemainAfterExit = true;
-        ExecStart = "${pkgs.nftables}/bin/nft -f ${mullvad-ts-rules}";
-        ExecStop = "-${pkgs.nftables}/bin/nft -f ${mullvad-ts-cleanup-rules}";
+        ExecStart = apply-mullvad-ts-rules;
+      };
+    };
+
+    systemd.services.mullvad-tailscale-rules = mkIf config.services.mullvad-vpn.enable {
+      description = "Watch Mullvad state and re-apply nftables exemptions";
+      wantedBy = [ "multi-user.target" ];
+      requires = [ "mullvad-daemon.service" ];
+      after = [ "mullvad-daemon.service" ];
+      partOf = [ "mullvad-daemon.service" ];
+
+      serviceConfig = {
+        Type = "simple";
+        Restart = "always";
+        RestartSec = 1;
+        ExecStart = watch-mullvad-ts-rules;
+        ExecStopPost = "-${pkgs.nftables}/bin/nft -f ${mullvad-ts-cleanup-rules}";
+      };
+    };
+
+    systemd.paths.mullvad-tailscale-settings = mkIf config.services.mullvad-vpn.enable {
+      description = "Re-apply Mullvad/Tailscale nftables exemptions when settings change";
+      wantedBy = [ "multi-user.target" ];
+      pathConfig = {
+        PathChanged = "/etc/mullvad-vpn/settings.json";
+        Unit = "mullvad-tailscale-apply.service";
       };
     };
   };
