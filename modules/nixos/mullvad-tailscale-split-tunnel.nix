@@ -11,6 +11,7 @@ let
     mkIf
     ;
   cfg = config.services.mullvad-tailscale-split-tunnel;
+  tailscaleRouteTable = 52;
 
   mullvad-ts-rules = pkgs.writeText "mullvad-ts.rules" ''
     table inet mullvad-ts {
@@ -40,6 +41,60 @@ let
   mullvad-ts-cleanup-rules = pkgs.writeText "mullvad-ts-cleanup.rules" ''
     table inet mullvad-ts
     delete table inet mullvad-ts
+  '';
+
+  applyRules = pkgs.writeShellScript "mullvad-ts-apply" ''
+    set -eu
+
+    nft_bin=${pkgs.nftables}/bin/nft
+    ip_bin=${pkgs.iproute2}/bin/ip
+    grep_bin=${pkgs.gnugrep}/bin/grep
+    sed_bin=${pkgs.gnused}/bin/sed
+    cleanup_rules=${mullvad-ts-cleanup-rules}
+    rules=${mullvad-ts-rules}
+    route_table=${toString tailscaleRouteTable}
+    mullvad_rule_pref=$(
+      "$ip_bin" rule show \
+        | "$grep_bin" -F "fwmark 0x6d6f6c65 lookup 1836018789" \
+        | "$sed_bin" -n '1s/:.*//p'
+    )
+
+    if "$nft_bin" list table inet mullvad-ts >/dev/null 2>&1; then
+      "$nft_bin" -f "$cleanup_rules"
+    fi
+
+    "$nft_bin" -f "$rules"
+
+    if [ -z "$mullvad_rule_pref" ]; then
+      echo "failed to locate Mullvad policy routing rule" >&2
+      exit 1
+    fi
+
+    rule_pref=$((mullvad_rule_pref - 1))
+
+    while "$ip_bin" -4 rule show | "$grep_bin" -Fq "to 100.64.0.0/10 lookup $route_table"; do
+      "$ip_bin" -4 rule del to 100.64.0.0/10 lookup "$route_table"
+    done
+
+    "$ip_bin" -4 rule add pref "$rule_pref" to 100.64.0.0/10 lookup "$route_table"
+  '';
+
+  cleanupRules = pkgs.writeShellScript "mullvad-ts-cleanup" ''
+    set -eu
+
+    nft_bin=${pkgs.nftables}/bin/nft
+    ip_bin=${pkgs.iproute2}/bin/ip
+    grep_bin=${pkgs.gnugrep}/bin/grep
+    cleanup_rules=${mullvad-ts-cleanup-rules}
+    route_table=${toString tailscaleRouteTable}
+
+    if "$nft_bin" list table inet mullvad-ts >/dev/null 2>&1; then
+      "$nft_bin" -f "$cleanup_rules"
+    fi
+
+    while "$ip_bin" -4 rule show | "$grep_bin" -Fq "to 100.64.0.0/10 lookup $route_table"; do
+      "$ip_bin" -4 rule del to 100.64.0.0/10 lookup "$route_table"
+    done
   '';
 in
 {
@@ -71,8 +126,8 @@ in
       );
 
     systemd.services.tailscaled.serviceConfig = {
-      ExecStartPre = [ "${pkgs.nftables}/bin/nft -f ${mullvad-ts-rules}" ];
-      ExecStopPost = [ "${pkgs.nftables}/bin/nft -f ${mullvad-ts-cleanup-rules}" ];
+      ExecStartPre = [ applyRules ];
+      ExecStopPost = [ cleanupRules ];
     };
   };
 }
