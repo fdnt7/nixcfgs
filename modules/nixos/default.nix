@@ -5,7 +5,7 @@
   # my-module = import ./my-module.nix;
   impermanence = import ./impermanence.nix;
   mullvad-libvirt-lan-sharing = import ./mullvad-libvirt-lan-sharing.nix;
-  persistence = import ./persistence.nix;
   mullvad-tailscale-split-tunnel = import ./mullvad-tailscale-split-tunnel.nix;
+  persistence = import ./persistence.nix;
   secrets = import ./secrets.nix;
 }
