@@ -3,6 +3,6 @@
     ./git.nix
     ./fish.nix
     ./neovim.nix
-    ./virt-manager.nix
+    ./virt-manager
   ];
 }
