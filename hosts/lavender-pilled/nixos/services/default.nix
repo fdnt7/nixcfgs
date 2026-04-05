@@ -1,8 +1,8 @@
 {
   imports = [
-    ./mullvad-libvirt-lan-sharing.nix
-    ./mullvad-tailscale-split-tunnel.nix
+    ./mullvad
     ./netbird.nix
     ./solaar.nix
+    ./tailscale.nix
   ];
 }
