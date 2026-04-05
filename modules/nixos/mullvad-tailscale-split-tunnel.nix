@@ -9,6 +9,7 @@ let
     mkEnableOption
     mdDoc
     mkIf
+    mkMerge
     ;
   cfg = config.services.mullvad-tailscale-split-tunnel;
   tailscaleRouteTable = 52;
@@ -43,54 +44,70 @@ let
     delete table inet mullvad-ts
   '';
 
-  applyRules = pkgs.writeShellScript "mullvad-ts-apply" ''
+  applyNftRules = pkgs.writeShellScript "mullvad-ts-apply-nft" ''
     set -eu
 
     nft_bin=${pkgs.nftables}/bin/nft
+    cleanup_rules=${mullvad-ts-cleanup-rules}
+
+    if "$nft_bin" list table inet mullvad-ts >/dev/null 2>&1; then
+      "$nft_bin" -f "$cleanup_rules"
+    fi
+
+    exec "$nft_bin" -f ${mullvad-ts-rules}
+  '';
+
+  cleanupNftRules = pkgs.writeShellScript "mullvad-ts-cleanup-nft" ''
+    set -eu
+
+    nft_bin=${pkgs.nftables}/bin/nft
+
+    if "$nft_bin" list table inet mullvad-ts >/dev/null 2>&1; then
+      exec "$nft_bin" -f ${mullvad-ts-cleanup-rules}
+    fi
+  '';
+
+  applyPolicyRule = pkgs.writeShellScript "mullvad-ts-apply-policy-rule" ''
+    set -eu
+
     ip_bin=${pkgs.iproute2}/bin/ip
     grep_bin=${pkgs.gnugrep}/bin/grep
     sed_bin=${pkgs.gnused}/bin/sed
-    cleanup_rules=${mullvad-ts-cleanup-rules}
-    rules=${mullvad-ts-rules}
+    sleep_bin=${pkgs.coreutils}/bin/sleep
     route_table=${toString tailscaleRouteTable}
-    mullvad_rule_pref=$(
-      "$ip_bin" rule show \
-        | "$grep_bin" -F "fwmark 0x6d6f6c65 lookup 1836018789" \
-        | "$sed_bin" -n '1s/:.*//p'
-    )
 
-    if "$nft_bin" list table inet mullvad-ts >/dev/null 2>&1; then
-      "$nft_bin" -f "$cleanup_rules"
-    fi
+    i=0
+    while [ "$i" -lt 30 ]; do
+      mullvad_rule_pref=$(
+        "$ip_bin" rule show \
+          | "$grep_bin" -F "fwmark 0x6d6f6c65 lookup 1836018789" \
+          | "$sed_bin" -n '1s/:.*//p'
+      )
 
-    "$nft_bin" -f "$rules"
+      if [ -n "$mullvad_rule_pref" ]; then
+        rule_pref=$((mullvad_rule_pref - 1))
 
-    if [ -z "$mullvad_rule_pref" ]; then
-      echo "failed to locate Mullvad policy routing rule" >&2
-      exit 1
-    fi
+        while "$ip_bin" -4 rule show | "$grep_bin" -Fq "to 100.64.0.0/10 lookup $route_table"; do
+          "$ip_bin" -4 rule del to 100.64.0.0/10 lookup "$route_table"
+        done
 
-    rule_pref=$((mullvad_rule_pref - 1))
+        exec "$ip_bin" -4 rule add pref "$rule_pref" to 100.64.0.0/10 lookup "$route_table"
+      fi
 
-    while "$ip_bin" -4 rule show | "$grep_bin" -Fq "to 100.64.0.0/10 lookup $route_table"; do
-      "$ip_bin" -4 rule del to 100.64.0.0/10 lookup "$route_table"
+      i=$((i + 1))
+      "$sleep_bin" 1
     done
 
-    "$ip_bin" -4 rule add pref "$rule_pref" to 100.64.0.0/10 lookup "$route_table"
+    echo "warning: Mullvad policy routing rule did not appear; skipping Tailscale IPv4 policy rule" >&2
+    exit 0
   '';
 
-  cleanupRules = pkgs.writeShellScript "mullvad-ts-cleanup" ''
+  cleanupPolicyRule = pkgs.writeShellScript "mullvad-ts-cleanup-policy-rule" ''
     set -eu
 
-    nft_bin=${pkgs.nftables}/bin/nft
     ip_bin=${pkgs.iproute2}/bin/ip
     grep_bin=${pkgs.gnugrep}/bin/grep
-    cleanup_rules=${mullvad-ts-cleanup-rules}
     route_table=${toString tailscaleRouteTable}
-
-    if "$nft_bin" list table inet mullvad-ts >/dev/null 2>&1; then
-      "$nft_bin" -f "$cleanup_rules"
-    fi
 
     while "$ip_bin" -4 rule show | "$grep_bin" -Fq "to 100.64.0.0/10 lookup $route_table"; do
       "$ip_bin" -4 rule del to 100.64.0.0/10 lookup "$route_table"
@@ -104,30 +121,39 @@ in
     );
   };
 
-  config = mkIf cfg.enable {
-    assertions = [
-      {
-        assertion = config.services.tailscale.enable;
-        message = "services.mullvad-tailscale-split-tunnel requires services.tailscale to be enabled.";
-      }
-      {
-        assertion = config.networking.nftables.enable;
-        message = "services.mullvad-tailscale-split-tunnel requires networking.nftables to be enabled.";
-      }
-    ];
+  config = mkMerge [
+    (mkIf cfg.enable {
+      assertions = [
+        {
+          assertion = config.services.tailscale.enable;
+          message = "services.mullvad-tailscale-split-tunnel requires services.tailscale to be enabled.";
+        }
+        {
+          assertion = config.networking.nftables.enable;
+          message = "services.mullvad-tailscale-split-tunnel requires networking.nftables to be enabled.";
+        }
+      ];
 
-    # --- Warnings: recommended integrations ---
-    warnings =
-      (lib.optional (!config.services.resolved.enable)
-        "services.mullvad-tailscale-split-tunnel works best with systemd-resolved enabled, as Mullvad's DNS integration expects it."
-      )
-      ++ (lib.optional (!config.services.mullvad-vpn.enable)
-        "services.mullvad-tailscale-split-tunnel is most useful when services.mullvad-vpn is enabled, since the rules mark connections for Mullvad's policy routing."
-      );
+      # --- Warnings: recommended integrations ---
+      warnings =
+        (lib.optional (!config.services.resolved.enable)
+          "services.mullvad-tailscale-split-tunnel works best with systemd-resolved enabled, as Mullvad's DNS integration expects it."
+        )
+        ++ (lib.optional (!config.services.mullvad-vpn.enable)
+          "services.mullvad-tailscale-split-tunnel is most useful when services.mullvad-vpn is enabled, since the rules mark connections for Mullvad's policy routing."
+        );
 
-    systemd.services.tailscaled.serviceConfig = {
-      ExecStartPre = [ applyRules ];
-      ExecStopPost = [ cleanupRules ];
-    };
-  };
+      systemd.services.tailscaled.serviceConfig = {
+        ExecStartPre = [ applyNftRules ];
+        ExecStopPost = [ cleanupNftRules ];
+      };
+    })
+
+    (mkIf (cfg.enable && config.services.mullvad-vpn.enable) {
+      systemd.services.mullvad-daemon.serviceConfig = {
+        ExecStartPost = lib.mkAfter [ applyPolicyRule ];
+        ExecStopPost = lib.mkAfter [ cleanupPolicyRule ];
+      };
+    })
+  ];
 }
