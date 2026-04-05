@@ -72,34 +72,13 @@ let
 
     ip_bin=${pkgs.iproute2}/bin/ip
     grep_bin=${pkgs.gnugrep}/bin/grep
-    sed_bin=${pkgs.gnused}/bin/sed
-    sleep_bin=${pkgs.coreutils}/bin/sleep
     route_table=${toString tailscaleRouteTable}
 
-    i=0
-    while [ "$i" -lt 30 ]; do
-      mullvad_rule_pref=$(
-        "$ip_bin" rule show \
-          | "$grep_bin" -F "fwmark 0x6d6f6c65 lookup 1836018789" \
-          | "$sed_bin" -n '1s/:.*//p'
-      )
-
-      if [ -n "$mullvad_rule_pref" ]; then
-        rule_pref=$((mullvad_rule_pref - 1))
-
-        while "$ip_bin" -4 rule show | "$grep_bin" -Fq "to 100.64.0.0/10 lookup $route_table"; do
-          "$ip_bin" -4 rule del to 100.64.0.0/10 lookup "$route_table"
-        done
-
-        exec "$ip_bin" -4 rule add pref "$rule_pref" to 100.64.0.0/10 lookup "$route_table"
-      fi
-
-      i=$((i + 1))
-      "$sleep_bin" 1
+    while "$ip_bin" -4 rule show | "$grep_bin" -Fq "to 100.64.0.0/10 lookup $route_table"; do
+      "$ip_bin" -4 rule del to 100.64.0.0/10 lookup "$route_table"
     done
 
-    echo "warning: Mullvad policy routing rule did not appear; skipping Tailscale IPv4 policy rule" >&2
-    exit 0
+    exec "$ip_bin" -4 rule add pref 5205 to 100.64.0.0/10 lookup "$route_table"
   '';
 
   cleanupPolicyRule = pkgs.writeShellScript "mullvad-ts-cleanup-policy-rule" ''
@@ -111,6 +90,74 @@ let
 
     while "$ip_bin" -4 rule show | "$grep_bin" -Fq "to 100.64.0.0/10 lookup $route_table"; do
       "$ip_bin" -4 rule del to 100.64.0.0/10 lookup "$route_table"
+    done
+  '';
+
+  applyMullvadOutputRule = pkgs.writeShellScript "mullvad-ts-apply-mullvad-output-rule" ''
+    set -eu
+
+    nft_bin=${pkgs.nftables}/bin/nft
+    grep_bin=${pkgs.gnugrep}/bin/grep
+    sed_bin=${pkgs.gnused}/bin/sed
+    head_bin=${pkgs.coreutils}/bin/head
+    sleep_bin=${pkgs.coreutils}/bin/sleep
+    rule_comment="mullvad-ts-tailscale-ipv4"
+
+    i=0
+    while [ "$i" -lt 30 ]; do
+      if "$nft_bin" list chain inet mullvad output >/dev/null 2>&1; then
+        while :; do
+          handle=$(
+            "$nft_bin" -a list chain inet mullvad output \
+              | "$grep_bin" -F "comment \"$rule_comment\"" \
+              | "$sed_bin" -n '1s/.*# handle \([0-9][0-9]*\)$/\1/p' \
+              | "$head_bin" -n 1
+          )
+
+          if [ -z "$handle" ]; then
+            break
+          fi
+
+          "$nft_bin" delete rule inet mullvad output handle "$handle"
+        done
+
+        exec "$nft_bin" insert rule inet mullvad output position 0 ip daddr 100.64.0.0/10 accept comment "$rule_comment"
+      fi
+
+      i=$((i + 1))
+      "$sleep_bin" 1
+    done
+
+    echo "warning: Mullvad output chain did not appear; skipping Tailscale IPv4 output allow rule" >&2
+    exit 0
+  '';
+
+  cleanupMullvadOutputRule = pkgs.writeShellScript "mullvad-ts-cleanup-mullvad-output-rule" ''
+    set -eu
+
+    nft_bin=${pkgs.nftables}/bin/nft
+    grep_bin=${pkgs.gnugrep}/bin/grep
+    sed_bin=${pkgs.gnused}/bin/sed
+    head_bin=${pkgs.coreutils}/bin/head
+    rule_comment="mullvad-ts-tailscale-ipv4"
+
+    if ! "$nft_bin" list chain inet mullvad output >/dev/null 2>&1; then
+      exit 0
+    fi
+
+    while :; do
+      handle=$(
+        "$nft_bin" -a list chain inet mullvad output \
+          | "$grep_bin" -F "comment \"$rule_comment\"" \
+          | "$sed_bin" -n '1s/.*# handle \([0-9][0-9]*\)$/\1/p' \
+          | "$head_bin" -n 1
+      )
+
+      if [ -z "$handle" ]; then
+        break
+      fi
+
+      "$nft_bin" delete rule inet mullvad output handle "$handle"
     done
   '';
 in
@@ -151,8 +198,14 @@ in
 
     (mkIf (cfg.enable && config.services.mullvad-vpn.enable) {
       systemd.services.mullvad-daemon.serviceConfig = {
-        ExecStartPost = lib.mkAfter [ applyPolicyRule ];
-        ExecStopPost = lib.mkAfter [ cleanupPolicyRule ];
+        ExecStartPost = lib.mkAfter [
+          applyPolicyRule
+          applyMullvadOutputRule
+        ];
+        ExecStopPost = lib.mkAfter [
+          cleanupPolicyRule
+          cleanupMullvadOutputRule
+        ];
       };
     })
   ];
