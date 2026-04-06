@@ -11,6 +11,8 @@
     # example = prev.example.overrideAttrs (oldAttrs: rec {
     # ...
     # });
+
+    claude-code = inputs.nixpkgs-14b7d17.legacyPackages.${final.stdenv.hostPlatform.system}.claude-code;
   };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will
