@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 {
-  home.packages = [ pkgs.cisco-packet-tracer_9 ];
+  home.packages = lib.mkIf false [ pkgs.cisco-packet-tracer_9 ];
 }
