@@ -51,6 +51,8 @@
     # nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
 
+    nixpkgs-14b7d17.url = "github:nixos/nixpkgs/14b7d17";
+
     nixvim = {
       url = "github:nix-community/nixvim";
       # If you are not running an unstable channel of nixpkgs, select the corresponding branch of nixvim.
