@@ -1,3 +1,3 @@
 {
-  programs.claude-code.enable = false;
+  programs.claude-code.enable = true;
 }
