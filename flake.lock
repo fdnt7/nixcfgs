@@ -936,22 +936,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-14b7d17": {
-      "locked": {
-        "lastModified": 1775037839,
-        "narHash": "sha256-J9BmBAK4Gig/yxSxRASZ37uEaUImwweht7VUrn0/XJc=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "14b7d17155501a32ee44fb8fcce5300d7348ab2e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "14b7d17",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs-lib": {
       "locked": {
         "lastModified": 1772328832,
@@ -1212,7 +1196,6 @@
         "nixcord": "nixcord",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_6",
-        "nixpkgs-14b7d17": "nixpkgs-14b7d17",
         "nixvim": "nixvim",
         "solaar": "solaar",
         "sops-nix": "sops-nix",

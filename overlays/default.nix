@@ -7,21 +7,11 @@
   # This one contains whatever you want to overlay
   # You can change versions, add patches, set compilation flags, anything really.
   # https://nixos.wiki/wiki/Overlays
-  modifications =
-    final: prev:
-    let
-      pinnedPkgs = import inputs.nixpkgs-14b7d17 {
-        system = final.stdenv.hostPlatform.system;
-        config = prev.config;
-      };
-    in
-    {
-      # example = prev.example.overrideAttrs (oldAttrs: rec {
-      # ...
-      # });
-
-      claude-code = pinnedPkgs.claude-code;
-    };
+  modifications = final: prev: {
+    # example = prev.example.overrideAttrs (oldAttrs: rec {
+    # ...
+    # });
+  };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will
   # be accessible through 'pkgs.unstable'
