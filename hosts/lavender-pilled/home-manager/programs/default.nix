@@ -33,6 +33,7 @@
     ./xournalpp.nix
     ./yazi
     ./zed-editor.nix
+    ./zen-browser.nix
     ./zoxide.nix
   ];
 
