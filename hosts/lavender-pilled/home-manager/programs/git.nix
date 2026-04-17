@@ -3,17 +3,17 @@
   programs = {
     git =
       let
-        inherit (nixcfgs) githubUname;
+        inherit (nixcfgs) githubUname gitSigningKey;
       in
       {
         enable = true;
         settings.user = {
-          name = nixcfgs.githubUname;
+          name = "Fridella Nythell";
           email = "43757589+${githubUname}@users.noreply.github.com";
         };
         signing = {
           format = "ssh";
-          key = nixcfgs.gitSigningKey;
+          key = gitSigningKey;
           signByDefault = true;
         };
       };
