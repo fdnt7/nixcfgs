@@ -3,20 +3,19 @@
   projectRootFile = "flake.nix";
 
   programs = {
-    biome = {
+    mdformat = {
       enable = true;
-      includes = [ "*.jsonc" ];
+      settings.wrap = 80;
     };
     nixfmt.enable = true;
-    prettier = {
+    oxfmt = {
       enable = true;
       includes = [
         "*.css"
-        "*.md"
-        "*.yaml"
+        "*.jsonc"
       ];
-      settings.proseWrap = "always";
     };
     stylua.enable = true;
+    yamlfmt.enable = true;
   };
 }

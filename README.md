@@ -11,8 +11,7 @@ This repository consolidates my previous per-host configuration files
 monorepo. Over time, it will also include the NixOS configurations for all of my
 other hosts.
 
-<!-- prettier-ignore -->
-> [!WARNING]
+> [!WARNING]\
 > Migration of [`cuties-only`](https://github.com/fdnt7/nix-config) has ceased
 > as I no longer have access to the hardware. The setup is functional but still
 > missing some features. In the meantime,
