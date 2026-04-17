@@ -53,6 +53,26 @@ in
         description = "Path to the Wakatime API key file";
       };
     };
+
+    gitIncludes = {
+      enable = mkEnableOption "git includes backed by sops secrets";
+
+      includes = mkOption {
+        type = listOf (types.attrsOf types.anything);
+        default = [
+          {
+            condition = "gitdir:~/Code/._/0";
+            path = "home-manager/programs/git/includes/0";
+          }
+        ];
+        description = ''
+          List of entries appended to programs.git.includes. Each entry is the
+          same attrset accepted by programs.git.includes (condition, priority, …),
+          except path names a SOPS key rather than a literal file path — it is
+          resolved to the sops-managed runtime path automatically.
+        '';
+      };
+    };
   };
 
   config = mkIf cfg.enable (mkMerge [
@@ -87,6 +107,23 @@ in
       {
         sops.secrets = secretsSet;
         nix.extraOptions = includeLines;
+      }
+    ))
+
+    (mkIf cfg.gitIncludes.enable (
+      let
+        includes = cfg.gitIncludes.includes;
+        secretsSet = builtins.listToAttrs (
+          map (inc: {
+            name = inc.path;
+            value = { };
+          }) includes
+        );
+        gitIncludesList = map (inc: inc // { path = config.sops.secrets.${inc.path}.path; }) includes;
+      in
+      {
+        sops.secrets = secretsSet;
+        programs.git.includes = gitIncludesList;
       }
     ))
 
