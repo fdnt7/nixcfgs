@@ -61,7 +61,7 @@ in
         type = listOf (types.attrsOf types.anything);
         default = [
           {
-            condition = "gitdir:~/Code/._/0";
+            condition = "gitdir:~/Code/._/0/";
             path = "home-manager/programs/git/includes/0";
           }
         ];
