@@ -1,5 +1,7 @@
 { nixcfgs, ... }:
 {
+  secrets.gitIncludes.enable = true;
+
   programs = {
     git =
       let
