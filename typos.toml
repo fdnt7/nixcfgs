@@ -1,0 +1,36 @@
+[default]
+extend-ignore-identifiers-re = ["f38ba8", "NO_COLOR"]
+extend-ignore-re = [
+  # Ignore lines that end with `# spellchecker:disable-line`
+  "(?Rm)^.*(#|//)\\s*spellchecker:disable-line$",
+  # Ignore the line after `# spellchecker:ignore-next-line`:
+  "(#|//)\\s*spellchecker:ignore-next-line\n.*",
+  # Ignore blocks between `# spellchecker:off` and `# spellchecker:on`
+  "(?s)(#|//)\\s*spellchecker:off.*?\\n\\s*(#|//)\\s*spellchecker:on",
+
+  ' *-----BEGIN AGE ENCRYPTED FILE-----\n(?: *[A-Za-z0-9+\/=]+\n)+ *-----END AGE ENCRYPTED FILE-----',
+
+  '\bosu-lazer-bin\b',
+  '\brust-analyzer\b',
+  '\bnix-colors\b',
+
+  '\bgit diff --color\b',
+]
+locale = "en-gb"
+
+[files]
+extend-exclude = ["LICENSE", "hosts/cuties-only"]
+
+[type.nix]
+extend-ignore-re = [
+  # Ignore "authorized"
+  ''' *users\.users\.([a-zA-Z_][a-zA-Z0-9_'-]*|\$\{.+\}) = \{\s+openssh\.authorizedKeys\b''',
+  # Ignore "initialization"
+  ' *programs\.zed-editor\.userSettings\.lsp\.rust-analyzer\.initialization_options\b',
+  # Ignore "colors"
+  ' *programs\.eza\.colors\b',
+  # Ignore "colors", "youre", "maximized", "maximized"
+  ' *programs\.discord\.settings\.(BACKGROUND_COLOR|DANGEROUS_ENABLE_DEVTOOLS_ONLY_ENABLE_IF_YOU_KNOW_WHAT_YOURE_DOING|IS_MAXIMIZED|IS_MINIMIZED)\b',
+  # Ignore "favorite", "color"
+  ' *programs\.nixcord\.config\.plugins\.(favoriteEmojiFirst|favoriteGifSearch|roleColorEverywhere)\b',
+]

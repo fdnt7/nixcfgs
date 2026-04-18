@@ -16,7 +16,7 @@ other hosts.
 > as I no longer have access to the hardware. The setup is functional but still
 > missing some features. In the meantime,
 > [`autism-inside`](https://github.com/fdnt7/autism-inside) and other hosts
-> (e.g. `estrogen-fuelled`) have not yet begun migration.
+> (e.g. `oestrogen-fuelled`) have not yet begun migration.
 
 ## Features
 

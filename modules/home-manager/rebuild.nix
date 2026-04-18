@@ -82,33 +82,33 @@ in
         helper_name=helper
 
         if [ -t 2 ] && [ -z "''${NO_COLOR-}" ]; then
-          helper_info_color="$(printf '\033[1;36m')"
-          helper_error_color="$(printf '\033[1;31m')"
-          helper_reset_color="$(printf '\033[0m')"
+          helper_info_colour="$(printf '\033[1;36m')"
+          helper_error_colour="$(printf '\033[1;31m')"
+          helper_reset_colour="$(printf '\033[0m')"
         else
-          helper_info_color=
-          helper_error_color=
-          helper_reset_color=
+          helper_info_colour=
+          helper_error_colour=
+          helper_reset_colour=
         fi
 
         helper_log() {
-          local color=$1
+          local colour=$1
           shift
 
-          printf '%b[%s]%b %s\n' "$color" "$helper_name" "$helper_reset_color" "$*" >&2
+          printf '%b[%s]%b %s\n' "$colour" "$helper_name" "$helper_reset_colour" "$*" >&2
         }
 
         die() {
-          helper_log "$helper_error_color" "$1"
+          helper_log "$helper_error_colour" "$1"
           exit 1
         }
 
         info() {
-          helper_log "$helper_info_color" "$1"
+          helper_log "$helper_info_colour" "$1"
         }
 
         error() {
-          helper_log "$helper_error_color" "$1"
+          helper_log "$helper_error_colour" "$1"
         }
 
         expand_home_path() {
@@ -160,9 +160,9 @@ in
           fi
 
           printf '%b[%s]%b Load it into ssh-agent now with ssh-add? [Y/n] ' \
-            "$helper_info_color" \
+            "$helper_info_colour" \
             "$helper_name" \
-            "$helper_reset_color" >&2
+            "$helper_reset_colour" >&2
           IFS= read -r response
 
           case "$response" in

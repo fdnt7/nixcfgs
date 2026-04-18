@@ -8,7 +8,7 @@
 #
 #   services.battery-notifier.enable = true;
 #
-#   # Optional: customize thresholds and battery device
+#   # Optional: customise thresholds and battery device
 #   # services.battery-notifier.lowThreshold = 25;
 #   # services.battery-notifier.criticalThreshold = 15;
 #   # services.battery-notifier.batteryDevice = "BAT1";
