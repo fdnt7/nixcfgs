@@ -7,19 +7,14 @@ let
   inherit (nixcfgs) uname gname;
 in
 {
-  users = {
-    users = {
-      ${uname} = {
-        isNormalUser = true;
-        openssh.authorizedKeys.keys = [
-        ];
-        extraGroups = [ "wheel" ];
+  users.users.${uname} = {
+    openssh.authorizedKeys.keys = [ ];
+    isNormalUser = true;
+    extraGroups = [ "wheel" ];
 
-        shell = pkgs.fish;
-      };
-    };
-    groups.${gname}.members = [ uname ];
+    shell = pkgs.fish;
   };
+  users.groups.${gname}.members = [ uname ];
 
   secrets.userPassword = {
     enable = true;

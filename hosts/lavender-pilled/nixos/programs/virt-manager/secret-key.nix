@@ -41,7 +41,7 @@
   };
 
   systemd.services.libvirt-secret-key-init = {
-    description = "Initialize libvirt secret encryption key";
+    description = "Initialise libvirt secret encryption key";
     before = [
       "libvirtd.service"
       "virtsecretd.service"

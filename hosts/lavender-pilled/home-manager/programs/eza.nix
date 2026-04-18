@@ -2,7 +2,6 @@
   programs.eza = {
     enable = true;
     enableFishIntegration = true;
-    colors = "always";
     git = true;
     icons = "always";
 
@@ -12,4 +11,6 @@
       "--colour-scale"
     ];
   };
+
+  programs.eza.colors = "always";
 }

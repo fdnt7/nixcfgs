@@ -62,16 +62,6 @@
       relative_line_numbers = "enabled";
 
       lsp = {
-        rust-analyzer = {
-          initialization_options = {
-            check = {
-              command = "clippy";
-            };
-            cargo = {
-              features = "all";
-            };
-          };
-        };
         tinymist = {
           settings = {
             exportPdf = "onType";
@@ -92,6 +82,15 @@
           ];
         };
       };
+    };
+  };
+
+  programs.zed-editor.userSettings.lsp.rust-analyzer.initialization_options = {
+    check = {
+      command = "clippy";
+    };
+    cargo = {
+      features = "all";
     };
   };
 }
