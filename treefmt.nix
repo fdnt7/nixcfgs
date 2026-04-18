@@ -17,6 +17,7 @@
     };
     stylua.enable = true;
     taplo.enable = true;
+    typos.enable = true;
     yamlfmt.enable = true;
   };
 }
