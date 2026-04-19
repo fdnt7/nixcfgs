@@ -1,0 +1,31 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/ndkd5bg6gzlpykr1vdg84rdfwv17gn47-nixos-system-lavender-pilled-26.05.20260328.8110df5
+
+CHANGED
+[C*] btrfs-progs                  6.19, 6.19-man -> 6.19.1, 6.19.1-man
+[U.] discord-canary               0.0.902, 0.0.902-fish-completions -> 0.0.927, 0.0.927-fish-completions
+[U*] fish                         4.5.0, 4.5.0-doc, 4.5.0_fish-completions, 4.5.0-fish-completions -> 4.6.0, 4.6.0-doc, 4.6.0_fish-completions, 4.6.0-fish-completions
+[U.] initrd-linux                 6.19.9 -> 6.19.10
+[U.] intel-gmmlib                 22.9.0 -> 22.10.0
+[U.] linux                        6.19.9, 6.19.9-modules ×2 -> 6.19.10, 6.19.10-modules ×2
+[U.] nix-your-shell               1.4.9, 1.4.9-fish-completions -> 1.4.10, 1.4.10-fish-completions
+[U.] nixos-system-lavender-pilled 26.05.20260324.46db2e0 -> 26.05.20260328.8110df5
+[C*] plasma-workspace             <others> -> 6.6.3-sessions, <others>
+[U.] ruff                         0.15.6 -> 0.15.7
+[U.] strongswan                   6.0.4 -> 6.0.5
+[U*] tailscale                    1.96.3 -> 1.96.4
+[U.] unifont                      16.0.03 -> 17.0.04
+[U*] wireplumber                  0.5.13, 0.5.13-doc, 0.5.13_fish-completions -> 0.5.14, 0.5.14-doc, 0.5.14_fish-completions
+[U.] zed-discord-presence         0.11.0 -> 0.11.1
+[U.] zed-editor                   0.228.0 -> 0.229.0
+[U.] zed-editor-wrapped           0.228.0, 0.228.0-fish-completions -> 0.229.0, 0.229.0-fish-completions
+
+ADDED
+[A.] unit-plasma-login.service    <none>
+
+SIZE: 16.8 GiB -> 16.8 GiB
+DIFF: -4.71 MiB
+
+Rebuilt-at: 2026-03-30T13:08:00+07:00
