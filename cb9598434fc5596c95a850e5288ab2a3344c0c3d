@@ -1,0 +1,19 @@
+fix(lavender-pilled): rebuild
+
+<<< /run/current-system
+>>> /nix/store/5z3m82vndihc8bjjhwph1689yf5g8cbd-nixos-system-lavender-pilled-26.05.20260401.6201e20
+
+ADDED
+[A.] mullvad-ts-apply-nft           <none>
+[A.] mullvad-ts-apply-policy-rule   <none>
+[A.] mullvad-ts-cleanup-nft         <none>
+[A.] mullvad-ts-cleanup-policy-rule <none>
+
+REMOVED
+[R.] mullvad-ts-apply               <none>
+[R.] mullvad-ts-cleanup             <none>
+
+SIZE: 20.3 GiB -> 20.3 GiB
+DIFF: 1.48 KiB
+
+Rebuilt-at: 2026-04-05T23:05:31+07:00
