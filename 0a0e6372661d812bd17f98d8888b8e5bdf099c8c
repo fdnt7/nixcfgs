@@ -1,0 +1,9 @@
+feat(lavender-pilled): rebuild
+
+<<< /run/current-system
+>>> /nix/store/gkdf9088k8vy96h85y2ghdka52wmdban-nixos-system-lavender-pilled-26.05.20260321.6c9a78c
+
+SIZE: 16.6 GiB -> 16.6 GiB
+DIFF: 80 bytes
+
+Rebuilt-at: 2026-03-26T04:08:35+07:00
