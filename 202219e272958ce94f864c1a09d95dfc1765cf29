@@ -1,0 +1,14 @@
+fix(lavender-pilled): rebuild
+
+<<< /run/current-system
+>>> /nix/store/gpambykiin8d3kg36klcfi749m1p505g-nixos-system-lavender-pilled-26.05.20260401.6201e20
+
+REMOVED
+[R.] persistence-mount-file                                         <none>
+[R.] unbindOrUnlink-persist-var-lib-systemd-credential.secret       <none>
+[R.] unit-persist-persist-var-lib-systemd-credential.secret.service <none>
+
+SIZE: 20.3 GiB -> 20.3 GiB
+DIFF: -4.86 KiB
+
+Rebuilt-at: 2026-04-04T22:13:08+07:00
