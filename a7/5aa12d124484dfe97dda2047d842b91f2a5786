@@ -1,9 +1,0 @@
-style(lavender-pilled): rebuild
-
-<<< /run/current-system
->>> /nix/store/c8x5ljfw05hy2fd2bjq16308qkpnk3dh-nixos-system-lavender-pilled-26.05.20260414.4bd9165
-
-SIZE: 20.0 GiB -> 20.0 GiB
-DIFF: 1.61 KiB
-
-Rebuilt-at: 2026-04-19T00:07:01+07:00
