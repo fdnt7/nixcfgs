@@ -1,3 +1,4 @@
+{ lib, ... }:
 {
   # Used to find the project root
   projectRootFile = "flake.nix";
@@ -20,4 +21,8 @@
     typos.enable = true;
     yamlfmt.enable = true;
   };
+
+  # exclude `--write-changes` from options so it doesn't automatically fix typos
+  # because it could break code
+  settings.formatter.typos.options = lib.mkForce [ "--force-exclude" ];
 }
