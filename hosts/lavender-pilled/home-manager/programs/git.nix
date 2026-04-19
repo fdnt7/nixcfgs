@@ -3,22 +3,18 @@
   secrets.gitIncludes.enable = true;
 
   programs = {
-    git =
-      let
-        inherit (nixcfgs) githubUname gitSigningKey;
-      in
-      {
-        enable = true;
-        settings.user = {
-          name = "Fridella Nythell";
-          email = "43757589+${githubUname}@users.noreply.github.com";
-        };
-        signing = {
-          format = "ssh";
-          key = gitSigningKey;
-          signByDefault = true;
-        };
+    git = {
+      enable = true;
+      settings.user = {
+        name = "Fridella Nythell";
+        email = "git@frdl.la";
       };
+      signing = {
+        format = "ssh";
+        key = nixcfgs.gitSigningKey;
+        signByDefault = true;
+      };
+    };
 
     fish.shellAbbrs = {
       g = "git";
