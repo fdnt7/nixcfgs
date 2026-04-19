@@ -1,0 +1,32 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/alqfjbn03h0dlk1m15pyfn4i4r9nda05-nixos-system-lavender-pilled-26.05.20260324.46db2e0
+
+CHANGED
+[U.] brave                        1.88.132, 1.88.132-fish-completions -> 1.88.134, 1.88.134-fish-completions
+[U.] brltty                       6.8 -> 6.9
+[U.] codex                        0.115.0, 0.115.0-fish-completions -> 0.116.0, 0.116.0-fish-completions
+[U.] delta                        0.19.0, 0.19.0-fish-completions -> 0.19.1, 0.19.1-fish-completions
+[C.] ffmpeg                       6.1.4-data, 6.1.4-lib, <others> -> <others>
+[U.] livekit-libwebrtc            125-unstable-2025-07-25, 125-unstable-2025-07-25-dev -> 137-unstable-2026-03-12, 137-unstable-2026-03-12-dev
+[U.] nixos-system-lavender-pilled 26.05.20260321.6c9a78c -> 26.05.20260324.46db2e0
+[U.] nss                          3.121, <others> -> 3.122, <others>
+[C*] pipewire                     <others> -> 1.6.2-dev, <others>
+[U.] pv                           1.10.4 -> 1.10.5
+[U.] squashfs                     4.7.4 -> 4.7.5
+[U*] tailscale                    1.96.2 -> 1.96.3
+[U.] vencord                      1.14.3 -> 1.14.6
+[U.] vpl-gpu-rt                   26.1.3 -> 26.1.4
+[U.] webkitgtk                    2.50.6+abi=4.1 -> 2.52.0+abi=4.1
+[U.] wl-clipboard                 2.2.1 -> 2.3.0
+[U.] zed-editor                   0.226.5 -> 0.228.0
+[U.] zed-editor-wrapped           0.226.5, 0.226.5-fish-completions -> 0.228.0, 0.228.0-fish-completions
+
+REMOVED
+[R.] woff2                        1.0.2-lib
+
+SIZE: 16.6 GiB -> 16.8 GiB
+DIFF: 163 MiB
+
+Rebuilt-at: 2026-03-26T19:04:49+07:00
