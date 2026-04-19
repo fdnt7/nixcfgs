@@ -1,0 +1,14 @@
+fix(lavender-pilled): rebuild
+
+<<< /run/current-system
+>>> /nix/store/haprsm5hjvi46xbwkh6f0d36ki5lb2dk-nixos-system-lavender-pilled-26.05.20260401.6201e20
+
+ADDED
+[A.] mullvad-ts-apply                            <none>
+[A.] mullvad-ts-cleanup                          <none>
+[A.] unit-mullvad-tailscale-split-tunnel.service <none>
+
+SIZE: 20.3 GiB -> 20.3 GiB
+DIFF: 4.46 KiB
+
+Rebuilt-at: 2026-04-05T22:04:10+07:00
