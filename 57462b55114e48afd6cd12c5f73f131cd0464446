@@ -1,0 +1,139 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/ncjav9h6kxzhq6b45cy1iy6iq9xacx9f-nixos-system-lavender-pilled-26.05.20260414.4bd9165
+
+CHANGED
+[U.] attica                           6.24.0, <others> -> 6.25.0, <others>
+[U*] baloo                            6.24.0 -> 6.25.0
+[U.] brave                            1.88.138, 1.88.138-fish-completions -> 1.89.132, 1.89.132-fish-completions
+[U*] breeze-icons                     6.24.0, <others> -> 6.25.0, <others>
+[U.] claude-code                      2.1.92, 2.1.92-fish-completions -> 2.1.104, 2.1.104-fish-completions
+[U.] electron                         40.8.2 -> 40.8.5
+[U.] electron-unwrapped               40.8.2 -> 40.8.5
+[U.] flatpak                          1.16.4 -> 1.16.6
+[U*] frameworkintegration             6.24.0, <others> -> 6.25.0, <others>
+[U*] iio-sensor-proxy                 3.8 -> 3.9
+[U.] initrd-linux                     6.19.11 -> 7.0
+[U.] karchive                         6.24.0, <others> -> 6.25.0, <others>
+[U*] kauth                            6.24.0, <others> -> 6.25.0, <others>
+[U.] kbookmarks                       6.24.0, <others> -> 6.25.0, <others>
+[U.] kcalendarcore                    6.24.0 -> 6.25.0
+[U*] kcmutils                         6.24.0 -> 6.25.0
+[U.] kcodecs                          6.24.0, <others> -> 6.25.0, <others>
+[U.] kcolorscheme                     6.24.0 -> 6.25.0
+[U.] kcompletion                      6.24.0, <others> -> 6.25.0, <others>
+[U*] kconfig                          6.24.0, <others> -> 6.25.0, <others>
+[U.] kconfigwidgets                   6.24.0, <others> -> 6.25.0, <others>
+[U.] kcontacts                        6.24.0 -> 6.25.0
+[U*] kcoreaddons                      6.24.0, <others> -> 6.25.0, <others>
+[U.] kcrash                           6.24.0, <others> -> 6.25.0, <others>
+[U.] kdav                             6.24.0 -> 6.25.0
+[U.] kdbusaddons                      6.24.0, <others> -> 6.25.0, <others>
+[U.] kdeclarative                     6.24.0 -> 6.25.0
+[U*] kded                             6.24.0, 6.24.0_fish-completions, <others> -> 6.25.0, 6.25.0_fish-completions, <others>
+[U.] kdesu                            6.24.0 -> 6.25.0
+[U.] kdnssd                           6.24.0, <others> -> 6.25.0, <others>
+[U.] kdoctools                        6.24.0, <others> -> 6.25.0, <others>
+[U*] kfilemetadata                    6.24.0 -> 6.25.0
+[U.] kglobalaccel                     6.24.0, <others> -> 6.25.0, <others>
+[U*] kguiaddons                       6.24.0, <others> -> 6.25.0, <others>
+[U.] kholidays                        6.24.0 -> 6.25.0
+[U.] ki18n                            6.24.0, <others> -> 6.25.0, <others>
+[U*] kiconthemes                      6.24.0, <others> -> 6.25.0, <others>
+[U.] kidletime                        6.24.0 -> 6.25.0
+[U*] kimageformats                    6.24.0 -> 6.25.0
+[U*] kio                              6.24.0, <others> -> 6.25.0, <others>
+[U.] kirigami                         6.24.0 -> 6.25.0
+[U.] kitemmodels                      6.24.0 -> 6.25.0
+[U.] kitemviews                       6.24.0, <others> -> 6.25.0, <others>
+[U.] kjobwidgets                      6.24.0, <others> -> 6.25.0, <others>
+[U.] knewstuff                        6.24.0, <others> -> 6.25.0, <others>
+[U.] knotifications                   6.24.0, <others> -> 6.25.0, <others>
+[U.] knotifyconfig                    6.24.0 -> 6.25.0
+[U*] kpackage                         6.24.0, 6.24.0_fish-completions, <others> -> 6.25.0, 6.25.0_fish-completions, <others>
+[U.] kparts                           6.24.0 -> 6.25.0
+[U.] kpty                             6.24.0 -> 6.25.0
+[U.] kquickcharts                     6.24.0 -> 6.25.0
+[U.] krunner                          6.24.0 -> 6.25.0
+[U*] kservice                         6.24.0, 6.24.0_fish-completions, <others> -> 6.25.0, 6.25.0_fish-completions, <others>
+[U.] kstatusnotifieritem              6.24.0 -> 6.25.0
+[U.] ksvg                             6.24.0 -> 6.25.0
+[U*] ktexteditor                      6.24.0 -> 6.25.0
+[U.] ktexttemplate                    6.24.0 -> 6.25.0
+[U.] ktextwidgets                     6.24.0, <others> -> 6.25.0, <others>
+[U.] kunitconversion                  6.24.0 -> 6.25.0
+[U.] kuserfeedback                    6.24.0 -> 6.25.0
+[U*] kwallet                          6.24.0, 6.24.0_fish-completions, <others> -> 6.25.0, 6.25.0_fish-completions, <others>
+[U.] kwidgetsaddons                   6.24.0, <others> -> 6.25.0, <others>
+[U.] kwindowsystem                    6.24.0, <others> -> 6.25.0, <others>
+[U.] kxmlgui                          6.24.0, <others> -> 6.25.0, <others>
+[C.] libqmi                           <others> -> 1.36.0-dev, <others>
+[C.] libqrtr-glib                     <others> -> 1.2.2-dev, <others>
+[U.] linux                            6.19.11, 6.19.11-modules ×2 -> 7.0, 7.0-modules ×2
+[U.] linux-firmware                   20260309-zstd -> 20260410-zstd
+[U.] modemmanager-qt                  6.24.0 -> 6.25.0
+[U.] networkmanager-qt                6.24.0 -> 6.25.0
+[U*] nix                              2.31.4 ×2, 2.31.4-doc, 2.31.4-man -> 2.34.6 ×2, 2.34.6-doc, 2.34.6-man
+[U.] nix-cmd                          2.31.4, <others> -> 2.34.6, <others>
+[U.] nix-expr                         2.31.4, <others> -> 2.34.6, <others>
+[U.] nix-fetchers                     2.31.4, <others> -> 2.34.6, <others>
+[U.] nix-flake                        2.31.4, <others> -> 2.34.6, <others>
+[U.] nix-main                         2.31.4, <others> -> 2.34.6, <others>
+[U.] nix-manual                       2.31.4, 2.31.4-man -> 2.34.6, 2.34.6-man
+[U.] nix-store                        2.31.4, <others> -> 2.34.6, <others>
+[U.] nix-util                         2.31.4, <others> -> 2.34.6, <others>
+[U.] nixos-system-lavender-pilled     26.05.20260409.4c1018d -> 26.05.20260414.4bd9165
+[U.] noto-fonts                       2026.03.01, 2026.03.01-fish-completions -> 2026.04.01, 2026.04.01-fish-completions
+[U.] parted                           3.6 -> 3.7
+[U.] prison                           6.24.0 -> 6.25.0
+[U.] purpose                          6.24.0 -> 6.25.0
+[U*] qqc2-desktop-style               6.24.0 -> 6.25.0
+[U.] ruff                             0.15.9 -> 0.15.10
+[U*] solid                            6.24.0, <others> -> 6.25.0, <others>
+[U.] sonnet                           6.24.0, <others> -> 6.25.0, <others>
+[U.] syndication                      6.24.0, <others> -> 6.25.0, <others>
+[U.] syntax-highlighting              6.24.0, <others> -> 6.25.0, <others>
+[U.] threadweaver                     6.24.0 -> 6.25.0
+[D.] yazi                             26.2.2pre20260415_e29a589 ×2, 26.2.2pre20260415_e29a589-fish-completions -> 26.2.2pre20260415_2e34e41 ×2, 26.2.2pre20260415_2e34e41-fish-completions
+[U.] zed-discord-presence             0.11.2 -> 0.11.3
+[U.] zed-editor                       0.230.1 -> 0.231.2
+[U.] zed-editor-wrapped               0.230.1, 0.230.1-fish-completions -> 0.231.2, 0.231.2-fish-completions
+
+ADDED
+[A.] busted-luarocks-config.lua       <none>
+[A.] cmake                            4.1.2
+[A.] die-hook                         <none>
+[A.] install-shell-files              <none>
+[A.] libssc                           0.2.2
+[A.] luajit2.1-busted                 2.3.0-1
+[A.] luajit2.1-coxpcall               1.17.0-1
+[A.] luajit2.1-dkjson                 2.8-2
+[A.] luajit2.1-inspect                3.1.3-0
+[A.] luajit2.1-lua-term               0.8-1
+[A.] luajit2.1-lua_cliargs            3.0.2-1
+[A.] luajit2.1-luafilesystem          1.9.0-1
+[A.] luajit2.1-luassert               1.9.0-1
+[A.] luajit2.1-luasystem              0.7.0-1
+[A.] luajit2.1-luv                    1.51.0-2
+[A.] luajit2.1-mediator_lua           1.1.2-0
+[A.] luajit2.1-penlight               1.15.0-1
+[A.] luajit2.1-say                    1.4.1-3
+[A.] luarocks_bootstrap               3.13.0
+[A.] make-shell-wrapper-hook          <none>
+[A.] nix-nswrapper                    2.34.6
+[A.] pipewire-ladspa-plugins          <none>
+[A.] rhash                            1.4.4
+[A.] unit-modprobe-.service           <none>
+[A.] wrap-lua-hook                    <none>
+[A.] zip                              3.0
+
+REMOVED
+[R.] unit-network.target              <none>
+[R.] unit-networking-scripted.target  <none>
+[R.] unit-systemd-udev-settle.service <none>
+
+SIZE: 19.9 GiB -> 20.0 GiB
+DIFF: 97.7 MiB
+
+Rebuilt-at: 2026-04-16T01:57:10+07:00
