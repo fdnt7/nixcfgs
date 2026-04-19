@@ -1,0 +1,56 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/n9dfny7bnm4iq8q3svms1669vil4bzwf-nixos-system-lavender-pilled-26.05.20260405.68d8aa3
+
+CHANGED
+[U*] bind                              9.20.18-host, 9.20.18-lib, 9.20.18-man -> 9.20.21-host, 9.20.21-lib, 9.20.21-man
+[U.] brave                             1.88.136, 1.88.136-fish-completions -> 1.88.138, 1.88.138-fish-completions
+[U*] framework-tool                    0.6.1 -> 0.6.2
+[U.] fzf                               0.70.0, <others> -> 0.71.0, <others>
+[U.] initrd-linux                      6.19.10 -> 6.19.11
+[U.] libcerf                           3.2 -> 3.3
+[U.] libiscsi                          1.20.0 -> 1.20.3
+[U*] libvirt                           12.1.0, 12.1.0_fish-completions -> 12.2.0, 12.2.0_fish-completions
+[U.] linux                             6.19.10, 6.19.10-modules ×2 -> 6.19.11, 6.19.11-modules ×2
+[U.] lowdown                           2.0.4-lib ×2 -> 2.0.4-lib, 3.0.1-lib
+[U.] mesa                              26.0.3 -> 26.0.4
+[U.] ngtcp2                            1.21.0, <others> -> 1.22.0, <others>
+[C*] nix                               2.31.3 ×2, 2.31.3-doc, 2.31.3-man -> 2.31.3+1 ×2, 2.31.3+1-doc, 2.31.3+1-man
+[U.] nix-cmd                           2.30.3+1, 2.31.3, <others> -> 2.30.3+2, 2.31.3+1, <others>
+[U.] nix-expr                          2.30.3+1, 2.31.3, <others> -> 2.30.3+2, 2.31.3+1, <others>
+[U.] nix-fetchers                      2.30.3+1, 2.31.3, <others> -> 2.30.3+2, 2.31.3+1, <others>
+[U.] nix-flake                         2.30.3+1, 2.31.3, <others> -> 2.30.3+2, 2.31.3+1, <others>
+[U.] nix-main                          2.30.3+1, 2.31.3, <others> -> 2.30.3+2, 2.31.3+1, <others>
+[C.] nix-manual                        2.31.3, 2.31.3-man -> 2.31.3+1, 2.31.3+1-man
+[U.] nix-store                         2.30.3+1, 2.31.3 ×2, <others> -> 2.30.3+2, 2.31.3, 2.31.3+1, <others>
+[U.] nix-util                          2.30.3+1, 2.31.3 ×2, <others> -> 2.30.3+2, 2.31.3, 2.31.3+1, <others>
+[U.] nixos-system-lavender-pilled      26.05.20260401.6201e20 -> 26.05.20260405.68d8aa3
+[U.] obs-studio                        32.1.0 -> 32.1.1
+[U.] openvpn                           2.6.14 -> 2.6.19
+[U.] python3.13-libvirt                12.1.0 -> 12.2.0
+[U.] python3.13-sentry-sdk             2.53.0 -> 2.54.0
+[U.] ruff                              0.15.7 -> 0.15.9
+[U*] tailscale                         1.96.4 -> 1.96.5
+[U.] wrapped-obs-studio                32.1.0, 32.1.0-fish-completions -> 32.1.1, 32.1.1-fish-completions
+[U.] xournalpp                         1.3.3, 1.3.3-fish-completions -> 1.3.4, 1.3.4-fish-completions
+[U.] zed-editor                        0.229.0 -> 0.230.1
+[U.] zed-editor-wrapped                0.229.0, 0.229.0-fish-completions -> 0.230.1, 0.230.1-fish-completions
+
+ADDED
+[A+] qrca                              25.12.3
+[A.] unit-network.target               <none>
+[A.] unit-networking-scripted.target   <none>
+[A.] unit-polkit-agent-helper-.service <none>
+
+REMOVED
+[R.] nvim-host-python3                 3.13.12-env
+[R.] python3.13-greenlet               3.3.0
+[R.] python3.13-msgpack                1.1.2
+[R.] python3.13-pynvim                 0.6.0
+[R.] wolfssl-all                       5.8.4-lib
+
+SIZE: 19.7 GiB -> 19.7 GiB
+DIFF: -3.97 MiB
+
+Rebuilt-at: 2026-04-07T08:14:34+07:00
