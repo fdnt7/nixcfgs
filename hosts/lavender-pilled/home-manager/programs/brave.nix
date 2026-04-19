@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 {
-  home.packages = [ pkgs.brave ];
+  home.packages = lib.mkIf false [ pkgs.brave ];
 }
