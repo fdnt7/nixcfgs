@@ -1,0 +1,92 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/6caz6cxskb67aajx8z6ja8ccvd2y3wq4-nixos-system-lavender-pilled-26.05.20260321.6c9a78c
+
+CHANGED
+[U.] abseil-cpp                   20250814.1-dev, <others> -> 20260107.1-dev, 20260107.1, <others>
+[U.] ada                          3.4.2 -> 3.4.3
+[C.] alsa-lib                     <others> -> 1.2.15.3, <others>
+[C.] alsa-ucm-conf                <others> -> 1.2.15.3, <others>
+[U.] boehm-gc                     8.2.8 ×3 -> 8.2.8 ×2, 8.2.12
+[U.] codex                        0.114.0, 0.114.0-fish-completions -> 0.115.0, 0.115.0-fish-completions
+[U.] delta                        0.18.2, 0.18.2-fish-completions -> 0.19.0, 0.19.0-fish-completions
+[U.] ed                           1.22.4 -> 1.22.5
+[C.] ell                          <others> -> 0.82, <others>
+[C.] fluidsynth                   <others> -> 2.5.3, <others>
+[U.] freerdp                      3.23.0 -> 3.24.1
+[C*] hicolor-icon-theme           <others> -> 0.18-dev, <others>
+[C.] hwdata                       <others> -> 0.405, <others>
+[C.] hwloc                        <others> -> 2.13.0-lib, <others>
+[C.] imagemagick                  <others> -> 7.1.2-17, <others>
+[U.] initrd-linux                 6.19.8 -> 6.19.9
+[U.] intel-graphics-compiler      2.28.4 -> 2.30.1
+[U*] iproute2                     6.18.0, 6.18.0_fish-completions -> 6.19.0, 6.19.0_fish-completions
+[U.] iptables                     1.8.11, 1.8.11-lib -> 1.8.12, 1.8.12-lib
+[U.] ktextaddons                  2.0.0 -> 2.0.1
+[U*] less                         691, 691-man -> 692, 692-man
+[U.] libbluray                    1.4.0 ×2 -> 1.4.0, 1.4.1
+[C.] libfyaml                     <others> -> 0.9.5, <others>
+[C.] libgpg-error                 <others> -> 1.58, <others>
+[C.] libheif                      <others> -> 1.21.2-lib, <others>
+[U.] libpq                        18.1 -> 18.2
+[U.] librsvg                      2.61.3-dev, <others> -> 2.61.4-dev, 2.61.4, <others>
+[C.] libselinux                   <others> -> 3.10, <others>
+[U.] libsepol                     3.8.1 -> 3.10
+[C.] libsodium                    <others> -> 1.0.21-unstable-2026-02-11, <others>
+[C.] libsoup                      <others> -> 3.6.6, <others>
+[U.] liburing                     2.13 -> 2.14
+[U.] libuv                        1.51.0-dev, <others> -> 1.52.0-dev, 1.52.0, <others>
+[U.] libvpx                       1.15.2-bin, <others> -> 1.16.0-bin, 1.16.0, <others>
+[U.] libx11                       1.8.12-dev, 1.8.12-man, <others> -> 1.8.13-dev, 1.8.13-man, 1.8.13, <others>
+[C.] libxkbcommon                 <others> -> 1.13.1, <others>
+[U.] linux                        6.19.8, 6.19.8-modules ×2 -> 6.19.9, 6.19.9-modules ×2
+[U.] llhttp                       9.3.0-dev, <others> -> 9.3.1-dev, 9.3.1, <others>
+[U*] lvm2                         2.03.38-lib, <others> -> 2.03.38-lib ×2, 2.03.38-scripts, <others>
+[U.] mesa                         26.0.2 -> 26.0.3
+[U.] minizip                      1.3.1 -> 1.3.2
+[U.] nixos-system-lavender-pilled 26.05.20260318.b40629e -> 26.05.20260321.6c9a78c
+[U.] nodejs                       24.13.0, 24.13.0-source -> 24.14.0, 24.14.0-source
+[U.] nodejs-slim                  24.13.0, 24.13.0-corepack, 24.13.0-npm -> 24.14.0, 24.14.0-corepack, 24.14.0-npm
+[U.] nss                          3.112.2-man, <others> -> 3.112.3-man, 3.112.3, <others>
+[U.] nss-cacert                   3.119.1, 3.119.1-p11kit -> 3.121, 3.121-p11kit
+[C.] openapv                      <others> -> 0.2.1.1, <others>
+[U.] openblas                     0.3.30 -> 0.3.31
+[C.] pciutils                     <others> -> 3.14.0-man, <others>
+[U.] perl5.42.0-Crypt-URandom     0.54 -> 0.55
+[U*] pipewire                     1.4.10-doc, 1.4.10-man, <others> -> 1.6.2-doc, 1.6.2-man, 1.6.2, <others>
+[U.] protobuf                     33.5 -> 34.0
+[C.] publicsuffix-list            <others> -> 0-unstable-2026-03-02, <others>
+[U.] python3.13-markdown          3.10.1 -> 3.10.2
+[U.] qpdf                         12.2.0-lib -> 12.3.2-lib
+[U.] ruff                         0.15.5 -> 0.15.6
+[C.] sbc                          <others> -> 2.2, <others>
+[U.] sdl3                         3.4.0-lib ×2 -> 3.4.0-lib, 3.4.2-lib
+[U*] shadow                       4.19.3, 4.19.3-man, 4.19.3-su -> 4.19.4, 4.19.4-man, 4.19.4-su
+[U.] simdjson                     4.2.4 -> 4.3.1
+[U.] socat                        1.8.1.0 -> 1.8.1.1
+[U.] sof-firmware                 2025.05.1-zstd -> 2025.12.2-zstd
+[C*] systemd                      259-man, <others> -> 259.3, 259.3-man, <others>
+[C.] systemd-minimal              <others> -> 259.3, <others>
+[C.] systemd-minimal-libs         <others> -> 259.3, <others>
+[U*] tailscale                    1.94.2 -> 1.96.2
+[C.] tzdata                       <others> -> 2026a, <others>
+[C.] wavpack                      <others> -> 5.9.0, <others>
+[U*] which                        2.23_fish-completions, <others> -> 2.23-info, 2.23-man, <others>
+[U*] xdg-user-dirs                0.19_fish-completions, <others> -> 0.19-lib, 0.19-man, <others>
+[C.] xkeyboard-config             <others> -> 2.47, <others>
+[U.] yazi                         26.2.2pre20260321_d4924eb ×2, 26.2.2pre20260321_d4924eb-fish-completions -> 26.2.2pre20260323_5c05350 ×2, 26.2.2pre20260323_5c05350-fish-completions
+[U.] zed-discord-presence         0.10.1 -> 0.11.0
+[U.] zlib                         1.3.1-dev, <others> -> 1.3.2-dev, 1.3.2, 1.3.2-static, <others>
+
+ADDED
+[A.] cdparanoia-iii               10.2
+[A.] libdbusmenu-qt5              0.9.3+16
+[A.] libldac-dec                  0.0.2-unstable-2024-11-12
+[A.] unixobcd                     2.3.12
+
+REMOVED
+[R.] unixODBC                     2.3.12
+
+SIZE: 14.9 GiB -> 16.6 GiB
+DIFF: 1.66 GiB
