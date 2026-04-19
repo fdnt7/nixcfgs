@@ -1,0 +1,12 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/p830d2qh6jyn5r58ni6gvcqgd62qmwpv-nixos-system-lavender-pilled-26.05.20260401.6201e20
+
+CHANGED
+[U.] yazi 26.2.2pre20260402_86b8f07 ×2, 26.2.2pre20260402_86b8f07-fish-completions -> 26.2.2pre20260403_ad655ed ×2, 26.2.2pre20260403_ad655ed-fish-completions
+
+SIZE: 19.3 GiB -> 19.3 GiB
+DIFF: -5.18 KiB
+
+Rebuilt-at: 2026-04-03T14:10:27+07:00
