@@ -1,0 +1,15 @@
+feat(lavender-pilled): rebuild
+
+<<< /run/current-system
+>>> /nix/store/275lkmfdcmyc4k4qrsk0ld4a4qip5cc5-nixos-system-lavender-pilled-26.05.20260401.6201e20
+
+ADDED
+[A.] unit-var-lib-systemd.mount           <none>
+
+REMOVED
+[R.] unit-var-lib-systemd-backlight.mount <none>
+
+SIZE: 20.3 GiB -> 20.3 GiB
+DIFF: -200 bytes
+
+Rebuilt-at: 2026-04-04T22:25:15+07:00
