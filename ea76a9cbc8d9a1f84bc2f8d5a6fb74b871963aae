@@ -1,0 +1,109 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/vr76imjzaqvm2ymgqmn6cvw03j1hr2zj-nixos-system-lavender-pilled-26.05.20260409.4c1018d
+
+CHANGED
+[U*] aurorae                            6.6.3 -> 6.6.4
+[U*] bind                               9.20.21-host, 9.20.21-lib, 9.20.21-man -> 9.20.22-host, 9.20.22-lib, 9.20.22-man
+[U*] breeze                             6.6.3, 6.6.3-qt5 -> 6.6.4, 6.6.4-qt5
+[U*] breeze-gtk                         6.6.3 -> 6.6.4
+[U.] brltty                             6.9 -> 6.9.1
+[U.] dhcpcd                             10.3.0 -> 10.3.1
+[U*] discover                           6.6.3 -> 6.6.4
+[U*] drkonqi                            6.6.3 -> 6.6.4
+[U.] flatpak                            1.16.3 -> 1.16.4
+[U*] kactivitymanagerd                  6.6.3 -> 6.6.4
+[U*] kde-cli-tools                      6.6.3, 6.6.3_fish-completions -> 6.6.4, 6.6.4_fish-completions
+[U*] kde-gtk-config                     6.6.3 -> 6.6.4
+[U.] kdecoration                        6.6.3 -> 6.6.4
+[U*] kdeplasma-addons                   6.6.3 -> 6.6.4
+[U*] kglobalacceld                      6.6.3 -> 6.6.4
+[U*] kinfocenter                        6.6.3 -> 6.6.4
+[U*] kmenuedit                          6.6.3 -> 6.6.4
+[U*] knighttime                         6.6.3 -> 6.6.4
+[U.] kpipewire                          6.6.3 -> 6.6.4
+[U*] krdp                               6.6.3 -> 6.6.4
+[U*] kscreen                            6.6.3 -> 6.6.4
+[U*] kscreenlocker                      6.6.3 -> 6.6.4
+[U*] ksystemstats                       6.6.3 -> 6.6.4
+[U*] kwallet-pam                        6.6.3 -> 6.6.4
+[U.] kwayland                           6.6.3, <others> -> 6.6.4, <others>
+[U*] kwayland-integration               6.6.3 -> 6.6.4
+[U*] kwin                               6.6.3 -> 6.6.4
+[U*] kwin-x11                           6.6.3 -> 6.6.4
+[U*] kwrited                            6.6.3 -> 6.6.4
+[U.] layer-shell-qt                     6.6.3 -> 6.6.4
+[U.] libblake3                          1.8.3 ×2 -> 1.8.3, 1.8.4
+[U*] libkscreen                         6.6.3 -> 6.6.4
+[U*] libksysguard                       6.6.3 -> 6.6.4
+[U*] libplasma                          6.6.3 -> 6.6.4
+[U*] milou                              6.6.3 -> 6.6.4
+[U*] neovim                             0.12.0 ×2, 0.12.0_fish-completions -> 0.12.1 ×2, 0.12.1_fish-completions
+[U.] neovim-unwrapped                   0.12.0 -> 0.12.1
+[U.] nfs-utils                          2.8.7, 2.8.7-lib -> 2.9.1, 2.9.1-lib
+[U*] nix                                2.31.3+1 ×2, 2.31.3+1-doc, 2.31.3+1-man -> 2.31.4 ×2, 2.31.4-doc, 2.31.4-man
+[U.] nix-cmd                            2.30.3+2, 2.31.3+1, <others> -> 2.30.4+1, 2.31.4, <others>
+[U.] nix-expr                           2.30.3+2, 2.31.3+1, <others> -> 2.30.4+1, 2.31.4, <others>
+[U.] nix-fetchers                       2.30.3+2, 2.31.3+1, <others> -> 2.30.4+1, 2.31.4, <others>
+[U.] nix-flake                          2.30.3+2, 2.31.3+1, <others> -> 2.30.4+1, 2.31.4, <others>
+[U.] nix-main                           2.30.3+2, 2.31.3+1, <others> -> 2.30.4+1, 2.31.4, <others>
+[U.] nix-manual                         2.31.3+1, 2.31.3+1-man -> 2.31.4, 2.31.4-man
+[U.] nix-store                          2.30.3+2, 2.31.3+1, <others> -> 2.30.4+1, 2.31.4, <others>
+[U.] nix-util                           2.30.3+2, 2.31.3+1, <others> -> 2.30.4+1, 2.31.4, <others>
+[U.] nixos-system-lavender-pilled       26.05.20260405.68d8aa3 -> 26.05.20260409.4c1018d
+[U*] ocean-sound-theme                  6.6.3 -> 6.6.4
+[U.] osu-lazer-bin                      2026.401.0, 2026.401.0-bwrap, 2026.401.0-extracted, 2026.401.0-fhsenv-profile, 2026.401.0-fhsenv-rootfs, 2026.401.0-fish-completions, 2026.401.0-init -> 2026.406.0, 2026.406.0-bwrap, 2026.406.0-extracted, 2026.406.0-fhsenv-profile, 2026.406.0-fhsenv-rootfs, 2026.406.0-fish-completions, 2026.406.0-init
+[U*] plasma-activities                  6.6.3 -> 6.6.4
+[U.] plasma-activities-stats            6.6.3 -> 6.6.4
+[U*] plasma-browser-integration         6.6.3 -> 6.6.4
+[U*] plasma-desktop                     6.6.3 -> 6.6.4
+[U*] plasma-integration                 6.6.3, 6.6.3-qt5 -> 6.6.4, 6.6.4-qt5
+[U*] plasma-keyboard                    6.6.3 -> 6.6.4
+[U*] plasma-login-manager               6.6.3 -> 6.6.4
+[U.] plasma-nano                        6.6.3 -> 6.6.4
+[U*] plasma-nm                          6.6.3 -> 6.6.4
+[U*] plasma-pa                          6.6.3 -> 6.6.4
+[U.] plasma-sdk                         6.6.3 -> 6.6.4
+[U*] plasma-systemmonitor               6.6.3 -> 6.6.4
+[U*] plasma-workspace                   6.6.3, 6.6.3-sessions -> 6.6.4, 6.6.4-sessions
+[U*] plasma-workspace-wallpapers        6.6.3 -> 6.6.4
+[U.] plasma5support                     6.6.3 -> 6.6.4
+[U*] polkit-kde-agent                   1-6.6.3 -> 1-6.6.4
+[U*] powerdevil                         6.6.3 -> 6.6.4
+[U*] qqc2-breeze-style                  6.6.3 -> 6.6.4
+[U*] spectacle                          6.6.3, 6.6.3_fish-completions -> 6.6.4, 6.6.4_fish-completions
+[U*] systemsettings                     6.6.3 -> 6.6.4
+[U.] tree-sitter-c-neovim               0.12.0 -> 0.12.1
+[U.] tree-sitter-lua-neovim             0.12.0 -> 0.12.1
+[U.] tree-sitter-markdown-neovim        0.12.0 -> 0.12.1
+[U.] tree-sitter-markdown_inline-neovim 0.12.0 -> 0.12.1
+[U.] tree-sitter-query-neovim           0.12.0 -> 0.12.1
+[U.] tree-sitter-vim-neovim             0.12.0 -> 0.12.1
+[U.] tree-sitter-vimdoc-neovim          0.12.0 -> 0.12.1
+[U*] xdg-desktop-portal                 1.20.3 -> 1.20.4
+[U*] xdg-desktop-portal-kde             6.6.3 -> 6.6.4
+
+ADDED
+[A.] nvim-host-python3                  3.13.12-env
+[A.] python3.13-greenlet                3.3.0
+[A.] python3.13-msgpack                 1.1.2
+[A.] python3.13-pynvim                  0.6.0
+[A.] unit-script-post-boot-pre-stop     <none>
+[A.] unit-script-sleep-actions-pre-stop <none>
+[A.] unit-script-sleep-actions-start    <none>
+[A.] unit-sleep-actions.service         <none>
+
+REMOVED
+[R.] unit-post-resume.service           <none>
+[R.] unit-post-resume.target            <none>
+[R.] unit-pre-shutdown.service          <none>
+[R.] unit-pre-sleep.service             <none>
+[R.] unit-script-post-resume-start      <none>
+[R.] unit-script-pre-shutdown-start     <none>
+[R.] unit-script-pre-sleep-start        <none>
+
+SIZE: 19.9 GiB -> 19.9 GiB
+DIFF: 6.66 MiB
+
+Rebuilt-at: 2026-04-10T16:57:24+07:00
