@@ -1,0 +1,30 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/zxp5vzgqfg2d9pqrgyvmlvlxnj8hrnqd-nixos-system-lavender-pilled-26.05.20260401.6201e20
+
+CHANGED
+[U.] brave                              1.88.134, 1.88.134-fish-completions -> 1.88.136, 1.88.136-fish-completions
+[U.] codex                              0.116.0, 0.116.0-fish-completions -> 0.118.0, 0.118.0-fish-completions
+[U.] delta                              0.19.1, 0.19.1-fish-completions -> 0.19.2, 0.19.2-fish-completions
+[U.] fastfetch                          2.60.0, 2.60.0-fish-completions, 2.60.0-man -> 2.61.0, 2.61.0-fish-completions, 2.61.0-man
+[U.] freerdp                            3.24.1 -> 3.24.2
+[U.] libqalculate                       5.9.0 -> 5.10.0
+[U*] neovim                             0.11.6 ×2, 0.11.6_fish-completions -> 0.12.0 ×2, 0.12.0_fish-completions
+[U.] neovim-unwrapped                   0.11.6 -> 0.12.0
+[U.] nixos-system-lavender-pilled       26.05.20260328.8110df5 -> 26.05.20260401.6201e20
+[U.] osu-lazer-bin                      2026.305.0, 2026.305.0-bwrap, 2026.305.0-extracted, 2026.305.0-fhsenv-profile, 2026.305.0-fhsenv-rootfs, 2026.305.0-fish-completions, 2026.305.0-init -> 2026.401.0, 2026.401.0-bwrap, 2026.401.0-extracted, 2026.401.0-fhsenv-profile, 2026.401.0-fhsenv-rootfs, 2026.401.0-fish-completions, 2026.401.0-init
+[U.] tree-sitter-c-neovim               0.11.6 -> 0.12.0
+[U.] tree-sitter-lua-neovim             0.11.6 -> 0.12.0
+[U.] tree-sitter-markdown-neovim        0.11.6 -> 0.12.0
+[U.] tree-sitter-markdown_inline-neovim 0.11.6 -> 0.12.0
+[U.] tree-sitter-query-neovim           0.11.6 -> 0.12.0
+[U.] tree-sitter-vim-neovim             0.11.6 -> 0.12.0
+[U.] tree-sitter-vimdoc-neovim          0.11.6 -> 0.12.0
+[U.] webkitgtk                          2.52.0+abi=4.1 -> 2.52.1+abi=4.1
+[U.] zed-discord-presence               0.11.1 -> 0.11.2
+
+SIZE: 18.6 GiB -> 18.9 GiB
+DIFF: 263 MiB
+
+Rebuilt-at: 2026-04-02T09:52:47+07:00
