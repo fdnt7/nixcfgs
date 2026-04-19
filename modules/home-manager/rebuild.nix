@@ -307,7 +307,7 @@ in
         }
 
         format_and_preview_dirty_commit() {
-          nix fmt .
+          nix fmt . || return
           git add -A
           git commit --amend --no-edit >/dev/null
           git diff --color=always HEAD^
