@@ -59,12 +59,10 @@ in
 
       includes = mkOption {
         type = listOf (types.attrsOf types.anything);
-        default = [
-          {
-            condition = "gitdir:~/Code/._/0/";
-            path = "home-manager/programs/git/includes/0";
-          }
-        ];
+        default = builtins.genList (n: {
+          condition = "gitdir:~/Code/._/${toString n}/";
+          path = "home-manager/programs/git/includes/${toString n}";
+        }) 3;
         description = ''
           List of entries appended to programs.git.includes. Each entry is the
           same attrset accepted by programs.git.includes (condition, priority, …),
