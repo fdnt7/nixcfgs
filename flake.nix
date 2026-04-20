@@ -4,6 +4,11 @@
   inputs = {
     # catppuccin.url = "github:catppuccin/nix";
 
+    claude-desktop = {
+      url = "github:aaddrick/claude-desktop-debian";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # devenv.url = "github:cachix/devenv";
     devenv.url = "github:cachix/devenv/v2.0.6"; # using binary cache
 
