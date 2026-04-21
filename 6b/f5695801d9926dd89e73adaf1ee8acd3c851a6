@@ -1,0 +1,74 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/ssi4v2k7j12hn1bdl4v9c6r7a9fvq0gj-nixos-system-lavender-pilled-26.05.20260418.b12141e
+
+CHANGED
+[U*] akonadi                      25.12.3 -> 26.04.0
+[U.] akonadi-calendar             25.12.3 -> 26.04.0
+[U.] akonadi-contacts             25.12.3 -> 26.04.0
+[U.] akonadi-mime                 25.12.3 -> 26.04.0
+[U.] akonadi-search               25.12.3 -> 26.04.0
+[U*] ark                          25.12.3, 25.12.3_fish-completions -> 26.04.0, 26.04.0_fish-completions
+[U*] baloo-widgets                25.12.3 -> 26.04.0
+[U.] claude-code                  2.1.104, 2.1.104-fish-completions -> 2.1.112, 2.1.112-fish-completions
+[U.] codex                        0.118.0, 0.118.0-fish-completions -> 0.121.0, 0.121.0-fish-completions
+[U*] dolphin                      25.12.3 -> 26.04.0
+[U*] dolphin-plugins              25.12.3 -> 26.04.0
+[U.] editorconfig-core-c          0.12.9 -> 0.12.11
+[U*] elisa                        25.12.3 -> 26.04.0
+[U*] ffmpegthumbs                 25.12.3 -> 26.04.0
+[U*] fwupd                        2.0.19, 2.0.19-lib, 2.0.19-man -> 2.1.1, 2.1.1-lib, 2.1.1-man
+[U.] grantleetheme                25.12.3 -> 26.04.0
+[U*] gwenview                     25.12.3 -> 26.04.0
+[U.] kaccounts-integration        25.12.3 -> 26.04.0
+[U*] kate                         25.12.3, 25.12.3_fish-completions -> 26.04.0, 26.04.0_fish-completions
+[U.] kcalutils                    25.12.3 -> 26.04.0
+[U*] kde-inotify-survey           25.12.3 -> 26.04.0
+[U.] kdegraphics-mobipocket       25.12.3 -> 26.04.0
+[U*] kdegraphics-thumbnailers     25.12.3 -> 26.04.0
+[U*] kdepim-runtime               25.12.3 -> 26.04.0
+[U*] khelpcenter                  25.12.3 -> 26.04.0
+[U.] kidentitymanagement          25.12.3 -> 26.04.0
+[U.] kimap                        25.12.3 -> 26.04.0
+[U*] kio-admin                    25.12.3 -> 26.04.0
+[U*] kio-extras                   25.12.3 -> 26.04.0
+[U.] kldap                        25.12.3 -> 26.04.0
+[U.] kmailtransport               25.12.3 -> 26.04.0
+[U.] kmbox                        25.12.3 -> 26.04.0
+[U.] kmime                        25.12.3 -> 26.04.0
+[U*] konsole                      25.12.3 -> 26.04.0
+[U.] kpimtextedit                 25.12.3 -> 26.04.0
+[U.] ksmtp                        25.12.3 -> 26.04.0
+[U*] kunifiedpush                 25.12.3 -> 26.04.0
+[U*] kwalletmanager               25.12.3 -> 26.04.0
+[U.] libgravatar                  25.12.3 -> 26.04.0
+[U.] libkdcraw                    25.12.3 -> 26.04.0
+[U.] libkdepim                    25.12.3 -> 26.04.0
+[U.] libkexiv2                    25.12.3 -> 26.04.0
+[U.] libkgapi                     25.12.3 -> 26.04.0
+[U.] libkleo                      25.12.3 -> 26.04.0
+[U.] mesa                         26.0.4 -> 26.0.5
+[U.] messagelib                   25.12.3 -> 26.04.0
+[U.] ngtcp2                       1.22.0, <others> -> 1.22.1, <others>
+[U.] nh                           4.3.0, 4.3.0-fish-completions -> 4.3.1, 4.3.1-fish-completions
+[U.] nh-unwrapped                 4.3.0 -> 4.3.1
+[U.] nixos-system-lavender-pilled 26.05.20260414.4bd9165 -> 26.05.20260418.b12141e
+[U.] nss                          3.122, <others> -> 3.123, <others>
+[U*] okular                       25.12.3, 25.12.3_fish-completions -> 26.04.0, 26.04.0_fish-completions
+[U.] osu-lazer-bin                2026.406.0, 2026.406.0-bwrap, 2026.406.0-extracted, 2026.406.0-fhsenv-profile, 2026.406.0-fhsenv-rootfs, 2026.406.0-fish-completions, 2026.406.0-init -> 2026.418.0, 2026.418.0-bwrap, 2026.418.0-extracted, 2026.418.0-fhsenv-profile, 2026.418.0-fhsenv-rootfs, 2026.418.0-fish-completions, 2026.418.0-init
+[U.] pimcommon                    25.12.3 -> 26.04.0
+[U.] python3.13-sentry-sdk        2.54.0 -> 2.58.0
+[U*] qrca                         25.12.3 -> 26.04.0
+[U.] ruff                         0.15.10 -> 0.15.11
+[U.] samba                        4.22.7 -> 4.23.5
+[U*] time                         1.9, 1.9-info -> 1.10, 1.10-info
+[U.] webkitgtk                    2.52.1+abi=4.1 -> 2.52.2+abi=4.1
+[U*] xwayland                     24.1.9, 24.1.9_fish-completions -> 24.1.10, 24.1.10_fish-completions
+[U.] zed-editor                   0.231.2 -> 0.232.2
+[U.] zed-editor-wrapped           0.231.2, 0.231.2-fish-completions -> 0.232.2, 0.232.2-fish-completions
+
+SIZE: 20.2 GiB -> 20.2 GiB
+DIFF: 21.7 MiB
+
+Rebuilt-at: 2026-04-21T07:19:04+07:00
