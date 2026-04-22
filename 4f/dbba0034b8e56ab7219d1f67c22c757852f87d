@@ -1,0 +1,46 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/qvjc2b3fgg28nnw81l1g09frxy7b7k1d-nixos-system-lavender-pilled-26.05.20260418.b12141e
+
+CHANGED
+[C.] abseil-cpp           20250814.1, <others> -> <others>
+[C.] alsa-lib             1.2.15.1, <others> -> <others>
+[C.] alsa-ucm-conf        1.2.15.1, <others> -> <others>
+[C.] ell                  0.81, <others> -> <others>
+[U.] fd                   10.3.0 -> 10.4.2
+[C.] fluidsynth           2.5.2, <others> -> <others>
+[C.] fzf                  0.68.0, <others> -> <others>
+[C.] hwdata               0.404, <others> -> <others>
+[C.] imagemagick          7.1.2-13, <others> -> <others>
+[C.] libbluray            1.4.0, <others> -> <others>
+[C.] libfyaml             0.9.4, <others> -> <others>
+[C.] libgpg-error         1.55, <others> -> <others>
+[C.] libheif              1.20.2-lib, <others> -> <others>
+[C.] librsvg              2.61.3, <others> -> <others>
+[C.] libselinux           3.8.1, <others> -> <others>
+[C.] libsoup              3.6.5, <others> -> <others>
+[C.] libuv                1.51.0, <others> -> <others>
+[C.] libvpx               1.15.2, <others> -> <others>
+[C.] libxkbcommon         1.11.0, <others> -> <others>
+[C.] nss                  3.112.2, <others> -> <others>
+[C.] openapv              0.2.1.0, <others> -> <others>
+[C*] pipewire             1.4.10, <others> -> <others>
+[U.] resvg                0.46.0 -> 0.47.0
+[C.] sbc                  2.1, <others> -> <others>
+[C.] sdl3                 3.4.0-lib, <others> -> <others>
+[C*] systemd              259, <others> -> <others>
+[C.] systemd-minimal-libs 259, <others> -> <others>
+[C.] tzdata               2025c, <others> -> <others>
+[C.] wavpack              5.8.1, <others> -> <others>
+[C.] xkeyboard-config     2.46, <others> -> <others>
+[U.] yazi                 26.2.2pre20260419_369c475 ×2, 26.2.2pre20260419_369c475-fish-completions -> 26.2.2pre20260421_4a2e5ad ×2, 26.2.2pre20260421_4a2e5ad-fish-completions
+[C.] zlib                 1.3.1-static, <others> -> <others>
+
+REMOVED
+[R.] cdparanoia-III       10.2
+
+SIZE: 19.3 GiB -> 18.4 GiB
+DIFF: -935 MiB
+
+Rebuilt-at: 2026-04-22T08:25:22+07:00
