@@ -341,7 +341,15 @@ in
 
           built_toplevel="$(realpath "$out_link")"
           info "Activating the built generation with nh os switch --ask."
-          nh os switch --ask --diff never "$built_toplevel"
+          local switch_exit=0
+          nh os switch --ask --diff never "$built_toplevel" || switch_exit=$?
+          if [ "$switch_exit" -ne 0 ]; then
+            if [ "$switch_exit" -ge 128 ]; then
+              return "$switch_exit"
+            fi
+            info "nh os switch failed (exit $switch_exit); retrying with nh os boot."
+            nh os boot --diff never "$built_toplevel"
+          fi
         }
       '';
     in
