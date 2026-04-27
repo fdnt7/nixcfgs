@@ -99,11 +99,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1777259923,
-        "narHash": "sha256-X5UrsmP0I+DA4ayfeQsjt7NZCHBd+ABrjQCiIzrr4DU=",
+        "lastModified": 1777288903,
+        "narHash": "sha256-mcQCDtB/pDKXD2yCY0Z0sB/354zXZDYQmlv9D1EmGmg=",
         "owner": "aaddrick",
         "repo": "claude-desktop-debian",
-        "rev": "5304fa145ece1a376251faa358144fee6e2feeb7",
+        "rev": "ea9b8aa0ab49e7fe58847d7ff00c074f61788059",
         "type": "github"
       },
       "original": {
@@ -725,11 +725,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1777258755,
-        "narHash": "sha256-EC07KwADRE2LdIk7vEDyAaD3I0ZUq24T9jQF9L0iEPk=",
+        "lastModified": 1777295000,
+        "narHash": "sha256-xzWerLYQG2W+VGJfaZ+8/Puswbok1o8Tix6/6hIW1rY=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "7f8bbc93d63401e41368d6ddc46a4f631610fa90",
+        "rev": "b408d49b845167add697937761a89c41c996ac7a",
         "type": "github"
       },
       "original": {
