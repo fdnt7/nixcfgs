@@ -17,16 +17,17 @@
       enableFishIntegration = true;
       initLua = ./init.lua;
       plugins =
-        # let
-        #    repo = pkgs.fetchFromGitHub {
-        #      owner = "yazi-rs";
-        #      repo = "plugins";
-        #      rev = "9a52857eac61ede58d11c06ca813c3fa63fe3609";
-        #      hash = "sha256-YM53SsE10wtMqI1JGa4CqZbAgr7h62MZ5skEdAavOVA=";
-        #    };
-        # in
+        let
+          yaziPlugins = pkgs.fetchFromGitHub {
+            owner = "yazi-rs";
+            repo = "plugins";
+            rev = "ac82af3e10f9a32cecd9f87ac64b3f9de7c7aea7";
+            hash = "sha256-svc7I2E+tVMEUWUvIS6i3oTGfLq13eaI61T0c1MQ8qQ=";
+          };
+        in
         {
-          full-border = pkgs.yaziPlugins.full-border;
+          # full-border = pkgs.yaziPlugins.full-border;
+          full-border = "${yaziPlugins}/full-border.yazi";
         };
       settings = {
         mgr = {
