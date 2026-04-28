@@ -12,7 +12,6 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
-    ./development.nix
     ./fonts
     ./nix.nix
     ./nix-community.nix

@@ -22,6 +22,8 @@
     ./nix-index.nix
     ./nix-index-database.nix
     ./nix-your-shell.nix
+    ./nixd.nix
+    ./nixfmt.nix
     ./obs-studio.nix
     ./osu.nix
     ./packet-tracer.nix
