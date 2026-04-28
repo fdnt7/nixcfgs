@@ -1,0 +1,14 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/66kys0r3qqwal6z632c3k3rb9vmikai5-nixos-system-lavender-pilled-26.05.20260422.0726a0e
+
+CHANGED
+[U.] discord                0.0.134, 0.0.134-fish-completions -> 0.0.135, 0.0.135-fish-completions
+[D.] zen-beta               1.19.9b, 1.19.9b-fish-completions -> 1.19.10b, 1.19.10b-fish-completions
+[D.] zen-beta-bin-unwrapped 1.19.9b -> 1.19.10b
+
+SIZE: 19.6 GiB -> 19.6 GiB
+DIFF: 77.0 KiB
+
+Rebuilt-at: 2026-04-28T08:30:53+07:00
