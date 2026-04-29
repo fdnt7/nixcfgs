@@ -1,0 +1,44 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/qmww1jpl5myxs3mahqsfyzkhpcavp8yh-nixos-system-lavender-pilled-26.05.20260427.1c3fe55
+
+CHANGED
+[U.] claude-code                        2.1.112, 2.1.112-fish-completions -> 2.1.119, 2.1.119-fish-completions
+[U.] claude-desktop                     1.4758.0, 1.4758.0-fish-completions -> 1.5220.0, 1.5220.0-fish-completions
+[U.] discord-canary                     0.0.927, 0.0.927-fish-completions -> 1.0.962, 1.0.962-fish-completions
+[U.] electron                           40.8.5 -> 40.9.2
+[U.] electron-unwrapped                 40.8.5, 41.2.0 -> 40.9.2, 41.3.0
+[U.] fastfetch                          2.62.0, 2.62.0-fish-completions, 2.62.0-man -> 2.62.1, 2.62.1-fish-completions, 2.62.1-man
+[U.] fzf                                0.71.0 ×2 -> 0.71.0, 0.72.0
+[U.] lsof                               4.99.5 -> 4.99.6
+[U*] neovim                             0.12.1 ×2, 0.12.1_fish-completions -> 0.12.2 ×2, 0.12.2_fish-completions
+[U.] neovim-unwrapped                   0.12.1 -> 0.12.2
+[U.] nh                                 4.3.1, 4.3.1-fish-completions -> 4.3.2, 4.3.2-fish-completions
+[U.] nh-unwrapped                       4.3.1 -> 4.3.2
+[U.] nix-index                          0.1.9-unstable-2026-02-05 -> 0.1.9-unstable-2026-04-20
+[U.] nix-index-with-full-db             0.1.9-unstable-2026-02-05, 0.1.9-unstable-2026-02-05-fish-completions -> 0.1.9-unstable-2026-04-20, 0.1.9-unstable-2026-04-20-fish-completions
+[U.] nixos-system-lavender-pilled       26.05.20260422.0726a0e -> 26.05.20260427.1c3fe55
+[U.] nss                                3.123, <others> -> 3.123.1, <others>
+[U.] obs-studio                         32.1.1 -> 32.1.2
+[C.] openssl                            <others> -> 1.1.1w, <others>
+[U.] osu-lazer-bin                      2026.418.0, 2026.418.0-bwrap, 2026.418.0-extracted, 2026.418.0-fhsenv-profile, 2026.418.0-fhsenv-rootfs, 2026.418.0-fish-completions, 2026.418.0-init -> 2026.425.0, 2026.425.0-bwrap, 2026.425.0-extracted, 2026.425.0-fhsenv-profile, 2026.425.0-fhsenv-rootfs, 2026.425.0-fish-completions, 2026.425.0-init
+[U.] strongswan                         6.0.5 -> 6.0.6
+[U.] tree-sitter-c-neovim               0.12.1 -> 0.12.2
+[U.] tree-sitter-lua-neovim             0.12.1 -> 0.12.2
+[U.] tree-sitter-markdown-neovim        0.12.1 -> 0.12.2
+[U.] tree-sitter-markdown_inline-neovim 0.12.1 -> 0.12.2
+[U.] tree-sitter-query-neovim           0.12.1 -> 0.12.2
+[U.] tree-sitter-vim-neovim             0.12.1 -> 0.12.2
+[U.] tree-sitter-vimdoc-neovim          0.12.1 -> 0.12.2
+[U.] wrapped-obs-studio                 32.1.1, 32.1.1-fish-completions -> 32.1.2, 32.1.2-fish-completions
+[U.] zed-editor                         0.232.3 -> 0.233.10
+[U.] zed-editor-wrapped                 0.232.3, 0.232.3-fish-completions -> 0.233.10, 0.233.10-fish-completions
+
+ADDED
+[A.] discord-stage-modules              <none>
+
+SIZE: 19.2 GiB -> 19.6 GiB
+DIFF: 465 MiB
+
+Rebuilt-at: 2026-04-29T09:28:54+07:00
