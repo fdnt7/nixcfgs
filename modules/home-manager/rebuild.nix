@@ -340,16 +340,31 @@ in
           fi
 
           built_toplevel="$(realpath "$out_link")"
+          local activate_log
+          activate_log="$(dirname "$build_log")/activate.log"
+
           info "Activating the built generation with nh os switch --ask."
           local switch_exit=0
-          nh os switch --ask --diff never "$built_toplevel" || switch_exit=$?
-          if [ "$switch_exit" -ne 0 ]; then
-            if [ "$switch_exit" -ge 128 ]; then
-              return "$switch_exit"
-            fi
-            info "nh os switch failed (exit $switch_exit); retrying with nh os boot."
-            nh os boot --diff never "$built_toplevel"
+          script -eqfc "nh os switch --ask --diff never \"$built_toplevel\"" "$activate_log" || switch_exit=$?
+
+          if [ "$switch_exit" -eq 0 ]; then
+            return 0
           fi
+
+          if [ "$switch_exit" -ge 128 ]; then
+            return "$switch_exit"
+          fi
+
+          local activate_text
+          activate_text="$(strip_script_envelope "$activate_log")"
+          case "$activate_text" in
+            *"User rejected the new config"* | *"interrupted by the user"*)
+              return "$switch_exit"
+              ;;
+          esac
+
+          info "nh os switch failed (exit $switch_exit); retrying with nh os boot."
+          nh os boot --diff never "$built_toplevel"
         }
       '';
     in
