@@ -925,11 +925,11 @@
         "nixpkgs-nixcord": "nixpkgs-nixcord"
       },
       "locked": {
-        "lastModified": 1777511021,
-        "narHash": "sha256-DBQVWVnGZxfJOumLt5Ezbc5L8znctyptDTCHzUcCVoA=",
+        "lastModified": 1777539516,
+        "narHash": "sha256-4SjNeWJmExhJUneIJtdCj2elzqkLqQNF74B37WGj/tQ=",
         "owner": "kaylorben",
         "repo": "nixcord",
-        "rev": "89e61194633450bed2b9ab60b0080792b93f4ced",
+        "rev": "e01de03fb108386bbf926a8dc2c04b0c43cfa30f",
         "type": "github"
       },
       "original": {
@@ -1535,11 +1535,11 @@
         "rust-overlay": "rust-overlay_3"
       },
       "locked": {
-        "lastModified": 1777190831,
-        "narHash": "sha256-/aRe0XpElRx8zLYAjhd3SroJn90hRqfCqhHJEZKUQB0=",
+        "lastModified": 1777546251,
+        "narHash": "sha256-sJEwQ1s63tiBD85VNYpYsFXz9z39pEX5ChUI5KgqY9w=",
         "owner": "sxyazi",
         "repo": "yazi",
-        "rev": "c4c533e3efca8da498b137dfc907bc5e20090f93",
+        "rev": "1caa5807c6d6f2be4e543eaaa5e1bdc475d8a695",
         "type": "github"
       },
       "original": {
@@ -1556,11 +1556,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1777484394,
-        "narHash": "sha256-03QK/lM/m4f1FjC4ldYtp8NobTGRdwGC24XBY6Vcdqo=",
+        "lastModified": 1777530527,
+        "narHash": "sha256-EWEMj4tKScXvUD3mx7IQwrBrozKZEOy0Vdge5HwJZ+w=",
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
-        "rev": "274e039947393bc90f45b8fc6d1af23e45937af0",
+        "rev": "f540b026224e5218512e6fc814d1b5a10638bc1f",
         "type": "github"
       },
       "original": {
