@@ -60,7 +60,7 @@ in
       includes = mkOption {
         type = listOf (types.attrsOf types.anything);
         default = builtins.genList (n: {
-          condition = "gitdir:~/Projects/._/${toString n}/";
+          condition = "gitdir:~/Projects/.!/${toString n}/";
           path = "home-manager/programs/git/includes/${toString n}";
         }) 3;
         description = ''
