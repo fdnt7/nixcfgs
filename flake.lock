@@ -99,11 +99,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1778031596,
-        "narHash": "sha256-zRrQaLVJZQHX/PurI3fqhEKZQ8XE4e0RZ9FZ5bBs0Zs=",
+        "lastModified": 1778073312,
+        "narHash": "sha256-E8EiMMmuNkS+LVk7k3ttCG55/U2WHcohABwoyJmMlq8=",
         "owner": "aaddrick",
         "repo": "claude-desktop-debian",
-        "rev": "a2411b89284fbd7755f93e642efdf9c9a4489c18",
+        "rev": "f7c4daeb89066789f9021e6414aba4f78673dee0",
         "type": "github"
       },
       "original": {
@@ -925,11 +925,11 @@
         "nixpkgs-nixcord": "nixpkgs-nixcord"
       },
       "locked": {
-        "lastModified": 1778058822,
-        "narHash": "sha256-iWK6mx+b9UeIrLCRC3tQMluI9TU093Q/q78/8LW7IHk=",
+        "lastModified": 1778072118,
+        "narHash": "sha256-4/wHpU5B9Neb9044kYS6+fVzi9SIJFvnrZeafBLtzVI=",
         "owner": "kaylorben",
         "repo": "nixcord",
-        "rev": "a88a9e39026c8456c9cbb130a794a37c358ef07d",
+        "rev": "5673b3360cc76bd614bcea38386855df8f8a76c1",
         "type": "github"
       },
       "original": {
