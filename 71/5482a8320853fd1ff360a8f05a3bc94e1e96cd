@@ -1,0 +1,71 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/ppgb2b86c112qm9n4zp2xgb687pzadj9-nixos-system-lavender-pilled-26.05.20260505.549bd84
+
+CHANGED
+[C.] alsa-lib                                 <others> -> 1.2.15.3-dev, <others>
+[C*] at-spi2-core                             <others> -> 2.58.3-dev, <others>
+[C.] cups                                     <others> -> 2.4.16-dev, <others>
+[U.] discord                                  0.0.135, 0.0.135-fish-completions -> 1.0.137, 1.0.137-fish-completions
+[C.] expat                                    <others> -> 2.7.5-dev, <others>
+[C.] fribidi                                  <others> -> 1.0.16-dev, <others>
+[C.] gmp-with-cxx                             <others> -> 6.3.0-dev, <others>
+[C.] graphite2                                <others> -> 1.3.14-dev, <others>
+[C.] gtk+3                                    <others> -> 3.24.52-dev, <others>
+[C.] harfbuzz                                 <others> -> 12.3.0-dev, <others>
+[C*] libcap                                   <others> -> 2.77-dev, <others>
+[C.] libice                                   <others> -> 1.1.2-dev, <others>
+[C.] libpulseaudio                            <others> -> 17.0-dev, <others>
+[C.] libsm                                    <others> -> 1.2.6-dev, <others>
+[C.] libxcomposite                            <others> -> 0.4.7-dev, <others>
+[C.] libxcursor                               <others> -> 1.2.3-dev, <others>
+[C.] libxdamage                               <others> -> 1.1.7-dev, <others>
+[C.] libxfixes                                <others> -> 6.0.2-dev, <others>
+[C.] libxft                                   <others> -> 2.3.9-dev, <others>
+[C.] libxi                                    <others> -> 1.8.2-dev, <others>
+[C.] libxinerama                              <others> -> 1.1.6-dev, <others>
+[C.] libxrandr                                <others> -> 1.5.5-dev, <others>
+[C.] libxshmfence                             <others> -> 1.3.3-dev, <others>
+[C.] nspr                                     <others> -> 4.38.2-dev, <others>
+[C.] nss                                      <others> -> 3.112.3-dev, <others>
+[C.] pango                                    <others> -> 1.57.0-dev, <others>
+[C.] util-linux-minimal                       <others> -> 2.42-dev, <others>
+[C.] wayland                                  <others> -> 1.24.0-dev, <others>
+
+ADDED
+[A.] audit-tmpdir.sh                          <none>
+[A.] auto-patchelf                            0-unstable-2024-08-14
+[A.] auto-patchelf-hook                       <none>
+[A.] binutils-wrapper                         2.46
+[A.] compress-man-pages.sh                    <none>
+[A.] die-hook                                 <none>
+[A.] full.distro                              <none>
+[A.] gcc-wrapper                              15.2.0
+[A.] gnu-config                               2024-01-01
+[A.] gnumake                                  4.4.1
+[A.] make-binary-wrapper-hook                 <none>
+[A.] make-shell-wrapper-hook                  <none>
+[A.] make-symlinks-relative.sh                <none>
+[A.] move-docs.sh                             <none>
+[A.] move-lib64.sh                            <none>
+[A.] move-sbin.sh                             <none>
+[A.] move-systemd-user-units.sh               <none>
+[A.] multiple-outputs.sh                      <none>
+[A.] no-broken-symlinks.sh                    <none>
+[A.] openasar                                 0-unstable-2026-04-18
+[A.] patch-shebangs.sh                        <none>
+[A.] patchelf                                 0.15.2
+[A.] prune-libtool-files.sh                   <none>
+[A.] python3.13-pyelftools                    0.32
+[A.] reproducible-builds.sh                   <none>
+[A.] set-source-date-epoch-to-latest.sh       <none>
+[A.] stdenv-linux                             <none>
+[A.] update-autotools-gnu-config-scripts-hook <none>
+[A.] wayland-protocols                        1.48
+[A.] wrap-gapps-hook                          <none>
+
+SIZE: 19.6 GiB -> 20.1 GiB
+DIFF: 522 MiB
+
+Rebuilt-at: 2026-05-06T19:19:25+07:00
