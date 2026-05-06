@@ -1,0 +1,39 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/5mhs6zxflwxw5wnjr0zr52aw425vxq7i-nixos-system-lavender-pilled-26.05.20260505.549bd84
+
+CHANGED
+[U.] cfitsio                      4.6.3 -> 4.6.4
+[U.] claude-code                  2.1.121, 2.1.121-fish-completions -> 2.1.123, 2.1.123-fish-completions
+[U.] mesa                         26.0.5 -> 26.0.6
+[U*] mullvad-vpn                  2025.14 -> 2026.1
+[U*] nix                          2.34.6 ×2, 2.34.6-doc, 2.34.6-man -> 2.34.7 ×2, 2.34.7-doc, 2.34.7-man
+[U.] nix-cmd                      2.30.4+1, 2.34.6, <others> -> 2.30.5+1, 2.34.7, <others>
+[U.] nix-expr                     2.30.4+1, 2.34.6, <others> -> 2.30.5+1, 2.34.7, <others>
+[U.] nix-fetchers                 2.30.4+1, 2.34.6, <others> -> 2.30.5+1, 2.34.7, <others>
+[U.] nix-flake                    2.30.4+1, 2.34.6, <others> -> 2.30.5+1, 2.34.7, <others>
+[U.] nix-index                    0.1.9-unstable-2026-04-20 -> 0.1.10
+[U.] nix-index-with-full-db       0.1.9-unstable-2026-04-20, 0.1.9-unstable-2026-04-20-fish-completions -> 0.1.10, 0.1.10-fish-completions
+[U.] nix-main                     2.30.4+1, 2.34.6, <others> -> 2.30.5+1, 2.34.7, <others>
+[U.] nix-manual                   2.34.6, 2.34.6-man -> 2.34.7, 2.34.7-man
+[U.] nix-nswrapper                2.34.6 -> 2.34.7
+[U.] nix-store                    2.30.4+1, 2.34.6, <others> -> 2.30.5+1, 2.34.7, <others>
+[U.] nix-util                     2.30.4+1, 2.34.6, <others> -> 2.30.5+1, 2.34.7, <others>
+[U.] nixos-system-lavender-pilled 26.05.20260430.15f4ee4 -> 26.05.20260505.549bd84
+[U.] python3.13-sentry-sdk        2.58.0 -> 2.59.0
+[U.] sd-switch                    0.6.2 -> 0.6.3
+[U.] starship                     1.25.0, 1.25.0-fish-completions -> 1.25.1, 1.25.1-fish-completions
+[U.] vencord                      1.14.11 -> 1.14.12
+[U.] yazi                         26.2.2pre20260504_10fc76d ×2, 26.2.2pre20260504_10fc76d-fish-completions -> 26.5.6pre20260505_aa52643 ×2, 26.5.6pre20260505_aa52643-fish-completions
+
+ADDED
+[A.] openjdk-minimal-jre          21.0.10+7
+
+REMOVED
+[R.] openjdk-headless-minimal-jre 21.0.10+7
+
+SIZE: 19.6 GiB -> 19.6 GiB
+DIFF: -6.79 MiB
+
+Rebuilt-at: 2026-05-06T08:21:06+07:00
