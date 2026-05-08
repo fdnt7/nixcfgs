@@ -10,7 +10,7 @@
     };
 
     # devenv.url = "github:cachix/devenv";
-    devenv.url = "github:cachix/devenv/v2.0.6"; # using binary cache
+    devenv.url = "github:cachix/devenv/v2.1"; # using binary cache
 
     # Home manager
     # home-manager.url = "github:nix-community/home-manager/release-23.11";
