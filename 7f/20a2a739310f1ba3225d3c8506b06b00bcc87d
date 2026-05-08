@@ -1,0 +1,40 @@
+chore(lavender-pilled): rebuild
+
+<<< /run/current-system
+>>> /nix/store/wazsj734qr492lc9is88m0vhqlldhf1j-nixos-system-lavender-pilled-26.05.20260505.549bd84
+
+CHANGED
+[D.] boehm-gc          8.2.12 ×2, 8.2.8 -> 8.2.12 ×3
+[U.] cachix            1.10.0 -> 1.11.1
+[U.] devenv-wrapped    2.0.7, 2.0.7-fish-completions -> 2.1.0, 2.1.0-fish-completions
+[D.] hwloc             2.13.0-lib, 2.12.2-lib -> 2.13.0-lib ×2
+[U.] libblake3         1.8.3, <others> -> 1.8.4 ×2, <others>
+[U.] libsodium         1.0.21-unstable-2026-01-22, <others> -> 1.0.21-unstable-2026-02-11, <others>
+[C.] libx11            1.8.12, <others> -> <others>
+[D.] llhttp            9.3.1, 9.3.0, <others> -> 9.3.1 ×2, <others>
+[D.] lowdown           3.0.1-lib, 2.0.4-lib -> 3.0.1-lib ×2
+[U.] nix-cmd           2.32.4, 2.33.3, <others> -> 2.34.4, 2.34.6, <others>
+[U.] nix-cmd-c         2.32.4 -> 2.34.4
+[U.] nix-expr          2.32.4, 2.33.3, <others> -> 2.34.4, 2.34.6, <others>
+[U.] nix-expr-c        2.32.4 -> 2.34.4
+[U.] nix-fetchers      2.32.4, 2.33.3, <others> -> 2.34.4, 2.34.6, <others>
+[U.] nix-fetchers-c    2.32.4 -> 2.34.4
+[U.] nix-flake         2.32.4, 2.33.3, <others> -> 2.34.4, 2.34.6, <others>
+[U.] nix-flake-c       2.32.4 -> 2.34.4
+[U.] nix-main          2.32.4, 2.33.3, <others> -> 2.34.4, 2.34.6, <others>
+[U.] nix-main-c        2.32.4 -> 2.34.4
+[U.] nix-store         2.31.3, 2.32.4, 2.33.3, <others> -> 2.31.4, 2.34.4, 2.34.6, <others>
+[U.] nix-store-c       2.32.4 -> 2.34.4
+[U.] nix-util          2.31.3, 2.32.4, 2.33.3, <others> -> 2.31.4, 2.34.4, 2.34.6, <others>
+[U.] nix-util-c        2.32.4 -> 2.34.4
+[C.] publicsuffix-list 0-unstable-2026-01-25, <others> -> <others>
+[C.] systemd-minimal   259, <others> -> <others>
+[C.] zlib              1.3.1, <others> -> <others>
+
+ADDED
+[A.] libghostty-vt     0.1.0-dev+1547dd6-nix
+
+SIZE: 19.3 GiB -> 18.6 GiB
+DIFF: -674 MiB
+
+Rebuilt-at: 2026-05-08T16:16:27+07:00
