@@ -15,6 +15,7 @@
     ./fonts
     ./nix.nix
     ./nix-community.nix
+    ./nix-gaming.nix
     ./nixpkgs.nix
     ./prefer-xdg-directories.nix
     ./programs
