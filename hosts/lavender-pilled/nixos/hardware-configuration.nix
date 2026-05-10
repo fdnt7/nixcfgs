@@ -3,7 +3,6 @@
 # to /etc/nixos/configuration.nix instead.
 {
   config,
-  inputs,
   lib,
   modulesPath,
   nixcfgs,
@@ -13,8 +12,6 @@
 {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
-
-    inputs.nixos-hardware.nixosModules.framework-12-13th-gen-intel
   ];
 
   # Use the systemd-boot EFI boot loader.

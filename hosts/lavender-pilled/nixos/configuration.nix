@@ -3,6 +3,7 @@
 # Edit this configuration file to fine what should be installed on
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
+{ inputs, ... }:
 {
   # You can import other NixOS modules here
   imports = [
@@ -12,6 +13,7 @@
     # Or modules from other flakes (such as nixos-hardware):
     # inputs.hardware.nixosModules.common-cpu-amd
     # inputs.hardware.nixosModules.common-ssd
+    inputs.nixos-hardware.nixosModules.framework-12-13th-gen-intel
 
     # You can also split up your configuration and import pieces of it here:
     ./backlight.nix
