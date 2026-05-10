@@ -25,7 +25,7 @@
     ./nixd.nix
     ./nixfmt.nix
     ./obs-studio.nix
-    ./osu.nix
+    ./osu-lazer-bin.nix
     ./packet-tracer.nix
     ./pdfpc.nix
     ./rebuild.nix
