@@ -1,0 +1,153 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/fzw318iw11i8m7b5arv9jl7np76wxhx5-nixos-system-lavender-pilled-26.05.20260510.da5ad66
+
+CHANGED
+[U*] akonadi                      26.04.0 -> 26.04.1
+[U.] akonadi-calendar             26.04.0 -> 26.04.1
+[U.] akonadi-contacts             26.04.0 -> 26.04.1
+[U.] akonadi-mime                 26.04.0 -> 26.04.1
+[U.] akonadi-search               26.04.0 -> 26.04.1
+[U*] ark                          26.04.0, 26.04.0_fish-completions -> 26.04.1, 26.04.1_fish-completions
+[U.] attica                       6.25.0, <others> -> 6.26.0, <others>
+[U*] baloo                        6.25.0 -> 6.26.0
+[U*] baloo-widgets                26.04.0 -> 26.04.1
+[U*] breeze-icons                 6.25.0, <others> -> 6.26.0, <others>
+[U.] claude-code                  2.1.123, 2.1.123-fish-completions -> 2.1.137, 2.1.137-fish-completions
+[U.] claude-desktop               1.6608.2, 1.6608.2-fish-completions -> 1.7196.0, 1.7196.0-fish-completions
+[U*] dolphin                      26.04.0 -> 26.04.1
+[U*] dolphin-plugins              26.04.0 -> 26.04.1
+[U*] elisa                        26.04.0 -> 26.04.1
+[U*] ffmpegthumbs                 26.04.0 -> 26.04.1
+[U*] fish                         4.6.0, 4.6.0-doc, 4.6.0_fish-completions, 4.6.0-fish-completions -> 4.7.1, 4.7.1-doc, 4.7.1_fish-completions, 4.7.1-fish-completions
+[U*] framework-tool               0.6.2 -> 0.6.3
+[U*] frameworkintegration         6.25.0, <others> -> 6.26.0, <others>
+[U.] freerdp                      3.24.2 -> 3.26.0
+[U.] grantleetheme                26.04.0 -> 26.04.1
+[U*] gwenview                     26.04.0 -> 26.04.1
+[U.] initrd-linux                 7.0.3 -> 7.0.5
+[U.] kaccounts-integration        26.04.0 -> 26.04.1
+[U.] karchive                     6.25.0, <others> -> 6.26.0, <others>
+[U*] kate                         26.04.0, 26.04.0_fish-completions -> 26.04.1, 26.04.1_fish-completions
+[U*] kauth                        6.25.0, <others> -> 6.26.0, <others>
+[U.] kbookmarks                   6.25.0, <others> -> 6.26.0, <others>
+[U.] kcalendarcore                6.25.0 -> 6.26.0
+[U.] kcalutils                    26.04.0 -> 26.04.1
+[U*] kcmutils                     6.25.0 -> 6.26.0
+[U.] kcodecs                      6.25.0, <others> -> 6.26.0, <others>
+[U.] kcolorscheme                 6.25.0 -> 6.26.0
+[U.] kcompletion                  6.25.0, <others> -> 6.26.0, <others>
+[U*] kconfig                      6.25.0, <others> -> 6.26.0, <others>
+[U.] kconfigwidgets               6.25.0, <others> -> 6.26.0, <others>
+[U.] kcontacts                    6.25.0 -> 6.26.0
+[U*] kcoreaddons                  6.25.0, <others> -> 6.26.0, <others>
+[U.] kcrash                       6.25.0, <others> -> 6.26.0, <others>
+[U.] kdav                         6.25.0 -> 6.26.0
+[U.] kdbusaddons                  6.25.0, <others> -> 6.26.0, <others>
+[U*] kde-inotify-survey           26.04.0 -> 26.04.1
+[U.] kdeclarative                 6.25.0 -> 6.26.0
+[C*] kded                         6.25.0, 6.25.0_fish-completions, 5.116.0 -> 6.26.0, 6.26.0_fish-completions
+[U.] kdegraphics-mobipocket       26.04.0 -> 26.04.1
+[U*] kdegraphics-thumbnailers     26.04.0 -> 26.04.1
+[U*] kdepim-runtime               26.04.0 -> 26.04.1
+[U.] kdesu                        6.25.0 -> 6.26.0
+[U.] kdnssd                       6.25.0, <others> -> 6.26.0, <others>
+[U.] kdoctools                    6.25.0, <others> -> 6.26.0, <others>
+[U*] kfilemetadata                6.25.0 -> 6.26.0
+[U.] kglobalaccel                 6.25.0, <others> -> 6.26.0, <others>
+[U*] kguiaddons                   6.25.0, <others> -> 6.26.0, <others>
+[U*] khelpcenter                  26.04.0 -> 26.04.1
+[U.] kholidays                    6.25.0 -> 6.26.0
+[U.] ki18n                        6.25.0, <others> -> 6.26.0, <others>
+[U*] kiconthemes                  6.25.0, <others> -> 6.26.0, <others>
+[U.] kidentitymanagement          26.04.0 -> 26.04.1
+[U.] kidletime                    6.25.0 -> 6.26.0
+[U*] kimageformats                6.25.0 -> 6.26.0
+[U.] kimap                        26.04.0 -> 26.04.1
+[U*] kio                          6.25.0, <others> -> 6.26.0, <others>
+[U*] kio-admin                    26.04.0 -> 26.04.1
+[U*] kio-extras                   26.04.0 -> 26.04.1
+[U.] kirigami                     6.25.0 -> 6.26.0
+[U.] kitemmodels                  6.25.0 -> 6.26.0
+[U.] kitemviews                   6.25.0, <others> -> 6.26.0, <others>
+[C.] kjobwidgets                  6.25.0, 5.116.0-bin, <others> -> 6.26.0, <others>
+[U.] kldap                        26.04.0 -> 26.04.1
+[U.] kmailtransport               26.04.0 -> 26.04.1
+[U.] kmbox                        26.04.0 -> 26.04.1
+[U.] kmime                        26.04.0 -> 26.04.1
+[U.] knewstuff                    6.25.0, <others> -> 6.26.0, <others>
+[U.] knotifications               6.25.0, <others> -> 6.26.0, <others>
+[U.] knotifyconfig                6.25.0 -> 6.26.0
+[U*] konsole                      26.04.0 -> 26.04.1
+[C*] kpackage                     6.25.0, 6.25.0_fish-completions, 5.116.0-bin, <others> -> 6.26.0, 6.26.0_fish-completions, <others>
+[U.] kparts                       6.25.0 -> 6.26.0
+[U.] kpimtextedit                 26.04.0 -> 26.04.1
+[U.] kpty                         6.25.0 -> 6.26.0
+[U.] kquickcharts                 6.25.0 -> 6.26.0
+[U.] krunner                      6.25.0 -> 6.26.0
+[U*] kservice                     6.25.0, 6.25.0_fish-completions, <others> -> 6.26.0, 6.26.0_fish-completions, <others>
+[U.] ksmtp                        26.04.0 -> 26.04.1
+[U.] kstatusnotifieritem          6.25.0 -> 6.26.0
+[U.] ksvg                         6.25.0 -> 6.26.0
+[U*] ktexteditor                  6.25.0 -> 6.26.0
+[U.] ktexttemplate                6.25.0 -> 6.26.0
+[U.] ktextwidgets                 6.25.0, <others> -> 6.26.0, <others>
+[U*] kunifiedpush                 26.04.0 -> 26.04.1
+[U.] kunitconversion              6.25.0 -> 6.26.0
+[U.] kuserfeedback                6.25.0 -> 6.26.0
+[C*] kwallet                      6.25.0, 6.25.0_fish-completions, 5.116.0-bin, <others> -> 6.26.0, 6.26.0_fish-completions, <others>
+[U*] kwalletmanager               26.04.0 -> 26.04.1
+[C.] kwayland                     5.116.0-bin, <others> -> <others>
+[U.] kwidgetsaddons               6.25.0, <others> -> 6.26.0, <others>
+[U.] kwindowsystem                6.25.0, <others> -> 6.26.0, <others>
+[U.] kxmlgui                      6.25.0, <others> -> 6.26.0, <others>
+[U.] libgravatar                  26.04.0 -> 26.04.1
+[U.] libinput                     1.29.2 -> 1.31.1
+[U.] libkdcraw                    26.04.0 -> 26.04.1
+[U.] libkdepim                    26.04.0 -> 26.04.1
+[U.] libkexiv2                    26.04.0 -> 26.04.1
+[U.] libkgapi                     26.04.0 -> 26.04.1
+[U.] libkleo                      26.04.0 -> 26.04.1
+[U.] libplacebo                   7.351.0, <others> -> 7.360.1, <others>
+[U.] linux                        7.0.3, 7.0.3-modules ×2 -> 7.0.5, 7.0.5-modules ×2
+[U.] mesa                         26.0.6 ×2 -> 26.1.0 ×2
+[U.] messagelib                   26.04.0 -> 26.04.1
+[U.] modemmanager-qt              6.25.0 -> 6.26.0
+[U.] nbd                          3.25 -> 3.27.1
+[U.] networkmanager-qt            6.25.0 -> 6.26.0
+[C.] nix-cmd                      2.30.5+1, <others> -> <others>
+[C.] nix-expr                     2.30.5+1, <others> -> <others>
+[C.] nix-fetchers                 2.30.5+1, <others> -> <others>
+[C.] nix-flake                    2.30.5+1, <others> -> <others>
+[C.] nix-main                     2.30.5+1, <others> -> <others>
+[C.] nix-store                    2.30.5+1, <others> -> <others>
+[C.] nix-util                     2.30.5+1, <others> -> <others>
+[U.] nixd                         2.9.0, 2.9.0-fish-completions -> 2.9.1, 2.9.1-fish-completions
+[U.] nixf                         2.9.0 -> 2.9.1
+[U.] nixos-system-lavender-pilled 26.05.20260505.549bd84 -> 26.05.20260510.da5ad66
+[U.] nixt                         2.9.0 -> 2.9.1
+[U*] okular                       26.04.0, 26.04.0_fish-completions -> 26.04.1, 26.04.1_fish-completions
+[C.] openssl                      1.1.1w, <others> -> <others>
+[C.] phonon                       4.11.1, <others> -> <others>
+[U.] pimcommon                    26.04.0 -> 26.04.1
+[U.] prison                       6.25.0 -> 6.26.0
+[U.] purpose                      6.25.0 -> 6.26.0
+[U*] qqc2-desktop-style           6.25.0 -> 6.26.0
+[U*] qrca                         26.04.0 -> 26.04.1
+[U.] qtkeychain                   0.15.0 -> 0.16.0
+[U*] solid                        6.25.0, <others> -> 6.26.0, <others>
+[U.] sonnet                       6.25.0, <others> -> 6.26.0, <others>
+[U.] syndication                  6.25.0, <others> -> 6.26.0, <others>
+[U.] syntax-highlighting          6.25.0, <others> -> 6.26.0, <others>
+[U*] tailscale                    1.96.5 -> 1.98.0
+[U.] threadweaver                 6.25.0 -> 6.26.0
+[U.] uriparser                    1.0.1 -> 1.0.2
+[U.] xen                          4.20.2 -> 4.20.3
+[U.] zed-editor                   1.0.0 -> 1.1.7
+[U.] zed-editor-wrapped           1.0.0, 1.0.0-fish-completions -> 1.1.7, 1.1.7-fish-completions
+
+SIZE: 21.2 GiB -> 21.2 GiB
+DIFF: -8.82 MiB
+
+Rebuilt-at: 2026-05-13T20:46:40+07:00
