@@ -1,0 +1,9 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/znm23pkqcc0vvms6x9dnrrz5f6airv67-nixos-system-lavender-pilled-26.05.20260510.da5ad66
+
+SIZE: 21.2 GiB -> 21.2 GiB
+DIFF: 21.9 KiB
+
+Rebuilt-at: 2026-05-14T04:41:00+07:00
