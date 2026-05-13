@@ -21,7 +21,6 @@
     ./programs
     ./secrets.nix
     ./services
-    ./systemd.nix
     ./xdg.nix
   ];
 
