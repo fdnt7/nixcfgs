@@ -1,0 +1,9 @@
+FIXME_type(lavender-pilled): rebuild
+
+<<< /run/current-system
+>>> /nix/store/g23qy4k5mzrr1p2dxh7rfkpcwjy3kzif-nixos-system-lavender-pilled-26.05.20260510.da5ad66
+
+SIZE: 21.1 GiB -> 21.1 GiB
+DIFF: 395 KiB
+
+Rebuilt-at: 2026-05-14T23:54:32+07:00
