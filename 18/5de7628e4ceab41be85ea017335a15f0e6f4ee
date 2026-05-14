@@ -1,0 +1,12 @@
+chore(lavender-pilled): rebuild
+
+<<< /run/current-system
+>>> /nix/store/8zfpzppryipybdjwy91z9ylp36a8m7zh-nixos-system-lavender-pilled-26.05.20260510.da5ad66
+
+CHANGED
+[U.] devenv-wrapped 2.1.0, 2.1.0-fish-completions -> 2.1.2, 2.1.2-fish-completions
+
+SIZE: 21.1 GiB -> 21.1 GiB
+DIFF: 944 KiB
+
+Rebuilt-at: 2026-05-15T01:06:22+07:00
