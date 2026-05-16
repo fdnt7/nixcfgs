@@ -55,6 +55,10 @@ let
     };
   };
 
+  openjdk = {
+    home.sessionVariables._JAVA_OPTIONS = "-Djava.util.prefs.userRoot=${configHome}/java";
+  };
+
   python = {
     home.sessionVariables = {
       PYTHON_HISTORY = "${stateHome}/python_history";
@@ -88,6 +92,7 @@ in
       nix
       node
       npm
+      openjdk
       python
       wakatime
       wget
