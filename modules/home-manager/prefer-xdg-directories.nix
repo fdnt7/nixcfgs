@@ -23,6 +23,10 @@ let
     home.sessionVariables.CARGO_HOME = "${dataHome}/cargo";
   };
 
+  claude-code = {
+    home.sessionVariables.CLAUDE_CONFIG_DIR = "${configHome}/claude";
+  };
+
   codex = {
     home.sessionVariables.CODEX_HOME = "${configHome}/codex";
   };
@@ -69,6 +73,7 @@ in
       android
       bash
       cargo
+      claude-code
       codex
       elan
       gtk2
