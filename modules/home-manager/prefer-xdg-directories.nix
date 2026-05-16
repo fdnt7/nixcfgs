@@ -47,6 +47,14 @@ let
     home.sessionVariables.NODE_REPL_HISTORY = "${stateHome}/node_repl_history";
   };
 
+  npm = {
+    home.sessionVariables = {
+      NPM_CONFIG_INIT_MODULE = "${configHome}/npm/config/npm-init.js";
+      NPM_CONFIG_CACHE = "${cacheHome}/npm";
+      NPM_CONFIG_TMP = "${stateHome}/npm";
+    };
+  };
+
   python = {
     home.sessionVariables = {
       PYTHON_HISTORY = "${stateHome}/python_history";
@@ -79,6 +87,7 @@ in
       gtk2
       nix
       node
+      npm
       python
       wakatime
       wget
