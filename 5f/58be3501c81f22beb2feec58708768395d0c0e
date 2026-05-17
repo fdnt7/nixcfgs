@@ -1,0 +1,13 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/80pki6fz4qvk4xkg5wi07n6xgy4cs5p4-nixos-system-lavender-pilled-26.05.20260515.d233902
+
+CHANGED
+[U.] SDL2_mixer 2.8.1 -> 2.8.2
+[D.] dnsmasq    2.92rel2, 2.92 -> 2.92rel2 ×2
+
+SIZE: 21.8 GiB -> 21.8 GiB
+DIFF: -20.3 MiB
+
+Rebuilt-at: 2026-05-17T23:16:58+07:00
