@@ -59,6 +59,8 @@ in
     power-profiles-daemon = mkEnableOption "Power Profiles Daemon persistence";
 
     libvirt = mkEnableOption "libvirt state persistence";
+
+    waydroid = mkEnableOption "Waydroid state persistence";
   };
 
   config = mkMerge [
@@ -118,6 +120,10 @@ in
 
     (mkIf cfg.libvirt {
       environment.persistence.${cfg.root}.directories = [ "/var/lib/libvirt" ];
+    })
+
+    (mkIf cfg.waydroid {
+      environment.persistence.${cfg.root}.directories = [ "/var/lib/waydroid" ];
     })
 
     (mkIf cfg.flake.enable {
