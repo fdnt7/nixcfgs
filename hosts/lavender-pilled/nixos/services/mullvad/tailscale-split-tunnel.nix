@@ -5,5 +5,5 @@
   networking.nftables.enable = true;
   services.resolved.enable = true;
 
-  services.mullvad-tailscale-split-tunnel.enable = true;
+  services.mullvad-tailscale-split-tunnel.enable = false;
 }
