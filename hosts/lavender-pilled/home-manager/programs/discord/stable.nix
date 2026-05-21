@@ -3,7 +3,7 @@
   imports = [ inputs.nixcord.homeModules.nixcord ];
 
   programs.discord = {
-    enable = true;
+    enable = false;
     settings = {
       # SKIP_HOST_UPDATE = true; # `true` by default by home-manager
       WINDOW_BOUNDS = {
@@ -31,7 +31,7 @@
   programs.discord.settings.IS_MINIMIZED = false;
 
   programs.nixcord = {
-    enable = false;
+    enable = true;
     vesktop.enable = true;
     discord.openASAR.enable = true;
   };
