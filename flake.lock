@@ -109,7 +109,6 @@
       "original": {
         "owner": "aaddrick",
         "repo": "claude-desktop-debian",
-        "rev": "ba2846c8b3e99ac35563e6c2184dd999b19bbc95",
         "type": "github"
       }
     },

@@ -5,7 +5,7 @@
     # catppuccin.url = "github:catppuccin/nix";
 
     claude-desktop = {
-      url = "github:aaddrick/claude-desktop-debian/ba2846c8b3e99ac35563e6c2184dd999b19bbc95";
+      url = "github:aaddrick/claude-desktop-debian";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
