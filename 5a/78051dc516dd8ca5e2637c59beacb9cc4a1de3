@@ -1,0 +1,12 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/5iywgf1xw803w8v4nhyrk25jdhvymr1b-nixos-system-lavender-pilled-26.05.20260515.d233902
+
+CHANGED
+[U.] claude-desktop 1.8089.1, 1.8089.1-fish-completions -> 1.8555.0, 1.8555.0-fish-completions
+
+SIZE: 22.1 GiB -> 22.1 GiB
+DIFF: 1.12 MiB
+
+Rebuilt-at: 2026-05-22T15:29:13+07:00
