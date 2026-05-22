@@ -1012,11 +1012,11 @@
         "nixpkgs": "nixpkgs_8"
       },
       "locked": {
-        "lastModified": 1779447124,
-        "narHash": "sha256-4Oze0+vi8hbSlpqJLj768ome5aqhQwY83Q+VqoEkyH4=",
+        "lastModified": 1779447251,
+        "narHash": "sha256-blxMFn/yCAeyKhG3qU7CvuI4nWwqIkyA/2FRQRmQV5s=",
         "owner": "fufexan",
         "repo": "nix-gaming",
-        "rev": "3f571ffc456f62928e242b42f67b89722aac696f",
+        "rev": "814364f40627d996d7ec0379cdcb90fdd09e6c4b",
         "type": "github"
       },
       "original": {
@@ -1768,11 +1768,11 @@
         "rust-overlay": "rust-overlay_3"
       },
       "locked": {
-        "lastModified": 1779440406,
-        "narHash": "sha256-CktWsUheluH1hsq7CIH/31kjFKaWfBiWL7QWmzaDiNg=",
+        "lastModified": 1779447379,
+        "narHash": "sha256-BkXaN//OJG40jVTRCQrp+hgu+qbl4jqT1HSEU+px86s=",
         "owner": "sxyazi",
         "repo": "yazi",
-        "rev": "c037855c4f3c8051724dbc8bd967a0cce610da0c",
+        "rev": "5d643ee01af13743d4643e83903afee56b777124",
         "type": "github"
       },
       "original": {
