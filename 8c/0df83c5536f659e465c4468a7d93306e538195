@@ -1,0 +1,20 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/plsn1x1i2q0xl5adrnf3asjwmxc6xqdj-nixos-system-lavender-pilled-26.05.20260523.2991645
+
+CHANGED
+[U.] chafa                        1.18.1 ×2, <others> -> 1.18.1, 1.18.2, <others>
+[U.] claude-code                  2.1.145, 2.1.145-fish-completions -> 2.1.148, 2.1.148-fish-completions
+[U.] nixos-system-lavender-pilled 26.05.20260521.f83fc3c -> 26.05.20260523.2991645
+
+ADDED
+[A.] OVMF-xen                     202602-fd
+
+REMOVED
+[R.] OVMF                         202602-fd
+
+SIZE: 24.1 GiB -> 24.1 GiB
+DIFF: 485 KiB
+
+Rebuilt-at: 2026-05-24T03:54:07+07:00
