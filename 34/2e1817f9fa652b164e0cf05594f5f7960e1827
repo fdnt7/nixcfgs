@@ -1,0 +1,15 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/pj5597wl2ckhls20yk1bsq0z4cssvi6y-nixos-system-lavender-pilled-26.05.20260523.64c08a7
+
+CHANGED
+[U*] bind                         9.20.22-host, 9.20.22-lib, 9.20.22-man -> 9.20.23-host, 9.20.23-lib, 9.20.23-man
+[U.] initrd-linux                 7.0.9 -> 7.0.10
+[U.] linux                        7.0.9, 7.0.9-modules ×2 -> 7.0.10, 7.0.10-modules ×2
+[U.] nixos-system-lavender-pilled 26.05.20260523.2991645 -> 26.05.20260523.64c08a7
+
+SIZE: 22.9 GiB -> 22.9 GiB
+DIFF: -1.47 KiB
+
+Rebuilt-at: 2026-05-25T23:48:12+07:00
