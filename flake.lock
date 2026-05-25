@@ -99,11 +99,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779667718,
-        "narHash": "sha256-ox/7YqYffIgKUy+1T3iRhe23fVDw8Lede+xQdawYces=",
+        "lastModified": 1779673181,
+        "narHash": "sha256-Ekf89nxdt/98KUZqX2tBuex3+Yy2Bo84DfMG/gKN3hc=",
         "owner": "aaddrick",
         "repo": "claude-desktop-debian",
-        "rev": "364147ecc60735ee1ad17179c182ba69acc5b657",
+        "rev": "5f67aa1ae4750a58850eb54ca67d17f3d545b9d6",
         "type": "github"
       },
       "original": {
@@ -1768,11 +1768,11 @@
         "rust-overlay": "rust-overlay_3"
       },
       "locked": {
-        "lastModified": 1779505360,
-        "narHash": "sha256-V9emUCEpW4lf73LreHeCpdH48R4GCmeEVE7za8V+QM0=",
+        "lastModified": 1779672664,
+        "narHash": "sha256-myhy8ng0oN35dgjhfQwu86hrfe08GhPjRuoLmsgWTR4=",
         "owner": "sxyazi",
         "repo": "yazi",
-        "rev": "d9cd1907d91927a36efe7296eee2a7d8975230f8",
+        "rev": "f7fea2b19afeaade31c6fa1a37c124c1fa59e15b",
         "type": "github"
       },
       "original": {
