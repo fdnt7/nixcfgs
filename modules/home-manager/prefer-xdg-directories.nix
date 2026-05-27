@@ -72,10 +72,9 @@ let
   };
 
   wget = {
-    programs.fish.shellInit = ''
-      if type -q wget
-          alias wget="wget --hsts-file=${dataHome}/wget-hsts"
-      end
+    home.sessionVariables.WGETRC = "${configHome}/wgetrc";
+    xdg.configFile.wgetrc.text = ''
+      hsts-file = ${stateHome}/wget-hsts
     '';
   };
 in
