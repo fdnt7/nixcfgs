@@ -1,0 +1,92 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/nl4xijcpj5kh9c37n8pc1hspjy84y69n-nixos-system-lavender-pilled-26.05.20260523.64c08a7
+
+CHANGED
+[U.] 7zz                       26.00 -> 26.01
+[C*] at-spi2-core              2.58.3, <others> -> <others>
+[C.] bluez                     5.84, <others> -> <others>
+[C.] chafa                     1.18.1-bin, 1.18.1, <others> -> 1.18.2-bin, <others>
+[U.] claude-desktop            1.9255.0, 1.9255.0-fish-completions -> 1.9255.2, 1.9255.2-fish-completions
+[C*] cryptsetup                2.8.4, <others> -> <others>
+[C.] cups                      2.4.16-lib, <others> -> <others>
+[C*] curl                      8.18.0-bin, <others> -> <others>
+[C.] ell                       0.82, <others> -> <others>
+[C.] expat                     2.7.4, <others> -> <others>
+[C.] ffmpeg                    8.0.1-bin, 8.0.1-data, 8.0.1-lib, <others> -> 8.1-bin, <others>
+[C.] ffmpeg-headless           8.0.1-data, 8.0.1-lib, <others> -> <others>
+[C.] file                      5.45, <others> -> <others>
+[C.] freetype                  2.13.3, <others> -> <others>
+[U.] fzf                       0.71.0, <others> -> 0.73.1, <others>
+[C.] gdk-pixbuf                2.44.5, <others> -> <others>
+[C.] glib                      2.86.3, <others> -> <others>
+[C.] gnum4                     1.4.20, <others> -> <others>
+[C.] gnutls                    3.8.12, <others> -> <others>
+[C.] gsettings-desktop-schemas 49.1, <others> -> <others>
+[C.] gsm                       1.0.23, <others> -> <others>
+[C.] gst-plugins-bad           1.26.5, <others> -> <others>
+[C.] gst-plugins-base          1.26.5, <others> -> <others>
+[C.] gstreamer                 1.26.5, <others> -> <others>
+[C.] gtk+3                     3.24.51, <others> -> <others>
+[C.] gtk4                      4.20.3, <others> -> <others>
+[C.] harfbuzz                  12.3.0, <others> -> <others>
+[C.] hwdata                    0.405, <others> -> <others>
+[C.] imagemagick               7.1.2-17, <others> -> <others>
+[C.] imath                     3.2.1, <others> -> <others>
+[D.] jemalloc                  5.3.1, 5.3.0-unstable-2025-09-12 -> 5.3.1 ×2
+[C.] lerc                      4.0.0, <others> -> <others>
+[C.] libadwaita                1.8.4, <others> -> <others>
+[C.] libapparmor               4.1.3, <others> -> <others>
+[C.] libavif                   1.3.0, <others> -> <others>
+[C.] libbpf                    1.6.3, <others> -> <others>
+[C.] libcap-ng                 0.9, <others> -> <others>
+[C.] libde265                  1.0.16, <others> -> <others>
+[C.] libdrm                    2.4.131, 2.4.131-bin, 2.4.131-dev, <others> -> <others>
+[C.] libfido2                  1.16.0, <others> -> <others>
+[C.] libfyaml                  0.9.5, <others> -> <others>
+[C.] libgpg-error              1.58, <others> -> <others>
+[C.] libjpeg-turbo             3.1.3, <others> -> <others>
+[C.] libopenmpt                0.8.4, <others> -> <others>
+[C.] libpciaccess              0.18.1, <others> -> <others>
+[C.] libpng-apng               1.6.55, <others> -> <others>
+[C.] libraqm                   0.10.4, <others> -> <others>
+[C.] libraw                    0.21.5b-lib, <others> -> <others>
+[C.] librsvg                   2.61.4, <others> -> <others>
+[C.] libsrtp                   2.7.0, <others> -> <others>
+[C.] libssh                    0.11.3, <others> -> <others>
+[C.] libuv                     1.52.0, <others> -> <others>
+[C.] lilv                      0.26.2, <others> -> <others>
+[C*] lvm2                      2.03.38-lib, <others> -> <others>
+[C.] mbedtls                   3.6.5, <others> -> <others>
+[C.] mesa-libgbm               25.1.0, <others> -> <others>
+[C.] neon                      0.36.0, <others> -> <others>
+[C.] nspr                      4.38.2, <others> -> <others>
+[C.] nss                       3.112.3, <others> -> <others>
+[C.] openapv                   0.2.1.1, <others> -> <others>
+[C.] openexr                   3.3.5, <others> -> <others>
+[C.] p11-kit                   0.26.1, <others> -> <others>
+[C.] pango                     1.57.0, <others> -> <others>
+[C*] pipewire                  1.6.2, <others> -> <others>
+[C.] python3                   3.13.12, <others> -> <others>
+[C.] sdl2-compat               2.32.64, <others> -> <others>
+[C.] sdl3                      3.4.2-lib, <others> -> <others>
+[C.] serd                      0.32.6, <others> -> <others>
+[C.] soundtouch                2.4.0, <others> -> <others>
+[C.] sratom                    0.6.20, <others> -> <others>
+[C*] systemd                   259.3, <others> -> <others>
+[C.] systemd-minimal-libs      259.3, <others> -> <others>
+[C.] tinysparql                3.10.1, <others> -> <others>
+[C.] tzdata                    2026a, <others> -> <others>
+[C.] unbound                   1.24.2-lib, <others> -> <others>
+[C.] wayland                   1.24.0, <others> -> <others>
+[U.] yazi                      26.5.6pre20260525_cf8b541 ×2, 26.5.6pre20260525_cf8b541-fish-completions -> 26.5.6pre20260528_6c30430 ×2, 26.5.6pre20260528_6c30430-fish-completions
+[C.] zenity                    4.2.1, <others> -> <others>
+
+REMOVED
+[R.] libldac-dec               0.0.2-unstable-2024-11-12
+
+SIZE: 22.9 GiB -> 22.0 GiB
+DIFF: -929 MiB
+
+Rebuilt-at: 2026-05-28T23:47:23+07:00
