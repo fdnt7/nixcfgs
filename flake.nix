@@ -5,7 +5,10 @@
     # catppuccin.url = "github:catppuccin/nix";
 
     claude-desktop = {
-      url = "github:aaddrick/claude-desktop-debian";
+      # Pin to the latest working commit as the main branch is failing to build
+      #
+      # Refs: https://github.com/aaddrick/claude-desktop-debian/issues/672
+      url = "github:aaddrick/claude-desktop-debian/5dd948e96d853ed37636bc0e2368fc2665cd1104";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
