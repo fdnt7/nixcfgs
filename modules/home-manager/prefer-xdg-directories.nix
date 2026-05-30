@@ -35,6 +35,10 @@ let
     home.sessionVariables.ELAN_HOME = "${dataHome}/elan";
   };
 
+  go = {
+    home.sessionVariables.GOPATH = "${dataHome}/go";
+  };
+
   gtk2 = {
     home.sessionVariables.GTK2_RC_FILES = "${configHome}/gtk-2.0/gtkrc";
   };
@@ -87,6 +91,7 @@ in
       claude-code
       codex
       elan
+      go
       gtk2
       nix
       node
