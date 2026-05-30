@@ -61,6 +61,8 @@ in
     libvirt = mkEnableOption "libvirt state persistence";
 
     waydroid = mkEnableOption "Waydroid state persistence";
+
+    bluetooth = mkEnableOption "Bluetooth state persistence";
   };
 
   config = mkMerge [
@@ -138,6 +140,10 @@ in
             mode = "u=rwx,g=rwx,o=";
           }
         ];
+    })
+
+    (mkIf cfg.bluetooth {
+      environment.persistence.${cfg.root}.directories = [ "/var/lib/bluetooth" ];
     })
   ];
 }
