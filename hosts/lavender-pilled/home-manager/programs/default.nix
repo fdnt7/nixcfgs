@@ -14,6 +14,7 @@
     ./foot.nix
     ./git.nix
     ./haruna.nix
+    ./line-messenger.nix
     ./man.nix
     ./mullvad-vpn.nix
     ./musescore.nix
