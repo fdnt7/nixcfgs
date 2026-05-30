@@ -17,6 +17,7 @@
 
     # You can also split up your configuration and import pieces of it here:
     ./backlight.nix
+    ./bluetooth.nix
     ./graphics.nix
     ./home-manager.nix
     ./impermanence.nix
