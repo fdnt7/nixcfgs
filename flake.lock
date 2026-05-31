@@ -973,11 +973,11 @@
         "treefmt-nix": "treefmt-nix_2"
       },
       "locked": {
-        "lastModified": 1780174204,
-        "narHash": "sha256-aZ3Jz0wDVbJ+GYsYm83YbftGAt539dXdztxSwH/D6BA=",
+        "lastModified": 1780186372,
+        "narHash": "sha256-UEotneBHywIlS90T2qMZOfZeIYkMtFLhPW1cIPHE5/g=",
         "owner": "fdnt7",
         "repo": "line-nix",
-        "rev": "1acadc96e9a78addccec9c292d75047755356870",
+        "rev": "4cb14baa0c18cc5bb2138cc7846c5b7bf4cfe66d",
         "type": "github"
       },
       "original": {
