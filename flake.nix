@@ -18,8 +18,7 @@
     # Home manager
     # home-manager.url = "github:nix-community/home-manager/release-23.11";
     home-manager = {
-      # silent the warning that `nixos-unstable` is not yet 26.11
-      url = "github:nix-community/home-manager/release-26.05";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -66,8 +65,7 @@
     # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
 
     nixvim = {
-      # silent the warning that `nixos-unstable` is not yet 26.11
-      url = "github:nix-community/nixvim/nixos-26.05";
+      url = "github:nix-community/nixvim";
       # If you are not running an unstable channel of nixpkgs, select the corresponding branch of nixvim.
       # url = "github:nix-community/nixvim/nixos-25.05";
 
