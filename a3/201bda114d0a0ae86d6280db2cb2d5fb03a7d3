@@ -1,0 +1,39 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/b7dnrhs7jq2f8jl0bq13igf6gd9w28jx-nixos-system-lavender-pilled-26.11.20260531.331800d
+
+CHANGED
+[U*] accountsservice              23.13.9 -> 26.13.3
+[U.] claude-code                  2.1.148, 2.1.148-fish-completions -> 2.1.158, 2.1.158-fish-completions
+[U.] ddcutil                      2.2.6 -> 2.2.7
+[U.] drbd                         9.33.0 -> 9.34.0
+[U.] electron                     40.10.0 -> 40.10.2
+[U.] electron-unwrapped           40.10.0, 41.6.1 -> 40.10.2, 41.7.1
+[U.] ffmpeg                       4.4.6-data, 4.4.6-lib, 7.1.3-data, 7.1.3-lib, <others> -> 4.4.7-data, 4.4.7-lib, 7.1.4-data, 7.1.4-lib, <others>
+[C*] fuse                         2.9.9, <others> -> <others>
+[U*] fwupd                        2.1.1, 2.1.1-lib, 2.1.1-man -> 2.1.4, 2.1.4-lib, 2.1.4-man
+[C.] fzf                          0.72.0, <others> -> <others>
+[U.] libglibutil                  1.0.81 -> 1.0.82
+[U.] libqalculate                 5.10.0 -> 5.11.0
+[U.] mint-x-icons                 1.7.5 -> 1.7.6
+[U.] musescore                    4.7.0, 4.7.0-fish-completions -> 4.7.2, 4.7.2-fish-completions
+[U*] nixos-rebuild-ng             26.05, 26.05_fish-completions -> 26.11, 26.11_fish-completions
+[U.] nixos-system-lavender-pilled 26.05.20260523.64c08a7 -> 26.11.20260531.331800d
+[U.] samba                        4.23.5 ×2 -> 4.23.8 ×2
+[U*] tailscale                    1.98.2 -> 1.98.3
+[U*] waydroid                     1.6.2 -> 1.6.3
+[U.] wireless-regdb               2026.02.04-zstd -> 2026.05.30-zstd
+[U.] zed-editor                   1.3.5 -> 1.3.6
+[U.] zed-editor-wrapped           1.3.5, 1.3.5-fish-completions -> 1.3.6, 1.3.6-fish-completions
+
+ADDED
+[A.] picotts                      0-unstable-2021-05-06
+
+REMOVED
+[R.] svox                         0-unstable-2021-05-06
+
+SIZE: 23.4 GiB -> 23.4 GiB
+DIFF: -1.08 MiB
+
+Rebuilt-at: 2026-06-02T03:49:08+07:00
