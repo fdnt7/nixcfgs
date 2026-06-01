@@ -1,0 +1,20 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/xscdpz871vvsxsjjgc3i1ns2cbrj7aw2-nixos-system-lavender-pilled-26.05.20260523.64c08a7
+
+CHANGED
+[U.] discord                 1.0.140, 1.0.140-fish-completions -> 1.0.141, 1.0.141-fish-completions
+
+ADDED
+[A.] line-client             9.1.2.3379
+[A.] line-messenger          9.1.2.3379, 9.1.2.3379-fish-completions
+
+REMOVED
+[R.] line-messenger-snapshot 2026-05-30T19-25-32Z, 2026-05-30T19-25-32Z-fish-completions
+[R.] line-snapshot.tar.zst   <none>
+
+SIZE: 23.4 GiB -> 23.4 GiB
+DIFF: 74.5 MiB
+
+Rebuilt-at: 2026-06-02T02:33:58+07:00
