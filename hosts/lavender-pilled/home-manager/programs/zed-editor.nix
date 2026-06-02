@@ -15,11 +15,11 @@
     ];
     extraPackages =
       let
-        inherit (pkgs) zed-discord-presence zed-wakatime;
+        inherit (pkgs) zed-discord-presence zed-wakatime-ls;
       in
       [
         zed-discord-presence
-        zed-wakatime
+        zed-wakatime-ls
       ];
 
     userKeymaps = [
