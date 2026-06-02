@@ -2,6 +2,5 @@
 # You can build them using 'nix build .#example'
 pkgs: {
   # example = pkgs.callPackage ./example { };
-  zed-wakatime = pkgs.callPackage ./zed-wakatime.nix { };
   zed-wakatime-ls = pkgs.callPackage ./zed-wakatime-ls.nix { };
 }
