@@ -1,0 +1,14 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/sspfzv6rh31818z54hd7b1bi89fi3azm-nixos-system-lavender-pilled-26.11.20260531.331800d
+
+CHANGED
+[U.] dhcpcd 10.3.1 ×2 -> 10.3.1, 10.3.2
+[C.] ngtcp2 <others> -> 1.23.0, <others>
+[U.] yazi   26.5.6pre20260606_ea7fa21 ×2, 26.5.6pre20260606_ea7fa21-fish-completions -> 26.5.6pre20260607_f6113d3 ×2, 26.5.6pre20260607_f6113d3-fish-completions
+
+SIZE: 23.4 GiB -> 23.5 GiB
+DIFF: 21.8 MiB
+
+Rebuilt-at: 2026-06-08T02:29:26+07:00
