@@ -44,9 +44,7 @@
     };
     #automodContext.enable = true; # native to discord now
     callTimer.enable = true;
-
-    # NOTE: C is capitalised because of https://github.com/FlameFlag/nixcord/issues/210
-    ClearURLs.enable = true;
+    clearUrls.enable = true;
     copyEmojiMarkdown.enable = true;
     dontRoundMyTimestamps.enable = true;
     expressionCloner.enable = true;
