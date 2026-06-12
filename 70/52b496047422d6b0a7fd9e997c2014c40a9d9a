@@ -1,0 +1,25 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/3i2jaay6fsw74hcricg1wvlh9r3mcm3i-nixos-system-lavender-pilled-26.11.20260610.9ae611a
+
+CHANGED
+[U.] claude-code                  2.1.161, 2.1.161-fish-completions -> 2.1.170, 2.1.170-fish-completions
+[U.] discord-canary               1.0.1095, 1.0.1095-fish-completions -> 1.0.1177, 1.0.1177-fish-completions
+[U.] fastfetch                    2.63.1, 2.63.1-fish-completions, 2.63.1-man -> 2.64.2, 2.64.2-fish-completions, 2.64.2-man
+[U.] haruna                       1.7.1, 1.7.1-fish-completions -> 1.8.1, 1.8.1-fish-completions
+[U.] initrd-linux                 7.0.11 -> 7.0.12
+[U.] intel-vaapi-driver           2.4.1-unstable-2024-10-29 ×2 -> 2.4.5 ×2
+[U.] libslirp                     4.9.1 -> 4.9.3
+[U.] linux                        7.0.11, 7.0.11-modules ×2 -> 7.0.12, 7.0.12-modules ×2
+[U.] nixos-system-lavender-pilled 26.11.20260606.a799d3e -> 26.11.20260610.9ae611a
+[U.] perl5.42.0-DBI               1.644 -> 1.648
+[U.] python3.13-libvirt           12.2.0 -> 12.4.0
+[U.] strongswan                   6.0.6 -> 6.0.7
+[U.] zed-editor                   1.4.4 -> 1.5.4
+[U.] zed-editor-wrapped           1.4.4, 1.4.4-fish-completions -> 1.5.4, 1.5.4-fish-completions
+
+SIZE: 23.7 GiB -> 23.7 GiB
+DIFF: 17.7 MiB
+
+Rebuilt-at: 2026-06-12T14:33:08+07:00
