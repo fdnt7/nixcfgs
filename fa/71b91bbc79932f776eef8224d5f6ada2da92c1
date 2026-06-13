@@ -1,0 +1,15 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/bmr0jlwpl8b1aag9nybnmxfid4n9n337-nixos-system-lavender-pilled-26.11.20260610.9ae611a
+
+ADDED
+[A.] osuinstall-sha256-JN0CYWsWNYCFP1Dt9Lnt376fER2MhQ+5UsPLVxj4iiw=.exe <none>
+
+REMOVED
+[R.] osuinstall-sha256-x7d8L2-EWFIRFOBsGXdJYBZR4b1P7r5QP0VyMnArFqs=.exe <none>
+
+SIZE: 23.7 GiB -> 23.7 GiB
+DIFF: -1.98 KiB
+
+Rebuilt-at: 2026-06-13T11:27:29+07:00
