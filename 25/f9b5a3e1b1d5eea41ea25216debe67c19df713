@@ -1,0 +1,10 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/6xikcmxlvqd7ljn5kr4xwn9idzn8qyvg-nixos-system-lavender-pilled-26.11.20260606.a799d3e
+
+CHANGED
+[U.] discord 1.0.141, 1.0.141-fish-completions -> 1.0.142, 1.0.142-fish-completions
+No version or size changes
+
+Rebuilt-at: 2026-06-09T12:14:14+07:00

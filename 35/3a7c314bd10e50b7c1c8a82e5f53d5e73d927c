@@ -1,0 +1,86 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/w1w5lvwggxflw33qbhka2ng56avz1pv7-nixos-system-lavender-pilled-26.11.20260606.a799d3e
+
+CHANGED
+[U*] akonadi                      26.04.1 -> 26.04.2
+[U.] akonadi-calendar             26.04.1 -> 26.04.2
+[U.] akonadi-contacts             26.04.1 -> 26.04.2
+[U.] akonadi-mime                 26.04.1 -> 26.04.2
+[U.] akonadi-search               26.04.1 -> 26.04.2
+[U*] ark                          26.04.1, 26.04.1_fish-completions -> 26.04.2, 26.04.2_fish-completions
+[U*] baloo-widgets                26.04.1 -> 26.04.2
+[U*] btrfs-progs                  6.19.1, 6.19.1-man -> 7.0, 7.0-man
+[U.] capstone                     5.0.7 -> 5.0.9
+[U.] claude-code                  2.1.158, 2.1.158-fish-completions -> 2.1.161, 2.1.161-fish-completions
+[C.] dhcpcd                       10.3.1, <others> -> <others>
+[U*] dolphin                      26.04.1 -> 26.04.2
+[U*] dolphin-plugins              26.04.1 -> 26.04.2
+[U*] elisa                        26.04.1 -> 26.04.2
+[U*] ffmpegthumbs                 26.04.1 -> 26.04.2
+[U*] framework-tool               0.6.3 -> 0.6.4
+[U.] grantleetheme                26.04.1 -> 26.04.2
+[U*] gwenview                     26.04.1 -> 26.04.2
+[U.] initrd-linux                 7.0.10 -> 7.0.11
+[U.] kaccounts-integration        26.04.1 -> 26.04.2
+[U*] kate                         26.04.1, 26.04.1_fish-completions -> 26.04.2, 26.04.2_fish-completions
+[U.] kcalutils                    26.04.1 -> 26.04.2
+[U*] kde-inotify-survey           26.04.1 -> 26.04.2
+[U.] kdegraphics-mobipocket       26.04.1 -> 26.04.2
+[U*] kdegraphics-thumbnailers     26.04.1 -> 26.04.2
+[U*] kdepim-runtime               26.04.1 -> 26.04.2
+[U*] khelpcenter                  26.04.1 -> 26.04.2
+[U.] kidentitymanagement          26.04.1 -> 26.04.2
+[U.] kimap                        26.04.1 -> 26.04.2
+[U*] kio-admin                    26.04.1 -> 26.04.2
+[U*] kio-extras                   26.04.1 -> 26.04.2
+[U.] kldap                        26.04.1 -> 26.04.2
+[U.] kmailtransport               26.04.1 -> 26.04.2
+[U.] kmbox                        26.04.1 -> 26.04.2
+[U.] kmime                        26.04.1 -> 26.04.2
+[U*] konsole                      26.04.1 -> 26.04.2
+[U.] kpimtextedit                 26.04.1 -> 26.04.2
+[U.] ksmtp                        26.04.1 -> 26.04.2
+[U*] kunifiedpush                 26.04.1 -> 26.04.2
+[U*] kwalletmanager               26.04.1 -> 26.04.2
+[U.] libblockdev                  3.4.0 -> 3.5.0
+[U.] libburn                      1.5.6 -> 1.5.8
+[U.] libgit2                      1.9.3-lib, <others> -> 1.9.4-lib, <others>
+[U.] libgphoto2                   2.5.33 -> 2.5.34
+[U.] libgravatar                  26.04.1 -> 26.04.2
+[U.] libinput                     1.31.1, 1.31.1-bin, 1.31.1-dev -> 1.31.3, 1.31.3-bin, 1.31.3-dev
+[U.] libisoburn                   1.5.6, 1.5.6-lib -> 1.5.8.pl02, 1.5.8.pl02-lib
+[U.] libisofs                     1.5.8 -> 1.5.8.pl02
+[U.] libjcat                      0.2.3 -> 0.2.6
+[U.] libkdcraw                    26.04.1 -> 26.04.2
+[U.] libkdepim                    26.04.1 -> 26.04.2
+[U.] libkexiv2                    26.04.1 -> 26.04.2
+[U.] libkgapi                     26.04.1 -> 26.04.2
+[U.] libkleo                      26.04.1 -> 26.04.2
+[U.] libwacom                     2.18.0 -> 2.19.0
+[U.] linux                        7.0.10, 7.0.10-modules ×2 -> 7.0.11, 7.0.11-modules ×2
+[U.] mesa                         26.1.1 ×2 -> 26.1.2 ×2
+[U.] messagelib                   26.04.1 -> 26.04.2
+[U.] nixfmt                       1.2.0, 1.2.0-fish-completions -> 1.3.1, 1.3.1-fish-completions
+[U.] nixos-system-lavender-pilled 26.11.20260531.331800d -> 26.11.20260606.a799d3e
+[U.] noto-fonts                   2026.05.01, 2026.05.01-fish-completions -> 2026.06.01, 2026.06.01-fish-completions
+[U*] okular                       26.04.1, 26.04.1_fish-completions -> 26.04.2, 26.04.2_fish-completions
+[U.] pimcommon                    26.04.1 -> 26.04.2
+[U.] python3.13-sentry-sdk        2.60.0 -> 2.61.1
+[U*] qemu                         10.2.2, 10.2.2-doc, 10.2.2_fish-completions, 10.2.2-ga -> 11.0.0, 11.0.0-doc, 11.0.0_fish-completions, 11.0.0-ga
+[U*] qrca                         26.04.1 -> 26.04.2
+[U.] squashfuse                   0.6.1 -> 0.6.2
+[U*] tailscale                    1.98.3 -> 1.98.5
+[U.] webkitgtk                    2.52.3+abi=4.1 -> 2.52.4+abi=4.1
+[U*] xwayland                     24.1.11, 24.1.11_fish-completions -> 24.1.12, 24.1.12_fish-completions
+[U.] zed-editor                   1.3.6 -> 1.4.4
+[U.] zed-editor-wrapped           1.3.6, 1.3.6-fish-completions -> 1.4.4, 1.4.4-fish-completions
+
+ADDED
+[A.] noto-fonts-cjk-serif         2.003
+
+SIZE: 23.5 GiB -> 23.7 GiB
+DIFF: 228 MiB
+
+Rebuilt-at: 2026-06-09T05:56:48+07:00

@@ -1,0 +1,8 @@
+revert(lavender-pilled): rebuild
+
+<<< /run/current-system
+>>> /nix/store/14x29hz3j991yxb8s1wjk2pki736kzp0-nixos-system-lavender-pilled-26.11.20260606.a799d3e
+
+No version or size changes
+
+Rebuilt-at: 2026-06-11T08:26:13+07:00

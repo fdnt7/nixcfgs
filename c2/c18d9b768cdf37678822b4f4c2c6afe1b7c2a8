@@ -1,0 +1,16 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/q0kgdr284g3ykw7n3xdpg9j4j4nq5ngb-nixos-system-lavender-pilled-26.11.20260531.331800d
+
+ADDED
+[A.] nixcord-settings.json                         <none>
+[A.] nixcord-vesktop-settings.json                 <none>
+
+REMOVED
+[R.] hm_homefdl.configvesktopsettingssettings.json <none>
+
+SIZE: 23.4 GiB -> 23.4 GiB
+DIFF: 16.7 KiB
+
+Rebuilt-at: 2026-06-03T05:37:53+07:00

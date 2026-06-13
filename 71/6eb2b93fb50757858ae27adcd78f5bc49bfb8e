@@ -1,0 +1,13 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/hg732rn72c22fzjx3alc6irj3s504wci-nixos-system-lavender-pilled-26.11.20260531.331800d
+
+CHANGED
+[U.] python3.13-umu-launcher-unwrapped 1.4.0-unstable-2026-04-26 -> 1.4.0-unstable-2026-06-04
+[U.] umu-launcher                      1.4.0-unstable-2026-04-26, 1.4.0-unstable-2026-04-26-bwrap, 1.4.0-unstable-2026-04-26-fhsenv-profile, 1.4.0-unstable-2026-04-26-fhsenv-rootfs, 1.4.0-unstable-2026-04-26-init -> 1.4.0-unstable-2026-06-04, 1.4.0-unstable-2026-06-04-bwrap, 1.4.0-unstable-2026-06-04-fhsenv-profile, 1.4.0-unstable-2026-06-04-fhsenv-rootfs, 1.4.0-unstable-2026-06-04-init
+
+SIZE: 23.4 GiB -> 23.4 GiB
+DIFF: 568 bytes
+
+Rebuilt-at: 2026-06-05T11:55:46+07:00
