@@ -1,0 +1,8 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/3fp7zq889fb9y2rcyrcsiim1w1axh5rf-nixos-system-lavender-pilled-26.11.20260610.9ae611a
+
+No version or size changes
+
+Rebuilt-at: 2026-06-15T23:32:20+07:00
