@@ -1,0 +1,12 @@
+revert(lavender-pilled): rebuild
+
+<<< /run/current-system
+>>> /nix/store/a00nlkbfdcv28h3sy0lkl42g8fys39r7-nixos-system-lavender-pilled-26.11.20260610.9ae611a
+
+CHANGED
+[U.] claude-desktop 1.11847.5, 1.11847.5-fish-completions -> 1.13576.0, 1.13576.0-fish-completions
+
+SIZE: 23.7 GiB -> 23.7 GiB
+DIFF: 18.4 MiB
+
+Rebuilt-at: 2026-06-18T02:42:53+07:00
