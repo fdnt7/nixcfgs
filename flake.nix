@@ -28,7 +28,11 @@
     impermanence.url = "github:nix-community/impermanence"; # no nixpkgs
 
     lanzaboote = {
-      url = "github:nix-community/lanzaboote/v1.0.0";
+      # Chase NixOS unstable change that disallows setting `bootspec.enable`
+      #
+      # Refs: https://github.com/nix-community/lanzaboote/pull/617
+      url = "github:nix-community/lanzaboote/0403b4b7e8b2612657f0053a4c315e6c43eee9e6";
+      # url = "github:nix-community/lanzaboote/v1.0.0";
 
       # Optional but recommended to limit the size of your system closure.
       inputs.nixpkgs.follows = "nixpkgs";
