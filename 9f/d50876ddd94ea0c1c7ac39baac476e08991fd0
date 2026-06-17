@@ -1,0 +1,15 @@
+fix(lavender-pilled): rebuild
+
+<<< /run/current-system
+>>> /nix/store/lb5ih883dd147xf5sl26ry65vb0i09fp-nixos-system-lavender-pilled-26.11.20260610.9ae611a
+
+ADDED
+[A.] lzbt        <none>
+
+REMOVED
+[R.] bootinstall <none>
+
+SIZE: 23.7 GiB -> 23.7 GiB
+DIFF: 1.29 MiB
+
+Rebuilt-at: 2026-06-18T03:18:16+07:00
