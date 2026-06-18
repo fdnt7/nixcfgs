@@ -99,11 +99,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1781661283,
-        "narHash": "sha256-mIxgzfcv2+VB01c7BuzsLqq2ZXMrK1F+W1MmGxLJDYg=",
+        "lastModified": 1781747722,
+        "narHash": "sha256-4aFy+NJ3aIVi7mIPLvIubnUuDy09FwDd+kG2QpagzCY=",
         "owner": "aaddrick",
         "repo": "claude-desktop-debian",
-        "rev": "da341d733ce120463ea9f565751122ee844b3a00",
+        "rev": "748b38854841db29b122d17515d4cf5add598994",
         "type": "github"
       },
       "original": {
@@ -867,11 +867,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1781719483,
-        "narHash": "sha256-MC6hWrek1hMewRRRHiAJ8z4sHEodzjizOefS/oHVrsU=",
+        "lastModified": 1781751568,
+        "narHash": "sha256-hZAbXoNA4nCSaIJJLGl/EdErFtlnAS06jEp4oO7Qp6s=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "ea0bf49c9d2a9c8f5548d116d63a7a1a35d1193d",
+        "rev": "5bcff43156c0eebe68759338b7879c8e1b2e2bd0",
         "type": "github"
       },
       "original": {
@@ -1106,11 +1106,11 @@
         "nixpkgs-nixcord": "nixpkgs-nixcord"
       },
       "locked": {
-        "lastModified": 1781716424,
-        "narHash": "sha256-vzNMgPYXQ0Uz9tPEKqsgJE2+l3reQZ6Js9i7dIeMxTc=",
+        "lastModified": 1781745691,
+        "narHash": "sha256-Ym4GOhy6K0agLIOPA5mTY4xIP7/57uRkoehopxf1Sis=",
         "owner": "kaylorben",
         "repo": "nixcord",
-        "rev": "1a7c514d94dffde42b59431c135d161c9cd837ea",
+        "rev": "b17a3f5fbf24844b39b2c6707be25206bda9f456",
         "type": "github"
       },
       "original": {
@@ -1855,11 +1855,11 @@
         "rust-overlay": "rust-overlay_3"
       },
       "locked": {
-        "lastModified": 1781438303,
-        "narHash": "sha256-cBw2N3U0hoZO33s24Z/022AthIJtTnZk1jwgnxObfBY=",
+        "lastModified": 1781766391,
+        "narHash": "sha256-wNGmvQ0XGNZeSJzw2FFSAqF5AxLj/OBtTbfGq6cxbxY=",
         "owner": "sxyazi",
         "repo": "yazi",
-        "rev": "f1e93d7f528b22fdeaf66b198c73e32a7040a90c",
+        "rev": "446a5721bf5c607e67e92e44b461f7fd4c62f488",
         "type": "github"
       },
       "original": {
@@ -1876,11 +1876,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1781710637,
-        "narHash": "sha256-HlTga/WhP9tUjIK13tgzNBqD2DqsXpqZAcONesVqMaY=",
+        "lastModified": 1781732195,
+        "narHash": "sha256-QA+DNtZjIepZtQs5OIh2bU3mQxxhEmKwATpl1utwqUA=",
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
-        "rev": "e2d4431429db3838daa0964013360c651451d6a6",
+        "rev": "68060c0abfc9dc024e3693661e11ddf31bbcffbc",
         "type": "github"
       },
       "original": {
