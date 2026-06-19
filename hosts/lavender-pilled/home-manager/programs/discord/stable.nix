@@ -33,7 +33,10 @@
   programs.nixcord = {
     enable = true;
     vesktop.enable = true;
-    discord.openASAR.enable = true;
+    # OpenASAR is preventing discord from starting up
+    #
+    # Refs: https://github.com/FlameFlag/nixcord/issues/226#issuecomment-4751549041
+    discord.openASAR.enable = false;
   };
 
   programs.nixcord.config.plugins = {
