@@ -42,7 +42,6 @@
       anonymiseByDefault = true;
       randomisedLength = 128;
     };
-    #automodContext.enable = true; # native to discord now
     callTimer.enable = true;
     clearUrls.enable = true;
     copyEmojiMarkdown.enable = true;
@@ -107,7 +106,6 @@
     viewIcons.enable = true;
     viewRaw.enable = true;
     volumeBooster.enable = true;
-    #watchTogetherAdblock.enable = true; # superseded by youtubeAdblock
     youtubeAdblock.enable = true;
   };
 
