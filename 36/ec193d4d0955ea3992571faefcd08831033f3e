@@ -1,0 +1,23 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/pfbsdrghi67gch2vl667gyr2nknn90a5-nixos-system-lavender-pilled-26.11.20260616.567a49d
+
+CHANGED
+[U.] claude-desktop                           1.13576.1, 1.13576.1-fish-completions -> 1.14271.0, 1.14271.0-fish-completions
+[U.] yazi                                     26.5.6pre20260618_85132ff ×2, 26.5.6pre20260618_85132ff-fish-completions -> 26.5.6pre20260619_ab8d634 ×2, 26.5.6pre20260619_ab8d634-fish-completions
+[U.] zen-beta                                 1.21.2b, 1.21.2b-fish-completions -> 1.21.3b, 1.21.3b-fish-completions
+[U.] zen-beta-bin-unwrapped                   1.21.2b -> 1.21.3b
+
+ADDED
+[A.] hm_hmfontconfigdefaultfonts.xml          <none>
+[A.] hm_hmfontconfigfonts.xml                 <none>
+
+REMOVED
+[R.] hm_fontconfigconf.d10hmfonts.conf        <none>
+[R.] hm_fontconfigconf.d52hmdefaultfonts.conf <none>
+
+SIZE: 23.4 GiB -> 23.4 GiB
+DIFF: 1.28 MiB
+
+Rebuilt-at: 2026-06-19T12:05:13+07:00
