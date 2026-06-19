@@ -29,8 +29,6 @@ extend-ignore-re = [
   ' *programs\.zed-editor\.userSettings\.lsp\.rust-analyzer\.initialization_options\b',
   # Ignore "colors"
   ' *programs\.eza\.colors\b',
-  # Ignore "colors", "youre", "maximized", "maximized"
-  ' *programs\.discord\.settings\.(BACKGROUND_COLOR|DANGEROUS_ENABLE_DEVTOOLS_ONLY_ENABLE_IF_YOU_KNOW_WHAT_YOURE_DOING|IS_MAXIMIZED|IS_MINIMIZED)\b',
   # Ignore "favorite", "color"
   ' *programs\.nixcord\.config\.plugins\.(favoriteEmojiFirst|favoriteGifSearch|roleColorEverywhere)\b',
 ]
