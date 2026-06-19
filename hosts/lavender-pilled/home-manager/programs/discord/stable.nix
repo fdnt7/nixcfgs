@@ -5,7 +5,6 @@
   programs.nixcord = {
     enable = true;
     vesktop.enable = true;
-    discord.openASAR.enable = true;
   };
 
   programs.nixcord.config.plugins = {
