@@ -1,0 +1,13 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/yc018x3gzsmpkn060xz78b7i6kdnsp6r-nixos-system-lavender-pilled-26.11.20260616.567a49d
+
+CHANGED
+[D.] dnsmasq       2.93, 2.92rel2 -> 2.93 ×2
+[U.] osu-lazer-bin 2026.518.0-lazer ×2, 2026.518.0-lazer-bwrap, 2026.518.0-lazer-extracted, 2026.518.0-lazer-fhsenv-profile, 2026.518.0-lazer-fhsenv-rootfs, 2026.518.0-lazer-fish-completions, 2026.518.0-lazer-init -> 2026.620.0-lazer ×2, 2026.620.0-lazer-bwrap, 2026.620.0-lazer-extracted, 2026.620.0-lazer-fhsenv-profile, 2026.620.0-lazer-fhsenv-rootfs, 2026.620.0-lazer-fish-completions, 2026.620.0-lazer-init
+
+SIZE: 23.4 GiB -> 23.4 GiB
+DIFF: -18.8 MiB
+
+Rebuilt-at: 2026-06-21T13:54:19+07:00
