@@ -5,7 +5,6 @@
     ./claude-desktop.nix
     ./codex.nix
     ./delta.nix
-    ./devenv.nix
     ./direnv.nix
     ./discord
     ./eza.nix
