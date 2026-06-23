@@ -1,0 +1,18 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/m3wnzhkd7fh18h5xiksi67gjbzfls0ic-nixos-system-lavender-pilled-26.11.20260616.567a49d
+
+CHANGED
+[U.] discord                                                            1.0.143, 1.0.143-fish-completions -> 1.0.144, 1.0.144-fish-completions
+
+ADDED
+[A.] osuinstall-sha256-I78kN7FMfMGTnsuEO9xTb2wpxyLexrj1pM4hWTdS6aQ=.exe <none>
+
+REMOVED
+[R.] osuinstall-sha256-JN0CYWsWNYCFP1Dt9Lnt376fER2MhQ+5UsPLVxj4iiw=.exe <none>
+
+SIZE: 22.4 GiB -> 22.4 GiB
+DIFF: 4.60 KiB
+
+Rebuilt-at: 2026-06-23T13:07:00+07:00
