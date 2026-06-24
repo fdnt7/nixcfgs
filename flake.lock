@@ -1111,11 +1111,11 @@
         "nixpkgs-nixcord": "nixpkgs-nixcord"
       },
       "locked": {
-        "lastModified": 1782292863,
-        "narHash": "sha256-rFrF8ytrLA2NicRRwHzxScwQtLLm2L7fz6oRoInDK4c=",
+        "lastModified": 1782320240,
+        "narHash": "sha256-BZTrprmdOa0CZPhpMdKcTuYLhjaP2zhEORVPSrUfRV4=",
         "owner": "kaylorben",
         "repo": "nixcord",
-        "rev": "d014fb9a39a39f4e34fe15071ad3b3f1e9e709d2",
+        "rev": "f775e367ee683756206df5bb860086eabbea07d1",
         "type": "github"
       },
       "original": {
@@ -1860,11 +1860,11 @@
         "rust-overlay": "rust-overlay_3"
       },
       "locked": {
-        "lastModified": 1782294140,
-        "narHash": "sha256-OijradBY/Y92HWXgym7oizo8YDbCpd5xqp9AZoOyKyo=",
+        "lastModified": 1782314056,
+        "narHash": "sha256-4aWV+vZXOrdRC7T6tAWmY60Njo0fXaFp8p9HRpPEN7M=",
         "owner": "sxyazi",
         "repo": "yazi",
-        "rev": "b1ee2e72ff39cb1a211f7e0502ce407d599acdbc",
+        "rev": "ef654f442060c3a4feae6d89f8b9ddf300d54ecc",
         "type": "github"
       },
       "original": {
