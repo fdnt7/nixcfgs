@@ -82,13 +82,5 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
-  # STOPGAP 2026-06-22: pin to 7.0.12. Kernel 7.1 (landed 3ef8ac1, 2026-06-18)
-  # hits a NULL-deref Oops in hidinput_hid_event() on stylus *hover*: the Ilitek
-  # ILIT2901 i2c-hid IRQ thread exits with irqs disabled -> dead touch + hung
-  # shutdown. Finger touch is fine; only pen/hover triggers it. Good on 7.0.12
-  # (worked Jun 17), broken on 7.1.0. Likely culprit f5013c67 ("HID: input: map
-  # HID_GD_Z to ABS_DISTANCE for stylus/pen"). Revert to linuxPackages_latest
-  # once fixed upstream. Refs: https://lore.kernel.org/linux-input/CAN+cGS7xoNnar0bUdtca05Q7iYfUeJDhOJC4CtycHVqtV+F5=A@mail.gmail.com/
-  # boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelPackages = pkgs.linuxPackages_7_0;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 }
