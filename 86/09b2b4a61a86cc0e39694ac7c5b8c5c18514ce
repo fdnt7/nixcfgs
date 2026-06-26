@@ -1,0 +1,173 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/3ib7dcdyp488lpliv6sqqm48yzzgjbz9-nixos-system-lavender-pilled-26.11.20260626.e73de5b
+
+CHANGED
+[U.] OVMF-xen                     202602-fd -> 202605-fd
+[U*] at-spi2-core                 2.60.1 ×2 -> 2.60.1, 2.60.4
+[C.] audit                        <others> -> 4.1.4-lib, <others>
+[U*] aurorae                      6.6.5 -> 6.7.1
+[U*] bind                         9.20.23-host, 9.20.23-lib, 9.20.23-man -> 9.20.24-host, 9.20.24-lib, 9.20.24-man
+[U*] bluedevil                    6.6.5 -> 6.7.1
+[U*] breeze                       6.6.5, 6.6.5-qt5 -> 6.7.1, 6.7.1-qt5
+[U*] breeze-gtk                   6.6.5 -> 6.7.1
+[U.] claude-code                  2.1.177, 2.1.177-fish-completions -> 2.1.191, 2.1.191-fish-completions
+[U.] discord-canary               1.0.1177, 1.0.1177-fish-completions -> 1.0.1317, 1.0.1317-fish-completions
+[U*] discover                     6.6.5 -> 6.7.1
+[U*] drkonqi                      6.6.5 -> 6.7.1
+[C.] e2fsprogs                    <others> -> 1.47.4, 1.47.4-bin, <others>
+[C.] expat                        <others> -> 2.8.1, <others>
+[U.] ffmpeg                       4.4.7-data, 4.4.7-lib, 7.1.4-data, 7.1.4-lib, <others> -> 4.4.8-data, 4.4.8-lib, 7.1.5-data, 7.1.5-lib, 8.1.1-data, 8.1.1-lib, <others>
+[U.] ffmpeg-headless              8.1-data ×2, 8.1-lib ×2 -> 8.1-data, 8.1-lib, 8.1.1-data, 8.1.1-lib
+[U.] fftw-double                  3.3.10 ×2 -> 3.3.10, 3.3.11
+[U.] fftw-single                  3.3.10 ×2 -> 3.3.10, 3.3.11
+[U*] fish                         4.7.1, 4.7.1-doc, 4.7.1_fish-completions, 4.7.1-fish-completions -> 4.8.0, 4.8.0-doc, 4.8.0_fish-completions, 4.8.0-fish-completions
+[U.] flatpak                      1.16.6 -> 1.18.0
+[U.] freerdp                      3.26.0 -> 3.27.1
+[U.] freetype                     2.14.2 ×2, 2.14.2-dev -> 2.14.2, 2.14.3-dev, 2.14.3
+[D.] gcc                          15.2.0-lib ×2, 15.2.0-libgcc ×2, 15.2.0 -> 15.2.0-lib ×4, 15.2.0-libgcc ×4
+[U*] getent-glibc                 2.42-61 -> 2.42-67
+[U.] ghostscript-with-X           10.07.0, 10.07.0-fonts -> 10.07.1, 10.07.1-fonts
+[U*] glibc                        2.42-61-dev, 2.42-61-getent, <others> -> 2.42-67-dev, 2.42-67-getent, 2.42-67, 2.42-67-bin, <others>
+[U*] glibc-locales                2.42-61 ×2 -> 2.42-61, 2.42-67
+[U.] icu4c                        76.1 ×2, 76.1-dev -> 76.1 ×3, 78.3-dev, 78.3
+[U.] ijs                          10.07.0 -> 10.07.1
+[C.] imagemagick                  <others> -> 7.1.2-24, <others>
+[U.] initrd-linux                 7.0.12 -> 7.0.13
+[U.] intel-compute-runtime        26.18.38308.1 -> 26.22.38646.4
+[U.] intel-graphics-compiler      2.34.4 -> 2.36.3
+[U*] kactivitymanagerd            6.6.5 -> 6.7.1
+[U*] kde-cli-tools                6.6.5, 6.6.5_fish-completions -> 6.7.1, 6.7.1_fish-completions
+[U*] kde-gtk-config               6.6.5 -> 6.7.1
+[U.] kdecoration                  6.6.5 -> 6.7.1
+[U*] kdeplasma-addons             6.6.5 -> 6.7.1
+[U*] kglobalacceld                6.6.5 -> 6.7.1
+[U*] kinfocenter                  6.6.5 -> 6.7.1
+[U*] kmenuedit                    6.6.5 -> 6.7.1
+[U*] knighttime                   6.6.5 -> 6.7.1
+[U.] kpipewire                    6.6.5 -> 6.7.1
+[C.] krb5                         <others> -> 1.22.2-lib, <others>
+[U*] krdp                         6.6.5 -> 6.7.1
+[U*] kscreen                      6.6.5 -> 6.7.1
+[U*] kscreenlocker                6.6.5 -> 6.7.1
+[U*] ksystemstats                 6.6.5 -> 6.7.1
+[U.] ktextaddons                  2.0.2 -> 2.1.0
+[U*] kwallet-pam                  6.6.5 -> 6.7.1
+[U.] kwayland                     6.6.5, <others> -> 6.7.1, <others>
+[U*] kwayland-integration         6.6.5 -> 6.7.1
+[U*] kwin                         6.6.5 -> 6.7.1
+[U*] kwin-x11                     6.6.5 -> 6.7.1
+[U*] kwrited                      6.6.5 -> 6.7.1
+[U.] layer-shell-qt               6.6.5 -> 6.7.1
+[C.] libaccounts-glib             1.27-dev, <others> -> <others>
+[U.] libadwaita                   1.9.0 ×2 -> 1.9.0, 1.9.1
+[U.] libde265                     1.0.18 ×2 -> 1.0.18, 1.1.1
+[C.] libgcrypt                    <others> -> 1.12.2-lib, <others>
+[C.] libheif                      <others> -> 1.23.0-lib, <others>
+[U*] libkscreen                   6.6.5 -> 6.7.1
+[U*] libksysguard                 6.6.5 -> 6.7.1
+[U*] libplasma                    6.6.5 -> 6.7.1
+[U.] libpng-apng                  1.6.56-dev, <others> -> 1.6.58-dev, 1.6.58, <others>
+[U.] libxml2                      2.15.2 ×3, 2.15.2-bin ×2, 2.15.2-dev, 2.15.2-py -> 2.15.2 ×2, 2.15.3-bin ×2, 2.15.3-dev, 2.15.3-py, 2.15.3
+[U.] libxxf86dga                  1.1.6 -> 1.1.7
+[U.] linux                        7.0.12, 7.0.12-modules ×2 -> 7.0.13, 7.0.13-modules ×2
+[U.] linux-firmware               20260519-zstd -> 20260622-zstd
+[U.] lsof                         4.99.6 -> 4.99.7
+[U.] mariadb-server               11.4.9 -> 11.4.12
+[U.] mdadm                        4.4 -> 4.6
+[U.] mesa                         26.1.2 ×2 -> 26.1.3 ×2
+[U*] milou                        6.6.5 -> 6.7.1
+[U*] mullvad-vpn                  2026.2 -> 2026.3
+[U.] nixos-system-lavender-pilled 26.11.20260616.567a49d -> 26.11.20260626.e73de5b
+[U.] nodejs                       24.15.0 -> 24.16.0
+[U.] nodejs-slim                  24.15.0, 24.15.0-corepack, 24.15.0-npm -> 24.16.0, 24.16.0-corepack, 24.16.0-npm
+[U*] ocean-sound-theme            6.6.5 -> 6.7.1
+[U.] openapv                      0.2.1.2 ×2 -> 0.2.1.2, 0.2.1.3
+[U.] openblas                     0.3.32 -> 0.3.33
+[U.] openexr                      3.4.10 ×2 -> 3.4.10, 3.4.11
+[U*] orca                         50.1.2, 50.1.2_fish-completions -> 50.2, 50.2_fish-completions
+[C.] perl5.42.0-HTTP-Daemon       <others> -> 6.17, <others>
+[U*] plasma-activities            6.6.5 -> 6.7.1
+[U.] plasma-activities-stats      6.6.5 -> 6.7.1
+[U*] plasma-browser-integration   6.6.5 -> 6.7.1
+[U*] plasma-desktop               6.6.5 -> 6.7.1
+[U*] plasma-integration           6.6.5, 6.6.5-qt5 -> 6.7.1, 6.7.1-qt5
+[U*] plasma-keyboard              6.6.5 -> 6.7.1
+[U*] plasma-login-manager         6.6.5 -> 6.7.1
+[U.] plasma-nano                  6.6.5 -> 6.7.1
+[U*] plasma-nm                    6.6.5 -> 6.7.1
+[U*] plasma-pa                    6.6.5 -> 6.7.1
+[U.] plasma-sdk                   6.6.5 -> 6.7.1
+[U*] plasma-systemmonitor         6.6.5 -> 6.7.1
+[U*] plasma-workspace             6.6.5, 6.6.5-sessions -> 6.7.1, 6.7.1-sessions
+[U*] plasma-workspace-wallpapers  6.6.5 -> 6.7.1
+[U.] plasma5support               6.6.5 -> 6.7.1
+[U*] polkit-kde-agent             1-6.6.5 -> 1-6.7.1
+[U*] powerdevil                   6.6.5 -> 6.7.1
+[C.] publicsuffix-list            <others> -> 0-unstable-2026-05-13, <others>
+[U.] python3.13-sentry-sdk        2.61.1 -> 2.63.0
+[U*] qqc2-breeze-style            6.6.5 -> 6.7.1
+[U.] qt5compat                    6.11.0 ×2 -> 6.11.1 ×2
+[U*] qtbase                       5.15.18, 5.15.18-bin, 6.11.0, 6.11.0-only-plugins-qml -> 5.15.19, 5.15.19-bin, 6.11.1, 6.11.1-only-plugins-qml
+[U.] qtdeclarative                5.15.18, 5.15.18-bin, 6.11.0 ×2 -> 5.15.19, 5.15.19-bin, 6.11.1 ×2
+[U.] qtgraphicaleffects           5.15.18 -> 5.15.19
+[U*] qtimageformats               6.11.0 -> 6.11.1
+[U.] qtlocation                   6.11.0 -> 6.11.1
+[U.] qtmultimedia                 6.11.0 -> 6.11.1
+[U.] qtnetworkauth                6.11.0 -> 6.11.1
+[U.] qtpositioning                6.11.0 -> 6.11.1
+[U.] qtquick3d                    6.11.0 -> 6.11.1
+[U.] qtquickcontrols              5.15.18 -> 5.15.19
+[U.] qtquickcontrols2             5.15.18, 5.15.18-bin -> 5.15.19, 5.15.19-bin
+[U.] qtscxml                      6.11.0 -> 6.11.1
+[U*] qtsensors                    6.11.0 -> 6.11.1
+[U.] qtserialport                 6.11.0 -> 6.11.1
+[U.] qtshadertools                6.11.0 -> 6.11.1
+[U.] qtspeech                     6.11.0 -> 6.11.1
+[U*] qtsvg                        5.15.18, 5.15.18-bin, 6.11.0 -> 5.15.19, 5.15.19-bin, 6.11.1
+[U*] qttools                      5.15.18, 5.15.18-bin, 6.11.0 -> 5.15.19, 5.15.19-bin, 6.11.1
+[U.] qttranslations               5.15.18, 6.11.0 -> 5.15.19, 6.11.1
+[U*] qtvirtualkeyboard            6.11.0 -> 6.11.1
+[U*] qtwayland                    5.15.18, 5.15.18-bin, 6.11.0 ×2 -> 5.15.19, 5.15.19-bin, 6.11.1 ×2
+[U.] qtwebchannel                 6.11.0 -> 6.11.1
+[U.] qtwebengine                  6.11.0 -> 6.11.1
+[U.] qtwebsockets                 6.11.0 -> 6.11.1
+[U.] qtwebview                    6.11.0 -> 6.11.1
+[U.] qtx11extras                  5.15.18 -> 5.15.19
+[U*] rsync                        3.4.1, 3.4.1_fish-completions -> 3.4.4, 3.4.4_fish-completions
+[U.] sd-switch                    0.6.3 -> 0.6.4
+[U.] sdl3                         3.4.8-lib ×3 -> 3.4.8-lib, 3.4.10-lib
+[U.] simdjson                     4.6.0 -> 4.6.4
+[U*] spectacle                    6.6.5, 6.6.5_fish-completions -> 6.7.1, 6.7.1_fish-completions
+[U*] strace                       7.0, 7.0-man -> 7.1, 7.1-man
+[U*] systemd                      260.1-man, <others> -> 260.2-man, 260.2, <others>
+[C.] systemd-minimal              <others> -> 260.2, <others>
+[C.] systemd-minimal-libs         <others> -> 260.2, <others>
+[U*] systemsettings               6.6.5 -> 6.7.1
+[C.] unbound                      <others> -> 1.25.1-lib, <others>
+[U*] wireplumber                  0.5.14, 0.5.14-doc, 0.5.14_fish-completions -> 0.5.15, 0.5.15-doc, 0.5.15_fish-completions
+[U*] xdg-desktop-portal-kde       6.6.5 -> 6.7.1
+[D.] yazi                         26.5.6pre20260626_bf12743 ×2, 26.5.6pre20260626_bf12743-fish-completions -> 26.5.6pre20260626_39527f4 ×2, 26.5.6pre20260626_39527f4-fish-completions
+[U.] zed-editor                   1.6.3 -> 1.7.2
+[U.] zed-editor-wrapped           1.6.3, 1.6.3-fish-completions -> 1.7.2, 1.7.2-fish-completions
+
+ADDED
+[A.] cxx-rust-cssparser           1.0.0
+[A.] fastfetch-unwrapped          2.64.2, 2.64.2-man
+[A.] polkitd.conf                 <none>
+[A+] union                        6.7.1
+
+REMOVED
+[R.] gmp                          6.3.0
+[R.] isl                          0.20
+[R.] libmpc                       1.4.0
+[R.] libsepol                     3.10
+[R.] libsysprof-capture           50.0
+[R.] yyjson                       0.12.0
+
+SIZE: 22.4 GiB -> 23.8 GiB
+DIFF: 1.44 GiB
+
+Rebuilt-at: 2026-06-26T23:18:43+07:00
+Requires-boot: true
