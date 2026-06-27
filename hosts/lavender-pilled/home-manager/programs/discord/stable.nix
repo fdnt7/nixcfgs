@@ -24,7 +24,6 @@
     fixSpotifyEmbeds.enable = true;
     fixYoutubeEmbeds.enable = true;
     forceOwnerCrown.enable = true;
-    friendsSince.enable = true;
     hideMedia.enable = true;
     # imageZoom.enable = true; # discord's native zoom is superior
     memberCount.enable = true;
