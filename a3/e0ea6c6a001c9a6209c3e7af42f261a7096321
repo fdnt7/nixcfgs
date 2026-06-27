@@ -1,0 +1,19 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/461fzl3aac45vw6g0rlzqwwilla036nj-nixos-system-lavender-pilled-26.11.20260626.e73de5b
+
+CHANGED
+[U.] claude-desktop         1.15962.0, 1.15962.0-fish-completions -> 1.15962.1, 1.15962.1-fish-completions
+[U.] vencord                1.14.15 -> 1.14.15-unstable-2026-06-24
+[U.] yazi                   26.5.6pre20260626_39527f4 ×2, 26.5.6pre20260626_39527f4-fish-completions -> 26.5.6pre20260627_b23ad81 ×2, 26.5.6pre20260627_b23ad81-fish-completions
+[U.] zen-beta               1.21.3b, 1.21.3b-fish-completions -> 1.21.4b, 1.21.4b-fish-completions
+[U.] zen-beta-bin-unwrapped 1.21.3b -> 1.21.4b
+
+REMOVED
+[R.] stage-modules.sh       <none>
+
+SIZE: 23.8 GiB -> 23.8 GiB
+DIFF: 1.00 MiB
+
+Rebuilt-at: 2026-06-28T00:13:28+07:00
