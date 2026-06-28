@@ -1,0 +1,18 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/k0pvar2lcgkka04lca0hqrn3rjm1jwcc-nixos-system-lavender-pilled-26.11.20260626.e73de5b
+
+CHANGED
+[U.] pv                     1.10.5 -> 1.11.0
+
+ADDED
+[A.] python3.13-python-xlib 0.33
+
+REMOVED
+[R.] python3.13-xlib        0.33
+
+SIZE: 23.8 GiB -> 23.8 GiB
+DIFF: 26.2 KiB
+
+Rebuilt-at: 2026-06-28T15:21:49+07:00
