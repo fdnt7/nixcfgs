@@ -1,0 +1,22 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/i67ivvl4saifwbw1lphh9a5v71vfwp3b-nixos-system-lavender-pilled-26.11.20260629.b5aa0fb
+
+CHANGED
+[U.] claude-code                  2.1.191, 2.1.191-fish-completions -> 2.1.193, 2.1.193-fish-completions
+[U.] claude-desktop               1.15962.1, 1.15962.1-fish-completions -> 1.17377.2, 1.17377.2-fish-completions
+[U.] fastfetch                    2.64.2, 2.64.2-fish-completions, 2.64.2-man -> 2.65.1, 2.65.1-fish-completions, 2.65.1-man
+[U.] fastfetch-unwrapped          2.64.2, 2.64.2-man -> 2.65.1, 2.65.1-man
+[U.] initrd-linux                 7.1.1 -> 7.1.2
+[U.] linux                        7.1.1, 7.1.1-modules ×2 -> 7.1.2, 7.1.2-modules ×2
+[U*] nano                         9.0, 9.0-doc, 9.0-info, 9.0-man -> 9.1, 9.1-doc, 9.1-info, 9.1-man
+[U.] nixos-system-lavender-pilled 26.11.20260626.e73de5b -> 26.11.20260629.b5aa0fb
+[U.] yazi                         26.5.6pre20260627_21550a7 ×2, 26.5.6pre20260627_21550a7-fish-completions -> 26.5.6pre20260701_b8ceaea ×2, 26.5.6pre20260701_b8ceaea-fish-completions
+[U.] zed-editor                   1.7.2 -> 1.8.2
+[U.] zed-editor-wrapped           1.7.2, 1.7.2-fish-completions -> 1.8.2, 1.8.2-fish-completions
+
+SIZE: 23.8 GiB -> 23.8 GiB
+DIFF: 6.15 MiB
+
+Rebuilt-at: 2026-07-02T13:47:37+07:00
