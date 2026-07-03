@@ -1,0 +1,14 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/ic9mbkx5h7craf7cym6f87xrbxaq648c-nixos-system-lavender-pilled-26.11.20260629.b5aa0fb
+
+CHANGED
+[U.] claude-desktop         1.17377.2, 1.17377.2-fish-completions -> 1.18286.0, 1.18286.0-fish-completions
+[U.] zen-beta               1.21.4b, 1.21.4b-fish-completions -> 1.21.5b, 1.21.5b-fish-completions
+[U.] zen-beta-bin-unwrapped 1.21.4b -> 1.21.5b
+
+SIZE: 23.8 GiB -> 23.8 GiB
+DIFF: 39.3 MiB
+
+Rebuilt-at: 2026-07-03T09:19:40+07:00
