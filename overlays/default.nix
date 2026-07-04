@@ -11,13 +11,6 @@
     # example = prev.example.overrideAttrs (oldAttrs: rec {
     # ...
     # });
-
-    # Override vesktop to use pnpm 10 as `pnpm-10.29.2` is insecure.
-    #
-    # Ref: https://github.com/NixOS/nixpkgs/issues/536623
-    vesktop = prev.vesktop.override {
-      pnpm_10_29_2 = final.pnpm_10;
-    };
   };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will
