@@ -1,0 +1,16 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /run/current-system
+>>> /nix/store/n0qm23654lp122gxkg785vcv3h4zfwvh-nixos-system-lavender-pilled-26.11.20260702.6517942
+
+CHANGED
+[C.] electron-unwrapped 41.9.1, <others> -> <others>
+
+REMOVED
+[R.] node-gyp           13.0.0
+[R.] node-pty           1.1.0-npm-deps
+
+SIZE: 23.8 GiB -> 23.6 GiB
+DIFF: -209 MiB
+
+Rebuilt-at: 2026-07-04T22:47:10+07:00
