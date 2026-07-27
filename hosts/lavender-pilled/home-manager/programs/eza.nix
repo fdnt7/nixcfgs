@@ -8,7 +8,11 @@
     extraOptions = [
       "-lah"
       "--group-directories-first"
-      "--colour-scale"
+      # eza 0.23.5 removed `--colour-scale` by accident
+      #
+      # Refs: https://github.com/eza-community/eza/pull/1866
+      # spellchecker:ignore-next-line
+      "--color-scale"
     ];
   };
 
