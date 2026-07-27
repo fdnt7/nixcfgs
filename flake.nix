@@ -218,5 +218,13 @@
       #     ];
       #   };
       # };
+
+      devShells = forAllSystems (system: {
+        default =
+          let
+            inherit (import nixpkgs { inherit system; }) mkShell prek;
+          in
+          mkShell { packages = [ prek ]; };
+      });
     };
 }
