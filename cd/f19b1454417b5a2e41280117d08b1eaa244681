@@ -1,0 +1,14 @@
+chore(lavender-pilled): rebuild
+
+<<< /nix/store/095dqxivx2mamn8gzd09fa1r4liwi4cm-nixos-system-lavender-pilled-26.11.20260726.624af66
+>>> /nix/store/yh2icimmwqrkr8sw2jk5si986qgshz31-nixos-system-lavender-pilled-26.11.20260726.624af66
+
+CHANGED
+[U.] lanzaboote-stub 1.0.0 -> 1.1.0
+[U.] lzbt-systemd    1.0.0 -> 1.1.0
+
+PATHS: 2965 -> 2965 (+4, -4)
+SIZE: 25.0 GiB -> 25.0 GiB
+DIFF: +3.52 KiB
+
+Rebuilt-at: 2026-07-28T05:45:57+07:00
