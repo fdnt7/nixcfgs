@@ -16,6 +16,10 @@
         "*.jsonc"
       ];
     };
+    shfmt = {
+      enable = true;
+      includes = [ ".envrc" ];
+    };
     stylua.enable = true;
     taplo.enable = true;
     typos.enable = true;
