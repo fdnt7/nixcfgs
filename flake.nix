@@ -106,6 +106,7 @@
 
   outputs =
     {
+      self,
       nixpkgs,
       ...
     }@inputs:
@@ -139,7 +140,7 @@
 
       # for `nix flake check`
       checks = forAllSystems (system: {
-        formatting = treefmtEval.${system}.config.build.check inputs.self;
+        formatting = treefmtEval.${system}.config.build.check self;
       });
 
       # Your custom packages and modifications, exported as overlays
@@ -224,7 +225,12 @@
           let
             inherit (import nixpkgs { inherit system; }) mkShell prek;
           in
-          mkShell { packages = [ prek ]; };
+          mkShell {
+            packages = [
+              prek
+              self.formatter.${system}
+            ];
+          };
       });
     };
 }
