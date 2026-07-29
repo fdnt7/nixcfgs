@@ -12,7 +12,7 @@
       #
       # Refs: https://github.com/eza-community/eza/pull/1866
       # spellchecker:ignore-next-line
-      "--color-scale"
+      "--color-scale=all"
     ];
   };
 
