@@ -28,7 +28,6 @@
     ./osu-lazer-bin.nix
     ./osu-stable.nix
     ./packet-tracer.nix
-    ./pdfpc.nix
     ./rbld.nix
     ./ripgrep.nix
     ./spotify.nix
