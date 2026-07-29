@@ -29,7 +29,6 @@
     ./osu-stable.nix
     ./packet-tracer.nix
     ./pdfpc.nix
-    ./rebuild.nix
     ./ripgrep.nix
     ./spotify.nix
     ./starship.nix
