@@ -69,6 +69,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    rbld = {
+      url = "github:fdnt7/rbld";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     solaar = {
       #url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz"; # For latest stable version
       #url = "https://flakehub.com/f/Svenum/Solaar-Flake/0.1.1.tar.gz"; # uncomment line for solaar version 1.1.13
@@ -227,6 +232,7 @@
           in
           mkShell {
             packages = [
+              inputs.rbld.packages.${system}.default
               prek
               self.formatter.${system}
             ];
