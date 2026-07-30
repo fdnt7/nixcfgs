@@ -81,6 +81,5 @@
   };
 
   programs.nixcord.config.plugins.favoriteEmojiFirst.enable = true;
-  programs.nixcord.config.plugins.favoriteGifSearch.enable = true;
   programs.nixcord.config.plugins.roleColorEverywhere.enable = true;
 }
