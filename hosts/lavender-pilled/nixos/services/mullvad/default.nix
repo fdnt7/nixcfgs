@@ -1,4 +1,3 @@
-{ pkgs, ... }:
 {
   imports = [
     ./libvirt-lan-sharing.nix
@@ -6,8 +5,8 @@
   ];
 
   services.mullvad-vpn = {
-    enable = false;
-    package = pkgs.mullvad-vpn;
+    enable = true;
+    gui.enable = true;
   };
 
   persist.mullvad-vpn = true;
