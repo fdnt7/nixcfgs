@@ -1,0 +1,14 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /nix/store/k451s158bcsiqhz45scqapf9qbk2jprk-nixos-system-lavender-pilled-26.11.20260729.0954f7e
+>>> /nix/store/7dzibdsm7yhgszzfqf0vf07d2yzsydwd-nixos-system-lavender-pilled-26.11.20260729.0954f7e
+
+CHANGED
+[D.] zen-beta               1.21.9b-fish-completions, 1.21.9b -> 1.21.10b-fish-completions, 1.21.10b
+[D.] zen-beta-bin-unwrapped 1.21.9b -> 1.21.10b, -266 KiB
+
+PATHS: 2954 -> 2954 (+25, -25)
+SIZE: 25.0 GiB -> 25.0 GiB
+DIFF: -270 KiB
+
+Rebuilt-at: 2026-07-31T00:53:04+07:00
