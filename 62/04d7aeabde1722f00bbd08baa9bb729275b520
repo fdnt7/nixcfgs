@@ -1,0 +1,24 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /nix/store/sbd8ym11r1kq3c69i7msdimkr2y6l2cv-nixos-system-lavender-pilled-26.11.20260726.624af66
+>>> /nix/store/n2iv6b3p3hd65lmcxkxfwnns2r0xhpxy-nixos-system-lavender-pilled-26.11.20260729.0954f7e
+
+CHANGED
+[U.] electron                     43.1.0 -> 43.2.0
+[U.] electron-unwrapped           43.1.0 -> 43.2.0, +89.0 KiB
+[U.] kirigami-addons              1.13.0 -> 1.13.1
+[U.] nh                           4.4.1-fish-completions, 4.4.1 -> 4.4.2-fish-completions, 4.4.2
+[U.] nh-unwrapped                 4.4.1 -> 4.4.2, +97.9 KiB
+[U.] nix-output-monitor           2.1.8 -> 2.2.0, +453 KiB
+[C*] nixos-manual-html            +18.2 KiB
+[U.] nixos-system-lavender-pilled 26.11.20260726.624af66 -> 26.11.20260729.0954f7e
+[U.] passt                        2025_09_19.623dbf6 -> 2026_07_16.090d739, +256 KiB
+[C.] source                       -15.0 KiB
+[U.] vencord                      1.15.0-2026-07-26 -> 1.15.0-2026-07-29, -14.6 KiB
+[U.] yazi                         26.5.6pre20260729_319f90e-fish-completions, 26.5.6pre20260729_319f90e ×2 -> 26.5.6pre20260730_99db84e-fish-completions, 26.5.6pre20260730_99db84e ×2, +12.3 KiB
+
+PATHS: 2944 -> 2944 (+130, -130)
+SIZE: 24.5 GiB -> 24.5 GiB
+DIFF: +899 KiB
+
+Rebuilt-at: 2026-07-30T09:12:59+07:00
