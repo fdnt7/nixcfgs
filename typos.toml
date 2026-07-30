@@ -30,5 +30,5 @@ extend-ignore-re = [
   # Ignore "colors"
   ' *programs\.eza\.colors\b',
   # Ignore "favorite", "color"
-  ' *programs\.nixcord\.config\.plugins\.(favoriteEmojiFirst|favoriteGifSearch|roleColorEverywhere)\b',
+  ' *programs\.nixcord\.config\.plugins\.(favoriteEmojiFirst|roleColorEverywhere)\b',
 ]
