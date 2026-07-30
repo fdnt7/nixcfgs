@@ -1,0 +1,13 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /nix/store/zcqi9gakm74af8wxlfsh6q55xa6rcn2m-nixos-system-lavender-pilled-26.11.20260729.0954f7e
+>>> /nix/store/kxy4pa348mzq3xrslrr13jcxvsv34j5j-nixos-system-lavender-pilled-26.11.20260729.0954f7e
+
+CHANGED
+[C.] rbld +54.3 KiB
+
+PATHS: 2954 -> 2954 (+13, -13)
+SIZE: 25.0 GiB -> 25.0 GiB
+DIFF: +54.3 KiB
+
+Rebuilt-at: 2026-07-31T04:12:09+07:00
