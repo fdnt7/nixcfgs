@@ -1,0 +1,23 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /nix/store/6acqkxfdbdlgi91rch07b8h3mnv30bib-nixos-system-lavender-pilled-26.11.20260801.148bab9
+>>> /nix/store/1db0r9aw89iifar4pfa5xg1kgbs87wfa-nixos-system-lavender-pilled-26.11.20260802.6438090
+
+CHANGED
+[U.] discord                      1.0.151-fish-completions, 1.0.151 -> 1.0.152-fish-completions, 1.0.152, +355 KiB
+[U.] ktextaddons                  2.1.1 -> 2.1.2, -13.5 KiB
+[U.] nfs-utils                    2.9.1-lib, 2.9.1 -> 2.9.2-lib, 2.9.2, +18.9 KiB
+[U.] nixos-system-lavender-pilled 26.11.20260801.148bab9 -> 26.11.20260802.6438090
+[C.] source                       -66.8 KiB
+[C.] starship                     +10.1 KiB
+[U*] upower                       1.91.1_fish-completions, 1.91.1 -> 1.91.2_fish-completions, 1.91.2
+[U*] xdg-desktop-portal           1.20.4 -> 1.22.1, +128 KiB
+[U.] yazi                         26.5.6pre20260802_bfa01e5-fish-completions, 26.5.6pre20260802_bfa01e5 ×2 -> 26.5.6pre20260803_91caaa5-fish-completions, 26.5.6pre20260803_91caaa5 ×2, +26.5 KiB
+[U.] zed-editor                   1.12.0 -> 1.13.1, +2.34 MiB
+[U.] zed-editor-wrapped           1.12.0-fish-completions, 1.12.0 -> 1.13.1-fish-completions, 1.13.1
+
+PATHS: 3517 -> 3517 (+108, -108)
+SIZE: 26.4 GiB -> 26.4 GiB
+DIFF: +2.80 MiB
+
+Rebuilt-at: 2026-08-04T01:50:39+07:00
