@@ -1,0 +1,27 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /nix/store/6gf3sxrqb6qxyvlza903ff9w0119a07k-nixos-system-lavender-pilled-26.11.20260802.6438090
+>>> /nix/store/nvfpc2lvhb853rdah62kw77pfm8qx0d6-nixos-system-lavender-pilled-26.11.20260804.e72e4f2
+
+CHANGED
+[U.] initrd-linux                          7.1.5 -> 7.1.6, -68.6 KiB
+[U.] intel-media-driver                    26.1.6 ×2 -> 26.2.4 ×2, +2.09 MiB
+[U.] linux                                 7.1.5-modules ×2, 7.1.5 -> 7.1.6-modules ×2, 7.1.6, -8.21 KiB
+[U*] nano                                  9.1-doc, 9.1-info, 9.1-man, 9.1 -> 9.2-doc, 9.2-info, 9.2-man, 9.2, +10.2 KiB
+[C*] nixos-manual-html                     +114 KiB
+[U.] nixos-system-lavender-pilled          26.11.20260802.6438090 -> 26.11.20260804.e72e4f2
+[C.] source                                +211 KiB
+[C.] starship                              +167 KiB
+[U*] tailscale                             1.98.10 -> 1.102.1, +1.76 MiB
+[U.] xen                                   4.20.3 -> 4.20.4
+[U.] zed-editor                            1.13.1 -> 1.13.2, +8.01 KiB
+[U.] zed-editor-wrapped                    1.13.1-fish-completions, 1.13.1 -> 1.13.2-fish-completions, 1.13.2
+
+ADDED
+[A.] unit-systemd-boot-random-seed.service <none>
+
+PATHS: 3517 -> 3518 (+106, -105)
+SIZE: 26.4 GiB -> 26.4 GiB
+DIFF: +4.28 MiB
+
+Rebuilt-at: 2026-08-04T22:15:34+07:00
