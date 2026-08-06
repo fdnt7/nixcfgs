@@ -1,0 +1,74 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /nix/store/qhh36d92y0yi81z6s54wdhbqgh3r8dv2-nixos-system-lavender-pilled-26.11.20260804.e72e4f2
+>>> /nix/store/131fip0y3j5963qp6kl295fifvscxvcl-nixos-system-lavender-pilled-26.11.20260805.b7c2ada
+
+CHANGED
+[U*] aurorae                      6.7.3 -> 6.7.4
+[U*] bluedevil                    6.7.3 -> 6.7.4
+[U*] breeze                       6.7.3-qt5, 6.7.3 -> 6.7.4-qt5, 6.7.4
+[U*] breeze-gtk                   6.7.3 -> 6.7.4
+[U.] claude-code                  2.1.220-fish-completions, 2.1.220 -> 2.1.222-fish-completions, 2.1.222, +13.8 MiB
+[U.] discord-canary               1.0.1398-fish-completions, 1.0.1398 -> 1.0.1576-fish-completions, 1.0.1576, +87.6 MiB
+[U*] discover                     6.7.3 -> 6.7.4
+[U*] drkonqi                      6.7.3 -> 6.7.4
+[U*] kactivitymanagerd            6.7.3 -> 6.7.4
+[U*] kde-cli-tools                6.7.3_fish-completions, 6.7.3 -> 6.7.4_fish-completions, 6.7.4
+[U*] kde-gtk-config               6.7.3 -> 6.7.4
+[U.] kdecoration                  6.7.3 -> 6.7.4
+[U*] kdeplasma-addons             6.7.3 -> 6.7.4, +16.4 KiB
+[U*] kglobalacceld                6.7.3 -> 6.7.4
+[U*] kinfocenter                  6.7.3 -> 6.7.4, +54.8 KiB
+[U*] kmenuedit                    6.7.3 -> 6.7.4
+[U*] knighttime                   6.7.3 -> 6.7.4
+[U.] kpipewire                    6.7.3 -> 6.7.4
+[U*] krdp                         6.7.3 -> 6.7.4
+[U*] kscreen                      6.7.3 -> 6.7.4, +11.8 KiB
+[U*] kscreenlocker                6.7.3 -> 6.7.4
+[U*] ksystemstats                 6.7.3 -> 6.7.4
+[U*] kwallet-pam                  6.7.3 -> 6.7.4
+[U.] kwayland                     6.7.3, <unchanged> -> 6.7.4, <unchanged>
+[U*] kwayland-integration         6.7.3 -> 6.7.4
+[U*] kwin                         6.7.3 -> 6.7.4, +35.8 KiB
+[U*] kwin-x11                     6.7.3 -> 6.7.4
+[U*] kwrited                      6.7.3 -> 6.7.4
+[U.] layer-shell-qt               6.7.3 -> 6.7.4
+[U*] libkscreen                   6.7.3 -> 6.7.4
+[U*] libksysguard                 6.7.3 -> 6.7.4
+[U*] libplasma                    6.7.3 -> 6.7.4
+[U*] milou                        6.7.3 -> 6.7.4
+[C*] nixos-manual-html            +40.7 KiB
+[U.] nixos-system-lavender-pilled 26.11.20260804.e72e4f2 -> 26.11.20260805.b7c2ada
+[U*] ocean-sound-theme            6.7.3 -> 6.7.4
+[U*] plasma-activities            6.7.3 -> 6.7.4
+[U.] plasma-activities-stats      6.7.3 -> 6.7.4
+[U*] plasma-browser-integration   6.7.3 -> 6.7.4
+[U*] plasma-desktop               6.7.3 -> 6.7.4, +14.0 KiB
+[U*] plasma-integration           6.7.3-qt5, 6.7.3 -> 6.7.4-qt5, 6.7.4
+[U*] plasma-keyboard              6.7.3 -> 6.7.4
+[U*] plasma-login-manager         6.7.3 -> 6.7.4
+[U.] plasma-nano                  6.7.3 -> 6.7.4
+[U*] plasma-nm                    6.7.3 -> 6.7.4, +14.3 KiB
+[U*] plasma-pa                    6.7.3 -> 6.7.4
+[U.] plasma-sdk                   6.7.3 -> 6.7.4
+[U*] plasma-systemmonitor         6.7.3 -> 6.7.4
+[U*] plasma-workspace             6.7.3-sessions, 6.7.3 -> 6.7.4-sessions, 6.7.4, +9.84 KiB
+[U*] plasma-workspace-wallpapers  6.7.3 -> 6.7.4
+[U.] plasma5support               6.7.3 -> 6.7.4
+[U*] polkit-kde-agent             1-6.7.3 -> 1-6.7.4
+[U*] powerdevil                   6.7.3 -> 6.7.4
+[U*] qqc2-breeze-style            6.7.3 -> 6.7.4
+[C.] source                       +187 KiB
+[U*] spectacle                    6.7.3_fish-completions, 6.7.3 -> 6.7.4_fish-completions, 6.7.4
+[U*] systemsettings               6.7.3 -> 6.7.4
+[U*] tailscale                    1.102.1 -> 1.102.2
+[U*] union                        6.7.3 -> 6.7.4, +15.5 KiB
+[U*] xdg-desktop-portal-kde       6.7.3 -> 6.7.4, +22.9 KiB
+[U.] zed-editor                   1.13.2 -> 1.14.2, +2.62 MiB
+[U.] zed-editor-wrapped           1.13.2-fish-completions, 1.13.2 -> 1.14.2-fish-completions, 1.14.2
+
+PATHS: 3518 -> 3518 (+162, -162)
+SIZE: 26.4 GiB -> 26.5 GiB
+DIFF: +104 MiB
+
+Rebuilt-at: 2026-08-06T21:54:35+07:00
