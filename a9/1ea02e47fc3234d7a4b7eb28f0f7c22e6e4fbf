@@ -1,0 +1,15 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /nix/store/nkjhrpgc86wvv9mrfmb2fazlcsdv83zv-nixos-system-lavender-pilled-26.11.20260804.e72e4f2
+>>> /nix/store/qhh36d92y0yi81z6s54wdhbqgh3r8dv2-nixos-system-lavender-pilled-26.11.20260804.e72e4f2
+
+CHANGED
+[U.] python3.14-umu-launcher-unwrapped 1.4.4-unstable-2026-07-25 -> 1.4.4-unstable-2026-08-05
+[U.] umu-launcher                      1.4.4-unstable-2026-07-25-bwrap, 1.4.4-unstable-2026-07-25-fhsenv-profile, 1.4.4-unstable-2026-07-25-fhsenv-rootfs, 1.4.4-unstable-2026-07-25-init, 1.4.4-unstable-2026-07-25 -> 1.4.4-unstable-2026-08-05-bwrap, 1.4.4-unstable-2026-08-05-fhsenv-profile, 1.4.4-unstable-2026-08-05-fhsenv-rootfs, 1.4.4-unstable-2026-08-05-init, 1.4.4-unstable-2026-08-05
+[U.] vencord                           1.15.0-2026-07-29 -> 1.15.0-2026-08-06
+
+PATHS: 3518 -> 3518 (+26, -26)
+SIZE: 26.4 GiB -> 26.4 GiB
+DIFF: -2.81 KiB
+
+Rebuilt-at: 2026-08-06T13:17:30+07:00
