@@ -1,0 +1,21 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /nix/store/zam3gfkszb1phyc7g9is670nnff9p0s4-nixos-system-lavender-pilled-26.11.20260807.f13ff45
+>>> /nix/store/aycma7dkgiwcrxbvnkkc593ra3gf8h5c-nixos-system-lavender-pilled-26.11.20260807.f13ff45
+
+CHANGED
+[C.] bash         5.3p9 ×3, <unchanged> -> 5.3p9 ×2, <unchanged>, -1.77 MiB
+[C*] bzip2        1.0.8 ×4, <unchanged> -> 1.0.8 ×3, <unchanged>, -86.9 KiB
+[C*] glibc        2.42-67 ×4, <unchanged> -> 2.42-67 ×3, <unchanged>, -33.5 MiB
+[C.] libidn2      2.3.8 ×5 -> 2.3.8 ×4, -360 KiB
+[C.] libunistring 1.4.2 ×5 -> 1.4.2 ×4, -1.98 MiB
+[C.] unzip        6.0 ×2 -> 6.0, -522 KiB
+[U.] vencord      1.15.0-2026-08-06 -> 1.15.1-2026-08-10
+[C.] xgcc         15.2.0-libgcc ×3, <unchanged> -> 15.2.0-libgcc ×2, <unchanged>, -193 KiB
+[U.] yazi         26.5.6pre20260808_9d5541d-fish-completions, 26.5.6pre20260808_9d5541d ×2 -> 26.5.6pre20260810_7595a1c-fish-completions, 26.5.6pre20260810_7595a1c ×2, +5.33 MiB
+
+PATHS: 2955 -> 2948 (+19, -26)
+SIZE: 23.6 GiB -> 23.6 GiB
+DIFF: -33.0 MiB
+
+Rebuilt-at: 2026-08-11T11:45:08+07:00
