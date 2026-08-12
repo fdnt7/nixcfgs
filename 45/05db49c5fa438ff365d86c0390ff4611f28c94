@@ -1,0 +1,28 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /nix/store/qc079z2409cd1bgy3ychp17imb98n0yh-nixos-system-lavender-pilled-26.11.20260809.279b4a8
+>>> /nix/store/cr68fv3nx7kid7yr40s5crbv069ac16x-nixos-system-lavender-pilled-26.11.20260810.2fcb964
+
+CHANGED
+[U.] discord-canary               1.0.1576-fish-completions, 1.0.1576 -> 1.0.1627-fish-completions, 1.0.1627, +141 KiB
+[C.] fc-cache                     +47.2 KiB
+[U.] initrd-linux                 7.1.7 -> 7.1.8, -18.2 KiB
+[U.] linux                        7.1.7-modules ×2, 7.1.7 -> 7.1.8-modules ×2, 7.1.8
+[U*] networkmanager               1.56.0-doc, <unchanged> -> 1.58.0-doc, 1.58.0-man, 1.58.0, <unchanged>, +21.7 MiB
+[U.] nixos-system-lavender-pilled 26.11.20260809.279b4a8 -> 26.11.20260810.2fcb964
+[U.] noto-fonts                   2026.07.01-fish-completions, 2026.07.01 -> 2026.08.01-fish-completions, 2026.08.01
+[C*] perl                         5.42.0-env ×4, <unchanged> -> 5.42.0-env ×5, <unchanged>, +642 KiB
+[C.] source                       +66.1 KiB
+[U.] tesseract                    5.5.2 -> 5.5.3
+[U.] unifont                      <unchanged> -> 17.0.05-bin, <unchanged>, +32.7 MiB
+[U*] upower                       1.91.2_fish-completions, 1.91.2 -> 1.91.3_fish-completions, 1.91.3
+[U.] yazi                         26.5.6pre20260810_7595a1c-fish-completions, 26.5.6pre20260810_7595a1c ×2 -> 26.5.6pre20260811_5ab58e3-fish-completions, 26.5.6pre20260811_5ab58e3 ×2, -7.04 MiB
+
+ADDED
+[A.] perl5.42.0-GD                2.86, +314 KiB
+
+PATHS: 2948 -> 2953 (+146, -141)
+SIZE: 23.6 GiB -> 23.6 GiB
+DIFF: +48.6 MiB
+
+Rebuilt-at: 2026-08-12T08:47:47+07:00
