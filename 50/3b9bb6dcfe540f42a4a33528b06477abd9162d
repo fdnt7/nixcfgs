@@ -1,0 +1,19 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /nix/store/3ry785q5awmb4jlky2kgflhmmiyq48jb-nixos-system-lavender-pilled-26.11.20260812.867dcbc
+>>> /nix/store/wfl7xw68iwpn0kyx8xff0giac53173dw-nixos-system-lavender-pilled-26.11.20260813.0e251e2
+
+CHANGED
+[U.] claude-code                  2.1.227-fish-completions, 2.1.227 -> 2.1.228-fish-completions, 2.1.228, +4.04 MiB
+[U.] discord-canary               1.0.1635-bwrap, 1.0.1635-fhsenv-profile, 1.0.1635-fhsenv-rootfs, 1.0.1635-fish-completions, 1.0.1635-init, 1.0.1635 -> 1.0.1646-bwrap, 1.0.1646-fhsenv-profile, 1.0.1646-fhsenv-rootfs, 1.0.1646-fish-completions, 1.0.1646-init, 1.0.1646
+[U.] discord-canary-unwrapped     1.0.1635 -> 1.0.1646, +10.4 KiB
+[C*] nixos-manual-html            +25.6 KiB
+[U.] nixos-system-lavender-pilled 26.11.20260812.867dcbc -> 26.11.20260813.0e251e2
+[C.] source                       +85.0 KiB
+[C.] yazi                         26.5.6pre20260813_5dab1e4-fish-completions, 26.5.6pre20260813_5dab1e4 ×2 -> 26.5.6pre20260813_f585b9b-fish-completions, 26.5.6pre20260813_f585b9b ×2, +9.34 KiB
+
+PATHS: 3553 -> 3553 (+51, -51)
+SIZE: 25.7 GiB -> 25.7 GiB
+DIFF: +4.17 MiB
+
+Rebuilt-at: 2026-08-13T20:02:52+07:00
