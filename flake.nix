@@ -228,13 +228,14 @@
       devShells = forAllSystems (system: {
         default =
           let
-            inherit (import nixpkgs { inherit system; }) mkShell prek;
+            inherit (import nixpkgs { inherit system; }) mkShell prek typos;
           in
           mkShell {
             packages = [
               inputs.rbld.packages.${system}.default
               prek
               self.formatter.${system}
+              typos
             ];
           };
       });

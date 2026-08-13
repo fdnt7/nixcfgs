@@ -2,14 +2,21 @@
 repo = "local"
 
 [[repos.hooks]]
+id = "check-boundaries"
+name = "check host boundaries"
+entry = "rbld . check boundaries"
+language = "system"
+pass_filenames = false
+
+[[repos.hooks]]
 id = "treefmt"
 name = "treefmt"
 entry = "treefmt --no-cache --fail-on-change"
 language = "system"
 
 [[repos.hooks]]
-id = "check-boundaries"
-name = "check host boundaries"
-entry = "rbld . check boundaries"
+id = "typos"
+name = "typos"
+entry = "typos"
 language = "system"
 pass_filenames = false
