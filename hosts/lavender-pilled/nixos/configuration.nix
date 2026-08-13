@@ -35,6 +35,7 @@
     ./sound.nix
     ./sudo.nix
     ./time.nix
+    ./tpm.nix
     ./users.nix
     ./virtual-keyboard.nix
     ./virtualisation.nix
