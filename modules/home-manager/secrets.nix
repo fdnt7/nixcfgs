@@ -65,8 +65,8 @@ in
         }) 3;
         description = ''
           List of entries appended to programs.git.includes. Each entry is the
-          same attrset accepted by programs.git.includes (condition, priority, …),
-          except path names a SOPS key rather than a literal file path — it is
+          same attrset accepted by programs.git.includes (condition, priority, ...),
+          except path names a SOPS key rather than a literal file path -- it is
           resolved to the sops-managed runtime path automatically.
         '';
       };
