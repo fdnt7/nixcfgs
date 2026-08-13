@@ -12,6 +12,7 @@
     in
     {
       root = persist;
+      machineId = true;
       flake = {
         enable = true;
         root = flake;
