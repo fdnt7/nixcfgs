@@ -1,0 +1,15 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /nix/store/wfl7xw68iwpn0kyx8xff0giac53173dw-nixos-system-lavender-pilled-26.11.20260813.0e251e2
+>>> /nix/store/v9wlr19r4kbrr0y843q73m3syi3lc621-nixos-system-lavender-pilled-26.11.20260813.0e251e2
+
+CHANGED
+[C.] sops-install-secrets   +268 KiB
+[U.] zen-beta               1.21.13b-fish-completions, 1.21.13b -> 1.21.14b-fish-completions, 1.21.14b
+[U.] zen-beta-bin-unwrapped 1.21.13b -> 1.21.14b, +400 KiB
+
+PATHS: 3553 -> 3553 (+21, -21)
+SIZE: 25.7 GiB -> 25.7 GiB
+DIFF: +668 KiB
+
+Rebuilt-at: 2026-08-14T06:51:58+07:00
