@@ -1,0 +1,20 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /nix/store/yz1x1gdij21dmig56rb9d68rcr5p8j6f-nixos-system-lavender-pilled-26.11.20260813.0e251e2
+>>> /nix/store/gqvys7c4vf27gay352kwmqczs5hb3yph-nixos-system-lavender-pilled-26.11.20260813.0e251e2
+
+CHANGED
+[D.] discord           1.0.154-bwrap, 1.0.154-fhsenv-profile, 1.0.154-fhsenv-rootfs, 1.0.154-init, <unchanged> -> <unchanged>, +663 MiB
+[U.] yazi              26.8.15pre20260815_94abcfa-fish-completions, 26.8.15pre20260815_94abcfa ×2 -> 26.8.15pre20260816_6be3742-fish-completions, 26.8.15pre20260816_6be3742 ×2
+
+ADDED
+[A.] stage-modules.sh  <none>
+
+REMOVED
+[R.] discord-unwrapped 1.0.154, -660 MiB
+
+PATHS: 2974 -> 2970 (+25, -29)
+SIZE: 23.9 GiB -> 23.9 GiB
+DIFF: +2.69 MiB
+
+Rebuilt-at: 2026-08-16T21:42:34+07:00
