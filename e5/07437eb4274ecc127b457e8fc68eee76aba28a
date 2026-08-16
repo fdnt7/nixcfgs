@@ -1,0 +1,98 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /nix/store/gqvys7c4vf27gay352kwmqczs5hb3yph-nixos-system-lavender-pilled-26.11.20260813.0e251e2
+>>> /nix/store/67farrjxaf05m2wpw9n786bg8j5dvvxf-nixos-system-lavender-pilled-26.11.20260816.e5bdc4a
+
+CHANGED
+[U.] attica                       6.28.0, <unchanged> -> 6.29.0, <unchanged>
+[U*] baloo                        6.28.0 -> 6.29.0
+[U*] bluez-qt                     6.28.0 -> 6.29.0
+[U*] breeze-icons                 6.28.0, <unchanged> -> 6.29.0, <unchanged>, +9.99 KiB
+[U.] claude-code                  2.1.228-fish-completions, 2.1.228 -> 2.1.232-fish-completions, 2.1.232, +13.8 MiB
+[U.] discord-canary               1.0.1646-bwrap, 1.0.1646-fhsenv-profile, 1.0.1646-fhsenv-rootfs, 1.0.1646-fish-completions, 1.0.1646-init, 1.0.1646 -> 1.0.1656-bwrap, 1.0.1656-fhsenv-profile, 1.0.1656-fhsenv-rootfs, 1.0.1656-fish-completions, 1.0.1656-init, 1.0.1656
+[U.] discord-canary-unwrapped     1.0.1646 -> 1.0.1656, +153 KiB
+[U.] flatpak                      1.18.0 -> 1.18.1, +35.0 KiB
+[U*] frameworkintegration         6.28.0, <unchanged> -> 6.29.0, <unchanged>
+[C.] initrd-linux                 +17.1 KiB
+[U.] karchive                     6.28.0, <unchanged> -> 6.29.0, <unchanged>, +25.0 KiB
+[U*] kauth                        6.28.0, <unchanged> -> 6.29.0, <unchanged>
+[U.] kbookmarks                   6.28.0, <unchanged> -> 6.29.0, <unchanged>
+[U.] kcalendarcore                6.28.0 -> 6.29.0, +15.8 KiB
+[U*] kcmutils                     6.28.0 -> 6.29.0, +8.74 KiB
+[U.] kcodecs                      6.28.0, <unchanged> -> 6.29.0, <unchanged>, +204 KiB
+[U.] kcolorscheme                 6.28.0 -> 6.29.0
+[U.] kcompletion                  6.28.0, <unchanged> -> 6.29.0, <unchanged>
+[U*] kconfig                      6.28.0, <unchanged> -> 6.29.0, <unchanged>, +23.2 KiB
+[U.] kconfigwidgets               6.28.0, <unchanged> -> 6.29.0, <unchanged>
+[U.] kcontacts                    6.28.0 -> 6.29.0
+[U*] kcoreaddons                  6.28.0, <unchanged> -> 6.29.0, <unchanged>, +32.5 KiB
+[U.] kcrash                       6.28.0, <unchanged> -> 6.29.0, <unchanged>
+[U.] kdav                         6.28.0 -> 6.29.0, +11.2 KiB
+[U.] kdbusaddons                  6.28.0, <unchanged> -> 6.29.0, <unchanged>
+[U.] kdeclarative                 6.28.0 -> 6.29.0
+[U*] kded                         6.28.0_fish-completions, 6.28.0 -> 6.29.0_fish-completions, 6.29.0
+[U.] kdesu                        6.28.0 -> 6.29.0
+[U.] kdnssd                       6.28.0, <unchanged> -> 6.29.0, <unchanged>
+[U.] kdoctools                    6.28.0, <unchanged> -> 6.29.0, <unchanged>
+[U*] kfilemetadata                6.28.0 -> 6.29.0
+[U.] kglobalaccel                 6.28.0, <unchanged> -> 6.29.0, <unchanged>
+[U*] kguiaddons                   6.28.0, <unchanged> -> 6.29.0, <unchanged>
+[U.] kholidays                    6.28.0 -> 6.29.0, +33.6 KiB
+[U.] ki18n                        6.28.0, <unchanged> -> 6.29.0, <unchanged>, +8.34 KiB
+[U*] kiconthemes                  6.28.0, <unchanged> -> 6.29.0, <unchanged>
+[U.] kidletime                    6.28.0 -> 6.29.0
+[U*] kimageformats                6.28.0 -> 6.29.0, +52.7 KiB
+[U*] kio                          6.28.0, <unchanged> -> 6.29.0, <unchanged>, +76.0 KiB
+[U.] kirigami                     6.28.0 -> 6.29.0
+[U.] kitemmodels                  6.28.0 -> 6.29.0
+[U.] kitemviews                   6.28.0, <unchanged> -> 6.29.0, <unchanged>
+[U.] kjobwidgets                  6.28.0, <unchanged> -> 6.29.0, <unchanged>
+[U.] knewstuff                    6.28.0, <unchanged> -> 6.29.0, <unchanged>, +11.5 KiB
+[U.] knotifications               6.28.0, <unchanged> -> 6.29.0, <unchanged>, -55.5 KiB
+[U.] knotifyconfig                6.28.0 -> 6.29.0
+[U*] kpackage                     6.28.0_fish-completions, 6.28.0, <unchanged> -> 6.29.0_fish-completions, 6.29.0, <unchanged>
+[U.] kparts                       6.28.0 -> 6.29.0
+[U.] kpty                         6.28.0 -> 6.29.0
+[U.] kquickcharts                 6.28.0 -> 6.29.0
+[U.] krunner                      6.28.0 -> 6.29.0
+[U*] kservice                     6.28.0_fish-completions, 6.28.0, <unchanged> -> 6.29.0_fish-completions, 6.29.0, <unchanged>
+[U.] kstatusnotifieritem          6.28.0 -> 6.29.0
+[U.] ksvg                         6.28.0 -> 6.29.0
+[U*] ktexteditor                  6.28.0 -> 6.29.0
+[U.] ktexttemplate                6.28.0 -> 6.29.0, +48.4 KiB
+[U.] ktextwidgets                 6.28.0, <unchanged> -> 6.29.0, <unchanged>
+[U.] kunitconversion              6.28.0 -> 6.29.0, +8.40 KiB
+[U.] kuserfeedback                6.28.0 -> 6.29.0, +11.0 KiB
+[U*] kwallet                      6.28.0_fish-completions, 6.28.0, <unchanged> -> 6.29.0_fish-completions, 6.29.0, <unchanged>, -23.9 KiB
+[U.] kwidgetsaddons               6.28.0, <unchanged> -> 6.29.0, <unchanged>, +13.4 KiB
+[U.] kwindowsystem                6.28.0, <unchanged> -> 6.29.0, <unchanged>
+[U.] kxmlgui                      6.28.0, <unchanged> -> 6.29.0, <unchanged>
+[C*] libksysguard                 -12.0 KiB
+[U.] libtraceevent                1.9 -> 1.9.0
+[U.] modemmanager-qt              6.28.0 -> 6.29.0
+[U.] networkmanager-qt            6.28.0 -> 6.29.0
+[C*] nixos-manual-html            -66.9 KiB
+[U.] nixos-system-lavender-pilled 26.11.20260813.0e251e2 -> 26.11.20260816.e5bdc4a
+[U.] nss                          3.126, <unchanged> -> 3.127, <unchanged>
+[C*] orca                         -43.4 KiB
+[U.] oxygen-icons                 6.28.0 -> 6.29.0, +1.02 MiB
+[C*] plasma-keyboard              -13.8 KiB
+[U.] prison                       6.28.0 -> 6.29.0
+[U.] purpose                      6.28.0 -> 6.29.0
+[U*] qqc2-desktop-style           6.28.0 -> 6.29.0, +19.8 KiB
+[U*] solid                        6.28.0, <unchanged> -> 6.29.0, <unchanged>
+[U.] sonnet                       6.28.0, <unchanged> -> 6.29.0, <unchanged>
+[C.] sops-install-secrets         +12.3 KiB
+[C.] source                       +192 KiB
+[U.] syndication                  6.28.0, <unchanged> -> 6.29.0, <unchanged>
+[U.] syntax-highlighting          6.28.0, <unchanged> -> 6.29.0, <unchanged>
+[U.] threadweaver                 6.28.0 -> 6.29.0
+[U.] xournalpp                    1.3.6-fish-completions, 1.3.6 -> 1.3.7-fish-completions, 1.3.7
+[U.] zed-editor                   1.14.2 -> 1.15.0, +3.07 MiB
+[U.] zed-editor-wrapped           1.14.2-fish-completions, 1.14.2 -> 1.15.0-fish-completions, 1.15.0
+
+PATHS: 2970 -> 2970 (+375, -375)
+SIZE: 23.9 GiB -> 23.9 GiB
+DIFF: +18.7 MiB
+
+Rebuilt-at: 2026-08-17T02:51:08+07:00
