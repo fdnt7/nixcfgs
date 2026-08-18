@@ -1,0 +1,36 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /nix/store/j42x2dy253cnw813c3iajr4i74m8vd9p-nixos-system-lavender-pilled-26.11.20260816.e5bdc4a
+>>> /nix/store/39mds0hkdjpslr2r78vxs6grc9w2y21m-nixos-system-lavender-pilled-26.11.20260817.ec2d622
+
+CHANGED
+[U.] claude-code                  2.1.232-fish-completions, 2.1.232 -> 2.1.233-fish-completions, 2.1.233, +1.50 MiB
+[C.] fc-cache                     -16.9 KiB
+[D.] ffmpeg                       4.4.8-data, 4.4.8-lib, <unchanged> -> <unchanged>, -26.6 MiB
+[U.] ffmpeg-headless              <unchanged> -> 7.1.5-data, 7.1.5-lib, <unchanged>, +28.6 MiB
+[U.] fzf                          0.74.2, <unchanged> -> 0.74.3, <unchanged>, +20.2 KiB
+[U.] initrd-linux                 7.1.8 -> 7.2, -37.2 KiB
+[U.] linux                        7.1.8-modules ×2, 7.1.8 -> 7.2-modules ×2, 7.2, +1.33 MiB
+[U*] mullvad                      2026.3 -> 2026.4, -180 KiB
+[U*] mullvad-vpn                  2026.3 -> 2026.4, +448 KiB
+[C*] nixos-manual-html            +45.7 KiB
+[U.] nixos-system-lavender-pilled 26.11.20260816.e5bdc4a -> 26.11.20260817.ec2d622
+[U*] openssh                      10.4p1-man, 10.4p1 -> 10.5p1-man, 10.5p1, +12.7 KiB
+[C*] perl                         5.42.0-env ×5, <unchanged> -> 5.42.0-env ×4, <unchanged>, -642 KiB
+[C*] plasma-keyboard              +13.8 KiB
+[U*] qemu                         11.0.3-doc, 11.0.3_fish-completions, 11.0.3-ga, 11.0.3 -> 11.1.0-doc, 11.1.0_fish-completions, 11.1.0-ga, 11.1.0, +21.4 MiB
+[C.] source                       +255 KiB
+[D.] unifont                      17.0.05-bin, <unchanged> -> <unchanged>, -23.0 MiB
+[U.] xen                          4.20.4 -> 4.22.0, +1.42 MiB
+
+REMOVED
+[R.] dash                         0.5.13.5, -189 KiB
+[R.] getty                        <none> ×2
+[R.] perl5.42.0-GD                2.86, -314 KiB
+[R.] yajl                         2.1.0-unstable-2024-02-01, -51.4 KiB
+
+PATHS: 2970 -> 2963 (+260, -267)
+SIZE: 23.9 GiB -> 23.9 GiB
+DIFF: +3.96 MiB
+
+Rebuilt-at: 2026-08-19T00:58:15+07:00
