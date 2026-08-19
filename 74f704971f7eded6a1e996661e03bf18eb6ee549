@@ -1,0 +1,13 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /nix/store/vxhagl5j1dzmr0q451q0i2jkwnsiwngr-nixos-system-lavender-pilled-26.11.20260818.0ae2bc1
+>>> /nix/store/845xxdc51jhz6vzfam9n59fs7bar5hfd-nixos-system-lavender-pilled-26.11.20260818.0ae2bc1
+
+CHANGED
+[C.] home-configuration-reference-manpage -9.81 KiB
+
+PATHS: 2963 -> 2963 (+16, -16)
+SIZE: 23.9 GiB -> 23.9 GiB
+DIFF: -9.81 KiB
+
+Rebuilt-at: 2026-08-19T23:15:28+07:00
