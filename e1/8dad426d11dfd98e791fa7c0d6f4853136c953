@@ -1,0 +1,17 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /nix/store/39mds0hkdjpslr2r78vxs6grc9w2y21m-nixos-system-lavender-pilled-26.11.20260817.ec2d622
+>>> /nix/store/cp6rjm987n9k3f9wp73v3s22i2rjfb8a-nixos-system-lavender-pilled-26.11.20260818.0ae2bc1
+
+CHANGED
+[U.] claude-code                  2.1.233-fish-completions, 2.1.233 -> 2.1.234-fish-completions, 2.1.234, +3.59 MiB
+[U.] claude-desktop               1.30096.5-fish-completions, 1.30096.5 -> 1.32885.1-fish-completions, 1.32885.1, -8.77 MiB
+[C*] nixos-manual-html            +14.7 KiB
+[U.] nixos-system-lavender-pilled 26.11.20260817.ec2d622 -> 26.11.20260818.0ae2bc1
+[C.] source                       -34.2 KiB
+
+PATHS: 2963 -> 2963 (+44, -44)
+SIZE: 23.9 GiB -> 23.9 GiB
+DIFF: -5.21 MiB
+
+Rebuilt-at: 2026-08-19T14:46:38+07:00
