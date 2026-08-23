@@ -1,0 +1,84 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /nix/store/w1bh9f21mpfpzl21hbc47nppnzs3nqvz-nixos-system-lavender-pilled-26.11.20260819.ffb3c9b
+>>> /nix/store/8lhvnf05qrfl7355vcim52qzd6xyw1gs-nixos-system-lavender-pilled-26.11.20260822.2c423e0
+
+CHANGED
+[U*] akonadi                      26.04.3 -> 26.08.0, -173 KiB
+[U.] akonadi-calendar             26.04.3 -> 26.08.0, +14.6 KiB
+[U.] akonadi-contacts             26.04.3 -> 26.08.0
+[U.] akonadi-mime                 26.04.3 -> 26.08.0
+[U.] akonadi-search               26.04.3 -> 26.08.0
+[U*] ark                          26.04.3_fish-completions, 26.04.3 -> 26.08.0_fish-completions, 26.08.0, +122 KiB
+[U*] baloo-widgets                26.04.3 -> 26.08.0, -20.8 KiB
+[U.] bcachefs-tools               1.39.1 -> 1.39.2, -9.64 KiB
+[C*] bluedevil                    +40.0 KiB
+[U.] claude-code                  2.1.234-fish-completions, 2.1.234 -> 2.1.238-fish-completions, 2.1.238, +10.0 MiB
+[U*] dolphin                      26.04.3 -> 26.08.0, +246 KiB
+[U*] dolphin-plugins              26.04.3 -> 26.08.0, +110 KiB
+[C.] electron                     43.2.0, 41.10.3 -> 43.4.1
+[C.] electron-unwrapped           43.2.0, 41.10.3 -> 43.4.1, -310 MiB
+[U*] elisa                        26.04.3 -> 26.08.0, +24.4 KiB
+[U.] fastfetch                    2.67.0-fish-completions, 2.67.0-man, 2.67.0 -> 2.67.1-fish-completions, 2.67.1-man, 2.67.1
+[U.] fastfetch-unwrapped          2.67.0-man, 2.67.0 -> 2.67.1-man, 2.67.1
+[U*] ffmpegthumbs                 26.04.3 -> 26.08.0
+[U.] grantleetheme                26.04.3 -> 26.08.0
+[U*] gwenview                     26.04.3 -> 26.08.0, +58.4 KiB
+[C.] index-x86_64-linux           +2.37 MiB
+[C.] index-x86_64-linux-small     +10.9 KiB
+[U.] intel-compute-runtime        26.27.39122.11 -> 26.31.39395.13, +65.8 KiB
+[U.] kaccounts-integration        26.04.3 -> 26.08.0
+[U*] kate                         26.04.3_fish-completions, 26.04.3 -> 26.08.0_fish-completions, 26.08.0, +831 KiB
+[U.] kcalutils                    26.04.3 -> 26.08.0, +21.7 KiB
+[U*] kde-inotify-survey           26.04.3 -> 26.08.0
+[U.] kdegraphics-mobipocket       26.04.3 -> 26.08.0
+[U*] kdegraphics-thumbnailers     26.04.3 -> 26.08.0
+[U*] kdepim-runtime               26.04.3 -> 26.08.0, -125 KiB
+[U*] khelpcenter                  26.04.3 -> 26.08.0, +112 KiB
+[U.] kidentitymanagement          26.04.3 -> 26.08.0
+[U.] kimap                        26.04.3 -> 26.08.0, +54.1 KiB
+[U*] kio-admin                    26.04.3 -> 26.08.0
+[U*] kio-extras                   26.04.3 -> 26.08.0
+[U.] kldap                        26.04.3 -> 26.08.0
+[U.] kmailtransport               26.04.3 -> 26.08.0, +9.97 KiB
+[U.] kmbox                        26.04.3 -> 26.08.0
+[D.] kmime                        26.04.3 -> 6.29.0
+[U*] konsole                      26.04.3 -> 26.08.0, +460 KiB
+[U.] kpimtextedit                 26.04.3 -> 26.08.0
+[U.] ksmtp                        26.04.3 -> 26.08.0, +15.4 KiB
+[U*] kunifiedpush                 26.04.3 -> 26.08.0
+[U*] kwalletmanager               26.04.3 -> 26.08.0, +11.5 KiB
+[U.] libgit2                      1.9.4-lib -> 1.9.7-lib
+[U.] libgravatar                  26.04.3 -> 26.08.0
+[U.] libkdcraw                    26.04.3 -> 26.08.0
+[U.] libkdepim                    26.04.3 -> 26.08.0
+[U.] libkexiv2                    26.04.3 -> 26.08.0
+[U.] libkgapi                     26.04.3 -> 26.08.0, +9.43 KiB
+[U.] libkleo                      26.04.3 -> 26.08.0, +62.4 KiB
+[U.] mesa                         26.2.0 ×2 -> 26.2.1 ×2, +74.6 KiB
+[U.] messagelib                   26.04.3 -> 26.08.0, +18.6 KiB
+[C*] mullvad-vpn                  +680 KiB
+[C*] nixos-manual-html            +37.3 KiB
+[U.] nixos-system-lavender-pilled 26.11.20260819.ffb3c9b -> 26.11.20260822.2c423e0
+[U*] okular                       26.04.3_fish-completions, 26.04.3 -> 26.08.0_fish-completions, 26.08.0, +211 KiB
+[U.] osinfo-db                    20251212 -> 20260812, +350 KiB
+[U.] pimcommon                    26.04.3 -> 26.08.0, +15.2 KiB
+[U*] qrca                         26.04.3 -> 26.08.0
+[C.] source                       +54.9 KiB
+[C.] system-path                  +21.0 KiB
+[U.] vencord                      1.15.1-2026-08-10 -> 1.15.2-2026-08-17, +20.1 KiB
+[U.] yazi                         26.8.15pre20260822_dc21204-fish-completions, 26.8.15pre20260822_dc21204 ×2 -> 26.8.15pre20260823_519939b-fish-completions, 26.8.15pre20260823_519939b ×2, +39.0 KiB
+[U.] zed-editor                   1.15.0 -> 1.16.1, +1.61 MiB
+[U.] zed-editor-wrapped           1.15.0-fish-completions, 1.15.0 -> 1.16.1-fish-completions, 1.16.1
+
+ADDED
+[A.] squashfs-tools               4.7.5, +680 KiB
+
+REMOVED
+[R.] squashfs                     4.7.5, -680 KiB
+
+PATHS: 2963 -> 2961 (+222, -224)
+SIZE: 23.9 GiB -> 23.7 GiB
+DIFF: -293 MiB
+
+Rebuilt-at: 2026-08-24T04:03:46+07:00
