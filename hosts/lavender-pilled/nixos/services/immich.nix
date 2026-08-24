@@ -1,0 +1,3 @@
+{
+  services.immich.enable = true;
+}
