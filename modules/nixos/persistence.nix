@@ -63,6 +63,8 @@ in
     waydroid = mkEnableOption "Waydroid state persistence";
 
     bluetooth = mkEnableOption "Bluetooth state persistence";
+
+    immich = mkEnableOption "Immich state persistence";
   };
 
   config = mkMerge [
@@ -144,6 +146,23 @@ in
 
     (mkIf cfg.bluetooth {
       environment.persistence.${cfg.root}.directories = [ "/var/lib/bluetooth" ];
+    })
+
+    (mkIf cfg.immich {
+      environment.persistence.${cfg.root}.directories = [
+        {
+          directory = "/var/lib/immich";
+          user = "immich";
+          group = "immich";
+          mode = "0750";
+        }
+        {
+          directory = "/var/lib/postgresql";
+          user = "postgres";
+          group = "postgres";
+          mode = "0700";
+        }
+      ];
     })
   ];
 }
