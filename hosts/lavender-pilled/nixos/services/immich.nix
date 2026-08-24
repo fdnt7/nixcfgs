@@ -4,4 +4,5 @@
     host = "0.0.0.0";
     openFirewall = true;
   };
+  persist.immich = true;
 }
