@@ -1,0 +1,22 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /nix/store/8lhvnf05qrfl7355vcim52qzd6xyw1gs-nixos-system-lavender-pilled-26.11.20260822.2c423e0
+>>> /nix/store/jdqdghgzh8birjgbyqp455kafg5i3yww-nixos-system-lavender-pilled-26.11.20260823.56c02bc
+
+CHANGED
+[U.] OVMF-xen                     202605-fd -> 202608-fd
+[U.] discord-canary               1.0.1656-bwrap, 1.0.1656-fhsenv-profile, 1.0.1656-fhsenv-rootfs, 1.0.1656-fish-completions, 1.0.1656-init, 1.0.1656 -> 1.0.1708-bwrap, 1.0.1708-fhsenv-profile, 1.0.1708-fhsenv-rootfs, 1.0.1708-fish-completions, 1.0.1708-init, 1.0.1708
+[U.] discord-canary-unwrapped     1.0.1656 -> 1.0.1708, -1.61 MiB
+[C*] nixos-manual-html            +17.8 KiB
+[U.] nixos-system-lavender-pilled 26.11.20260822.2c423e0 -> 26.11.20260823.56c02bc
+[U.] obs-studio                   32.1.2 -> 32.2.1, +234 KiB
+[C.] source                       +169 KiB
+[U.] vesktop                      1.6.5-unstable-2026-07-16-fish-completions, 1.6.5-unstable-2026-07-16 -> 1.6.7-fish-completions, 1.6.7, +8.98 KiB
+[U.] wrapped-obs-studio           32.1.2-fish-completions, 32.1.2 -> 32.2.1-fish-completions, 32.2.1
+[U.] zfs-user                     2.4.3 -> 2.4.4
+
+PATHS: 2961 -> 2961 (+95, -95)
+SIZE: 23.7 GiB -> 23.7 GiB
+DIFF: -1.18 MiB
+
+Rebuilt-at: 2026-08-24T19:02:58+07:00
