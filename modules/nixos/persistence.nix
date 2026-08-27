@@ -157,6 +157,12 @@ in
           mode = "0750";
         }
         {
+          directory = "/var/cache/immich";
+          user = "immich";
+          group = "immich";
+          mode = "0755";
+        }
+        {
           directory = "/var/lib/postgresql";
           user = "postgres";
           group = "postgres";
