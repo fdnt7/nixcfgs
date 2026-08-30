@@ -6,6 +6,10 @@
     enable = true;
     discord.vencord.enable = true;
     vesktop.enable = true;
+    # openASAR made discord unable to play GIFs or videos
+    #
+    # Refs: https://github.com/NixOS/nixpkgs/issues/507233
+    discord.openASAR.enable = false;
   };
 
   programs.nixcord.config.plugins = {
