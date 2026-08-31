@@ -1,0 +1,24 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /nix/store/rgrv8jkv39wxqzx2vnczabfikpg8f97y-nixos-system-lavender-pilled-26.11.20260828.83199d0
+>>> /nix/store/cf9alaxwhh9bm8a54zgk9kvcpjns69rg-nixos-system-lavender-pilled-26.11.20260829.d2f6794
+
+CHANGED
+[U.] discord-canary               1.0.1708-bwrap, 1.0.1708-fhsenv-profile, 1.0.1708-fhsenv-rootfs, 1.0.1708-fish-completions, 1.0.1708-init, 1.0.1708 -> 1.0.1766-bwrap, 1.0.1766-fhsenv-profile, 1.0.1766-fhsenv-rootfs, 1.0.1766-fish-completions, 1.0.1766-init, 1.0.1766
+[U.] discord-canary-unwrapped     1.0.1708 -> 1.0.1766, -2.16 MiB
+[U.] initrd-linux                 7.2.1 -> 7.2.2
+[U.] linux                        7.2.1-modules ×2, 7.2.1 -> 7.2.2-modules ×2, 7.2.2
+[C*] nixos-manual-html            +10.2 KiB
+[U.] nixos-system-lavender-pilled 26.11.20260828.83199d0 -> 26.11.20260829.d2f6794
+[U.] nss                          3.127, <unchanged> -> 3.128, <unchanged>, +212 KiB
+[U.] obs-studio                   32.2.1 -> 32.2.2
+[C.] source                       +217 KiB
+[C.] spicetify-Default            +1.07 MiB
+[U.] wrapped-obs-studio           32.2.1-fish-completions, 32.2.1 -> 32.2.2-fish-completions, 32.2.2
+[U.] yazi                         26.8.15pre20260826_faa20df-fish-completions, 26.8.15pre20260826_faa20df ×2 -> 26.8.15pre20260831_5f31edf-fish-completions, 26.8.15pre20260831_5f31edf ×2, +207 KiB
+
+PATHS: 3119 -> 3119 (+358, -358)
+SIZE: 25.4 GiB -> 25.4 GiB
+DIFF: -477 KiB
+
+Rebuilt-at: 2026-08-31T14:39:20+07:00
