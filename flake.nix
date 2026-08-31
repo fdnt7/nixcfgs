@@ -25,7 +25,7 @@
     impermanence.url = "github:nix-community/impermanence"; # no nixpkgs
 
     lanzaboote = {
-      url = "github:nix-community/lanzaboote/v1.1.0";
+      url = "github:nix-community/lanzaboote/69cf334f9dbc11213c6228c97e9b32924d51443f";
 
       # Optional but recommended to limit the size of your system closure.
       inputs.nixpkgs.follows = "nixpkgs";
