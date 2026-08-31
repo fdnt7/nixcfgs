@@ -1,0 +1,13 @@
+fix(flake): rebuild
+
+<<< /nix/store/hjkp74jj7akd061sxi8pl8djp496mxrb-nixos-system-lavender-pilled-26.11.20260829.d2f6794
+>>> /nix/store/47k22jjri7k1yik9dn3ijd04na8gbs4x-nixos-system-lavender-pilled-26.11.20260829.d2f6794
+
+CHANGED
+[C.] lzbt-systemd +126 KiB
+
+PATHS: 3118 -> 3118 (+4, -4)
+SIZE: 25.4 GiB -> 25.4 GiB
+DIFF: +126 KiB
+
+Rebuilt-at: 2026-08-31T16:55:04+07:00
