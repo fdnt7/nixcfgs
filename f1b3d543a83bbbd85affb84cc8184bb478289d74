@@ -1,0 +1,15 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /nix/store/m5wv2vdpgq4pld0l30gm3bnb60s7dr6z-nixos-system-lavender-pilled-26.11.20260831.34ab990
+>>> /nix/store/shjz3qip9wd8ikkfnil1flpsv2z8rwf8-nixos-system-lavender-pilled-26.11.20260831.34ab990
+
+CHANGED
+[U.] claude-desktop       1.40609.0-fish-completions, 1.40609.0 -> 1.40609.1-fish-completions, 1.40609.1, +128 KiB
+[C.] sops-install-secrets +207 KiB
+[C.] yazi                 26.9.1pre20260901_8dd895c-fish-completions, 26.9.1pre20260901_8dd895c ×2 -> 26.9.1pre20260901_5f901b8-fish-completions, 26.9.1pre20260901_5f901b8 ×2, +10.6 KiB
+
+PATHS: 3118 -> 3118 (+23, -23)
+SIZE: 25.4 GiB -> 25.4 GiB
+DIFF: +347 KiB
+
+Rebuilt-at: 2026-09-02T20:43:40+07:00
