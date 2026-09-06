@@ -1,0 +1,36 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /nix/store/9b25cv4qkwbp8dzcd9rnvgj4llmpp3ja-nixos-system-lavender-pilled-26.11.20260902.3ed67ec
+>>> /nix/store/3llbnyxy8bvwikkvz3h11z3jhjx94mii-nixos-system-lavender-pilled-26.11.20260905.c043004
+
+CHANGED
+[U.] claude-code                          2.1.257-fish-completions, 2.1.257 -> 2.1.260-fish-completions, 2.1.260, -764 KiB
+[U.] claude-desktop                       1.40609.1-fish-completions, 1.40609.1 -> 1.46388.2-fish-completions, 1.46388.2, +8.70 MiB
+[U.] discord-canary                       1.0.1766-bwrap, 1.0.1766-fhsenv-profile, 1.0.1766-fhsenv-rootfs, 1.0.1766-fish-completions, 1.0.1766-init, 1.0.1766 -> 1.0.1794-bwrap, 1.0.1794-fhsenv-profile, 1.0.1794-fhsenv-rootfs, 1.0.1794-fish-completions, 1.0.1794-init, 1.0.1794
+[U.] discord-canary-unwrapped             1.0.1766 -> 1.0.1794, -82.9 MiB
+[U.] foot                                 1.27.0-fish-completions, 1.27.0-terminfo, 1.27.0 -> 1.28.0-fish-completions, 1.28.0-terminfo, 1.28.0, +13.6 KiB
+[U.] freerdp                              3.30.0 -> 3.31.1, +77.9 KiB
+[C.] home-configuration-reference-manpage +11.4 KiB
+[C.] immich                               -8.78 KiB
+[C.] index-x86_64-linux                   +139 KiB
+[U.] initrd-linux                         7.2.2 -> 7.2.3, -22.9 KiB
+[U.] libmtp                               1.1.22 -> 1.1.23
+[U*] libvirt                              12.6.0_fish-completions, 12.6.0 -> 12.7.0_fish-completions, 12.7.0, +383 KiB
+[U.] linux                                7.2.2-modules ×2, 7.2.2 -> 7.2.3-modules ×2, 7.2.3, +17.2 KiB
+[U.] mesa                                 26.2.1 ×2 -> 26.2.2 ×2, +54.1 KiB
+[C*] nixos-manual-html                    +155 KiB
+[U.] nixos-system-lavender-pilled         26.11.20260902.3ed67ec -> 26.11.20260905.c043004
+[U.] noto-fonts                           2026.08.01-fish-completions, 2026.08.01 -> 2026.09.01-fish-completions, 2026.09.01
+[U.] openvswitch                          3.7.1 -> 4.0.0, -77.1 KiB
+[U.] python3.14-libvirt-python            12.6.0 -> 12.7.0
+[C.] source                               +226 KiB
+[U.] wireless-regdb                       2026.05.30-zstd -> 2026.09.03-zstd
+[U*] wireplumber                          0.5.15-doc, 0.5.15_fish-completions, 0.5.15 -> 0.5.17-doc, 0.5.17_fish-completions, 0.5.17, +1.18 MiB
+[D.] zen-beta                             1.21.16b-fish-completions, 1.21.16b -> 1.22b-fish-completions, 1.22b
+[D.] zen-beta-bin-unwrapped               1.21.16b -> 1.22b, +17.0 MiB
+
+PATHS: 3118 -> 3118 (+279, -279)
+SIZE: 25.3 GiB -> 25.2 GiB
+DIFF: -55.7 MiB
+
+Rebuilt-at: 2026-09-06T21:52:15+07:00
