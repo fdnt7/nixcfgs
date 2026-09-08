@@ -1,0 +1,20 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /nix/store/3llbnyxy8bvwikkvz3h11z3jhjx94mii-nixos-system-lavender-pilled-26.11.20260905.c043004
+>>> /nix/store/b5s1kbx78i7r1nj70dbhk34pmspg0a34-nixos-system-lavender-pilled-26.11.20260907.dc5d91f
+
+CHANGED
+[U*] fish                         4.8.1-doc, 4.8.1-fish-completions, 4.8.1_fish-completions, 4.8.1 -> 4.9.2-doc, 4.9.2-fish-completions, 4.9.2_fish-completions, 4.9.2, +209 KiB
+[U.] nilfs-utils                  2.2.12 -> 2.3.1
+[U.] nixos-system-lavender-pilled 26.11.20260905.c043004 -> 26.11.20260907.dc5d91f
+[U.] python3.14-huggingface-hub   1.28.0 -> 1.30.0, +56.9 KiB
+[U.] python3.14-tokenizers        0.23.1 -> 0.23.2, +301 KiB
+[C.] source                       +83.2 KiB
+[U.] talloc                       2.4.4 ×2 -> 2.5.0 ×2, +13.3 KiB
+[U.] yazi                         26.9.1pre20260901_5f901b8-fish-completions, 26.9.1pre20260901_5f901b8 ×2 -> 26.9.1pre20260908_8c2b5f8-fish-completions, 26.9.1pre20260908_8c2b5f8 ×2, +401 KiB
+
+PATHS: 3118 -> 3118 (+212, -212)
+SIZE: 25.2 GiB -> 25.2 GiB
+DIFF: +1.06 MiB
+
+Rebuilt-at: 2026-09-08T15:29:25+07:00
