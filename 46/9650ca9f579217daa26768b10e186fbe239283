@@ -1,0 +1,157 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /nix/store/l6dfjp20852a25ch9cscvsddciwkxrf7-nixos-system-lavender-pilled-26.11.20260908.d6524aa
+>>> /nix/store/f0kwc7hvl7kkjzma0q9h6qrh9clcz0d8-nixos-system-lavender-pilled-26.11.20260910.8ce4ef6
+
+CHANGED
+[U.] attica                       6.29.0, <unchanged> -> 6.30.0, <unchanged>
+[U*] aurorae                      6.7.4 -> 6.7.5
+[U*] baloo                        6.29.0 -> 6.30.0
+[U*] bluedevil                    6.7.4 -> 6.7.5, -31.5 KiB
+[U*] bluez-qt                     6.29.0 -> 6.30.0
+[U*] breeze                       6.7.4-qt5, 6.7.4 -> 6.7.5-qt5, 6.7.5
+[U*] breeze-gtk                   6.7.4 -> 6.7.5
+[U*] breeze-icons                 6.29.0, <unchanged> -> 6.30.0, <unchanged>, +39.1 KiB
+[U.] claude-code                  2.1.263-fish-completions, 2.1.263 -> 2.1.266-fish-completions, 2.1.266, +272 KiB
+[U*] discover                     6.7.4 -> 6.7.5
+[U*] drkonqi                      6.7.4 -> 6.7.5
+[U.] electron                     43.4.1 -> 43.5.1
+[U.] electron-unwrapped           43.4.1 -> 43.5.1, +2.43 MiB
+[U.] fastfetch                    2.67.1-fish-completions, 2.67.1-man, 2.67.1 -> 2.68.1-fish-completions, 2.68.1-man, 2.68.1
+[U.] fastfetch-unwrapped          2.67.1-man, 2.67.1 -> 2.68.1-man, 2.68.1, +421 KiB
+[U.] ffmpeg                       <unchanged> -> 9.0.1-bin, <unchanged>, +1.03 MiB
+[U*] fish                         4.9.2-doc, 4.9.2-fish-completions, 4.9.2_fish-completions, 4.9.2 -> 4.9.3-doc, 4.9.3-fish-completions, 4.9.3_fish-completions, 4.9.3
+[U*] frameworkintegration         6.29.0, <unchanged> -> 6.30.0, <unchanged>
+[C.] intel-compute-runtime        +63.3 MiB
+[U.] jellyfin-ffmpeg              7.1.4-3-bin, 7.1.4-3-data, 7.1.4-3-lib -> 8.1.2-4-bin, 8.1.2-4-data, 8.1.2-4-lib, -2.65 MiB
+[U*] kactivitymanagerd            6.7.4 -> 6.7.5
+[U.] karchive                     6.29.0, <unchanged> -> 6.30.0, <unchanged>
+[U*] kauth                        6.29.0, <unchanged> -> 6.30.0, <unchanged>
+[U.] kbookmarks                   6.29.0, <unchanged> -> 6.30.0, <unchanged>
+[U.] kcalendarcore                6.29.0 -> 6.30.0, +274 KiB
+[U*] kcmutils                     6.29.0 -> 6.30.0
+[U.] kcodecs                      6.29.0, <unchanged> -> 6.30.0, <unchanged>
+[U.] kcolorscheme                 6.29.0 -> 6.30.0
+[U.] kcompletion                  6.29.0, <unchanged> -> 6.30.0, <unchanged>
+[U*] kconfig                      6.29.0, <unchanged> -> 6.30.0, <unchanged>
+[U.] kconfigwidgets               6.29.0, <unchanged> -> 6.30.0, <unchanged>
+[U.] kcontacts                    6.29.0 -> 6.30.0
+[U*] kcoreaddons                  6.29.0, <unchanged> -> 6.30.0, <unchanged>
+[U.] kcrash                       6.29.0, <unchanged> -> 6.30.0, <unchanged>
+[U.] kdav                         6.29.0 -> 6.30.0, +10.4 KiB
+[U.] kdbusaddons                  6.29.0, <unchanged> -> 6.30.0, <unchanged>
+[U*] kde-cli-tools                6.7.4_fish-completions, 6.7.4 -> 6.7.5_fish-completions, 6.7.5
+[U*] kde-gtk-config               6.7.4 -> 6.7.5
+[U.] kdeclarative                 6.29.0 -> 6.30.0
+[U.] kdecoration                  6.7.4 -> 6.7.5
+[U*] kded                         6.29.0_fish-completions, 6.29.0 -> 6.30.0_fish-completions, 6.30.0
+[U*] kdeplasma-addons             6.7.4 -> 6.7.5
+[U.] kdesu                        6.29.0 -> 6.30.0
+[U.] kdnssd                       6.29.0, <unchanged> -> 6.30.0, <unchanged>
+[U.] kdoctools                    6.29.0, <unchanged> -> 6.30.0, <unchanged>
+[U*] kfilemetadata                6.29.0 -> 6.30.0, +9.99 KiB
+[U.] kglobalaccel                 6.29.0, <unchanged> -> 6.30.0, <unchanged>
+[U*] kglobalacceld                6.7.4 -> 6.7.5
+[U*] kguiaddons                   6.29.0, <unchanged> -> 6.30.0, <unchanged>
+[U.] kholidays                    6.29.0 -> 6.30.0
+[U.] ki18n                        6.29.0, <unchanged> -> 6.30.0, <unchanged>
+[U*] kiconthemes                  6.29.0, <unchanged> -> 6.30.0, <unchanged>
+[U.] kidletime                    6.29.0 -> 6.30.0
+[U*] kimageformats                6.29.0 -> 6.30.0
+[U*] kinfocenter                  6.7.4 -> 6.7.5
+[U*] kio                          6.29.0, <unchanged> -> 6.30.0, <unchanged>, +208 KiB
+[U.] kirigami                     6.29.0 -> 6.30.0, -109 KiB
+[U.] kitemmodels                  6.29.0 -> 6.30.0
+[U.] kitemviews                   6.29.0, <unchanged> -> 6.30.0, <unchanged>
+[U.] kjobwidgets                  6.29.0, <unchanged> -> 6.30.0, <unchanged>
+[U*] kmenuedit                    6.7.4 -> 6.7.5
+[U.] kmime                        6.29.0 -> 6.30.0
+[U.] knewstuff                    6.29.0, <unchanged> -> 6.30.0, <unchanged>
+[U*] knighttime                   6.7.4 -> 6.7.5
+[U.] knotifications               6.29.0, <unchanged> -> 6.30.0, <unchanged>
+[U.] knotifyconfig                6.29.0 -> 6.30.0
+[U*] kpackage                     6.29.0_fish-completions, 6.29.0, <unchanged> -> 6.30.0_fish-completions, 6.30.0, <unchanged>
+[U.] kparts                       6.29.0 -> 6.30.0, -21.4 KiB
+[U.] kpipewire                    6.7.4 -> 6.7.5
+[U.] kpty                         6.29.0 -> 6.30.0
+[U.] kquickcharts                 6.29.0 -> 6.30.0
+[U*] krdp                         6.7.4 -> 6.7.5
+[U.] krunner                      6.29.0 -> 6.30.0
+[U*] kscreen                      6.7.4 -> 6.7.5
+[U*] kscreenlocker                6.7.4 -> 6.7.5
+[U*] kservice                     6.29.0_fish-completions, 6.29.0, <unchanged> -> 6.30.0_fish-completions, 6.30.0, <unchanged>
+[U.] kstatusnotifieritem          6.29.0 -> 6.30.0
+[U.] ksvg                         6.29.0 -> 6.30.0
+[U*] ksystemstats                 6.7.4 -> 6.7.5, +15.6 KiB
+[U*] ktexteditor                  6.29.0 -> 6.30.0, +51.4 KiB
+[U.] ktexttemplate                6.29.0 -> 6.30.0
+[U.] ktextwidgets                 6.29.0, <unchanged> -> 6.30.0, <unchanged>
+[U.] kunitconversion              6.29.0 -> 6.30.0, -136 KiB
+[U.] kuserfeedback                6.29.0 -> 6.30.0, +21.7 KiB
+[U*] kwallet                      6.29.0_fish-completions, 6.29.0, <unchanged> -> 6.30.0_fish-completions, 6.30.0, <unchanged>, -255 KiB
+[U*] kwallet-pam                  6.7.4 -> 6.7.5
+[U.] kwayland                     6.7.4, <unchanged> -> 6.7.5, <unchanged>
+[U*] kwayland-integration         6.7.4 -> 6.7.5
+[U.] kwidgetsaddons               6.29.0, <unchanged> -> 6.30.0, <unchanged>
+[U*] kwin                         6.7.4 -> 6.7.5, +80.5 KiB
+[U*] kwin-x11                     6.7.4 -> 6.7.5, +46.8 KiB
+[U.] kwindowsystem                6.29.0, <unchanged> -> 6.30.0, <unchanged>
+[U*] kwrited                      6.7.4 -> 6.7.5
+[U.] kxmlgui                      6.29.0, <unchanged> -> 6.30.0, <unchanged>
+[U.] layer-shell-qt               6.7.4 -> 6.7.5
+[U*] libkscreen                   6.7.4 -> 6.7.5
+[U*] libksysguard                 6.7.4 -> 6.7.5
+[U*] libplasma                    6.7.4 -> 6.7.5
+[U*] milou                        6.7.4 -> 6.7.5
+[U.] modemmanager-qt              6.29.0 -> 6.30.0
+[U.] networkmanager-qt            6.29.0 -> 6.30.0
+[C*] nixos-manual-html            +15.9 KiB
+[U.] nixos-system-lavender-pilled 26.11.20260908.d6524aa -> 26.11.20260910.8ce4ef6
+[U*] ocean-sound-theme            6.7.4 -> 6.7.5
+[U.] oxygen-icons                 6.29.0 -> 6.30.0, +403 KiB
+[U*] plasma-activities            6.7.4 -> 6.7.5
+[U.] plasma-activities-stats      6.7.4 -> 6.7.5
+[U*] plasma-browser-integration   6.7.4 -> 6.7.5
+[U*] plasma-desktop               6.7.4 -> 6.7.5, +131 KiB
+[U*] plasma-integration           6.7.4-qt5, 6.7.4 -> 6.7.5-qt5, 6.7.5
+[U*] plasma-keyboard              6.7.4 -> 6.7.5
+[U*] plasma-login-manager         6.7.4 -> 6.7.5
+[U.] plasma-nano                  6.7.4 -> 6.7.5
+[U*] plasma-nm                    6.7.4 -> 6.7.5, +10.0 KiB
+[U*] plasma-pa                    6.7.4 -> 6.7.5
+[U.] plasma-sdk                   6.7.4 -> 6.7.5
+[U*] plasma-systemmonitor         6.7.4 -> 6.7.5
+[U*] plasma-workspace             6.7.4-sessions, 6.7.4 -> 6.7.5-sessions, 6.7.5, +27.5 KiB
+[U*] plasma-workspace-wallpapers  6.7.4 -> 6.7.5
+[U.] plasma5support               6.7.4 -> 6.7.5
+[U*] polkit-kde-agent             1-6.7.4 -> 1-6.7.5
+[U*] powerdevil                   6.7.4 -> 6.7.5, +10.7 KiB
+[U.] prison                       6.29.0 -> 6.30.0
+[U.] purpose                      6.29.0 -> 6.30.0, -85.3 KiB
+[U*] qqc2-breeze-style            6.7.4 -> 6.7.5
+[U*] qqc2-desktop-style           6.29.0 -> 6.30.0, -18.8 KiB
+[U*] solid                        6.29.0, <unchanged> -> 6.30.0, <unchanged>
+[U.] sonnet                       6.29.0, <unchanged> -> 6.30.0, <unchanged>
+[C.] source                       +75.2 KiB
+[U*] spectacle                    6.7.4_fish-completions, 6.7.4 -> 6.7.5_fish-completions, 6.7.5
+[U.] syndication                  6.29.0, <unchanged> -> 6.30.0, <unchanged>
+[U.] syntax-highlighting          6.29.0, <unchanged> -> 6.30.0, <unchanged>, +13.8 KiB
+[U*] systemsettings               6.7.4 -> 6.7.5
+[U.] threadweaver                 6.29.0 -> 6.30.0
+[U*] union                        6.7.4 -> 6.7.5
+[U.] vencord                      1.15.4-2026-08-30 -> 1.15.5-2026-09-09, +43.6 KiB
+[C.] wine                         +7.95 MiB
+[U*] xdg-desktop-portal-kde       6.7.4 -> 6.7.5
+[U.] zed-editor                   1.17.2 -> 1.19.2, -18.2 MiB
+[U.] zed-editor-wrapped           1.17.2-fish-completions, 1.17.2 -> 1.19.2-fish-completions, 1.19.2
+
+ADDED
+[A.] hm-putter.json               <none>
+[A.] wget                         1.25.0, +3.37 MiB
+[A.] whisper-cpp                  1.9.2, +26.3 MiB
+
+PATHS: 3118 -> 3122 (+431, -427)
+SIZE: 25.1 GiB -> 25.2 GiB
+DIFF: +85.1 MiB
+
+Rebuilt-at: 2026-09-10T18:50:49+07:00
