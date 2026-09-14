@@ -1,0 +1,31 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /nix/store/spnmy4zbxd57xbsj06daj0pgc1zrwdja-nixos-system-lavender-pilled-26.11.20260911.eaad089
+>>> /nix/store/iv0bp6g7gnaqvv04z1inl6wr8sr9ngj2-nixos-system-lavender-pilled-26.11.20260913.ef34387
+
+CHANGED
+[U.] claude-code                  2.1.266-fish-completions, 2.1.266 -> 2.1.268-fish-completions, 2.1.268, +2.54 MiB
+[U.] claude-desktop               1.52386.3-fish-completions, 1.52386.3 -> 1.52386.6-fish-completions, 1.52386.6, +33.4 KiB
+[D.] ffmpeg-headless              9.0.1-bin, <unchanged> -> <unchanged>, -824 KiB
+[U.] fzf                          0.74.3, <unchanged> -> 0.74.4, <unchanged>, +8.48 KiB
+[U.] intel-gmmlib                 22.10.1 ×2 -> 22.10.2 ×2
+[C.] jellyfin-ffmpeg              -43.0 KiB
+[U.] libcerf                      3.3 -> 3.6, +76.4 KiB
+[C*] nixos-manual-html            +19.3 KiB
+[U.] nixos-system-lavender-pilled 26.11.20260911.eaad089 -> 26.11.20260913.ef34387
+[C.] opencv                       4.13.0 ×3 -> 4.13.0 ×2, -75.8 MiB
+[U.] python3.14-onnx              1.21.0 -> 1.22.0, +4.07 MiB
+[C.] source                       +570 KiB
+
+REMOVED
+[R.] frei0r-plugins               3.5.0, -7.16 MiB
+[R.] gavl                         2.0.1, -11.2 MiB
+[R.] rav1e                        0.8.1, -19.7 MiB
+[R.] wget                         1.25.0, -3.37 MiB
+[R.] whisper-cpp                  1.9.2, -26.3 MiB
+
+PATHS: 3669 -> 3662 (+100, -107)
+SIZE: 26.6 GiB -> 26.5 GiB
+DIFF: -137 MiB
+
+Rebuilt-at: 2026-09-14T18:21:53+07:00
