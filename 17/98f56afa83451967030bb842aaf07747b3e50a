@@ -1,0 +1,13 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /nix/store/iv0bp6g7gnaqvv04z1inl6wr8sr9ngj2-nixos-system-lavender-pilled-26.11.20260913.ef34387
+>>> /nix/store/yvykl2bs6717hhr5f42xn1cgkyha9r0r-nixos-system-lavender-pilled-26.11.20260913.ef34387
+
+CHANGED
+[U.] vencord 1.15.5-2026-09-09 -> 1.15.6-2026-09-14
+
+PATHS: 3662 -> 3662 (+17, -17)
+SIZE: 26.5 GiB -> 26.5 GiB
+DIFF: +4.02 KiB
+
+Rebuilt-at: 2026-09-15T12:59:21+07:00
