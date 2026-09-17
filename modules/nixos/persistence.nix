@@ -115,7 +115,10 @@ in
     })
 
     (mkIf cfg.mullvad-vpn {
-      environment.persistence.${cfg.root}.directories = [ "/etc/mullvad-vpn" ];
+      environment.persistence.${cfg.root}.directories = [
+        "/etc/mullvad-vpn"
+        "/var/cache/mullvad-vpn"
+      ];
     })
 
     (mkIf cfg.power-profiles-daemon {
