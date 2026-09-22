@@ -1,0 +1,34 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /nix/store/m6hq6ybvwjd1yv7wh57aa7xf9hj0v19r-nixos-system-lavender-pilled-26.11.20260919.20b1ddd
+>>> /nix/store/s20nazr7fyaynxpsyqkixvkdmndyh2l9-nixos-system-lavender-pilled-26.11.20260920.44a9189
+
+CHANGED
+[U*] bind                         9.20.26-host, 9.20.26-lib, 9.20.26-man -> 9.20.29-host, 9.20.29-lib, 9.20.29-man, +8.05 KiB
+[U.] claude-code                  2.1.276-fish-completions, 2.1.276 -> 2.1.278-fish-completions, 2.1.278, +1.96 MiB
+[C.] initrd-linux                 -9.12 KiB
+[U.] kirigami-addons              1.13.1 -> 1.14.0, +931 KiB
+[U.] libmatroska                  1.7.1 -> 1.7.2
+[U.] nfs-utils                    2.9.2-lib, 2.9.2 -> 3.1.1-lib, 3.1.1, +19.6 KiB
+[C*] nixos-manual-html            +13.1 KiB
+[U.] nixos-system-lavender-pilled 26.11.20260919.20b1ddd -> 26.11.20260920.44a9189
+[U.] nsncd                        1.5.2 -> 1.5.3, +23.5 KiB
+[U.] osu-lazer-bin                2026.920.0-lazer-bwrap, 2026.920.0-lazer-extracted, 2026.920.0-lazer-fhsenv-profile, 2026.920.0-lazer-fhsenv-rootfs, 2026.920.0-lazer-fish-completions, 2026.920.0-lazer-init, 2026.920.0-lazer ×2 -> 2026.921.0-lazer-bwrap, 2026.921.0-lazer-extracted, 2026.921.0-lazer-fhsenv-profile, 2026.921.0-lazer-fhsenv-rootfs, 2026.921.0-lazer-fish-completions, 2026.921.0-lazer-init, 2026.921.0-lazer ×2
+[U.] pulseaudio-qt                1.8.1 -> 1.9.0, +82.2 KiB
+[U*] qemu                         11.1.0-doc, 11.1.0_fish-completions, 11.1.0-ga, 11.1.0 -> 11.1.1-doc, 11.1.1_fish-completions, 11.1.1-ga, 11.1.1, +40.3 KiB
+[C.] source                       +441 KiB
+[U.] yazi                         26.9.1pre20260920_112aece-fish-completions, 26.9.1pre20260920_112aece ×2 -> 26.9.1pre20260921_0ea4c5d-fish-completions, 26.9.1pre20260921_0ea4c5d ×2, -9.03 KiB
+
+ADDED
+[A.] gpm                          1.20.7-unstable-2020-06-17, +444 KiB
+[A.] syslinux                     6.04-pre2-unstable-2019-02-07, +3.28 MiB
+
+REMOVED
+[R.] gpm-unstable                 2020-06-17, -444 KiB
+[R.] syslinux-unstable            2019-02-07, -3.28 MiB
+
+PATHS: 2759 -> 2759 (+169, -169)
+SIZE: 23.6 GiB -> 23.6 GiB
+DIFF: +3.48 MiB
+
+Rebuilt-at: 2026-09-22T13:20:45+07:00
