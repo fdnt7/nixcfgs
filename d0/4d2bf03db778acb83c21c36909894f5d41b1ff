@@ -1,0 +1,31 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /nix/store/m98nqpy4hkb36n3cr53rf9nmshq2266l-nixos-system-lavender-pilled-26.11.20260920.44a9189
+>>> /nix/store/rwszx293ck0bncbk8cb9pin96q3zhdm0-nixos-system-lavender-pilled-26.11.20260922.6774f7b
+
+CHANGED
+[U.] discord-canary               1.0.1837-bwrap, 1.0.1837-fhsenv-profile, 1.0.1837-fhsenv-rootfs, 1.0.1837-fish-completions, 1.0.1837-init, 1.0.1837 -> 1.0.1950-bwrap, 1.0.1950-fhsenv-profile, 1.0.1950-fhsenv-rootfs, 1.0.1950-fish-completions, 1.0.1950-init, 1.0.1950
+[U.] discord-canary-unwrapped     1.0.1837 -> 1.0.1950, +4.04 MiB
+[U.] initrd-linux                 7.2.6 -> 7.2.7
+[U.] libdicom                     1.0.5 -> 1.3.0, +78.7 KiB
+[U.] linux                        7.2.6-modules ×2, 7.2.6 -> 7.2.7-modules ×2, 7.2.7, -23.1 KiB
+[U*] mullvad                      2026.4 -> 2026.5, +183 KiB
+[U*] mullvad-vpn                  2026.4 -> 2026.5, +123 KiB
+[C*] nixos-manual-html            -12.8 KiB
+[U.] nixos-system-lavender-pilled 26.11.20260920.44a9189 -> 26.11.20260922.6774f7b
+[U.] openslide                    4.0.0 -> 4.0.1, +41.0 KiB
+[U*] wpa_supplicant               2.11 -> 2.12, +186 KiB
+[U.] zed-editor                   1.20.1 -> 1.20.2
+[U.] zed-editor-wrapped           1.20.1-fish-completions, 1.20.1 -> 1.20.2-fish-completions, 1.20.2
+
+ADDED
+[A.] libunity                     7.1.4-unstable-2021-02-01, +1.68 MiB
+
+REMOVED
+[R.] libunity-unstable            2021-02-01, -1.68 MiB
+
+PATHS: 2759 -> 2759 (+96, -96)
+SIZE: 23.6 GiB -> 23.6 GiB
+DIFF: +4.62 MiB
+
+Rebuilt-at: 2026-09-22T23:57:40+07:00
