@@ -1,0 +1,23 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /nix/store/2qb6vayqkxlfpi3ai4kxix5avvm9a9yy-nixos-system-lavender-pilled-26.11.20260922.6774f7b
+>>> /nix/store/qbfn6427h4hm4vr2nzyf5gs4nnhqb3y1-nixos-system-lavender-pilled-26.11.20260923.4975466
+
+CHANGED
+[U.] claude-code                          2.1.278-fish-completions, 2.1.278 -> 2.1.280-fish-completions, 2.1.280, -400 KiB
+[U.] claude-desktop                       2.2553.13-fish-completions, 2.2553.13 -> 2.7032.0-fish-completions, 2.7032.0, +8.85 MiB
+[C.] home-configuration-reference-manpage +9.51 KiB
+[U.] libebml                              1.4.5 -> 1.4.7, -31.7 KiB
+[C*] nixos-manual-html                    +21.2 KiB
+[U.] nixos-system-lavender-pilled         26.11.20260922.6774f7b -> 26.11.20260923.4975466
+[U.] nodejs                               22.23.2, <unchanged> -> 22.23.3, <unchanged>
+[U.] nodejs-slim                          22.23.2-corepack, 22.23.2-npm, 22.23.2, <unchanged> -> 22.23.3-corepack, 22.23.3-npm, 22.23.3, <unchanged>, -441 KiB
+[C.] source                               +170 KiB
+[U.] zen-beta                             1.22.2b-fish-completions, 1.22.2b -> 1.22.3b-fish-completions, 1.22.3b
+[U.] zen-beta-bin-unwrapped               1.22.2b -> 1.22.3b, -134 KiB
+
+PATHS: 2759 -> 2759 (+62, -62)
+SIZE: 23.6 GiB -> 23.6 GiB
+DIFF: +8.07 MiB
+
+Rebuilt-at: 2026-09-24T17:26:42+07:00
