@@ -67,7 +67,6 @@
     showTimeoutDuration.enable = true;
     sortFriendRequests.enable = true;
     spotifyCrack.enable = true;
-    summaries.enable = true;
     typingIndicator.enable = true;
     typingTweaks.enable = true;
     unindent.enable = true;
