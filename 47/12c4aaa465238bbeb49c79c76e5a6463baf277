@@ -1,0 +1,19 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /nix/store/lgc2jqznkc6a7mp1qxg7ab0iacb4d113-nixos-system-lavender-pilled-26.11.20260923.4975466
+>>> /nix/store/00cmb0vxy2zxkqsq743ri8b7zbh1db1q-nixos-system-lavender-pilled-26.11.20260923.4975466
+
+CHANGED
+[U.] vencord                                                            1.15.6-2026-09-16 -> 1.15.7-2026-09-25, -87.8 KiB
+
+ADDED
+[A.] osuinstall-sha256-OtwtABqsztX5K6iuJBIZgNXiP1ZT830Uz0dlvKGr2fk=.exe <none>, +4.33 MiB
+
+REMOVED
+[R.] osuinstall-sha256-bhgsENGBMgnRJ1Pbxws6W7oA-vTs9kvEIFGHDm3+S30=.exe <none>, -4.33 MiB
+
+PATHS: 2759 -> 2759 (+26, -26)
+SIZE: 23.6 GiB -> 23.6 GiB
+DIFF: -88.0 KiB
+
+Rebuilt-at: 2026-09-26T01:16:53+07:00
