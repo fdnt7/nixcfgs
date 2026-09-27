@@ -1,0 +1,29 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /nix/store/r3gdh7kvvvvivq175m8w40bv31fv4981-nixos-system-lavender-pilled-26.11.20260925.e94cb15
+>>> /nix/store/p4fbpqxvvgzx25sa6x3722jff2sbgxwl-nixos-system-lavender-pilled-26.11.20260926.e158d9e
+
+CHANGED
+[U.] claude-code                     2.1.280-fish-completions, 2.1.280 -> 2.1.283-fish-completions, 2.1.283, +7.48 MiB
+[C.] comma                           +8.84 KiB
+[C.] index-x86_64-linux              +1.11 MiB
+[U.] initrd-linux                    7.2.7 -> 7.2.8, +49.7 KiB
+[U.] lcevcdec                        4.2.1-lib -> 4.2.2-lib
+[U.] libxmp                          4.7.2 -> 4.7.3
+[U.] linux                           7.2.7-modules ×2, 7.2.7 -> 7.2.8-modules ×2, 7.2.8, +45.2 KiB
+[C*] nixos-manual-html               +26.0 KiB
+[U.] nixos-system-lavender-pilled    26.11.20260925.e94cb15 -> 26.11.20260926.e158d9e
+[U.] openvpn                         2.6.21 -> 2.6.23
+[U.] parted                          3.7 -> 3.8, +181 KiB
+[U.] pv                              1.11.0 -> 1.12.0, +31.3 KiB
+[U*] redis                           8.10.1 -> 8.10.2
+[C.] source                          +57.1 KiB
+
+ADDED
+[A.] unit-systemd-bless-boot.service <none>
+
+PATHS: 2759 -> 2760 (+108, -107)
+SIZE: 23.6 GiB -> 23.6 GiB
+DIFF: +9.00 MiB
+
+Rebuilt-at: 2026-09-28T00:41:41+07:00
