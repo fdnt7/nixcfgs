@@ -1,0 +1,14 @@
+chore(flake): rebuild
+
+<<< /nix/store/fcyfglq22xrsnx46vkmy1c09kcihh31q-nixos-system-lavender-pilled-26.11.20260929.b4fd65b
+>>> /nix/store/dyrg0mvq9jklybhz0jsx3q31j27ks1fc-nixos-system-lavender-pilled-26.11.20260929.b4fd65b
+
+CHANGED
+[U.] lanzaboote-stub 1.1.0 -> 1.2.0
+[U.] lzbt-systemd    1.1.0 -> 1.2.0
+
+PATHS: 3357 -> 3357 (+4, -4)
+SIZE: 25.5 GiB -> 25.5 GiB
+DIFF: +224 bytes
+
+Rebuilt-at: 2026-10-01T05:19:10+07:00
