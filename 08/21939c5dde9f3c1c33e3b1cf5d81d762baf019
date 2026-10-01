@@ -1,0 +1,23 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /nix/store/dyrg0mvq9jklybhz0jsx3q31j27ks1fc-nixos-system-lavender-pilled-26.11.20260929.b4fd65b
+>>> /nix/store/w3n5hfaha371hkn2dg1ip29vyvsfbssr-nixos-system-lavender-pilled-26.11.20261001.c59305b
+
+CHANGED
+[U.] claude-code                  2.1.283-fish-completions, 2.1.283 -> 2.1.285-fish-completions, 2.1.285, -1.17 MiB
+[U.] immich                       3.2.2 -> 3.2.4
+[U.] immich-machine-learning      3.2.2 -> 3.2.4
+[C*] nixos-manual-html            +8.12 KiB
+[U.] nixos-system-lavender-pilled 26.11.20260929.b4fd65b -> 26.11.20261001.c59305b
+[C.] source                       +133 KiB
+[U*] tailscale                    1.102.4 -> 1.102.5
+[U*] wireplumber                  0.5.17-doc, 0.5.17_fish-completions, 0.5.17 -> 0.5.18-doc, 0.5.18_fish-completions, 0.5.18, +55.8 KiB
+[U.] yazi                         26.9.1pre20260930_d0798b4-fish-completions, 26.9.1pre20260930_d0798b4 ×2 -> 26.9.1pre20261001_4e493b8-fish-completions, 26.9.1pre20261001_4e493b8 ×2, +258 KiB
+[U.] zed-editor                   1.21.0 -> 1.22.0, -3.73 MiB
+[U.] zed-editor-wrapped           1.21.0-fish-completions, 1.21.0 -> 1.22.0-fish-completions, 1.22.0
+
+PATHS: 3357 -> 3357 (+73, -73)
+SIZE: 25.5 GiB -> 25.5 GiB
+DIFF: -4.45 MiB
+
+Rebuilt-at: 2026-10-02T04:44:40+07:00
