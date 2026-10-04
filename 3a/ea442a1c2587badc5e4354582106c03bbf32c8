@@ -1,0 +1,37 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /nix/store/b5w17wf15r48zwpcq5x9r2nmj1ibyfjf-nixos-system-lavender-pilled-26.11.20261001.c59305b
+>>> /nix/store/4qq9ikcb6051k0ikdxfcaibswiryh1pc-nixos-system-lavender-pilled-26.11.20261001.c59305b
+
+CHANGED
+[C.] 7zz                    +308 KiB
+[C.] bc                     1.08.2 ×2 -> 1.08.2, -244 KiB
+[C.] chafa                  1.18.2 ×2, <unchanged> -> 1.18.2, <unchanged>, -540 KiB
+[C*] curl                   8.22.0-bin ×3, <unchanged> -> 8.22.0-bin ×2, <unchanged>, -375 KiB
+[C.] djvulibre              3.5.30-lib ×2, 3.5.30 ×2 -> 3.5.30-lib, 3.5.30, -2.45 MiB
+[C.] ffmpeg                 9.0.1-data ×2, 9.0.1-lib ×2, <unchanged> -> 9.0.1-data, 9.0.1-lib, <unchanged>, -34.1 MiB
+[C.] fzf                    0.74.4 ×2 -> 0.74.4, -4.86 MiB
+[C.] imagemagick            7.1.2-31 ×2 -> 7.1.2-31, -8.23 MiB
+[C.] jemalloc               5.3.1 ×3 -> 5.3.1 ×2, -1.20 MiB
+[C.] libavif                1.4.2 ×3 -> 1.4.2 ×2, -1.11 MiB
+[D.] libheif                1.23.3-lib, <unchanged> -> <unchanged>, -2.84 MiB
+[C.] libhwy                 1.4.0 ×2 -> 1.4.0, -101 KiB
+[C.] libjxl                 0.12.0 ×2 -> 0.12.0, -6.93 MiB
+[C.] liblqr                 1-0.4.3 ×2 -> 1-0.4.3, -77.3 KiB
+[C.] libraqm                0.11.0 ×2 -> 0.11.0, -56.1 KiB
+[C.] libraw                 0.22.1-lib ×2 -> 0.22.1-lib, -2.50 MiB
+[C.] libultrahdr            1.4.0 ×2 -> 1.4.0, -2.68 MiB
+[C.] poppler-data           0.4.12 ×3 -> 0.4.12 ×2, -12.4 MiB
+[U.] poppler-utils          26.06.0 -> 26.09.0, +307 KiB
+[C.] potrace                1.16 ×2 -> 1.16, -253 KiB
+[C.] ripgrep                15.2.0 ×2, <unchanged> -> 15.2.0, <unchanged>, -6.74 MiB
+[U.] yazi                   26.9.1pre20261002_a190600-fish-completions, 26.9.1pre20261002_a190600 ×2 -> 26.9.1pre20261003_1518360-fish-completions, 26.9.1pre20261003_1518360 ×2, +89.0 KiB
+[D.] zen-beta               1.22.3b-fish-completions, 1.22.3b -> 1.23b-fish-completions, 1.23b
+[D.] zen-beta-bin-unwrapped 1.22.3b -> 1.23b, +4.25 MiB
+[C.] zoxide                 0.10.0 ×2, <unchanged> -> 0.10.0, <unchanged>, -1.33 MiB
+
+PATHS: 3358 -> 3336 (+25, -47)
+SIZE: 25.5 GiB -> 25.4 GiB
+DIFF: -84.0 MiB
+
+Rebuilt-at: 2026-10-04T09:56:45+07:00
