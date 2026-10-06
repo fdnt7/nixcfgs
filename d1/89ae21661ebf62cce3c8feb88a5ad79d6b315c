@@ -1,0 +1,55 @@
+build(lavender-pilled): apply flake.lock update
+
+<<< /nix/store/8rcsp5hn6dq1nxqxbi875f0jdzrr2jxl-nixos-system-lavender-pilled-26.11.20261003.a7868a7
+>>> /nix/store/ahyb3pc96q6c0p5h12ara71z9fnh98xw-nixos-system-lavender-pilled-26.11.20261006.151fa4e
+
+CHANGED
+[D*] bzip2                                1.0.8-dev, <unchanged> -> <unchanged>
+[D.] cairo                                1.18.4-dev, <unchanged> -> <unchanged>, -184 KiB
+[U.] cgif                                 0.5.3 -> 0.5.4
+[U.] claude-code                          2.1.287-fish-completions, 2.1.287 -> 2.1.289-fish-completions, 2.1.289, +1.71 MiB
+[U.] claude-desktop                       2.9939.4-fish-completions, 2.9939.4 -> 2.19675.1-fish-completions, 2.19675.1, +10.3 MiB
+[U.] delta                                0.19.2-fish-completions, 0.19.2 -> 0.20.1-fish-completions, 0.20.1, +57.4 KiB
+[U.] discord                              1.0.160-fish-completions, 1.0.160 -> 1.0.161-fish-completions, 1.0.161, -361 KiB
+[D.] expat                                2.8.5-dev, <unchanged> -> <unchanged>, -120 KiB
+[D*] fontconfig                           2.18.3-dev, <unchanged> -> <unchanged>, -44.0 KiB
+[D.] freetype                             2.14.3-dev, <unchanged> -> <unchanged>, -884 KiB
+[D.] gdk-pixbuf                           2.44.8-dev, <unchanged> -> <unchanged>, -506 KiB
+[C.] home-configuration-reference-manpage +9.37 KiB
+[D.] lerc                                 4.2.0-dev, <unchanged> -> <unchanged>, -26.1 KiB
+[C.] libappimage                          -52.8 KiB
+[D.] libjpeg-turbo                        3.1.4.1-dev, <unchanged> -> <unchanged>, -217 KiB
+[D.] libpng-apng                          1.6.58-dev, <unchanged> -> <unchanged>, -265 KiB
+[D.] librsvg                              2.62.3-dev, <unchanged> -> <unchanged>, -236 KiB
+[D.] libtiff                              4.7.2-dev, <unchanged> -> <unchanged>, -107 KiB
+[D.] libx11                               1.8.13-dev, <unchanged> -> <unchanged>, -250 KiB
+[D.] libxau                               1.0.12-dev, <unchanged> -> <unchanged>
+[D.] libxcb                               1.17.0-dev, <unchanged> -> <unchanged>, -2.05 MiB
+[D.] libxext                              1.3.7-dev, <unchanged> -> <unchanged>, -58.9 KiB
+[D.] libxrender                           0.9.12-dev, <unchanged> -> <unchanged>, -35.3 KiB
+[U.] lua                                  <unchanged> -> 5.5.1, <unchanged>, +1.49 MiB
+[C*] mullvad                              +880 KiB
+[C*] nixos-manual-html                    +118 KiB
+[U.] nixos-system-lavender-pilled         26.11.20261003.a7868a7 -> 26.11.20261006.151fa4e
+[U.] noto-fonts                           2026.09.01-fish-completions, 2026.09.01 -> 2026.10.01-fish-completions, 2026.10.01
+[U.] osu-lazer-bin                        2026.921.0-lazer-bwrap, 2026.921.0-lazer-extracted, 2026.921.0-lazer-fhsenv-profile, 2026.921.0-lazer-fhsenv-rootfs, 2026.921.0-lazer-fish-completions, 2026.921.0-lazer-init, 2026.921.0-lazer ×2 -> 2026.1005.0-lazer-bwrap, 2026.1005.0-lazer-extracted, 2026.1005.0-lazer-fhsenv-profile, 2026.1005.0-lazer-fhsenv-rootfs, 2026.1005.0-lazer-fish-completions, 2026.1005.0-lazer-init, 2026.1005.0-lazer ×2
+[C.] source                               +192 KiB
+[U.] vencord                              1.15.9-2026-10-02 -> 1.15.10-2026-10-05
+[D*] xz                                   5.8.4-dev, <unchanged> -> <unchanged>, -229 KiB
+[U.] yazi                                 26.9.1pre20261003_1518360-fish-completions, 26.9.1pre20261003_1518360 ×2 -> 26.9.1pre20261005_be8dc1b-fish-completions, 26.9.1pre20261005_be8dc1b ×2, -17.1 KiB
+
+ADDED
+[A.] settings.json                        <none>, +19.9 KiB
+[A.] stage.sh                             <none>
+[A.] vesktop-settings.json                <none>, +19.9 KiB
+
+REMOVED
+[R.] nixcord-settings.json                <none>, -19.9 KiB
+[R.] nixcord-vesktop-settings.json        <none>, -19.9 KiB
+[R.] stage-modules.sh                     <none>
+
+PATHS: 2749 -> 2733 (+175, -191)
+SIZE: 23.7 GiB -> 23.7 GiB
+DIFF: +9.12 MiB
+
+Rebuilt-at: 2026-10-07T06:48:19+07:00
