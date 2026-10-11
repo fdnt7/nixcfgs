@@ -149,56 +149,7 @@
 
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#your-hostname'
-      nixosConfigurations =
-        let
-          hostConfigs = {
-            # migration ceased - more on `README.md`
-
-            # cuties-only = {
-            #   nixcfgs = rec {
-            #     name = "nixcfgs";
-            #     uname = "fdnt";
-            #     gname = name;
-            #     hostName = "cuties-only";
-            #     flake = "/etc/${name}";
-            #     persistVol = "persist";
-            #     persist = "/${persistVol}";
-            #     sopsAgeKeyFile = "${persist}/var/lib/sops-nix/key.txt";
-            #     enableWinBoat = true;
-            #   };
-            # };
-
-            lavender-pilled = {
-              nixcfgs = rec {
-                name = "nixcfgs";
-                uname = "fdl";
-                gname = name;
-                hostName = "lavender-pilled";
-                flake = "/etc/${name}";
-                persistVol = "persist";
-                persist = "/${persistVol}";
-                sopsAgeKeyFile = "${persist}/var/lib/sops-nix/key.txt";
-                homeDirectory = "/home/${uname}";
-                gitSigningKey = "${homeDirectory}/.ssh/id_ed25519_github_fdnt7_signing";
-              };
-            };
-
-            # Add more hosts here...
-          };
-        in
-        builtins.mapAttrs (
-          hostName: cfg:
-          nixpkgs.lib.nixosSystem {
-            specialArgs = {
-              inherit inputs;
-              nixcfgs = cfg.nixcfgs;
-            };
-
-            modules = [
-              ./hosts/${hostName}/nixos/configuration.nix
-            ];
-          }
-        ) hostConfigs;
+      nixosConfigurations = { };
 
       # use home-manager as a nixos module to comply with impermanence
 

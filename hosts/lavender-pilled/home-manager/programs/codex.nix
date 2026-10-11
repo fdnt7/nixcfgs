@@ -1,3 +1,0 @@
-{
-  programs.codex.enable = false;
-}

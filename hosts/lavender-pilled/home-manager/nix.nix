@@ -1,3 +1,0 @@
-{
-  secrets.nixAccessTokens.enable = true;
-}

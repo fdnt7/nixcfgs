@@ -1,3 +1,0 @@
-{
-  persist.sudo = true;
-}
