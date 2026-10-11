@@ -9,7 +9,6 @@
 
     ../common/optional/bluetooth.nix
     ../common/optional/fingerprint.nix
-    ../common/optional/firefox.nix
     ../common/optional/networkmanager.nix
     ../common/optional/plasma.nix
     ../common/optional/secure-boot.nix
