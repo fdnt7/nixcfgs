@@ -6,6 +6,23 @@
     enable = true;
     enableDefaultConfig = true;
     extraConfig = ''
+      input {
+          keyboard {
+              xkb {
+                  layout "us,th"
+                  // Caps Lock is Escape; Super+Space switches layout.
+                  options "caps:escape,grp:win_space_toggle"
+              }
+
+              repeat-delay 200
+              repeat-rate 40
+          }
+
+          mouse {
+              accel-profile "flat"
+          }
+      }
+
       // No title bars: ask clients to leave decorations to the compositor.
       prefer-no-csd
 
