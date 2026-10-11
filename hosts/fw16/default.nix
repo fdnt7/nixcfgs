@@ -20,6 +20,7 @@
     ./filesystems.nix
     ./graphics.nix
     ./hibernation.nix
+    ./power.nix
     ./tpm-unlock.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
