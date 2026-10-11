@@ -1,6 +1,5 @@
 {
   imports = [
-    ./firefox.nix
     ./fonts.nix
     ./foot.nix
     ./hypridle.nix
@@ -9,5 +8,6 @@
     ./niri.nix
     ./rofi.nix
     ./waybar.nix
+    ./zen-browser.nix
   ];
 }
