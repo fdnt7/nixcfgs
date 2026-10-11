@@ -6,7 +6,6 @@
 
   environment.persistence.${config.impermanence.persist} = {
     directories = [
-      "/etc/nixos"
       # impermanence recommends it
       "/var/lib/nixos"
       "/var/lib/systemd/coredump"
