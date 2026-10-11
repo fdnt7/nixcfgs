@@ -6,4 +6,7 @@
       "flakes"
     ];
   };
+
+  # Disable if you don't want unfree packages
+  nixpkgs.config.allowUnfree = true;
 }

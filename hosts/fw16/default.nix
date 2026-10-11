@@ -1,6 +1,9 @@
-# Framework Laptop 16
+# Framework Laptop 16 (AMD Ryzen AI 300 Series, NVIDIA expansion bay module)
+{ inputs, ... }:
 {
   imports = [
+    inputs.nixos-hardware.nixosModules.framework-16-amd-ai-300-series-nvidia
+
     ../common/global
     ../common/users/f.nix
 
@@ -12,6 +15,7 @@
     ../common/optional/secure-boot.nix
 
     ./filesystems.nix
+    ./graphics.nix
     ./hibernation.nix
     ./tpm-unlock.nix
 
