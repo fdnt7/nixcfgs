@@ -2,6 +2,7 @@
   config,
   inputs,
   lib,
+  pkgs,
   ...
 }:
 {
@@ -10,6 +11,7 @@
   users.users.f = {
     isNormalUser = true;
     uid = 1000;
+    shell = pkgs.fish;
     extraGroups = [
       "wheel"
       "networkmanager"

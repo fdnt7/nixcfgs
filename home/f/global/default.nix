@@ -1,5 +1,4 @@
 # Home configuration shared by every host this user has an account on.
-{ config, ... }:
 {
   home = {
     username = "f";
@@ -15,11 +14,4 @@
   };
 
   xdg.enable = true;
-
-  # Lets Home Manager set session variables such as SSH_AUTH_SOCK. Bash only
-  # reads its startup files from ~, so those three links have to stay.
-  programs.bash = {
-    enable = true;
-    historyFile = "${config.xdg.stateHome}/bash/history";
-  };
 }

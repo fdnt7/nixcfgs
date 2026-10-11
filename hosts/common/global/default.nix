@@ -1,6 +1,7 @@
 # Configuration shared by every host.
 {
   imports = [
+    ./fish.nix
     ./impermanence.nix
     ./locale.nix
     ./nix.nix
