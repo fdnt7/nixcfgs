@@ -8,6 +8,7 @@
     ./niri.nix
     ./rofi.nix
     ./waybar.nix
+    ./zed-editor.nix
     ./zen-browser.nix
   ];
 }
