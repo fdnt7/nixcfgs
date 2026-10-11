@@ -1,8 +1,10 @@
 {
-  # `ls` and friends. Icons wait for a Nerd Font to be installed.
+  # `ls` and friends. The icons need a Nerd Font, which the desktop features
+  # install.
   programs.eza = {
     enable = true;
     git = true;
+    icons = "always";
     extraOptions = [
       "-lah"
       "--group-directories-first"
