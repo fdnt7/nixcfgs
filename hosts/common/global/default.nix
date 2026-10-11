@@ -5,6 +5,7 @@
     ./fish.nix
     ./impermanence.nix
     ./locale.nix
+    ./nh.nix
     ./nix.nix
     ./packages.nix
     ./ssh.nix
