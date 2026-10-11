@@ -9,10 +9,11 @@
     ../common/optional/firefox.nix
     ../common/optional/networkmanager.nix
     ../common/optional/plasma.nix
-    ../common/optional/systemd-boot.nix
+    ../common/optional/secure-boot.nix
 
     ./filesystems.nix
     ./hibernation.nix
+    ./tpm-unlock.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
