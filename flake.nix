@@ -56,7 +56,6 @@
     # You can access packages and modules from different nixpkgs revs
     # at the same time. Here's an working example:
     # nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
 
     nixvim = {
       url = "github:nix-community/nixvim";
@@ -149,7 +148,12 @@
 
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#your-hostname'
-      nixosConfigurations = { };
+      nixosConfigurations = {
+        fw16 = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [ ./hosts/fw16 ];
+        };
+      };
 
       # use home-manager as a nixos module to comply with impermanence
 

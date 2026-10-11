@@ -5,18 +5,24 @@
 
 My NixOS configurations.
 
-This repository consolidates my previous per-host configuration files
-([`cuties-only`](https://github.com/fdnt7/nix-config) and
-[`autism-inside`](https://github.com/fdnt7/autism-inside)) into a single
-monorepo. Over time, it will also include the NixOS configurations for all of my
-other hosts.
+This repository holds the NixOS configurations for my hosts in a single
+monorepo. Currently that is `fw16`; the earlier `cuties-only` and
+`lavender-pilled` hosts are retired and remain in the git history.
 
-> [!WARNING]\
-> Migration of [`cuties-only`](https://github.com/fdnt7/nix-config) has ceased
-> as I no longer have access to the hardware. The setup is functional but still
-> missing some features. In the meantime,
-> [`autism-inside`](https://github.com/fdnt7/autism-inside) and other hosts
-> (e.g. `oestrogen-fuelled`) have not yet begun migration.
+## Structure
+
+- [`hosts/common/global`](./hosts/common/global) - configuration shared by every
+  host
+- [`hosts/common/optional`](./hosts/common/optional) - opt-in features, one per
+  file, imported by the hosts that want them
+- [`hosts/common/users`](./hosts/common/users) - user accounts
+- `hosts/<name>` - a host: its hardware, its list of imports, and whatever is
+  specific to it
+- [`modules`](./modules) - reusable NixOS and Home Manager modules exported by
+  the flake
+
+State that must survive a reboot is declared next to the feature that creates
+it, through `environment.persistence`.
 
 ## Features
 
@@ -31,20 +37,15 @@ other hosts.
   subvolume is cleared on every boot
 - Declarative encrypted secrets management with
   [`sops-nix`](https://github.com/Mic92/sops-nix)
-- Customisable global constants passed down to [`flake.nix`](./flake.nix) and
-  reused in both NixOS and Home Manager configurations.
 - Hopefully a best practice compliant configuration structure with idiomatic nix
   usage as a language.
 
 ## Prerequisites
 
-Before installation, these directories and files must be present:
+Before installation, this file must be present:
 
-- `/persist/etc/nixcfgs` - the flake directory
-- `/persist/usr/share/fonts/seguiemj.ttf` - Windows 11's Segoe UI Emoji font
-- `/persist/var/lib/sops-nix/key.txt` - the key file for sops
-
-Optionally, edit the attributes of `nixcfgs` in `flake.nix` as seen fit.
+- `/persist/secrets/<user>.passwd` - the user's password hash, from
+  `mkpasswd -m yescrypt`
 
 ## Attributions
 
