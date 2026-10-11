@@ -42,6 +42,7 @@
           Mod+T hotkey-overlay-title=null { spawn "footclient"; }
           Mod+D hotkey-overlay-title="Run an Application: rofi" { spawn "rofi" "-show" "drun"; }
           Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "loginctl" "lock-session"; }
+          Mod+Alt+V hotkey-overlay-title="Clipboard History" { spawn-sh "cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy"; }
       }
     '';
   };
