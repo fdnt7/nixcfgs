@@ -3,6 +3,7 @@
     ./global
     ./features/cli
     ./features/desktop
+    ./features/games
   ];
 
   wayland.windowManager.niri.extraConfig = ''
