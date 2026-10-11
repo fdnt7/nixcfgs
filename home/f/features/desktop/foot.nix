@@ -4,5 +4,7 @@
   programs.foot = {
     enable = true;
     server.enable = true;
+    # The family comes from ./fonts.nix.
+    settings.main.font = "monospace:size=9";
   };
 }
