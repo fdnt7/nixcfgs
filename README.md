@@ -18,6 +18,8 @@ monorepo. Currently that is `fw16`; the earlier `cuties-only` and
 - [`hosts/common/users`](./hosts/common/users) - user accounts
 - `hosts/<name>` - a host: its hardware, its list of imports, and whatever is
   specific to it
+- [`home/<user>`](./home) - Home Manager configuration: `global` for every host,
+  `features` to opt into, and one `<host>.nix` listing what that host gets
 - [`modules`](./modules) - reusable NixOS and Home Manager modules exported by
   the flake
 

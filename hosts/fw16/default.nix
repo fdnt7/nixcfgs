@@ -13,6 +13,7 @@
     ../common/optional/networkmanager.nix
     ../common/optional/plasma.nix
     ../common/optional/secure-boot.nix
+    ../common/optional/tpm.nix
 
     ./filesystems.nix
     ./graphics.nix
