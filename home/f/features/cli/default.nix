@@ -10,6 +10,7 @@
     ./nix-your-shell.nix
     ./ssh-tpm-agent.nix
     ./starship.nix
+    ./yazi
     ./zoxide.nix
   ];
 }
