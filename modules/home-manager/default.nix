@@ -3,6 +3,5 @@
 {
   # List your module files here
   # my-module = import ./my-module.nix;
-  prefer-xdg-directories = import ./prefer-xdg-directories.nix;
   secrets = import ./secrets.nix;
 }
