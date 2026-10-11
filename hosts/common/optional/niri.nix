@@ -3,9 +3,6 @@
   # sets up its portals; each user's configuration is in Home Manager.
   programs.niri.enable = true;
 
-  # Wins over other desktops installed alongside, which only suggest theirs.
-  services.displayManager.defaultSession = "niri";
-
   # hyprlock reads the fingerprint reader itself, alongside the password
   # field, so its PAM stack must not also wait for a finger.
   security.pam.services.hyprlock.fprintAuth = false;

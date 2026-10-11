@@ -12,7 +12,7 @@
     ../common/optional/greetd.nix
     ../common/optional/networkmanager.nix
     ../common/optional/niri.nix
-    ../common/optional/plasma.nix
+    ../common/optional/pipewire.nix
     ../common/optional/secure-boot.nix
     ../common/optional/tpm.nix
 
