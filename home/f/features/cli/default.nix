@@ -7,6 +7,7 @@
     ./git.nix
     ./neovim.nix
     ./nh.nix
+    ./nix-index.nix
     ./nix-your-shell.nix
     ./ssh-tpm-agent.nix
     ./starship.nix
