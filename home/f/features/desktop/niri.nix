@@ -37,6 +37,32 @@
           }
       }
 
+      // Fixed workspaces, always present and first in this order, so that
+      // Mod+1 to Mod+3 reach them. Everything after them comes and goes.
+      workspace "web"
+      workspace "code"
+      workspace "games"
+
+      window-rule {
+          match app-id="^zen"
+          open-on-workspace "web"
+      }
+
+      window-rule {
+          match app-id=r#"^dev\.zed\.Zed$"#
+          open-on-workspace "code"
+      }
+
+      // Launchers and what they start. Steam games are "steam_app_<id>".
+      window-rule {
+          match app-id="^steam$"
+          match app-id=r#"^steam_app_\d+$"#
+          match app-id=r#"^org\.prismlauncher\.PrismLauncher$"#
+          match app-id="(?i)minecraft"
+          match app-id="^osu!"
+          open-on-workspace "games"
+      }
+
       binds {
           // The launcher, clipboard history and lock screen are the shell's:
           // ../../../../hosts/common/optional/dms.nix.
