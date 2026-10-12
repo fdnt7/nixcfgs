@@ -63,6 +63,22 @@
           Mod+Shift+7 { move-column-to-workspace 7 focus=false; }
           Mod+Shift+8 { move-column-to-workspace 8 focus=false; }
           Mod+Shift+9 { move-column-to-workspace 9 focus=false; }
+
+          // Back to the workspace last shown.
+          Mod+BackSpace { focus-workspace-previous; }
+
+          // Fullscreen for the application only: it fills its own tile.
+          Mod+Ctrl+Shift+F { toggle-windowed-fullscreen; }
+
+          // Swap with the window in the next column; the plain brackets move
+          // the window into or out of that column.
+          Mod+Ctrl+BracketLeft { swap-window-left; }
+          Mod+Ctrl+BracketRight { swap-window-right; }
+
+          // Retarget a running screen share. The display key (F9) on the
+          // Framework keyboard sends Super+P.
+          Mod+P { set-dynamic-cast-window; }
+          Mod+Ctrl+P { set-dynamic-cast-monitor; }
       }
     '';
   };
