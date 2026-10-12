@@ -8,6 +8,7 @@
     ../common/users/f.nix
 
     ../common/optional/bluetooth.nix
+    ../common/optional/dms.nix
     ../common/optional/fingerprint.nix
     ../common/optional/gaming.nix
     ../common/optional/greetd.nix

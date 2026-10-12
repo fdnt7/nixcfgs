@@ -38,6 +38,8 @@
       }
 
       binds {
+          // The launcher, clipboard history and lock screen are the shell's:
+          // ../../../../hosts/common/optional/dms.nix.
           Mod+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "footclient"; }
           Mod+W repeat=false { close-window; }
           // G for group, as in Hyprland.
@@ -45,9 +47,9 @@
           // Unbound: the included defaults cannot be removed, only overridden,
           // and niri has no do-nothing action.
           Mod+T hotkey-overlay-title=null { spawn "true"; }
-          Mod+D hotkey-overlay-title="Run an Application: rofi" { spawn "rofi" "-show" "drun"; }
-          Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "loginctl" "lock-session"; }
-          Mod+Alt+V hotkey-overlay-title="Clipboard History" { spawn-sh "cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy"; }
+          Mod+D hotkey-overlay-title="Run an Application" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
+          Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn "dms" "ipc" "call" "lock" "lock"; }
+          Mod+Alt+V hotkey-overlay-title="Clipboard History" { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
       }
     '';
   };
@@ -57,7 +59,4 @@
     pkgs.brightnessctl
     pkgs.playerctl
   ];
-
-  # Password prompts for privileged actions requested by graphical programs.
-  services.polkit-gnome.enable = true;
 }
