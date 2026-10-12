@@ -1,5 +1,5 @@
 # Framework Laptop 16 (AMD Ryzen AI 300 Series, NVIDIA expansion bay module)
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 {
   imports = [
     inputs.nixos-hardware.nixosModules.framework-16-amd-ai-300-series-nvidia
@@ -29,6 +29,8 @@
   ];
 
   networking.hostName = "fw16"; # Define your hostname.
+
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "26.05"; # Did you read the comment?
