@@ -1,6 +1,7 @@
 {
   imports = [
     ./clipboard.nix
+    ./discord.nix
     ./dolphin.nix
     ./fonts.nix
     ./foot.nix
