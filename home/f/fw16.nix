@@ -1,3 +1,4 @@
+{ config, ... }:
 {
   imports = [
     ./global
@@ -5,6 +6,9 @@
     ./features/desktop
     ./features/games
   ];
+
+  # The NVIDIA driver keeps its compute cache in ~/.nv unless told otherwise.
+  home.sessionVariables.CUDA_CACHE_PATH = "${config.xdg.cacheHome}/nv";
 
   wayland.windowManager.niri.extraConfig = ''
     // The built-in 2560x1600 panel.
