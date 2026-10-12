@@ -21,6 +21,9 @@
           mouse {
               accel-profile "flat"
           }
+
+          // Hover focuses a window only if that will not scroll the view.
+          focus-follows-mouse max-scroll-amount="0%"
       }
 
       // No title bars: ask clients to leave decorations to the compositor.
@@ -39,7 +42,9 @@
           Mod+W repeat=false { close-window; }
           // G for group, as in Hyprland.
           Mod+G { toggle-column-tabbed-display; }
-          Mod+T hotkey-overlay-title=null { spawn "footclient"; }
+          // Unbound: the included defaults cannot be removed, only overridden,
+          // and niri has no do-nothing action.
+          Mod+T hotkey-overlay-title=null { spawn "true"; }
           Mod+D hotkey-overlay-title="Run an Application: rofi" { spawn "rofi" "-show" "drun"; }
           Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "loginctl" "lock-session"; }
           Mod+Alt+V hotkey-overlay-title="Clipboard History" { spawn-sh "cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy"; }
