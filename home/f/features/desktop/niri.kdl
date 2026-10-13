@@ -40,9 +40,8 @@ hotkey-overlay {
 layout {
     gaps 8
 
-    // What shows until the shell has drawn its wallpaper, about a second
-    // after login. Black, as the shell's own first frame is and the
-    // console before it was.
+    // What shows until the wallpaper fades in over it, just after login:
+    // black, as the console before it was. ./wallpaper.nix
     background-color "#000000"
 
     center-focused-column "never"

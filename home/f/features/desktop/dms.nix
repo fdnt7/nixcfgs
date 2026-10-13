@@ -5,7 +5,7 @@
   # shell restarts; make it here to keep it.
   #
   # Not here, because the shell keeps them with its state instead: the
-  # weather location and the wallpaper, in ~/.local/state/DankMaterialShell.
+  # weather location, in ~/.local/state/DankMaterialShell.
   xdg.configFile."DankMaterialShell/settings.json" = {
     # The shell writes its own copy when it first starts.
     force = true;
@@ -18,6 +18,9 @@
       controlCenterShowMicPercent = true;
       networkPreference = "wifi";
       osdPowerProfileEnabled = true;
+
+      # No wallpaper from the shell, on any screen: ./wallpaper.nix.
+      screenPreferences.wallpaper = [ ];
 
       # Notifications at the bottom right (3). Repeats are shown: by
       # default one identical to another from the last five seconds is

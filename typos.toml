@@ -34,6 +34,8 @@ extend-ignore-re = [
   # Ignore "center", "color", "maximize", "behavior" in the names of
   # DankMaterialShell's settings
   '\b(centerWidgets|controlCenterShowMicPercent|controlCenterButton|batteryColorMode|borderColor|widgetOutlineColor|shadowColorMode|shadowCustomColor|maximizeDetection|maximizeWidgetIcons|maximizeWidgetText|scrollXBehavior|scrollYBehavior)\b',
+  # Ignore "color" in an SVG attribute
+  '\bflood-color\b',
 ]
 
 [type.kdl]
