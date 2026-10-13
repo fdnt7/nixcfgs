@@ -1,14 +1,19 @@
 {
   imports = [
+    ./bat.nix
+    ./btop.nix
     ./claude-code.nix
+    ./delta.nix
     ./direnv.nix
     ./eza.nix
+    ./fastfetch
     ./fish.nix
     ./git.nix
     ./neovim.nix
     ./nh.nix
     ./nix-index.nix
     ./nix-your-shell.nix
+    ./ripgrep.nix
     ./ssh-tpm-agent.nix
     ./starship.nix
     ./yazi
