@@ -12,6 +12,7 @@
     ../common/optional/fingerprint.nix
     ../common/optional/gaming.nix
     ../common/optional/greetd.nix
+    ../common/optional/mullvad.nix
     ../common/optional/networkmanager.nix
     ../common/optional/niri.nix
     ../common/optional/pipewire.nix

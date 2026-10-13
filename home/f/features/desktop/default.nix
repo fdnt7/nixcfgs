@@ -5,6 +5,7 @@
     ./dolphin.nix
     ./fonts.nix
     ./foot.nix
+    ./mullvad.nix
     ./musescore.nix
     ./niri.nix
     ./spotify.nix
