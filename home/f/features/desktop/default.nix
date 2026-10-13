@@ -6,10 +6,12 @@
     ./dolphin.nix
     ./fonts.nix
     ./foot.nix
+    ./mpv.nix
     ./mullvad.nix
     ./musescore.nix
     ./niri.nix
     ./spotify.nix
+    ./swayimg.nix
     ./touchpad.nix
     ./wallpaper.nix
     ./zed-editor.nix

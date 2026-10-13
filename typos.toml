@@ -36,6 +36,8 @@ extend-ignore-re = [
   '\b(centerWidgets|controlCenterShowMicPercent|controlCenterButton|batteryColorMode|borderColor|widgetOutlineColor|shadowColorMode|shadowCustomColor|maximizeDetection|maximizeWidgetIcons|maximizeWidgetText|scrollXBehavior|scrollYBehavior)\b',
   # Ignore "color" in an SVG attribute
   '\bflood-color\b',
+  # Ignore "thumbnailers" in a package name
+  '\bkdegraphics-thumbnailers\b',
 ]
 
 [type.kdl]

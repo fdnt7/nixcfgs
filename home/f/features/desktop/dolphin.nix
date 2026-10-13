@@ -6,5 +6,11 @@
     pkgs.kdePackages.dolphin
     pkgs.kdePackages.kio-extras
     pkgs.kdePackages.breeze-icons
+
+    # Previews in the file list: of videos, of documents and raw photos,
+    # and the newer picture formats such as HEIC and AVIF.
+    pkgs.kdePackages.ffmpegthumbs
+    pkgs.kdePackages.kdegraphics-thumbnailers
+    pkgs.kdePackages.kimageformats
   ];
 }
