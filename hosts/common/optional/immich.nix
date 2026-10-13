@@ -6,6 +6,12 @@
     enable = true;
     host = "0.0.0.0";
     openFirewall = true;
+
+    # How many images are worked on at once. The image library runs each
+    # one on a thread from Node's pool, which holds four by default: the
+    # job concurrency set in Immich has no effect beyond that. This is
+    # the ceiling; that setting picks how much of it to use.
+    environment.UV_THREADPOOL_SIZE = "24";
   };
 
   # The library, the thumbnails and model cache, and the database.
