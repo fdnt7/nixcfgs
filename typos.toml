@@ -31,4 +31,14 @@ extend-ignore-re = [
   ' *programs\.eza\.colors\b',
   # Ignore "favorite", "color"
   ' *programs\.nixcord\.config\.plugins\.(favoriteEmojiFirst|roleColorEverywhere)\b',
+  # Ignore "center", "color", "maximize", "behavior" in the names of
+  # DankMaterialShell's settings
+  '\b(centerWidgets|controlCenterShowMicPercent|controlCenterButton|batteryColorMode|borderColor|widgetOutlineColor|shadowColorMode|shadowCustomColor|maximizeDetection|maximizeWidgetIcons|maximizeWidgetText|scrollXBehavior|scrollYBehavior)\b',
+]
+
+[type.kdl]
+extend-glob = ["*.kdl"]
+extend-ignore-re = [
+  # Ignore "center", "color", "maximize" in niri's options and actions
+  '\b(center-focused-column|center-column|center-visible-columns|maximize-column|maximize-window-to-edges|active-color|inactive-color|background-color|backdrop-color)\b',
 ]
