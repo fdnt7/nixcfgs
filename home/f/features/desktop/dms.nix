@@ -22,6 +22,11 @@
       # No wallpaper from the shell, on any screen: ./wallpaper.nix.
       screenPreferences.wallpaper = [ ];
 
+      # The power profile follows the charger: performance (2) when plugged
+      # in, balanced (1) on battery. As strings, as the shell stores them.
+      acProfileName = "2";
+      batteryProfileName = "1";
+
       # How long a key is held in the power menu to confirm its action,
       # in seconds; the shortest the shell offers.
       powerActionHoldDuration = 0.25;
