@@ -19,7 +19,8 @@ extend-ignore-re = [
 locale = "en-gb"
 
 [files]
-extend-exclude = ["LICENSE", "hosts/cuties-only"]
+# Patches quote other projects' source, spelt their way.
+extend-exclude = ["LICENSE", "hosts/cuties-only", "*.patch"]
 
 [type.nix]
 extend-ignore-re = [

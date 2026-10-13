@@ -6,7 +6,13 @@ in
   # Lets Qt programs, Dolphin and Prism Launcher among them, take their
   # colours from the shell. Outside Plasma Qt has no theme of its own: it
   # draws light whatever the desktop prefers.
-  home.packages = [ pkgs.qtengine ];
+  home.packages = [
+    (pkgs.qtengine.overrideAttrs (old: {
+      # Toolbars drawn by Breeze, as in Dolphin, otherwise keep their
+      # colours when the shell switches between light and dark.
+      patches = (old.patches or [ ]) ++ [ ./qtengine-refresh-breeze-scheme.patch ];
+    }))
+  ];
 
   # Puts the profile's Qt plugins on the search path, where the theme
   # plugin is found.

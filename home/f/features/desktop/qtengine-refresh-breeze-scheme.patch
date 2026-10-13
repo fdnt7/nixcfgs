@@ -1,0 +1,13 @@
+Breeze reads the colour scheme through a cached instance of its own,
+opened without globals, to colour toolbars. Reparse that one too, or a
+scheme rewritten in place leaves toolbars in the old colours.
+
+--- a/src/qt6/common/common.cpp
++++ b/src/qt6/common/common.cpp
+@@ -8,5 +8,6 @@
+ QPalette Style::loadColorScheme(const QString& filePath) {
+ 	auto config = KSharedConfig::openConfig(filePath);
+ 	config->reparseConfiguration();
++	KSharedConfig::openConfig(filePath, KConfig::NoGlobals)->reparseConfiguration();
+ 	return KColorScheme::createApplicationPalette(config);
+ }
