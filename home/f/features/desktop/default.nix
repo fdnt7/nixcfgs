@@ -10,6 +10,7 @@
     ./mullvad.nix
     ./musescore.nix
     ./niri.nix
+    ./qt-theme.nix
     ./spotify.nix
     ./swayimg.nix
     ./touchpad.nix
