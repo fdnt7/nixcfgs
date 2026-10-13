@@ -27,6 +27,10 @@
       acProfileName = "2";
       batteryProfileName = "1";
 
+      # qtengine's settings are declared in ./qt-theme.nix; the shell would
+      # otherwise keep writing its own copy over them.
+      matugenTemplateQtengine = false;
+
       # How long a key is held in the power menu to confirm its action,
       # in seconds; the shortest the shell offers.
       powerActionHoldDuration = 0.25;

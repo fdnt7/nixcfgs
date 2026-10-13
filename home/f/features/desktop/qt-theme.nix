@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 let
   theme = "qtengine";
 in
@@ -6,10 +6,6 @@ in
   # Lets Qt programs, Dolphin and Prism Launcher among them, take their
   # colours from the shell. Outside Plasma Qt has no theme of its own: it
   # draws light whatever the desktop prefers.
-  #
-  # qtengine is the platform theme the shell knows how to drive: when it
-  # sees the variable below it writes ~/.config/qtengine/config.json and
-  # keeps it pointed at the colour scheme it generates.
   home.packages = [ pkgs.qtengine ];
 
   # Puts the profile's Qt plugins on the search path, where the theme
@@ -20,4 +16,18 @@ in
   # which otherwise picks GTK's theme for whatever it launches.
   home.sessionVariables.QT_QPA_PLATFORMTHEME = theme;
   systemd.user.sessionVariables.QT_QPA_PLATFORMTHEME = theme;
+
+  xdg.configFile."qtengine/config.json" = {
+    # The shell wrote one of its own before this was declared.
+    force = true;
+    text = builtins.toJSON {
+      # The scheme the shell regenerates whenever its theme or its light
+      # and dark mode changes. qtengine watches the file, so programs that
+      # are running follow along.
+      theme.colorScheme = "${config.xdg.dataHome}/color-schemes/DankMatugen.colors";
+
+      # Open with a double click; qtengine's default is a single one.
+      misc.singleClickActivate = false;
+    };
+  };
 }
