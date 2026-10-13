@@ -6,6 +6,7 @@
     ./fonts.nix
     ./foot.nix
     ./niri.nix
+    ./spotify.nix
     ./zed-editor.nix
     ./zen-browser.nix
   ];
