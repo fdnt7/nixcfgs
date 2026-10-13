@@ -2,6 +2,7 @@
   imports = [
     ./clipboard.nix
     ./discord.nix
+    ./dms.nix
     ./dolphin.nix
     ./fonts.nix
     ./foot.nix
