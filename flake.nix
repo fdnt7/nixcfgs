@@ -4,11 +4,6 @@
   inputs = {
     # catppuccin.url = "github:catppuccin/nix";
 
-    claude-desktop = {
-      url = "github:aaddrick/claude-desktop-debian";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # Home manager
     # home-manager.url = "github:nix-community/home-manager/release-23.11";
     home-manager = {
@@ -30,9 +25,6 @@
       # Optional but recommended to limit the size of your system closure.
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # do not override nixpkgs via follows -- wine must remain the locked revision
-    line-nix.url = "github:fdnt7/line-nix";
 
     nix-gaming.url = "github:fufexan/nix-gaming"; # using binary cache
 
