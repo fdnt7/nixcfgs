@@ -111,6 +111,15 @@ binds {
     // Then one key: R reboot, P power off, S suspend, X log out, L lock.
     Mod+Q hotkey-overlay-title="Power Menu" { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
 
+    // Applications, by what they are for.
+    Mod+Alt+B hotkey-overlay-title="Browser: Zen" { spawn "zen-beta"; }
+    Mod+Alt+E hotkey-overlay-title="Editor: Zed" { spawn "zeditor"; }
+    Mod+Alt+F hotkey-overlay-title="Files: Dolphin" { spawn "dolphin"; }
+    Mod+Alt+S hotkey-overlay-title="Spotify" { spawn "spotify"; }
+    Mod+Alt+D hotkey-overlay-title="Discord" { spawn "discord"; }
+    Mod+Alt+G hotkey-overlay-title="Games: Steam" { spawn "steam"; }
+    Mod+Alt+M hotkey-overlay-title="MuseScore" { spawn "mscore"; }
+
     Mod+Shift+Slash { show-hotkey-overlay; }
     Mod+O repeat=false { toggle-overview; }
 
