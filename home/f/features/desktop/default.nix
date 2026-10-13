@@ -6,6 +6,7 @@
     ./dolphin.nix
     ./fonts.nix
     ./foot.nix
+    ./mime-apps.nix
     ./mpv.nix
     ./mullvad.nix
     ./musescore.nix
