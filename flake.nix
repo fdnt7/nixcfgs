@@ -41,11 +41,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixcord = {
-      url = "github:kaylorben/nixcord";
-      inputs.nixpkgs.follows = "nixpkgs"; # should be safe
-    };
-
     # nixd.url = "github:nix-community/nixd"; # using binary cache
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master"; # no nixpkgs
@@ -56,14 +51,6 @@
     # You can access packages and modules from different nixpkgs revs
     # at the same time. Here's an working example:
     # nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      # If you are not running an unstable channel of nixpkgs, select the corresponding branch of nixvim.
-      # url = "github:nix-community/nixvim/nixos-25.05";
-
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     rbld = {
       url = "github:fdnt7/rbld";
@@ -87,8 +74,6 @@
 
     # # xdg-ninja.url = "github:b3nj5m1n/xdg-ninja";
     # xdg-ninja.url = "github:fdnt7/xdg-ninja/feature/codex";
-
-    yazi.url = "github:sxyazi/yazi"; # using binary cache
 
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
