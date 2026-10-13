@@ -1,0 +1,302 @@
+// The whole niri config: niri's default config with the changes folded in,
+// so that every setting and bind is listed here and can be removed.
+// https://niri-wm.github.io/niri/Configuration:-Introduction
+
+input {
+    keyboard {
+        xkb {
+            layout "us,th"
+            // Caps Lock is Escape; Super+Space switches layout.
+            options "caps:escape,grp:win_space_toggle"
+        }
+
+        repeat-delay 200
+        repeat-rate 40
+
+        numlock
+    }
+
+    touchpad {
+        tap
+        natural-scroll
+    }
+
+    mouse {
+        accel-profile "flat"
+    }
+
+    // Hover focuses a window only if that will not scroll the view.
+    focus-follows-mouse max-scroll-amount="0%"
+}
+
+// No title bars: ask clients to leave decorations to the compositor.
+prefer-no-csd
+
+// No key list on top of the first workspace at login; Mod+Shift+/ shows it.
+hotkey-overlay {
+    skip-at-startup
+}
+
+layout {
+    gaps 8
+
+    // What shows until the shell has drawn its wallpaper, about a second
+    // after login. Black, as the shell's own first frame is and the
+    // console before it was.
+    background-color "#000000"
+
+    center-focused-column "never"
+
+    // What Mod+R cycles through.
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+
+    default-column-width { proportion 0.5; }
+
+    focus-ring {
+        width 2
+        active-color "#7fc8ff"
+        inactive-color "#505050"
+    }
+}
+
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+// Behind the workspaces in the overview: a shade darker than they are.
+overview {
+    backdrop-color "#100e14"
+}
+
+// Fixed workspaces, always present and first in this order, so that
+// Mod+1 to Mod+3 reach them. Everything after them comes and goes.
+workspace "web"
+workspace "code"
+workspace "games"
+
+window-rule {
+    match app-id="^zen"
+    open-on-workspace "web"
+}
+
+// The browser's picture-in-picture player floats.
+window-rule {
+    match app-id="^zen" title="^Picture-in-Picture$"
+    open-floating true
+}
+
+window-rule {
+    match app-id=r#"^dev\.zed\.Zed$"#
+    open-on-workspace "code"
+}
+
+// Launchers and what they start. Steam games are "steam_app_<id>".
+window-rule {
+    match app-id="^steam$"
+    match app-id=r#"^steam_app_\d+$"#
+    match app-id=r#"^org\.prismlauncher\.PrismLauncher$"#
+    match app-id="(?i)minecraft"
+    match app-id="^osu!"
+    open-on-workspace "games"
+}
+
+binds {
+    // Programs and session. The launcher, clipboard history and lock screen
+    // are the shell's: ../../../../hosts/common/optional/dms.nix.
+    Mod+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "footclient"; }
+    Mod+D hotkey-overlay-title="Run an Application" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
+    Mod+Alt+V hotkey-overlay-title="Clipboard History" { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
+    Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn "dms" "ipc" "call" "lock" "lock"; }
+    // Then one key: R reboot, P power off, S suspend, X log out, L lock.
+    Mod+Q hotkey-overlay-title="Power Menu" { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
+
+    Mod+Shift+Slash { show-hotkey-overlay; }
+    Mod+O repeat=false { toggle-overview; }
+
+    // An escape hatch for applications that inhibit these shortcuts.
+    Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+
+    // Asks for confirmation.
+    Mod+Shift+E { quit; }
+    Ctrl+Alt+Delete { quit; }
+
+    Mod+Shift+P { power-off-monitors; }
+
+    Print { screenshot; }
+    Ctrl+Print { screenshot-screen; }
+    Alt+Print { screenshot-window; }
+
+    // Retarget a running screen share. The display key (F9) on the
+    // Framework keyboard sends Super+P.
+    Mod+P { set-dynamic-cast-window; }
+    Mod+Ctrl+P { set-dynamic-cast-monitor; }
+
+    // Media and brightness keys.
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
+    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+
+    XF86AudioPlay        allow-when-locked=true { spawn-sh "playerctl play-pause"; }
+    XF86AudioStop        allow-when-locked=true { spawn-sh "playerctl stop"; }
+    XF86AudioPrev        allow-when-locked=true { spawn-sh "playerctl previous"; }
+    XF86AudioNext        allow-when-locked=true { spawn-sh "playerctl next"; }
+
+    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+
+    // The Framework key (F12), which has no function of its own, sends
+    // this: ./touchpad.nix.
+    XF86Tools hotkey-overlay-title="Toggle the Touchpad" { spawn "toggle-touchpad"; }
+
+    // Windows and columns.
+    Mod+W repeat=false { close-window; }
+
+    Mod+Left  { focus-column-left; }
+    Mod+Down  { focus-window-down; }
+    Mod+Up    { focus-window-up; }
+    Mod+Right { focus-column-right; }
+    Mod+H     { focus-column-left; }
+    Mod+J     { focus-window-down; }
+    Mod+K     { focus-window-up; }
+    Mod+L     { focus-column-right; }
+
+    Mod+Ctrl+Left  { move-column-left; }
+    Mod+Ctrl+Down  { move-window-down; }
+    Mod+Ctrl+Up    { move-window-up; }
+    Mod+Ctrl+Right { move-column-right; }
+    Mod+Ctrl+H     { move-column-left; }
+    Mod+Ctrl+J     { move-window-down; }
+    Mod+Ctrl+K     { move-window-up; }
+    Mod+Ctrl+L     { move-column-right; }
+
+    Mod+Home { focus-column-first; }
+    Mod+End  { focus-column-last; }
+    Mod+Ctrl+Home { move-column-to-first; }
+    Mod+Ctrl+End  { move-column-to-last; }
+
+    // Move the window in or out of a neighbouring column; with Ctrl, swap
+    // it with the window in that column.
+    Mod+BracketLeft  { consume-or-expel-window-left; }
+    Mod+BracketRight { consume-or-expel-window-right; }
+    Mod+Ctrl+BracketLeft { swap-window-left; }
+    Mod+Ctrl+BracketRight { swap-window-right; }
+    Mod+Comma  { consume-window-into-column; }
+    Mod+Period { expel-window-from-column; }
+
+    // G for group, as in Hyprland.
+    Mod+G { toggle-column-tabbed-display; }
+
+    Mod+V       { toggle-window-floating; }
+    Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+
+    // Sizing.
+    Mod+R { switch-preset-column-width; }
+    Mod+Shift+R { switch-preset-column-width-back; }
+    Mod+Ctrl+Shift+R { switch-preset-window-height; }
+    Mod+Ctrl+R { reset-window-height; }
+    Mod+F { maximize-column; }
+    Mod+Shift+F { fullscreen-window; }
+    // Fullscreen for the application only: it fills its own tile.
+    Mod+Ctrl+Shift+F { toggle-windowed-fullscreen; }
+    Mod+M { maximize-window-to-edges; }
+    Mod+Ctrl+F { expand-column-to-available-width; }
+    Mod+C { center-column; }
+    Mod+Ctrl+C { center-visible-columns; }
+
+    Mod+Minus { set-column-width "-10%"; }
+    Mod+Equal { set-column-width "+10%"; }
+    Mod+Shift+Minus { set-window-height "-10%"; }
+    Mod+Shift+Equal { set-window-height "+10%"; }
+
+    // Monitors.
+    Mod+Shift+Left  { focus-monitor-left; }
+    Mod+Shift+Down  { focus-monitor-down; }
+    Mod+Shift+Up    { focus-monitor-up; }
+    Mod+Shift+Right { focus-monitor-right; }
+    Mod+Shift+H     { focus-monitor-left; }
+    Mod+Shift+J     { focus-monitor-down; }
+    Mod+Shift+K     { focus-monitor-up; }
+    Mod+Shift+L     { focus-monitor-right; }
+
+    Mod+Shift+Ctrl+Left  { move-column-to-monitor-left; }
+    Mod+Shift+Ctrl+Down  { move-column-to-monitor-down; }
+    Mod+Shift+Ctrl+Up    { move-column-to-monitor-up; }
+    Mod+Shift+Ctrl+Right { move-column-to-monitor-right; }
+    Mod+Shift+Ctrl+H     { move-column-to-monitor-left; }
+    Mod+Shift+Ctrl+J     { move-column-to-monitor-down; }
+    Mod+Shift+Ctrl+K     { move-column-to-monitor-up; }
+    Mod+Shift+Ctrl+L     { move-column-to-monitor-right; }
+
+    // Workspaces.
+    Mod+Page_Down      { focus-workspace-down; }
+    Mod+Page_Up        { focus-workspace-up; }
+    Mod+U              { focus-workspace-down; }
+    Mod+I              { focus-workspace-up; }
+    Mod+Ctrl+Page_Down { move-column-to-workspace-down; }
+    Mod+Ctrl+Page_Up   { move-column-to-workspace-up; }
+    Mod+Ctrl+U         { move-column-to-workspace-down; }
+    Mod+Ctrl+I         { move-column-to-workspace-up; }
+
+    Mod+Shift+Page_Down { move-workspace-down; }
+    Mod+Shift+Page_Up   { move-workspace-up; }
+    Mod+Shift+U         { move-workspace-down; }
+    Mod+Shift+I         { move-workspace-up; }
+
+    // Back to the workspace last shown.
+    Mod+BackSpace { focus-workspace-previous; }
+
+    // An index past the last workspace means the empty one at the bottom.
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+
+    // Send the column to a workspace and stay here; Mod+Ctrl follows it.
+    Mod+Shift+1 { move-column-to-workspace 1 focus=false; }
+    Mod+Shift+2 { move-column-to-workspace 2 focus=false; }
+    Mod+Shift+3 { move-column-to-workspace 3 focus=false; }
+    Mod+Shift+4 { move-column-to-workspace 4 focus=false; }
+    Mod+Shift+5 { move-column-to-workspace 5 focus=false; }
+    Mod+Shift+6 { move-column-to-workspace 6 focus=false; }
+    Mod+Shift+7 { move-column-to-workspace 7 focus=false; }
+    Mod+Shift+8 { move-column-to-workspace 8 focus=false; }
+    Mod+Shift+9 { move-column-to-workspace 9 focus=false; }
+    Mod+Ctrl+1 { move-column-to-workspace 1; }
+    Mod+Ctrl+2 { move-column-to-workspace 2; }
+    Mod+Ctrl+3 { move-column-to-workspace 3; }
+    Mod+Ctrl+4 { move-column-to-workspace 4; }
+    Mod+Ctrl+5 { move-column-to-workspace 5; }
+    Mod+Ctrl+6 { move-column-to-workspace 6; }
+    Mod+Ctrl+7 { move-column-to-workspace 7; }
+    Mod+Ctrl+8 { move-column-to-workspace 8; }
+    Mod+Ctrl+9 { move-column-to-workspace 9; }
+
+    // Mouse wheel.
+    Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
+    Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
+    Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
+    Mod+Ctrl+WheelScrollUp   cooldown-ms=150 { move-column-to-workspace-up; }
+
+    Mod+WheelScrollRight      { focus-column-right; }
+    Mod+WheelScrollLeft       { focus-column-left; }
+    Mod+Ctrl+WheelScrollRight { move-column-right; }
+    Mod+Ctrl+WheelScrollLeft  { move-column-left; }
+
+    // Shift turns vertical scrolling into horizontal, as in applications.
+    Mod+Shift+WheelScrollDown      { focus-column-right; }
+    Mod+Shift+WheelScrollUp        { focus-column-left; }
+    Mod+Ctrl+Shift+WheelScrollDown { move-column-right; }
+    Mod+Ctrl+Shift+WheelScrollUp   { move-column-left; }
+}
+
+// Written by toggle-touchpad to switch the touchpad off: ./touchpad.nix.
+// Last, because a later touchpad section replaces the one above.
+include optional=true "~/.local/state/niri/touchpad.kdl"

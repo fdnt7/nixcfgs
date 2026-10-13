@@ -9,6 +9,7 @@
     ./musescore.nix
     ./niri.nix
     ./spotify.nix
+    ./touchpad.nix
     ./zed-editor.nix
     ./zen-browser.nix
   ];
