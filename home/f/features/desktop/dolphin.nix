@@ -2,6 +2,11 @@
 {
   # Graphical file manager, run outside Plasma: it needs its I/O plugins and
   # an icon theme brought along. There is no module for it.
+  #
+  # Known wrinkle: a folder shown with a preview of its contents keeps the
+  # colours it was painted in when the shell switches between light and
+  # dark, until the window is reopened. Dolphin does not repaint previews
+  # on a palette change, whichever widget style draws it.
   home.packages = [
     pkgs.kdePackages.dolphin
     pkgs.kdePackages.kio-extras
