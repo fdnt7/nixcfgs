@@ -41,7 +41,7 @@ in
       # The fade at startup. Off unless asked for, whatever the manual
       # says of its default; the time is in milliseconds.
       initial-transition = true;
-      transition-time = 1000;
+      transition-time = 500;
     };
   };
 }

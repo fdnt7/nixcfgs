@@ -22,6 +22,10 @@
       # No wallpaper from the shell, on any screen: ./wallpaper.nix.
       screenPreferences.wallpaper = [ ];
 
+      # How long a key is held in the power menu to confirm its action,
+      # in seconds; the shortest the shell offers.
+      powerActionHoldDuration = 0.25;
+
       # Notifications at the bottom right (3). Repeats are shown: by
       # default one identical to another from the last five seconds is
       # dropped, which swallows the touchpad toggle's when it is pressed
