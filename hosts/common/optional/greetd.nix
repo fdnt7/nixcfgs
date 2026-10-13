@@ -4,6 +4,9 @@
   pkgs,
   ...
 }:
+let
+  journal = "${config.systemd.package}/bin/systemd-cat";
+in
 {
   # Minimal login manager with a text greeter. Like the console, it shows
   # PAM's prompts, so the fingerprint reader works without ceremony.
@@ -16,6 +19,9 @@
       "--remember"
       "--remember-session"
       "--sessions ${config.services.displayManager.sessionData.desktops}/share/wayland-sessions"
+      # What a session prints as it starts goes to the journal, not over
+      # the greeter: niri-session draws a warning from systemd there.
+      "--session-wrapper '${journal} --identifier=session'"
     ];
   };
 
