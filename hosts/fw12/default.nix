@@ -21,6 +21,7 @@
     ./disk.nix
     ./hibernation.nix
     ./power.nix
+    ./remote-setup.nix
     ./tpm-nvpcr.nix
     ./tpm-unlock.nix
 

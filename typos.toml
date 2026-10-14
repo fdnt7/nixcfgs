@@ -26,6 +26,7 @@ extend-exclude = ["LICENSE", "hosts/cuties-only", "*.patch"]
 extend-ignore-re = [
   # Ignore "authorized"
   ''' *users\.users\.([a-zA-Z_][a-zA-Z0-9_'-]*|\$\{.+\}) = \{\s+openssh\.authorizedKeys\b''',
+  '\busers\.users\.[a-z]+\.openssh\.authorizedKeys\b',
   # Ignore "initialization"
   ' *programs\.zed-editor\.userSettings\.lsp\.rust-analyzer\.initialization_options\b',
   # Ignore "colors"
