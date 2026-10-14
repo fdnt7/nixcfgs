@@ -18,7 +18,13 @@ in
     gnupg.sshKeyPaths = [ ];
   };
 
-  # For editing on the host itself:
-  #   sudo SOPS_AGE_SSH_PRIVATE_KEY_FILE=<host key> sops edit <file>
-  environment.systemPackages = [ pkgs.sops ];
+  # For editing on the host itself, with the same key converted:
+  #   sudo SOPS_AGE_KEY_CMD="ssh-to-age -private-key -i <host key>" \
+  #     sops edit <file>
+  # SOPS_AGE_SSH_PRIVATE_KEY_FILE does not do: it only matches recipients
+  # written as SSH keys, and these are written as age keys.
+  environment.systemPackages = [
+    pkgs.sops
+    pkgs.ssh-to-age
+  ];
 }
