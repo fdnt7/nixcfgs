@@ -8,10 +8,12 @@
     enable = true;
 
     input = {
-      # As on fw16, in ../../../f/features/desktop/niri.kdl.
+      # As on fw16, in ../../../f/features/desktop/niri.kdl: Caps Lock is
+      # Escape.
       keyboard = {
         repeatDelay = 200;
         repeatRate = 40;
+        options = [ "caps:escape" ];
       };
 
       # Plasma keeps touchpad settings per device. Both touchpads this
