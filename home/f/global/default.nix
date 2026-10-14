@@ -14,4 +14,13 @@
   };
 
   xdg.enable = true;
+
+  programs.git.settings = {
+    user = {
+      name = "Fridella Nythell";
+      email = "git@frdl.la";
+    };
+    # Keys whose signatures `git log --show-signature` accepts as mine.
+    gpg.ssh.allowedSignersFile = "${./allowed-signers}";
+  };
 }
