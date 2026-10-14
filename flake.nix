@@ -17,7 +17,15 @@
     #   inputs.hyprland.follows = "hyprland";
     # };
 
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     impermanence.url = "github:nix-community/impermanence"; # no nixpkgs
+
+    # do not override nixpkgs via follows -- wine must remain the locked revision
+    line-nix.url = "github:fdnt7/line-nix";
 
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v1.2.0";
@@ -126,6 +134,10 @@
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#your-hostname'
       nixosConfigurations = {
+        fw12 = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [ ./hosts/fw12 ];
+        };
         fw16 = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [ ./hosts/fw16 ];
