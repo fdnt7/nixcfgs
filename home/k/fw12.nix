@@ -20,6 +20,7 @@
     ./features/desktop/haruna.nix
     ./features/desktop/line.nix
     ./features/desktop/obs-studio.nix
+    ./features/desktop/plasma.nix
     ./features/desktop/tailscale-systray.nix
     ./features/desktop/xournalpp.nix
   ];

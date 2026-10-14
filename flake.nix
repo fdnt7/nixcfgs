@@ -52,6 +52,12 @@
     # at the same time. Here's an working example:
     # nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
+
     rbld = {
       url = "github:fdnt7/rbld";
       inputs.nixpkgs.follows = "nixpkgs";
