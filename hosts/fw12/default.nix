@@ -32,6 +32,11 @@
 
   networking.hostName = "fw12"; # Define your hostname.
 
+  # Times in 24 hours everywhere Plasma draws one by itself, the login and
+  # lock screens among them, which follow the locale rather than the panel
+  # clock's setting. The rest of the locale stays American English.
+  i18n.extraLocaleSettings.LC_TIME = "en_GB.UTF-8";
+
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
