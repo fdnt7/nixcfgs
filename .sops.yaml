@@ -1,9 +1,12 @@
 keys:
-  - &admin_fdnt age14w56rvyhtfqvvtdd2rtg00xs2m6zssz5x7qfqcjyac9edwfucs2st5mmjm
-  - &admin_fdl age1nnyztzln3fn9k5v5te2u4tmwvqxlseupk76w5k6lm70jxhks9pas0huhvk
+  # Editing from fw16: f's age key, ~/.config/sops/age/keys.txt there.
+  - &f_fw16 age1n4zzx32smd586l062y5hg47cg7ec94wcy2rcgcp5khjahjyc0sgsls8f3f
+  # fw12's SSH host key, through ssh-to-age: decrypts at boot, and edits
+  # there with SOPS_AGE_SSH_PRIVATE_KEY_FILE pointed at the private half.
+  - &fw12 age1hnck7dxpy724lcugmg7sdpnp3u8zhgju3vausgfuphyd4r35kersntwaca
 creation_rules:
-  - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
+  - path_regex: hosts/fw12/secrets\.yaml$
     key_groups:
       - age:
-          - *admin_fdnt
-          - *admin_fdl
+          - *f_fw16
+          - *fw12

@@ -13,6 +13,7 @@
     ../common/optional/pipewire.nix
     ../common/optional/plasma.nix
     ../common/optional/secure-boot.nix
+    ../common/optional/sops.nix
     ../common/optional/tailscale.nix
     ../common/optional/tpm.nix
     ../common/optional/virtual-keyboard.nix
@@ -21,6 +22,7 @@
     ./disk.nix
     ./hibernation.nix
     ./power.nix
+    ./secrets.nix
     ./tpm-nvpcr.nix
     ./tpm-unlock.nix
 
