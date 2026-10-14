@@ -16,9 +16,11 @@
 
   xdg.enable = true;
 
-  # An allowed-signers file, as ../../f/global has, follows once this
-  # user's key exists: it is made on the machine, by `ssh-tpm-keygen`.
-  #
+  # Keys whose signatures `git log --show-signature` accepts as mine. The
+  # principal is the key's own name rather than an address, which would
+  # say who this is.
+  programs.git.settings.gpg.ssh.allowedSignersFile = "${./allowed-signers}";
+
   # Who commits is not written here: this repository is public. The name
   # and address are in a file kept on the machine, as `[user]` settings.
   # A second file overrides the address for university work: it applies
