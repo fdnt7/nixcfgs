@@ -12,18 +12,17 @@
     ../common/optional/networkmanager.nix
     ../common/optional/pipewire.nix
     ../common/optional/plasma.nix
+    ../common/optional/secure-boot.nix
     ../common/optional/tailscale.nix
     ../common/optional/tpm.nix
     ../common/optional/virtual-keyboard.nix
     ../common/optional/waydroid.nix
 
-    # Until this machine has Secure Boot keys of its own. Then
-    # ../common/optional/secure-boot.nix takes its place, as its header says.
-    ../common/optional/systemd-boot.nix
-
     ./disk.nix
+    ./hibernation.nix
     ./power.nix
     ./tpm-nvpcr.nix
+    ./tpm-unlock.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
