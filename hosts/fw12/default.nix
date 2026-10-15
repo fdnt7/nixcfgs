@@ -23,7 +23,6 @@
     ./hibernation.nix
     ./power.nix
     ./secrets.nix
-    ./tpm-nvpcr.nix
     ./tpm-unlock.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
