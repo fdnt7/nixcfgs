@@ -1,0 +1,99 @@
+build(fw12): apply flake.lock update
+
+<<< /nix/store/fq6dksj2445blv7xjmqr8n6ljq94ah3b-nixos-system-fw12-26.11.20261008.e7439b6
+>>> /nix/store/f4klkd885crzzy6dpxx2sc713b5gx0wq-nixos-system-fw12-26.11.20261011.7fd4004
+
+CHANGED
+[U.] 7zz                      26.02-lib, 26.02 -> 26.04-lib, 26.04, +8.02 KiB
+[U*] akonadi                  26.08.1 -> 26.08.2
+[U.] akonadi-calendar         26.08.1 -> 26.08.2
+[U*] akonadi-contacts         26.08.1 -> 26.08.2
+[U*] akonadi-import-wizard    26.08.1 -> 26.08.2
+[U.] akonadi-mime             26.08.1 -> 26.08.2
+[U*] akonadi-search           26.08.1 -> 26.08.2
+[U*] akonadiconsole           26.08.1 -> 26.08.2
+[U.] akregator                26.08.1 -> 26.08.2, +43.4 KiB
+[U*] ark                      26.08.1_fish-completions, 26.08.1 -> 26.08.2_fish-completions, 26.08.2, +36.0 KiB
+[U*] baloo-widgets            26.08.1 -> 26.08.2
+[U.] calendarsupport          26.08.1 -> 26.08.2
+[U.] claude-code              2.1.292-fish-completions, 2.1.292 -> 2.1.296-fish-completions, 2.1.296, +5.35 MiB
+[C.] discord                  -9.91 KiB
+[U*] dolphin                  26.08.1 -> 26.08.2, +529 KiB
+[U*] dolphin-plugins          26.08.1 -> 26.08.2, +26.8 KiB
+[U*] elisa                    26.08.1 -> 26.08.2, +30.6 KiB
+[U.] eventviews               26.08.1 -> 26.08.2
+[U*] ffmpegthumbs             26.08.1 -> 26.08.2
+[U*] fwupd                    2.1.6-lib, 2.1.6-man, 2.1.6 -> 2.1.8-lib, 2.1.8-man, 2.1.8, +261 KiB
+[U.] fzf                      0.74.4 -> 0.74.5
+[U.] grantleetheme            26.08.1 -> 26.08.2
+[U*] gwenview                 26.08.1 -> 26.08.2, +84.6 KiB
+[U.] incidenceeditor          26.08.1 -> 26.08.2
+[C.] index-x86_64-linux       +1.02 MiB
+[C.] index-x86_64-linux-small +26.0 KiB
+[U.] kaccounts-integration    26.08.1 -> 26.08.2
+[U.] kaddressbook             26.08.1 -> 26.08.2, +38.9 KiB
+[U*] kate                     26.08.1_fish-completions, 26.08.1 -> 26.08.2_fish-completions, 26.08.2
+[U.] kcalutils                26.08.1 -> 26.08.2
+[U*] kde-inotify-survey       26.08.1 -> 26.08.2
+[U.] kdegraphics-mobipocket   26.08.1 -> 26.08.2
+[U*] kdegraphics-thumbnailers 26.08.1 -> 26.08.2
+[U*] kdepim-runtime           26.08.1 -> 26.08.2, +15.2 KiB
+[U*] khelpcenter              26.08.1 -> 26.08.2
+[U.] kidentitymanagement      26.08.1 -> 26.08.2
+[U.] kimap                    26.08.1 -> 26.08.2
+[U*] kio-admin                26.08.1 -> 26.08.2
+[U*] kio-extras               26.08.1 -> 26.08.2
+[U.] kirigami-addons          1.14.2 -> 1.15.0, +284 KiB
+[U.] kldap                    26.08.1 -> 26.08.2
+[U*] kmail                    26.08.1 -> 26.08.2
+[U*] kmail-account-wizard     26.08.1 -> 26.08.2
+[U.] kmailtransport           26.08.1 -> 26.08.2
+[U.] kmbox                    26.08.1 -> 26.08.2
+[U*] konsole                  26.08.1 -> 26.08.2, +269 KiB
+[U*] kontact                  26.08.1 -> 26.08.2, +44.5 KiB
+[U.] kontactinterface         26.08.1 -> 26.08.2
+[U.] korganizer               26.08.1 -> 26.08.2, +45.8 KiB
+[U.] kpimtextedit             26.08.1 -> 26.08.2
+[U.] ksmtp                    26.08.1 -> 26.08.2
+[U.] ktnef                    26.08.1 -> 26.08.2
+[U*] kunifiedpush             26.08.1 -> 26.08.2
+[U*] kwalletmanager           26.08.1 -> 26.08.2, +11.6 KiB
+[U.] libgravatar              26.08.1 -> 26.08.2
+[U.] libkdcraw                26.08.1 -> 26.08.2
+[U.] libkdepim                26.08.1 -> 26.08.2
+[U.] libkexiv2                26.08.1 -> 26.08.2
+[U.] libkgapi                 26.08.1 -> 26.08.2
+[U.] libkleo                  26.08.1 -> 26.08.2
+[U.] libksieve                26.08.1 -> 26.08.2
+[U.] mailcommon               26.08.1 -> 26.08.2
+[U.] mailimporter             26.08.1 -> 26.08.2
+[U*] merkuro                  26.08.1 -> 26.08.2
+[U.] messagelib               26.08.1 -> 26.08.2
+[U.] mimetreeparser           26.08.1 -> 26.08.2
+[C.] nh-unwrapped             -2.14 MiB
+[C*] nixos-manual-html        +81.3 KiB
+[U.] nixos-system-fw12        26.11.20261008.e7439b6 -> 26.11.20261011.7fd4004
+[U.] ntfs3g                   2026.9.18 -> 2026.9.28
+[U*] okular                   26.08.1_fish-completions, 26.08.1 -> 26.08.2_fish-completions, 26.08.2
+[U.] pimcommon                26.08.1 -> 26.08.2
+[U*] qrca                     26.08.1 -> 26.08.2
+[C.] source                   +280 KiB
+[C.] system-path              +9.03 KiB
+[U*] tailscale                1.102.5 -> 1.104.1, +1.18 MiB
+[U.] zanshin                  26.08.1 -> 26.08.2
+[U.] zen-beta                 1.23.1b-fish-completions, 1.23.1b -> 1.23.2b-fish-completions, 1.23.2b
+[U.] zen-beta-bin-unwrapped   1.23.1b -> 1.23.2b, -65.8 KiB
+
+ADDED
+[A.] hm_homek.confignpmnpmrc  <none>
+
+REMOVED
+[R.] dee                      1.2.7-unstable-2017-06-16, -375 KiB
+[R.] hm_.confignpmnpmrc       <none>
+[R.] libunity                 7.1.4-unstable-2021-02-01, -1.72 MiB
+
+PATHS: 2375 -> 2373 (+216, -218)
+SIZE: 16.9 GiB -> 16.9 GiB
+DIFF: +5.41 MiB
+
+Rebuilt-at: 2026-10-15T10:24:15+07:00
