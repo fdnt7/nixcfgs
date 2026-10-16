@@ -22,6 +22,7 @@
 
     ./autologin.nix
     ./filesystems.nix
+    ./fwupd.nix
     ./graphics.nix
     ./hibernation.nix
     ./power.nix
