@@ -16,7 +16,6 @@
     ../common/optional/sops.nix
     ../common/optional/tailscale.nix
     ../common/optional/tpm.nix
-    ../common/optional/virtual-keyboard.nix
     ../common/optional/waydroid.nix
 
     ./disk.nix
