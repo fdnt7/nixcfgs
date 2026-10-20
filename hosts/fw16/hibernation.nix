@@ -12,7 +12,8 @@
   # in arch/x86/power/hibernate.c needs the whole map to be identical.
   # https://community.frame.work/t/fw16-hibernation-fails-to-resume-firmware-presenting-different-memory-map-every-boot/83015
   #
-  # Not fixed in Linux 7.2.9 or 7.3-rc6, nor by nixos-hardware. To check a
+  # Not fixed in Linux 7.2.10 (retried 2026-10-20) or 7.3-rc6, nor by
+  # nixos-hardware. To check a
   # newer kernel or BIOS: boot a few times and compare the TPMEventLog=
   # address in `journalctl -k | grep 'efi: ACPI='`; if it stays put, or the
   # kernel no longer checksums non-RAM regions, drop this note. Known
