@@ -3,12 +3,18 @@ let
   # Connects every trusted device that answers. Headphones and the like
   # only look for the machine when they are switched on, so one that was
   # already on when the machine came up stays unconnected until asked.
+  #
+  # Just after waking, bluetoothctl also prints the adapter's changes
+  # ("[CHG] Controller ..."), so only the Device lines are read. A connect
+  # to anything else never returns on its own, which once held up a
+  # shutdown, hence the timeout and the closed input.
   reconnect = pkgs.writeShellApplication {
     name = "bluetooth-reconnect";
     runtimeInputs = [ config.hardware.bluetooth.package ];
     text = ''
-      bluetoothctl devices Trusted | while read -r _ address _; do
-        bluetoothctl connect "$address" || true
+      bluetoothctl devices Trusted | while read -r kind address _; do
+        [ "$kind" = Device ] || continue
+        bluetoothctl --timeout 15 connect "$address" </dev/null || true
       done
     '';
   };
