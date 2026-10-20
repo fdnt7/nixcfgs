@@ -15,7 +15,7 @@
 
       clockFormat = "24h";
       cornerRadius = 12;
-      controlCenterShowMicPercent = true;
+      controlCenterShowMicPercent = true; # ignore "center" # spellchecker:disable-line
       networkPreference = "wifi";
       osdPowerProfileEnabled = true;
 
@@ -75,7 +75,7 @@
             "workspaceSwitcher"
             "focusedWindow"
           ];
-          centerWidgets = [ "music" ];
+          centerWidgets = [ "music" ]; # ignore "center" # spellchecker:disable-line
           rightWidgets = [
             "systemTray"
             "clipboard"
@@ -84,7 +84,7 @@
             "memUsage"
             "notificationButton"
             "battery"
-            "controlCenterButton"
+            "controlCenterButton" # ignore "center" # spellchecker:disable-line
             "clock"
           ];
 
@@ -102,20 +102,15 @@
           widgetTransparency = 1;
           squareCorners = false;
           noBackground = false;
-          maximizeWidgetIcons = false;
-          maximizeWidgetText = false;
           removeWidgetPadding = false;
           widgetPadding = 8;
-          batteryColorMode = "theme";
           gothCornersEnabled = false;
           gothCornerRadiusOverride = false;
           gothCornerRadiusValue = 12;
           borderEnabled = false;
-          borderColor = "surfaceText";
           borderOpacity = 1;
           borderThickness = 1;
           widgetOutlineEnabled = false;
-          widgetOutlineColor = "primary";
           widgetOutlineOpacity = 1;
           widgetOutlineThickness = 1;
           fontScale = 1;
@@ -123,18 +118,33 @@
           openOnOverview = false;
           popupGapsAuto = true;
           popupGapsManual = 4;
-          maximizeDetection = true;
           useOverlayLayer = false;
           scrollEnabled = true;
-          scrollXBehavior = "column";
-          scrollYBehavior = "workspace";
           shadowIntensity = 0;
           shadowOpacity = 60;
-          shadowColorMode = "default";
-          shadowCustomColor = "#000000";
           clickThrough = false;
           hoverPopouts = false;
           hoverPopoutDelay = 150;
+
+          # spellchecker:off
+
+          # ignore "color"
+          batteryColorMode = "theme";
+          borderColor = "surfaceText";
+          shadowColorMode = "default";
+          shadowCustomColor = "#000000";
+          widgetOutlineColor = "primary";
+
+          # ignore "behavior"
+          scrollXBehavior = "column";
+          scrollYBehavior = "workspace";
+
+          # ignore "maximize"
+          maximizeDetection = true;
+          maximizeWidgetIcons = false;
+          maximizeWidgetText = false;
+
+          # spellchecker:on
         }
       ];
     };

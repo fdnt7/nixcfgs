@@ -5,7 +5,7 @@
   ...
 }:
 {
-  # The original osu!, under Wine, beside the new one: ./osu-lazer-bin.nix.
+  # The original osu!, under Wine, beside the new one: ./osu-lazer.nix.
   # Its prefix and songs go under the data directory rather than ~/.osu.
   home.packages = [
     (inputs.nix-gaming.packages.${pkgs.stdenv.hostPlatform.system}.osu-stable.override {

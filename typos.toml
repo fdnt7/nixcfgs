@@ -1,52 +1,50 @@
 [default]
-extend-ignore-identifiers-re = ["f38ba8", "NO_COLOR"]
 extend-ignore-re = [
   # Ignore lines that end with `# spellchecker:disable-line`
   "(?Rm)^.*(#|//)\\s*spellchecker:disable-line$",
-  # Ignore the line after `# spellchecker:ignore-next-line`:
-  "(#|//)\\s*spellchecker:ignore-next-line\n.*",
   # Ignore blocks between `# spellchecker:off` and `# spellchecker:on`
   "(?s)(#|//)\\s*spellchecker:off.*?\\n\\s*(#|//)\\s*spellchecker:on",
+  # Ignore age blocks between `-----BEGIN AGE ENCRYPTED FILE-----` and `-----END AGE ENCRYPTED FILE-----`
+  '-----BEGIN AGE ENCRYPTED FILE-----\n(?: *[A-Za-z0-9+/=]+\n)+ *-----END AGE ENCRYPTED FILE-----',
 
-  ' *-----BEGIN AGE ENCRYPTED FILE-----\n(?: *[A-Za-z0-9+\/=]+\n)+ *-----END AGE ENCRYPTED FILE-----',
-
-  '\bosu-lazer-bin\b',
-  '\brust-analyzer\b',
-  '\bnix-colors\b',
-
-  '\bgit diff --color\b',
+  # Ignore "lazer"
+  '\bosu-lazer(-bin)?\b',
+  # Ignore "thumbnailers"
+  '\bkdegraphics-thumbnailers\b',
 ]
 locale = "en-gb"
 
 [files]
-# Patches quote other projects' source, spelt their way.
-extend-exclude = ["LICENSE", "hosts/cuties-only", "*.patch"]
+extend-exclude = ["LICENSE"]
+
+[type.diff]
+extend-ignore-identifiers-re = [
+  # Ignore "color" in the identifiers qtengine's patch touches
+  "^KColorScheme$",
+  "^loadColorScheme$",
+]
+
+[type.jsonc]
+extend-glob = ["*.jsonc"]
+extend-ignore-re = [
+  # Ignore "color" in keys
+  '"color":',
+]
 
 [type.nix]
 extend-ignore-re = [
-  # Ignore "authorized"
-  ''' *users\.users\.([a-zA-Z_][a-zA-Z0-9_'-]*|\$\{.+\}) = \{\s+openssh\.authorizedKeys\b''',
-  '\busers\.users\.[a-z]+\.openssh\.authorizedKeys\b',
-  # Ignore "initialization"
-  ' *programs\.zed-editor\.userSettings\.lsp\.rust-analyzer\.initialization_options\b',
-  # Ignore "colors"
-  ' *programs\.eza\.colors\b',
-  # Ignore "favorite", "color"
-  ' *programs\.nixcord\.config\.plugins\.(favoriteEmojiFirst|roleColorEverywhere)\b',
-  # Ignore "center", "color", "maximize", "behavior" in the names of
-  # DankMaterialShell's settings
-  '\b(centerWidgets|controlCenterShowMicPercent|controlCenterButton|batteryColorMode|borderColor|widgetOutlineColor|shadowColorMode|shadowCustomColor|maximizeDetection|maximizeWidgetIcons|maximizeWidgetText|scrollXBehavior|scrollYBehavior)\b',
-  # Ignore "color" in an SVG attribute
-  '\bflood-color\b',
-  # Ignore "color" in qtengine's setting name
-  '\btheme\.colorScheme\b',
-  # Ignore "thumbnailers" in a package name
-  '\bkdegraphics-thumbnailers\b',
+  # Ignore "analyzer", "color", "colors", "initialization" in attribute names:
+  # attrpaths first on their line, assigned to
+  '(?m)^\s*(programs\.eza\.colors|programs\.zed-editor\.userSettings\.lsp\.rust-analyzer\.initialization_options|theme\.colorScheme)\s*=',
+  # Ignore "color" in eza's flag
+  '"--color-scale=',
 ]
 
 [type.kdl]
 extend-glob = ["*.kdl"]
 extend-ignore-re = [
-  # Ignore "center", "color", "maximize" in niri's options and actions
-  '\b(center-focused-column|center-column|center-visible-columns|maximize-column|maximize-window-to-edges|active-color|inactive-color|background-color|backdrop-color)\b',
+  # Ignore "center", "color" in niri's options: node names, first on their line
+  '(?m)^\s*(active-color|backdrop-color|background-color|center-focused-column|inactive-color)\s',
+  # Ignore "center", "maximize" in niri's actions: alone in a bind's block
+  '\{\s*(center-column|center-visible-columns|maximize-column|maximize-window-to-edges)\s*;',
 ]

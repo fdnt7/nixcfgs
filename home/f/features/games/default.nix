@@ -1,6 +1,6 @@
 {
   imports = [
-    ./osu-lazer-bin.nix
+    ./osu-lazer.nix
     ./osu-stable.nix
     ./prismlauncher.nix
     ./steam.nix

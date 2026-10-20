@@ -4,6 +4,7 @@ let
   # background, two slanted bands in its primary and secondary colours and
   # the shell's logo in a corner. In the shell's own units, 2048 by 1280
   # for the panel at its scale of 1.25, and rendered at the panel's size.
+  # spellchecker:off
   svg = pkgs.writeText "wallpaper.svg" ''
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 1280">
       <defs>
@@ -24,6 +25,7 @@ let
         href="${pkgs.dms-shell.src}/quickshell/assets/danklogonormal.svg" />
     </svg>
   '';
+  # spellchecker:on
 
   wallpaper = pkgs.runCommand "wallpaper.png" { nativeBuildInputs = [ pkgs.resvg ]; } ''
     resvg --width 2560 ${svg} $out
