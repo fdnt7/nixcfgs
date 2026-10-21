@@ -58,8 +58,10 @@
       inputs.home-manager.follows = "home-manager";
     };
 
-    git-hooks = {
-      url = "github:fdnt7/git-hooks";
+    # The dev shell, `nix fmt` and the formatting check, shared with my
+    # other projects; ./treefmt.nix adds to its formatters.
+    devshell = {
+      url = "github:fdnt7/devshell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -78,11 +80,6 @@
       inputs.nixpkgs.follows = "nixpkgs"; # should be safe
     };
 
-    treefmt-nix = {
-      url = "github:numtide/treefmt-nix";
-      inputs.nixpkgs.follows = "nixpkgs"; # should be safe
-    };
-
     # # xdg-ninja.url = "github:b3nj5m1n/xdg-ninja";
     # xdg-ninja.url = "github:fdnt7/xdg-ninja/feature/codex";
 
@@ -98,6 +95,8 @@
     {
       self,
       nixpkgs,
+      devshell,
+      rbld,
       ...
     }@inputs:
     let
@@ -113,26 +112,15 @@
       # pass to it, with each system as an argument
       # forAllSystems = nixpkgs.lib.genAttrs systems;
       forAllSystems = nixpkgs.lib.genAttrs nixpkgs.lib.systems.flakeExposed;
-
-      # Eval the treefmt modules from ./treefmt.nix
-      treefmtEval = forAllSystems (
-        system: inputs.treefmt-nix.lib.evalModule nixpkgs.legacyPackages.${system} ./treefmt.nix
-      );
     in
-    {
+    devshell.lib.mkOutputs { inherit self nixpkgs; } (pkgs: {
+      packages = [ rbld.packages.${pkgs.stdenv.hostPlatform.system}.default ];
+      treefmt = ./treefmt.nix;
+    })
+    // {
       # Your custom packages
       # Accessible through 'nix build', 'nix shell', etc
       packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
-      # Formatter for your nix files, available through 'nix fmt'
-      # Other options beside 'alejandra' include 'nixpkgs-fmt'
-      # formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
-      formatter = forAllSystems (system: treefmtEval.${system}.config.build.wrapper);
-
-      # for `nix flake check`
-      checks = forAllSystems (system: {
-        formatting = treefmtEval.${system}.config.build.check self;
-      });
-
       # Your custom packages and modifications, exported as overlays
       overlays = import ./overlays { inherit inputs; };
       # Reusable nixos modules you might want to export
@@ -170,19 +158,5 @@
       #   };
       # };
 
-      devShells = forAllSystems (system: {
-        default =
-          let
-            inherit (import nixpkgs { inherit system; }) mkShell prek;
-          in
-          mkShell {
-            packages = [
-              inputs.git-hooks.packages.${system}.default
-              inputs.rbld.packages.${system}.default
-              prek
-              self.formatter.${system}
-            ];
-          };
-      });
     };
 }

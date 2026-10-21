@@ -1,7 +1,6 @@
+# What this repository adds to the formatting devshell gives every project
+# (mdformat, nixfmt, shfmt for .envrc, taplo).
 {
-  # Used to find the project root
-  projectRootFile = "flake.nix";
-
   settings.excludes = [
     # No formatter reads ssh's allowed signers format
     "home/f/global/allowed-signers"
@@ -12,21 +11,11 @@
   ];
 
   programs = {
-    mdformat = {
-      enable = true;
-      settings.wrap = 80;
-    };
-    nixfmt.enable = true;
     oxfmt = {
       enable = true;
       includes = [ "*.jsonc" ];
     };
-    shfmt = {
-      enable = true;
-      includes = [ ".envrc" ];
-    };
     stylua.enable = true;
-    taplo.enable = true;
     yamlfmt.enable = true;
   };
 }
