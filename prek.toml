@@ -20,6 +20,6 @@ repo = "local"
 [[repos.hooks]]
 id = "check-scope"
 name = "one scope per commit"
-entry = "rbld . check scope"
+entry = "rbld check scope ."
 language = "system"
 pass_filenames = false
