@@ -1,6 +1,6 @@
 {
   # Settings for DankMaterialShell, which is enabled system-wide:
-  # ../../../../hosts/common/optional/dms.nix. The file is read-only to
+  # ../../../../nixos/optional/dms.nix. The file is read-only to
   # the shell, so a change made in its settings window lasts until the
   # shell restarts; make it here to keep it.
   #

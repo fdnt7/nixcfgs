@@ -1,5 +1,5 @@
 {
-  # The login shell, set in ../../../../hosts/common/users.
+  # The login shell, set in ../../../../nixos/users.
   programs.fish = {
     enable = true;
     shellInit = "set -g fish_greeting";

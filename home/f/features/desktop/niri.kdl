@@ -103,7 +103,7 @@ window-rule {
 
 binds {
     // Programs and session. The launcher, clipboard history and lock screen
-    // are the shell's: ../../../../hosts/common/optional/dms.nix.
+    // are the shell's: ../../../../nixos/optional/dms.nix.
     Mod+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "footclient"; }
     Mod+D hotkey-overlay-title="Run an Application" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
     Mod+Alt+V hotkey-overlay-title="Clipboard History" { spawn "dms" "ipc" "call" "clipboard" "toggle"; }

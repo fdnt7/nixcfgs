@@ -3,7 +3,7 @@ keys:
   - &f_fw16 age1n4zzx32smd586l062y5hg47cg7ec94wcy2rcgcp5khjahjyc0sgsls8f3f
   # fw12's SSH host key, through ssh-to-age: decrypts at boot, and edits
   # there with SOPS_AGE_KEY_CMD and ssh-to-age, as in
-  # hosts/common/optional/sops.nix.
+  # nixos/optional/sops.nix.
   - &fw12 age1hnck7dxpy724lcugmg7sdpnp3u8zhgju3vausgfuphyd4r35kersntwaca
 creation_rules:
   - path_regex: hosts/fw12/secrets\.yaml$

@@ -4,21 +4,21 @@
   imports = [
     inputs.nixos-hardware.nixosModules.framework-16-amd-ai-300-series-nvidia
 
-    ../common/global
-    ../common/users/f.nix
+    ../../nixos/global
+    ../../nixos/users/f.nix
 
-    ../common/optional/bluetooth.nix
-    ../common/optional/dms.nix
-    ../common/optional/fingerprint.nix
-    ../common/optional/gaming.nix
-    ../common/optional/greetd.nix
-    ../common/optional/immich.nix
-    ../common/optional/mullvad.nix
-    ../common/optional/networkmanager.nix
-    ../common/optional/niri.nix
-    ../common/optional/pipewire.nix
-    ../common/optional/secure-boot.nix
-    ../common/optional/tpm.nix
+    ../../nixos/optional/bluetooth.nix
+    ../../nixos/optional/dms.nix
+    ../../nixos/optional/fingerprint.nix
+    ../../nixos/optional/gaming.nix
+    ../../nixos/optional/greetd.nix
+    ../../nixos/optional/immich.nix
+    ../../nixos/optional/mullvad.nix
+    ../../nixos/optional/networkmanager.nix
+    ../../nixos/optional/niri.nix
+    ../../nixos/optional/pipewire.nix
+    ../../nixos/optional/secure-boot.nix
+    ../../nixos/optional/tpm.nix
 
     ./autologin.nix
     ./filesystems.nix

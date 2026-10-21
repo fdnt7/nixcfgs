@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   # The daemon and client are system-wide:
-  # ../../../../hosts/common/optional/mullvad.nix. This starts the client
+  # ../../../../nixos/optional/mullvad.nix. This starts the client
   # with the session, for its tray icon. Connecting on boot is the daemon's
   # own setting, `mullvad auto-connect set on`, kept with its state.
   #

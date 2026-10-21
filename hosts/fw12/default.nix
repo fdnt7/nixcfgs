@@ -4,19 +4,19 @@
   imports = [
     inputs.nixos-hardware.nixosModules.framework-12-13th-gen-intel
 
-    ../common/global
-    ../common/users/k.nix
+    ../../nixos/global
+    ../../nixos/users/k.nix
 
-    ../common/optional/bluetooth.nix
-    ../common/optional/mullvad.nix
-    ../common/optional/networkmanager.nix
-    ../common/optional/pipewire.nix
-    ../common/optional/plasma.nix
-    ../common/optional/secure-boot.nix
-    ../common/optional/sops.nix
-    ../common/optional/tailscale.nix
-    ../common/optional/tpm.nix
-    ../common/optional/waydroid.nix
+    ../../nixos/optional/bluetooth.nix
+    ../../nixos/optional/mullvad.nix
+    ../../nixos/optional/networkmanager.nix
+    ../../nixos/optional/pipewire.nix
+    ../../nixos/optional/plasma.nix
+    ../../nixos/optional/secure-boot.nix
+    ../../nixos/optional/sops.nix
+    ../../nixos/optional/tailscale.nix
+    ../../nixos/optional/tpm.nix
+    ../../nixos/optional/waydroid.nix
 
     ./disk.nix
     ./hibernation.nix

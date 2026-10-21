@@ -1,7 +1,7 @@
 {
   # DankMaterialShell: bar, launcher, notifications, lock screen and idle
   # handling in one shell, started as a user service with the session. Its
-  # settings are per user: ../../../home/f/features/desktop/dms.nix.
+  # settings are per user: ../../home/f/features/desktop/dms.nix.
   #
   # The lock screen needs no PAM service here: on NixOS the shell derives a
   # password-only stack from `login` into its state directory, and reads the

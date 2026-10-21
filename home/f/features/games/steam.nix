@@ -1,6 +1,6 @@
 { config, ... }:
 {
-  # Steam itself is system-wide: ../../../../hosts/common/optional/gaming.nix.
+  # Steam itself is system-wide: ../../../../nixos/optional/gaming.nix.
   # Its runtime bundles PulseAudio 1.1, which keeps its cookie in
   # ~/.pulse-cookie. Point it at the one current clients already use. It
   # has to be this file: that version creates the default cookie before it

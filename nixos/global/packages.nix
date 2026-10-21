@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   # Tools every host wants for root as well as for users. Anything personal
-  # belongs in Home Manager, under ../../../home.
+  # belongs in Home Manager, under ../../home.
   programs.git.enable = true;
   programs.neovim = {
     enable = true;

@@ -1,4 +1,4 @@
 {
-  # Tray icon for the daemon in ../../../../hosts/common/optional/tailscale.nix.
+  # Tray icon for the daemon in ../../../../nixos/optional/tailscale.nix.
   services.tailscale-systray.enable = true;
 }

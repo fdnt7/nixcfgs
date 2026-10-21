@@ -6,18 +6,17 @@
 My NixOS configurations.
 
 This repository holds the NixOS configurations for my hosts in a single
-monorepo. Currently that is `fw16`; the earlier `cuties-only` and
-`lavender-pilled` hosts are retired and remain in the git history.
+monorepo. Currently those are `fw16` and `fw12`; the earlier `cuties-only` is
+retired and remains in the git history, and `fw12` was `lavender-pilled`.
 
 ## Structure
 
-- [`hosts/common/global`](./hosts/common/global) - configuration shared by every
-  host
-- [`hosts/common/optional`](./hosts/common/optional) - opt-in features, one per
-  file, imported by the hosts that want them
-- [`hosts/common/users`](./hosts/common/users) - user accounts
-- `hosts/<name>` - a host: its hardware, its list of imports, and whatever is
-  specific to it
+- [`nixos/global`](./nixos/global) - NixOS configuration shared by every host
+- [`nixos/optional`](./nixos/optional) - opt-in features, one per file, imported
+  by the hosts that want them
+- [`nixos/users`](./nixos/users) - user accounts
+- [`hosts/<name>`](./hosts) - a host, and nothing but hosts: its hardware, its
+  list of imports, and whatever is specific to it
 - [`home/<user>`](./home) - Home Manager configuration: `global` for every host,
   `features` to opt into, and one `<host>.nix` listing what that host gets
 - [`modules`](./modules) - reusable NixOS and Home Manager modules exported by

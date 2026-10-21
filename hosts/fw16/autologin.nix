@@ -5,7 +5,7 @@
   # everything after. Logging out returns to the greeter.
   services.greetd.settings.initial_session = {
     # Through systemd-cat for the same reason as in the greeter:
-    # ../common/optional/greetd.nix.
+    # ../../nixos/optional/greetd.nix.
     command = "${config.systemd.package}/bin/systemd-cat --identifier=session ${config.programs.niri.package}/bin/niri-session";
     user = "f";
   };

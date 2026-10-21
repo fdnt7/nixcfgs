@@ -8,7 +8,7 @@
 {
   imports = [ inputs.home-manager.nixosModules.home-manager ];
 
-  users.users.f = {
+  users.users.k = {
     isNormalUser = true;
     uid = 1000;
     shell = pkgs.fish;
@@ -17,13 +17,13 @@
       "networkmanager"
     ]
     ++ lib.optional config.security.tpm2.enable config.security.tpm2.tssGroup;
-    hashedPasswordFile = "${config.impermanence.persist}/secrets/f.passwd";
+    hashedPasswordFile = "${config.impermanence.persist}/secrets/k.passwd";
   };
 
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = { inherit inputs; };
-    users.f = import ../../../home/f/${config.networking.hostName}.nix;
+    users.k = import ../../home/k/${config.networking.hostName}.nix;
   };
 }
