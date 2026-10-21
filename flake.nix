@@ -58,6 +58,11 @@
       inputs.home-manager.follows = "home-manager";
     };
 
+    git-hooks = {
+      url = "github:fdnt7/git-hooks";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     rbld = {
       url = "github:fdnt7/rbld";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -168,14 +173,14 @@
       devShells = forAllSystems (system: {
         default =
           let
-            inherit (import nixpkgs { inherit system; }) mkShell prek typos;
+            inherit (import nixpkgs { inherit system; }) mkShell prek;
           in
           mkShell {
             packages = [
+              inputs.git-hooks.packages.${system}.default
               inputs.rbld.packages.${system}.default
               prek
               self.formatter.${system}
-              typos
             ];
           };
       });

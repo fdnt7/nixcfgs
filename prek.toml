@@ -1,3 +1,18 @@
+default_install_hook_types = ["pre-commit", "commit-msg"]
+default_stages = ["pre-commit"]
+
+[[repos]]
+repo = "https://github.com/fdnt7/git-hooks"
+rev = "333e94a8583e8875e63ba8e89dd7b8e70af7a3c9"
+hooks = [
+  { id = "ascii-only" },
+  { id = "cog-verify" },
+  { id = "commit-msg-length" },
+  { id = "no-co-authors" },
+  { id = "treefmt" },
+  { id = "typos" },
+]
+
 [[repos]]
 repo = "local"
 
@@ -5,18 +20,5 @@ repo = "local"
 id = "check-boundaries"
 name = "check host boundaries"
 entry = "rbld . check boundaries"
-language = "system"
-pass_filenames = false
-
-[[repos.hooks]]
-id = "treefmt"
-name = "treefmt"
-entry = "treefmt --no-cache --fail-on-change"
-language = "system"
-
-[[repos.hooks]]
-id = "typos"
-name = "typos"
-entry = "typos"
 language = "system"
 pass_filenames = false

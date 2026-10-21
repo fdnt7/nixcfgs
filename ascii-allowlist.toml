@@ -1,0 +1,17 @@
+# Non-ASCII characters allowed anywhere, pasted as they are, each with
+# where it is needed. One that does not show can be an escape, like
+# "\u00A0". Read by the ascii-only hook from fdnt7/git-hooks, which
+# exempts this file from the check.
+
+allowed = [
+  "‘", # left single quotation mark: the header nixos-generate-config writes
+  "’", # right single quotation mark: the same header
+
+  # Nerd Font icons for the module keys in the fastfetch preset
+  "", # NixOS logo: os
+  "󰌢", # laptop: host
+  "", # chip: kernel
+  "", # clock: uptime
+  "󰏖", # package: packages
+  "", # memory: memory
+]
