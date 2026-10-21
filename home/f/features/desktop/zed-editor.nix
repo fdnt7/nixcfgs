@@ -30,6 +30,11 @@
       vim_mode = true;
       relative_line_numbers = "enabled";
 
+      # The terminal otherwise starts $SHELL, which `nix develop` points at
+      # the build's bash, one without line editing, so Zed opened from a
+      # dev shell would get that instead of fish.
+      terminal.shell.program = "fish";
+
       lsp.tinymist.settings = {
         exportPdf = "onType";
         outputPath = "$dir/$name";
