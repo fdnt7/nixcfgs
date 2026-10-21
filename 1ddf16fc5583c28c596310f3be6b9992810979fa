@@ -1,0 +1,12 @@
+fw16: switch to 1ddf16f
+
+<<< /nix/store/nf12lbqacmqdyjqj9g4f8n061gm93dqj-nixos-system-fw16-26.11.20261015.fe13242
+>>> /nix/store/bg9mbqn4zwggw5f6106r284ci0m3pzfd-nixos-system-fw16-26.11.20261015.fe13242
+No version or selection state changes.
+Closure size: 2287 -> 2287 (23 paths added, 23 paths removed, delta +0, disk usage +128B).
+
+Host: fw16
+From: c208502
+Activation: switch
+Generation: /nix/store/bg9mbqn4zwggw5f6106r284ci0m3pzfd-nixos-system-fw16-26.11.20261015.fe13242
+Rebuilt-at: 2026-10-22T06:13:27+07:00
