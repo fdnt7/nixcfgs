@@ -23,11 +23,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1792592221,
-        "narHash": "sha256-nwjJXpN/kWcnwVEJ+Kx+HorJJMf2Gr1X7OURXO17C6c=",
+        "lastModified": 1792600811,
+        "narHash": "sha256-MBSKHgtNznuMFy4gwem4zPVhlSDRHT3HfHigKag2+/Q=",
         "owner": "fdnt7",
         "repo": "devshell",
-        "rev": "a7e2c2129d30d3114118f45144e3ef34590e0526",
+        "rev": "5b734239116467b93fe0a0440a431de790469efa",
         "type": "github"
       },
       "original": {
@@ -498,11 +498,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792600203,
-        "narHash": "sha256-D5ShO4uRqu3p0oI/Pv6sUDofH4EQn3mleouDZD0WOfk=",
+        "lastModified": 1792600775,
+        "narHash": "sha256-Ug1a7rbxkTSVjI97Qatc5VosusL1N7i/VdfBSu3pDG8=",
         "owner": "fdnt7",
         "repo": "rbld",
-        "rev": "9ec56868cba34e4c10494588e09ad21ae8ab5eaf",
+        "rev": "5c4363efdec75ea1d345f94582642de91cdfb9e1",
         "type": "github"
       },
       "original": {
