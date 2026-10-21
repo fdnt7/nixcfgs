@@ -1,0 +1,22 @@
+fw16: switch to 042ff9a
+
+<<< /nix/store/kf57yz9kfkd8hvf0mlhq3b2kzc0xjb0b-nixos-system-fw16-26.11.20261015.fe13242
+>>> /nix/store/xzn1wqggqndkg6372hsr7gl9ppla7bjy-nixos-system-fw16-26.11.20261015.fe13242
+Added packages:
+[A.]  #01  dconf-cleanup                 <none>
+[A.]  #02  dconf-keys.json               <none>
+[A.]  #03  hm-dconf.ini                  <none>
+[A.]  #04  hm_gtk3.0settings.ini         <none>
+[A.]  #05  hm_gtk4.0settings.ini         <none>
+[A.]  #06  hm_homef.configgtk2.0gtkrc    <none>
+[A.]  #07  index.theme                   <none>
+[A.]  #08  index.theme-fish-completions  <none>
+[A.]  #09  keep                          <none>
+[A.]  #10  posy-cursors                  1.6, 1.6-fish-completions
+Closure size: 2276 -> 2287 (28 paths added, 17 paths removed, delta +11, disk usage +62.8MiB).
+
+Host: fw16
+From: 8f4ee81
+Activation: switch
+Generation: /nix/store/xzn1wqggqndkg6372hsr7gl9ppla7bjy-nixos-system-fw16-26.11.20261015.fe13242
+Rebuilt-at: 2026-10-22T06:04:15+07:00
