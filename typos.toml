@@ -7,22 +7,26 @@ extend-ignore-re = [
   # Ignore age blocks between `-----BEGIN AGE ENCRYPTED FILE-----` and `-----END AGE ENCRYPTED FILE-----`
   '-----BEGIN AGE ENCRYPTED FILE-----\n(?: *[A-Za-z0-9+/=]+\n)+ *-----END AGE ENCRYPTED FILE-----',
 
+  # Ignore short and full commit hashes, like "ba2846c"
+  '\b[0-9a-f]{7,40}\b',
+  # Ignore nvd's package lines, like "[U.] sord 0.16.20", in commit messages
+  '(?m)^\[[A-Z][.+*-]\] .*$',
   # Ignore "lazer"
-  '\bosu-lazer(-bin)?\b',
-  # Ignore "thumbnailers"
-  '\bkdegraphics-thumbnailers\b',
+  '\bosu[-! ]lazer(-bin)?\b',
 ]
 locale = "en-gb"
+
+[default.extend-words]
+# A real word, which typos does not know
+thumbnailers = "thumbnailers"
 
 [files]
 extend-exclude = ["LICENSE"]
 
-[type.diff]
-extend-ignore-identifiers-re = [
-  # Ignore "color" in the identifiers qtengine's patch touches
-  "^KColorScheme$",
-  "^loadColorScheme$",
-]
+[type.diff.extend-identifiers]
+# Ignore "color" in the identifiers qtengine's patch touches
+KColorScheme = "KColorScheme"
+loadColorScheme = "loadColorScheme"
 
 [type.jsonc]
 extend-glob = ["*.jsonc"]
