@@ -1,6 +1,6 @@
 # Non-ASCII characters allowed anywhere, pasted as they are, each with
 # where it is needed. One that does not show can be an escape, like
-# "\u00A0". Read by the ascii-only hook from fdnt7/git-hooks, which
+# "\u00A0". Read by the ascii-only hook from fdnt7/devshell, which
 # exempts this file from the check.
 
 allowed = [
