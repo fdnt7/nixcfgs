@@ -3,14 +3,15 @@ let
   cursor = config.home.pointerCursor;
 in
 {
-  # Posy's base size is 32, where most themes' is 24. niri loads a cursor at
-  # the scale rounded up, 2 on fw16's 1.25, and draws it down from there; the
-  # variants drawn for 125% and 175% are never asked for.
+  # niri asks for the size times the scale rounded up, 2 on fw16's 1.25, and
+  # takes the nearest image Posy has: 32, 48, 64 and so on. 24 gets the one
+  # drawn at 150%, shown at 125%; Posy's own base of 32 gets the 200% one,
+  # a size larger. The variants drawn for 125% and 175% are never asked for.
   home.pointerCursor = {
     enable = true;
     package = pkgs.posy-cursors;
     name = "Posy_Cursor_Black";
-    size = 32;
+    size = 24;
     # For GTK 3 programs, which read it from their settings and from dconf
     # rather than asking the compositor for a cursor by name.
     gtk.enable = true;
