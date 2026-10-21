@@ -9,7 +9,7 @@ in
   home.pointerCursor = {
     enable = true;
     package = pkgs.posy-cursors;
-    name = "Posy_Cursor";
+    name = "Posy_Cursor_Black";
     size = 32;
     # For GTK 3 programs, which read it from their settings and from dconf
     # rather than asking the compositor for a cursor by name.
