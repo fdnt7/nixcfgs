@@ -3,7 +3,7 @@ default_stages = ["pre-commit"]
 
 [[repos]]
 repo = "https://github.com/fdnt7/git-hooks"
-rev = "8b6082d0618258981b9a6452418894643b45d3fb"
+rev = "f64e32c713e6e007f3e6c3d9736f375027fef343"
 hooks = [
   { id = "ascii-only" },
   { id = "cog-verify" },
