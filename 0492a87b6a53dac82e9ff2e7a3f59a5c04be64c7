@@ -1,0 +1,14 @@
+fw16: switch to 0492a87
+
+<<< /nix/store/nf12lbqacmqdyjqj9g4f8n061gm93dqj-nixos-system-fw16-26.11.20261015.fe13242
+>>> /nix/store/kx05fpv9dk4djnb604wgzg0r5y53afr7-nixos-system-fw16-26.11.20261015.fe13242
+
+PATHS: 2287 -> 2287 (+21, -21)
+SIZE: 18.7 GiB -> 18.7 GiB
+DIFF: 0 bytes
+
+Host: fw16
+From: 2e087ed
+Activation: switch
+Generation: /nix/store/kx05fpv9dk4djnb604wgzg0r5y53afr7-nixos-system-fw16-26.11.20261015.fe13242
+Rebuilt-at: 2026-10-22T20:14:18+07:00
