@@ -6,9 +6,10 @@ in
   # niri asks for the size times the scale rounded up, 2 on fw16's 1.25,
   # takes the nearest image the theme has, 32, 48, 64 and so on, and shows
   # it as it is, so the size moves in steps. 24 gets the 48 pixel images,
-  # drawn at 150%; Posy's own base size of 32 gets the 200% ones, which
-  # look large. The set drawn for 125% and 175% has a step between, at
-  # 175%, but its hand and move cursors are the white set's.
+  # drawn at 150%, which look a touch small; Posy's own base size of 32
+  # gets the 64 pixel ones, drawn at 200%. The set drawn for 125% and 175%
+  # has a step between, at 175%, but its hand and move cursors are the
+  # white set's.
   #
   # TODO(upstream): report to
   # https://github.com/simtrami/posy-improved-cursor-linux/issues, then
@@ -29,7 +30,7 @@ in
     enable = true;
     package = pkgs.posy-cursors;
     name = "Posy_Cursor_Black";
-    size = 24;
+    size = 32;
     # For GTK 3 programs, which read it from their settings and from dconf
     # rather than asking the compositor for a cursor by name.
     gtk.enable = true;
