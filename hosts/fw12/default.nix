@@ -16,7 +16,6 @@
     ../../nixos/optional/sops.nix
     ../../nixos/optional/tailscale.nix
     ../../nixos/optional/tpm.nix
-    ../../nixos/optional/waydroid.nix
 
     ./disk.nix
     ./hibernation.nix
