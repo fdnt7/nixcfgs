@@ -31,6 +31,11 @@
       PartOf = [ "graphical-session.target" ];
       After = [ "graphical-session.target" ];
       ConditionEnvironment = "WAYLAND_DISPLAY";
+      # Every window is the instance's, so restarting it on a switch would
+      # close them all, the one running the switch with them. A new kitty
+      # takes over at the next login; settings reach the running one
+      # anyway, as the module signals it to reload.
+      X-SwitchMethod = "keep-old";
     };
     Service = {
       ExecStart = "${config.programs.kitty.package}/bin/kitty --single-instance --start-as=hidden";
