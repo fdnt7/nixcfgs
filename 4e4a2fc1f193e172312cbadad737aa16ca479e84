@@ -1,0 +1,17 @@
+fw16: switch to 4e4a2fc
+
+<<< /nix/store/kx05fpv9dk4djnb604wgzg0r5y53afr7-nixos-system-fw16-26.11.20261015.fe13242
+>>> /nix/store/9v5ghd8kllhm8gi113073firih0lfdsb-nixos-system-fw16-26.11.20261015.fe13242
+
+ADDED
+[A.] config.toml <none>
+
+PATHS: 2287 -> 2288 (+17, -16)
+SIZE: 18.7 GiB -> 18.7 GiB
+DIFF: -432 bytes
+
+Host: fw16
+From: 0492a87
+Activation: switch
+Generation: /nix/store/9v5ghd8kllhm8gi113073firih0lfdsb-nixos-system-fw16-26.11.20261015.fe13242
+Rebuilt-at: 2026-10-25T16:11:09+07:00
