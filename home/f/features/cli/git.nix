@@ -8,5 +8,8 @@
       key = "~/.ssh/id_ecdsa.pub";
       signByDefault = true;
     };
+    # rbld writes a note on every commit it deploys, one notes ref per host,
+    # and `git log` shows them all under the commit they are on.
+    settings.notes.displayRef = "refs/notes/rebuild/*";
   };
 }
