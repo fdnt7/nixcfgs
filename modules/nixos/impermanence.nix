@@ -53,8 +53,10 @@ in
   };
 
   config = mkIf cfg.enable {
+    # The rollback is a systemd unit, which the initrd always runs systemd
+    # for: the scripted initrd is gone from nixpkgs, and the option that
+    # chose between them with it.
     boot.initrd.systemd = {
-      enable = true;
       initrdBin = [
         pkgs.btrfs-progs
         pkgs.findutils
