@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  # DankMaterialShell's backdrop in its purple theme, redrawn: the theme's
+  # Dux Shell's backdrop in its purple theme, redrawn: the theme's
   # background, two slanted bands in its primary and secondary colours and
   # the shell's logo in a corner. In the shell's own units, 2048 by 1280
   # for the panel at its scale of 1.25, and rendered at the panel's size.
@@ -22,7 +22,7 @@ let
         transform="rotate(35 2150.4 512)" />
       <image x="48" y="1006.95" width="200" height="225.05" opacity="0.25"
         filter="url(#tint)"
-        href="${pkgs.dms-shell.src}/quickshell/assets/danklogonormal.svg" />
+        href="${pkgs.dux-shell.src}/quickshell/assets/danklogonormal.svg" />
     </svg>
   '';
   # spellchecker:on
