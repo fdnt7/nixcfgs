@@ -1,6 +1,7 @@
 {
   imports = [
     ./bat.nix
+    ./cargo.nix
     ./btop.nix
     ./claude-code.nix
     ./delta.nix
