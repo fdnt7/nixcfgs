@@ -1,0 +1,17 @@
+fw16: switch to edd81a4
+
+<<< /nix/store/q077iqcyjm15jrpqfziwy2zisxjgzpfs-nixos-system-fw16-26.11.20261023.3ec6363
+>>> /nix/store/igryxkaamli563dklvwlclwhmhfzh6c1-nixos-system-fw16-26.11.20261023.3ec6363
+
+ADDED
+[A.] hm_.sshconfig <none>
+
+PATHS: 2262 -> 2263 (+8, -7)
+SIZE: 18.8 GiB -> 18.8 GiB
+DIFF: +800 bytes
+
+Host: fw16
+From: 2f4b2e6
+Activation: switch
+Generation: /nix/store/igryxkaamli563dklvwlclwhmhfzh6c1-nixos-system-fw16-26.11.20261023.3ec6363
+Rebuilt-at: 2026-10-26T00:06:31+07:00
