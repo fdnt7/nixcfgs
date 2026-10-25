@@ -1,0 +1,20 @@
+fw16: switch to 15a91e0
+
+<<< /nix/store/igryxkaamli563dklvwlclwhmhfzh6c1-nixos-system-fw16-26.11.20261023.3ec6363
+>>> /nix/store/0qrpwqaddvw1gqb93nr9hw7iw54rwkll-nixos-system-fw16-26.11.20261023.3ec6363
+
+CHANGED
+[C.] home-manager-path +1.52 MiB
+
+ADDED
+[A.] noto-fonts        2026.10.01-fish-completions, 2026.10.01, +49.1 MiB
+
+PATHS: 2263 -> 2265 (+14, -12)
+SIZE: 18.8 GiB -> 18.9 GiB
+DIFF: +50.6 MiB
+
+Host: fw16
+From: edd81a4
+Activation: switch
+Generation: /nix/store/0qrpwqaddvw1gqb93nr9hw7iw54rwkll-nixos-system-fw16-26.11.20261023.3ec6363
+Rebuilt-at: 2026-10-26T01:23:04+07:00
