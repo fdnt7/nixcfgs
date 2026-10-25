@@ -1,0 +1,30 @@
+fw16: switch to 46c328f
+
+<<< /nix/store/97my5a7y49dr0zxxlmh5axb1rzsry9yz-nixos-system-fw16-26.11.20261023.3ec6363
+>>> /nix/store/c4mnnfnf195aflp0bra1rp2gky1ww3jg-nixos-system-fw16-26.11.20261023.3ec6363
+
+CHANGED
+[U*] ncurses                                                        <unchanged> -> 6.6-dev, <unchanged>, +383 KiB
+
+ADDED
+[A.] hm_kittykitty.conf                                             <none>
+[A.] kitty                                                          0.49.2-fish-completions, 0.49.2-terminfo, 0.49.2, +77.5 MiB
+[A.] libstartup-notification                                        0.12, +78.8 KiB
+[A.] shader-slang                                                   2026.19, +67.5 MiB
+
+REMOVED
+[R.] ghostty                                                        1.3.1-fish-completions, 1.3.1-man, 1.3.1-shell_integration, 1.3.1-terminfo, 1.3.1-vim, 1.3.1, -27.4 MiB
+[R.] ghostty-config                                                 <none>
+[R.] gtk4-layer-shell                                               1.3.0, -138 KiB
+[R.] hm_batconfig                                                   <none>
+[R.] hm_systemduserappcom.mitchellh.ghostty.service.doverrides.conf <none>
+
+PATHS: 2278 -> 2275 (+20, -23)
+SIZE: 18.9 GiB -> 19.0 GiB
+DIFF: +118 MiB
+
+Host: fw16
+From: 4ca657a
+Activation: switch
+Generation: /nix/store/c4mnnfnf195aflp0bra1rp2gky1ww3jg-nixos-system-fw16-26.11.20261023.3ec6363
+Rebuilt-at: 2026-10-26T06:30:16+07:00
