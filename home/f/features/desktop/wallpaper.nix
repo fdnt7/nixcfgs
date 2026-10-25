@@ -1,35 +1,83 @@
 { pkgs, ... }:
 let
-  # Dux Shell's backdrop in its purple theme, redrawn: the theme's
-  # background, two slanted bands in its primary and secondary colours and
-  # the shell's logo in a corner. In the shell's own units, 2048 by 1280
-  # for the panel at its scale of 1.25, and rendered at the panel's size.
-  # spellchecker:off
-  svg = pkgs.writeText "wallpaper.svg" ''
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 1280">
-      <defs>
-        <filter id="tint">
-          <feFlood flood-color="#d0bcff" />
-          <feComposite in2="SourceAlpha" operator="in" />
-        </filter>
-      </defs>
-      <rect width="2048" height="1280" fill="#141218" />
-      <rect x="1433.6" y="-384" width="1638.4" height="1920"
-        fill="#d0bcff" fill-opacity="0.16"
-        transform="rotate(35 2252.8 576)" />
-      <rect x="1740.8" y="-256" width="819.2" height="1536"
-        fill="#ccc2dc" fill-opacity="0.08"
-        transform="rotate(35 2150.4 512)" />
-      <image x="48" y="1006.95" width="200" height="225.05" opacity="0.25"
-        filter="url(#tint)"
-        href="${pkgs.dux-shell.src}/quickshell/assets/danklogonormal.svg" />
-    </svg>
-  '';
-  # spellchecker:on
+  # Bloom, the second of Dux Shell's material wallpapers, drawn by the shell's
+  # own code from the package's source, so it follows the shell as it
+  # changes: its canvas, coloured by its theme as it starts with no settings
+  # of its own, purple and dark, which is the theme in use here. It is drawn
+  # at the panel's size, 2048 by 1280 at its scale of 1.25, where the
+  # pattern's tiles come out the size the shell would draw them.
+  render = pkgs.writeText "shell.qml" ''
+    import QtQuick
+    import Quickshell
+    import qs.Widgets
+    import "DCommon/Common/MaterialWallpaper.js" as MaterialWallpaper
 
-  wallpaper = pkgs.runCommand "wallpaper.png" { nativeBuildInputs = [ pkgs.resvg ]; } ''
-    resvg --width 2560 ${svg} $out
+    ShellRoot {
+        FloatingWindow {
+            implicitWidth: 2048
+            implicitHeight: 1280
+            visible: true
+
+            MaterialWallpaper {
+                id: wallpaper
+                anchors.fill: parent
+                composition: MaterialWallpaper.preset("bloom")
+                // ready once the pattern has loaded and the canvas is painted
+                onReadyChanged: if (ready) Qt.callLater(save)
+
+                function save() {
+                    wallpaper.grabToImage(result => {
+                        result.saveToFile(Quickshell.env("out"));
+                        Qt.quit();
+                    });
+                }
+            }
+        }
+    }
   '';
+
+  # The theme takes in most of the shell, which wants a Wayland compositor
+  # with layer shell to load: sway, headless and drawing in software, is
+  # one that runs in the build. Unwrapped, as the wrapper starts a D-Bus
+  # session, which there is no bus daemon in the build for.
+  wallpaper =
+    pkgs.runCommand "wallpaper.png"
+      {
+        nativeBuildInputs = [
+          pkgs.quickshell
+          pkgs.sway-unwrapped
+        ];
+      }
+      ''
+        # The shell's QML as it unpacks it at run time: its own tree, whose
+        # link to the shared widgets beside it holds in a copy of the whole
+        # source; the shell's entry point is swapped for the one above.
+        cp -r ${pkgs.dux-shell.src} source
+        chmod -R u+w source
+        cp ${render} source/quickshell/shell.qml
+
+        mkdir -m 700 run
+        export HOME=$PWD XDG_RUNTIME_DIR=$PWD/run
+        export WLR_BACKENDS=headless WLR_RENDERER=pixman WLR_LIBINPUT_NO_DEVICES=1
+        # an output the panel's size, which the window fills at its scale,
+        # tiled and bare
+        cat > sway.conf <<'EOF'
+        output * resolution 2560x1600
+        default_border none
+        for_window [title=".*"] floating disable
+        EOF
+        sway --config sway.conf &
+        for _ in $(seq 100); do
+          [ -S run/wayland-1 ] && break
+          sleep 0.1
+        done
+
+        WAYLAND_DISPLAY=wayland-1 QT_QPA_PLATFORM=wayland QT_QUICK_BACKEND=software \
+          QT_SCALE_FACTOR=1.25 \
+          timeout 60 quickshell --path source/quickshell
+        kill %1
+        test -s $out
+      '';
 in
 {
   # The wallpaper is drawn by wpaperd rather than the shell, for two
