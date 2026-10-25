@@ -1,3 +1,4 @@
+{ config, ... }:
 {
   # On trial beside ./foot.nix, from 2026-10-26: one instance runs in the
   # background, so a window should open as fast as footclient's, and the
@@ -12,8 +13,12 @@
       # The family comes from ./fonts.nix, at foot's size.
       font-family = "monospace";
       font-size = 9;
-      # Written by the shell, which tells Ghostty to reload on a change.
-      theme = "dankcolors";
+      # The colours the shell writes, and tells Ghostty to reload when they
+      # change. Read as a file of settings rather than as a theme, behind a
+      # `?`, as the shell writes it only once it next makes its colours, and
+      # until then the module's check of the config would fail on a theme
+      # that isn't there.
+      config-file = "?${config.xdg.configHome}/ghostty/themes/dankcolors";
     };
   };
 }
