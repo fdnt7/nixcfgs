@@ -17,7 +17,6 @@
     ./swayimg.nix
     ./zathura.nix
     ./touchpad.nix
-    ./wallpaper.nix
     ./zed-editor.nix
     ./zen-browser.nix
   ];

@@ -24,9 +24,6 @@
       networkPreference = "wifi";
       osdPowerProfileEnabled = true;
 
-      # No wallpaper from the shell, on any screen: ./wallpaper.nix.
-      screenPreferences.wallpaper = [ ];
-
       # The shell writes a niri rule floating its own windows, once per
       # compositor, and notes here that it has; noted already, it does not
       # try again at every start. ./niri.kdl does not include the files the
