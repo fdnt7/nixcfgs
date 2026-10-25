@@ -1,0 +1,20 @@
+fw16: switch to e02e2e7
+
+<<< /nix/store/kf1zj20dg512j0gl07ykaqv3hxwfr07k-nixos-system-fw16-26.11.20261023.3ec6363
+>>> /nix/store/akajcq03ps4ziinkbf22vhvhh2cisirc-nixos-system-fw16-26.11.20261023.3ec6363
+
+ADDED
+[A.] hm_dmssettings.json               <none>
+
+REMOVED
+[R.] hm_DankMaterialShellsettings.json <none>
+
+PATHS: 2267 -> 2267 (+9, -9)
+SIZE: 18.8 GiB -> 18.8 GiB
+DIFF: +8 bytes
+
+Host: fw16
+From: f278a6e
+Activation: switch
+Generation: /nix/store/akajcq03ps4ziinkbf22vhvhh2cisirc-nixos-system-fw16-26.11.20261023.3ec6363
+Rebuilt-at: 2026-10-25T18:40:47+07:00
