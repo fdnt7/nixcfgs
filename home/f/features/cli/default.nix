@@ -15,6 +15,7 @@
     ./nix-index.nix
     ./nix-your-shell.nix
     ./npm.nix
+    ./rbld.nix
     ./ripgrep.nix
     ./ssh-tpm-agent.nix
     ./starship.nix
