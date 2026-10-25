@@ -1,0 +1,27 @@
+fw16: boot to bf9e293
+
+<<< /nix/store/c4mnnfnf195aflp0bra1rp2gky1ww3jg-nixos-system-fw16-26.11.20261023.3ec6363
+>>> /nix/store/i9q4457vhrbx78b11f603agff2p4ac8a-nixos-system-fw16-26.11.20261023.3ec6363
+
+CHANGED
+[C.] home-manager-path -11.0 KiB
+
+ADDED
+[A.] kitty.service     <none>
+
+REMOVED
+[R.] fcft              3.3.3, -170 KiB
+[R.] foot              1.28.0-fish-completions, 1.28.0-terminfo, 1.28.0, -855 KiB
+[R.] foot.ini          <none>
+[R.] foot.service      <none>
+
+PATHS: 2275 -> 2270 (+13, -18)
+SIZE: 19.0 GiB -> 19.0 GiB
+DIFF: -1.02 MiB
+
+Host: fw16
+From: 46c328f
+Activation: boot
+Activation-reason: a switch would stop foot.service, which rbld runs under
+Generation: /nix/store/i9q4457vhrbx78b11f603agff2p4ac8a-nixos-system-fw16-26.11.20261023.3ec6363
+Rebuilt-at: 2026-10-26T06:51:03+07:00
