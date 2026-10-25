@@ -1,0 +1,14 @@
+fw16: switch to 4ca657a
+
+<<< /nix/store/5qg27jszbsb0zwy45yz2iingzfk2bv40-nixos-system-fw16-26.11.20261023.3ec6363
+>>> /nix/store/97my5a7y49dr0zxxlmh5axb1rzsry9yz-nixos-system-fw16-26.11.20261023.3ec6363
+
+PATHS: 2278 -> 2278 (+9, -9)
+SIZE: 18.9 GiB -> 18.9 GiB
+DIFF: +32 bytes
+
+Host: fw16
+From: 4d67441
+Activation: switch
+Generation: /nix/store/97my5a7y49dr0zxxlmh5axb1rzsry9yz-nixos-system-fw16-26.11.20261023.3ec6363
+Rebuilt-at: 2026-10-26T06:13:53+07:00
