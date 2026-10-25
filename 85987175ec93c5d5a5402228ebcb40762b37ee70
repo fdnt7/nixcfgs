@@ -1,0 +1,18 @@
+fw16: switch to 8598717
+
+<<< /nix/store/0qrpwqaddvw1gqb93nr9hw7iw54rwkll-nixos-system-fw16-26.11.20261023.3ec6363
+>>> /nix/store/v27qy1wm6pjxbizcplnl9gnhrxx5ks1v-nixos-system-fw16-26.11.20261023.3ec6363
+
+ADDED
+[A.] dix  2.2.0, +2.10 MiB
+[A.] rbld 0.1.0-fish-completions, 0.1.0, +3.51 MiB
+
+PATHS: 2265 -> 2268 (+14, -11)
+SIZE: 18.9 GiB -> 18.9 GiB
+DIFF: +5.60 MiB
+
+Host: fw16
+From: 15a91e0
+Activation: switch
+Generation: /nix/store/v27qy1wm6pjxbizcplnl9gnhrxx5ks1v-nixos-system-fw16-26.11.20261023.3ec6363
+Rebuilt-at: 2026-10-26T06:03:26+07:00
