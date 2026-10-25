@@ -34,6 +34,10 @@ in
     # For GTK 3 programs, which read it from their settings and from dconf
     # rather than asking the compositor for a cursor by name.
     gtk.enable = true;
+    # The theme is linked into the XDG data directory as well, and every
+    # program here finds it there or through XCURSOR_PATH, so the copy in
+    # ~/.icons, kept for programs that look nowhere else, is only clutter.
+    dotIcons.enable = false;
   };
   gtk.enable = true;
 
