@@ -1,0 +1,24 @@
+fw16: switch to 4d67441
+
+<<< /nix/store/v27qy1wm6pjxbizcplnl9gnhrxx5ks1v-nixos-system-fw16-26.11.20261023.3ec6363
+>>> /nix/store/5qg27jszbsb0zwy45yz2iingzfk2bv40-nixos-system-fw16-26.11.20261023.3ec6363
+
+CHANGED
+[C.] home-manager-path                                              +18.5 KiB
+
+ADDED
+[A.] ghostty                                                        1.3.1-fish-completions, 1.3.1-man, 1.3.1-shell_integration, 1.3.1-terminfo, 1.3.1-vim, 1.3.1, +27.4 MiB
+[A.] ghostty-config                                                 <none>
+[A.] gtk4-layer-shell                                               1.3.0, +138 KiB
+[A.] hm_batconfig                                                   <none>
+[A.] hm_systemduserappcom.mitchellh.ghostty.service.doverrides.conf <none>
+
+PATHS: 2268 -> 2278 (+23, -13)
+SIZE: 18.9 GiB -> 18.9 GiB
+DIFF: +27.6 MiB
+
+Host: fw16
+From: 8598717
+Activation: switch
+Generation: /nix/store/5qg27jszbsb0zwy45yz2iingzfk2bv40-nixos-system-fw16-26.11.20261023.3ec6363
+Rebuilt-at: 2026-10-26T06:11:11+07:00
