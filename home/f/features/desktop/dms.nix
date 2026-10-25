@@ -1,26 +1,37 @@
 {
-  # Settings for DankMaterialShell, which is enabled system-wide:
+  # Settings for Dux Shell (formerly DankMaterialShell, and still `dms` on
+  # the command line), which is enabled system-wide:
   # ../../../../nixos/optional/dms.nix. The file is read-only to
   # the shell, so a change made in its settings window lasts until the
   # shell restarts; make it here to keep it.
   #
-  # Not here, because the shell keeps them with its state instead: the
-  # weather location, in ~/.local/state/DankMaterialShell.
-  xdg.configFile."DankMaterialShell/settings.json" = {
+  # Not here, because the shell keeps them with its state instead, in
+  # ~/.local/state/dms: the weather location, and where each lock screen
+  # widget sits, which is set by dragging it in the lock screen's editor.
+  xdg.configFile."dms/settings.json" = {
     # The shell writes its own copy when it first starts.
     force = true;
     text = builtins.toJSON {
-      # The format version: a lower one would be migrated, and written back.
-      configVersion = 18;
+      # The format version. A lower one is migrated at every start and the
+      # result never saved, the file being read-only, so this stays at the
+      # shell's own: 42 for 2.0.
+      configVersion = 42;
 
       clockFormat = "24h";
-      cornerRadius = 12;
-      controlCenterShowMicPercent = true; # ignore "center" # spellchecker:disable-line
+      # How rounded corners are, replacing a radius in pixels; 38 is what
+      # the 12 pixels this used to say come to.
+      radiusStrength = 38;
       networkPreference = "wifi";
       osdPowerProfileEnabled = true;
 
       # No wallpaper from the shell, on any screen: ./wallpaper.nix.
       screenPreferences.wallpaper = [ ];
+
+      # The shell writes a niri rule floating its own windows, once per
+      # compositor, and notes here that it has; noted already, it does not
+      # try again at every start. ./niri.kdl does not include the files the
+      # shell writes for niri, so the rule itself does nothing.
+      dmsWindowsFloatingSeeded = [ "niri" ];
 
       # The power profile follows the charger: performance (2) when plugged
       # in, balanced (1) on battery. As strings, as the shell stores them.
@@ -84,7 +95,11 @@
             "memUsage"
             "notificationButton"
             "battery"
-            "controlCenterButton" # ignore "center" # spellchecker:disable-line
+            {
+              id = "controlCenterButton"; # ignore "center" # spellchecker:disable-line
+              enabled = true;
+              showMicPercent = true;
+            }
             "clock"
           ];
 
@@ -100,9 +115,10 @@
           attachToScreenEdge = false;
           transparency = 1;
           widgetTransparency = 1;
+          followInterfaceStyle = true;
+          widgetFollowInterfaceStyle = true;
           squareCorners = false;
           noBackground = false;
-          removeWidgetPadding = false;
           widgetPadding = 8;
           gothCornersEnabled = false;
           gothCornerRadiusOverride = false;
@@ -136,7 +152,7 @@
           widgetOutlineColor = "primary";
 
           # ignore "behavior"
-          scrollXBehavior = "column";
+          scrollXBehavior = "focusWindow";
           scrollYBehavior = "workspace";
 
           # ignore "maximize"
