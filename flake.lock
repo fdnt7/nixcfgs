@@ -498,11 +498,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1792952267,
-        "narHash": "sha256-hikJLauhVDa5VmsxnRgSFN2nC5a8yhjuBrTJoGSByPg=",
+        "lastModified": 1792954819,
+        "narHash": "sha256-y87xlcOQkPgLjAEf4ukKQNCpeVnkRWCApeAwA/LYUzw=",
         "owner": "fdnt7",
         "repo": "rbld",
-        "rev": "7ab701901bce5c3530085e50e53f4905cfb1e096",
+        "rev": "5b324fc1fbf23fb0f811ed41ac87fae53b111171",
         "type": "github"
       },
       "original": {
