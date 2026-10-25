@@ -1,0 +1,14 @@
+fw16: switch to eb00929
+
+<<< /nix/store/9v5ghd8kllhm8gi113073firih0lfdsb-nixos-system-fw16-26.11.20261015.fe13242
+>>> /nix/store/lzp6rnadllhxvf6ip2gyx0n33v3pyjpr-nixos-system-fw16-26.11.20261015.fe13242
+
+PATHS: 2288 -> 2288 (+8, -8)
+SIZE: 18.7 GiB -> 18.7 GiB
+DIFF: +40 bytes
+
+Host: fw16
+From: 4e4a2fc
+Activation: switch
+Generation: /nix/store/lzp6rnadllhxvf6ip2gyx0n33v3pyjpr-nixos-system-fw16-26.11.20261015.fe13242
+Rebuilt-at: 2026-10-25T16:36:44+07:00
