@@ -1,0 +1,20 @@
+fw16: switch to 2f4b2e6
+
+<<< /nix/store/4cnzlgxkm4m0krgryg3q0m42jjxjm9gr-nixos-system-fw16-26.11.20261023.3ec6363
+>>> /nix/store/q077iqcyjm15jrpqfziwy2zisxjgzpfs-nixos-system-fw16-26.11.20261023.3ec6363
+
+REMOVED
+[R.] wallpaper.png     <none>, -687 KiB
+[R.] wpaperd           1.3.0-fish-completions, 1.3.0, -11.1 MiB
+[R.] wpaperd-wallpaper <none>
+[R.] wpaperd.service   <none>
+
+PATHS: 2267 -> 2262 (+13, -18)
+SIZE: 18.8 GiB -> 18.8 GiB
+DIFF: -11.8 MiB
+
+Host: fw16
+Activation: switch
+Stopped: wpaperd.service
+Generation: /nix/store/q077iqcyjm15jrpqfziwy2zisxjgzpfs-nixos-system-fw16-26.11.20261023.3ec6363
+Rebuilt-at: 2026-10-25T23:44:25+07:00
