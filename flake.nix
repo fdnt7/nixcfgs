@@ -96,7 +96,6 @@
       self,
       nixpkgs,
       devshell,
-      rbld,
       ...
     }@inputs:
     let
@@ -114,7 +113,6 @@
       forAllSystems = nixpkgs.lib.genAttrs nixpkgs.lib.systems.flakeExposed;
     in
     devshell.lib.mkOutputs { inherit self nixpkgs; } (pkgs: {
-      packages = [ rbld.packages.${pkgs.stdenv.hostPlatform.system}.default ];
       treefmt = ./treefmt.nix;
     })
     // {
