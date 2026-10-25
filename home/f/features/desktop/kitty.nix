@@ -1,16 +1,14 @@
 {
-  # On trial beside ./foot.nix, from 2026-10-26, after Ghostty opened its
-  # windows a beat later than footclient: with --single-instance, kitty's
-  # launcher hands the command line to the running instance in C, before any
-  # Python starts, and the shell recolours it when its theme changes, which
-  # it does not do for foot.
-  #
-  # The first `kitty --single-instance` of a session becomes the instance,
-  # so only that first window waits on startup.
+  # The terminal, chosen on 2026-10-26 over foot and Ghostty: with
+  # --single-instance, kitty's launcher hands the command line to the
+  # running instance in C, before any Python starts, so a window opens as
+  # fast as footclient's; and the shell recolours it when its theme
+  # changes, which it does not do for foot. Ghostty opened its windows a
+  # beat later than either.
   programs.kitty = {
     enable = true;
     settings = {
-      # The family comes from ./fonts.nix, at foot's size.
+      # The family comes from ./fonts.nix.
       font_family = "monospace";
       font_size = 9;
     };

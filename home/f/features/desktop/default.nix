@@ -6,7 +6,6 @@
     ./dms.nix
     ./dolphin.nix
     ./fonts.nix
-    ./foot.nix
     ./kitty.nix
     ./mime-apps.nix
     ./mpv.nix
