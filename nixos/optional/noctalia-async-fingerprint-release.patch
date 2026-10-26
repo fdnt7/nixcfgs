@@ -1,0 +1,85 @@
+diff --git a/src/auth/fingerprint_authenticator.cpp b/src/auth/fingerprint_authenticator.cpp
+index 23445c3..f29bbe4 100644
+--- a/src/auth/fingerprint_authenticator.cpp
++++ b/src/auth/fingerprint_authenticator.cpp
+@@ -4,8 +4,10 @@
+ #include "dbus/system_bus.h"
+ #include "i18n/i18n.h"
+ 
++#include <algorithm>
+ #include <chrono>
+ #include <map>
++#include <memory>
+ #include <optional>
+ #include <sdbus-c++/Error.h>
+ #include <sdbus-c++/IConnection.h>
+@@ -256,16 +258,29 @@ void FingerprintAuthenticator::stopVerify() {
+ }
+ 
+ void FingerprintAuthenticator::releaseDevice() {
++  std::erase_if(m_releasing, [](const Releasing& r) { return *r.done; });
+   if (m_device == nullptr) {
+     return;
+   }
++  // Asynchronous: Release also stops a verification still winding down, which can take fprintd a
++  // second, and the lock screen would wait on it before unlocking.
++  auto done = std::make_shared<bool>(false);
+   try {
+-    m_device->callMethod("Release").onInterface(kDeviceInterface);
+-    kLog.info("released fingerprint device");
++    m_device->callMethodAsync("Release")
++        .onInterface(kDeviceInterface)
++        .uponReplyInvoke([done](std::optional<sdbus::Error> e) {
++          *done = true;
++          if (e.has_value()) {
++            kLog.debug("could not release fingerprint device: {}", e->what());
++          } else {
++            kLog.info("released fingerprint device");
++          }
++        });
+   } catch (const sdbus::Error& e) {
+     kLog.debug("could not release fingerprint device: {}", e.what());
++    *done = true;
+   }
+-  m_device.reset();
++  m_releasing.push_back({std::move(m_device), std::move(done)});
+ }
+ 
+ void FingerprintAuthenticator::handleVerifyStatus(const std::string& result, bool done) {
+@@ -291,7 +306,9 @@ void FingerprintAuthenticator::handleVerifyStatus(const std::string& result, boo
+     kLog.warn("unknown fingerprint verify status: {}", result);
+     break;
+   case MatchResult::Matched:
+-    stopVerify();
++    // No VerifyStop: winding the reader down takes fprintd about a second after a match, and the
++    // call would hold up the unlock. The Release that follows from stop() ends the operation.
++    m_verifying = false;
+     authenticated = true;
+     break;
+   case MatchResult::NoMatch:
+diff --git a/src/auth/fingerprint_authenticator.h b/src/auth/fingerprint_authenticator.h
+index a17eb58..ac1902b 100644
+--- a/src/auth/fingerprint_authenticator.h
++++ b/src/auth/fingerprint_authenticator.h
+@@ -5,6 +5,7 @@
+ #include <functional>
+ #include <memory>
+ #include <string>
++#include <vector>
+ 
+ class SystemBus;
+ 
+@@ -41,6 +42,13 @@ private:
+   SystemBus& m_bus;
+   std::unique_ptr<sdbus::IProxy> m_loginManager;
+   std::unique_ptr<sdbus::IProxy> m_device;
++  // Devices whose Release is still in flight, kept alive until fprintd replies; freed on a later
++  // release rather than from their own reply handler.
++  struct Releasing {
++    std::unique_ptr<sdbus::IProxy> device;
++    std::shared_ptr<bool> done;
++  };
++  std::vector<Releasing> m_releasing;
+ 
+   AuthenticatedCallback m_onAuthenticated;
+   StatusCallback m_onStatus;

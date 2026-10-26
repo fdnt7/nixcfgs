@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   # Noctalia, on trial in place of Dux Shell (./dms.nix): bar, launcher,
   # notifications, lock screen and idle handling in one shell. Its settings
@@ -12,6 +13,14 @@
     # shell's widgets. Each is only a default; fw16 has all but UPower
     # already.
     recommendedServices.enable = true;
+
+    # After a fingerprint matched, the lock screen waited on fprintd to stop
+    # the reader, a second or more on fw16, before it began to unlock; this
+    # leaves the reader to stop in the background. Drop it once upstream
+    # does the same: https://github.com/noctalia-dev/noctalia/pull/4922.
+    package = pkgs.noctalia.overrideAttrs (old: {
+      patches = (old.patches or [ ]) ++ [ ./noctalia-async-fingerprint-release.patch ];
+    });
   };
 
   # The lock screen checks a password against the `login` stack, where
