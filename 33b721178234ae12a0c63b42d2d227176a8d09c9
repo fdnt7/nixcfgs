@@ -1,0 +1,44 @@
+fw16: boot to 33b7211
+
+<<< /nix/store/vr9iilymivb4rg3x9jfrn8h2xv3rbpd3-nixos-system-fw16-26.11.20261023.3ec6363
+>>> /nix/store/ihrgsc1xrdq5vqixw34r766dmi5ssdfc-nixos-system-fw16-26.11.20261023.3ec6363
+
+CHANGED
+[U*] zstd                              <unchanged> -> 1.5.7-dev, <unchanged>, +220 KiB
+
+ADDED
+[A+] accountsservice                   26.27.3, +793 KiB
+[A+] cava                              1.0.0, +188 KiB
+[A.] cpptrace                          1.0.4, +789 KiB
+[A+] dux-shell                         2.0.0, +81.3 MiB
+[A.] hm_dmssettings.json               <none>
+[A.] libdwarf                          2.3.3-lib, +690 KiB
+[A+] matugen                           4.2.0, +11.1 MiB
+[A.] pam_u2f                           1.4.0, +132 KiB
+[A+] quickshell                        0.3.2, +10.4 MiB
+[A.] unit-accounts-daemon.service      <none>
+[A.] unit-dms.service                  <none>
+[A.] wl-clip-persist                   0.5.0-fish-completions, 0.5.0, +3.49 MiB
+[A.] wl-clip-persist.service           <none>
+
+REMOVED
+[R.] git-minimal                       2.56.0, -57.3 MiB
+[R.] gnuplot                           6.0.5, -3.12 MiB
+[R.] libcerf                           3.8, -424 KiB
+[R.] libqalculate                      5.13.2, -11.2 MiB
+[R-] noctalia                          5.3.0-fish-completions, 5.3.0, -48.9 MiB
+[R.] noctalia-config.toml              <none>
+[R.] noctalia.service                  <none>
+[R.] sdbus-cpp                         2.2.1, -1.32 MiB
+[R.] set-gdfontpath-from-fontconfig.sh <none>
+
+PATHS: 2265 -> 2270 (+56, -51)
+SIZE: 19.0 GiB -> 19.0 GiB
+DIFF: -13.2 MiB
+
+Host: fw16
+From: 091b4ce
+Activation: boot
+Activation-reason: asked for with --boot
+Generation: /nix/store/ihrgsc1xrdq5vqixw34r766dmi5ssdfc-nixos-system-fw16-26.11.20261023.3ec6363
+Rebuilt-at: 2026-10-26T21:58:32+07:00
