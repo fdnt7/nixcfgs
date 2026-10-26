@@ -23,6 +23,12 @@ thumbnailers = "thumbnailers"
 [files]
 extend-exclude = ["LICENSE"]
 
+[type.diff]
+extend-ignore-re = [
+  # Ignore context and removed lines: upstream's text, only added lines are ours
+  '(?m)^[ -].*$',
+]
+
 [type.diff.extend-identifiers]
 # Ignore "color" in the identifiers qtengine's patch touches
 KColorScheme = "KColorScheme"
