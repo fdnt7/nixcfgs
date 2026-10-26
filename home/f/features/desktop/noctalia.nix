@@ -1,3 +1,18 @@
+let
+  # How the wallpaper comes in at login, and the lock screen in and out: one
+  # picked at random each time, quicker than the default 1.5 seconds. The
+  # honeycomb is left out, as it dropped frames on fw16.
+  transition = {
+    transition = [
+      "fade"
+      "wipe"
+      "disc"
+      "stripes"
+      "zoom"
+    ];
+    transition_duration = 800;
+  };
+in
 {
   # Noctalia, on trial in place of Dux Shell (./dms.nix) from 2026-10-26,
   # mainly for its fade-in of the wallpaper at login. The package and the
@@ -18,6 +33,9 @@
         polkit_agent = true;
         # Everything it would ask is set here.
         setup_wizard_enabled = false;
+        # Every animation half again as fast; the default felt sluggish next
+        # to Dux Shell.
+        animation.speed = 1.5;
 
         # One key per action in the power menu, as before: L lock, X log
         # out, S suspend, R reboot, P power off. Every action is listed, as
@@ -63,6 +81,8 @@
           position = "bottom";
           smart_auto_hide = true;
           reserve_space = false;
+          # Edge to edge, rather than 100 pixels in from each end.
+          margin_ends = 0;
 
           # Status on the right, ending in the clock; the middle is left to
           # what comes and goes.
@@ -86,7 +106,12 @@
         };
       };
 
-      notification.position = "bottom_right";
+      # Clear of the bar, which they would otherwise cover: its 34 pixels and
+      # a gap. The bar is not taken into account by itself.
+      notification = {
+        position = "bottom_right";
+        offset_y = 42;
+      };
 
       # Lock after five minutes idle, then the screen off 30 seconds into
       # the lock, however it was locked; suspend after half an hour.
@@ -120,9 +145,12 @@
       };
       # spellchecker:on
 
-      # The wallpaper fades in at login rather than appearing at once,
+      # The wallpaper comes in at login rather than appearing at once,
       # which is what this trial is for.
-      wallpaper.transition_on_startup = true;
+      wallpaper = transition // {
+        transition_on_startup = true;
+      };
+      lockscreen = transition;
 
       # The colour scheme Qt programs follow, through ./qt-theme.nix.
       # Nothing else is themed for now.
