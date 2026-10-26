@@ -153,7 +153,11 @@ in
       wallpaper = transition // {
         transition_on_startup = true;
       };
-      lockscreen = transition;
+      # Shorter again for the lock screen: "Unlocked" shows as soon as the
+      # finger or password is accepted, and the desktop only after this.
+      lockscreen = transition // {
+        transition_duration = 400;
+      };
 
       # The power profile follows the charger, as with Dux Shell:
       # performance on it, charging or full, and balanced on battery. Only
