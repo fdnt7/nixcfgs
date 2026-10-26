@@ -11,9 +11,16 @@
       font_family = "monospace";
       font_size = 9;
     };
-    # kitty's own colours. The shell's (`include dank-theme.conf`) were too
-    # high in contrast, and its terminal palette settings only shifted their
-    # hue. Theming waits on fw16's choice of shell: see the Noctalia trial.
+    # Catppuccin, dark or light as the desktop prefers, switched live: kitty
+    # asks for the desktop's colour scheme and follows its changes. Dux
+    # Shell's light mode reports no preference rather than light, so that
+    # is Latte too; Plasma, on fw12, reports both. The shell's own colours
+    # (`include dank-theme.conf`) were too high in contrast.
+    autoThemeFiles = {
+      dark = "Catppuccin-Mocha";
+      light = "Catppuccin-Latte";
+      noPreference = "Catppuccin-Latte";
+    };
   };
 
   # The instance closes with its last window, and starting one takes about
