@@ -1,5 +1,5 @@
 diff --git a/src/auth/fingerprint_authenticator.cpp b/src/auth/fingerprint_authenticator.cpp
-index 23445c3..f29bbe4 100644
+index 23445c3..d2e9f34 100644
 --- a/src/auth/fingerprint_authenticator.cpp
 +++ b/src/auth/fingerprint_authenticator.cpp
 @@ -4,8 +4,10 @@
@@ -13,7 +13,40 @@ index 23445c3..f29bbe4 100644
  #include <optional>
  #include <sdbus-c++/Error.h>
  #include <sdbus-c++/IConnection.h>
-@@ -256,16 +258,29 @@ void FingerprintAuthenticator::stopVerify() {
+@@ -88,7 +90,11 @@ FingerprintAuthenticator::FingerprintAuthenticator(SystemBus& bus) : m_bus(bus)
+   }
+ }
+ 
+-FingerprintAuthenticator::~FingerprintAuthenticator() { stop(); }
++FingerprintAuthenticator::~FingerprintAuthenticator() {
++  stop();
++  // Before the members their reply handlers use; fprintd drops the claims with the connection.
++  m_releasing.clear();
++}
+ 
+ void FingerprintAuthenticator::setAuthenticatedCallback(AuthenticatedCallback callback) {
+   m_onAuthenticated = std::move(callback);
+@@ -114,6 +120,7 @@ void FingerprintAuthenticator::start() {
+ void FingerprintAuthenticator::stop() {
+   m_retryTimer.stop();
+   m_active = false;
++  m_startAfterRelease = false;
+   m_verifying = false;
+   m_claiming = false;
+   // Release even after verify-disconnected: fprintd also reports libfprint's recoverable TOO_HOT
+@@ -198,6 +205,11 @@ void FingerprintAuthenticator::startVerify(bool isRetry) {
+   m_verifying = true;
+ 
+   if (m_device == nullptr) {
++    if (std::ranges::any_of(m_releasing, [](const Releasing& r) { return !*r.done; })) {
++      m_verifying = false;
++      m_startAfterRelease = true;
++      return;
++    }
+     if (!createDeviceProxy()) {
+       m_verifying = false;
+       return;
+@@ -256,16 +268,33 @@ void FingerprintAuthenticator::stopVerify() {
  }
  
  void FingerprintAuthenticator::releaseDevice() {
@@ -29,12 +62,16 @@ index 23445c3..f29bbe4 100644
 -    kLog.info("released fingerprint device");
 +    m_device->callMethodAsync("Release")
 +        .onInterface(kDeviceInterface)
-+        .uponReplyInvoke([done](std::optional<sdbus::Error> e) {
++        .uponReplyInvoke([this, done](std::optional<sdbus::Error> e) {
 +          *done = true;
 +          if (e.has_value()) {
 +            kLog.debug("could not release fingerprint device: {}", e->what());
 +          } else {
 +            kLog.info("released fingerprint device");
++          }
++          if (m_startAfterRelease) {
++            m_startAfterRelease = false;
++            startVerify(false);
 +          }
 +        });
    } catch (const sdbus::Error& e) {
@@ -46,7 +83,7 @@ index 23445c3..f29bbe4 100644
  }
  
  void FingerprintAuthenticator::handleVerifyStatus(const std::string& result, bool done) {
-@@ -291,7 +306,9 @@ void FingerprintAuthenticator::handleVerifyStatus(const std::string& result, boo
+@@ -291,7 +320,9 @@ void FingerprintAuthenticator::handleVerifyStatus(const std::string& result, boo
      kLog.warn("unknown fingerprint verify status: {}", result);
      break;
    case MatchResult::Matched:
@@ -58,7 +95,7 @@ index 23445c3..f29bbe4 100644
      break;
    case MatchResult::NoMatch:
 diff --git a/src/auth/fingerprint_authenticator.h b/src/auth/fingerprint_authenticator.h
-index a17eb58..ac1902b 100644
+index a17eb58..0f19c4b 100644
 --- a/src/auth/fingerprint_authenticator.h
 +++ b/src/auth/fingerprint_authenticator.h
 @@ -5,6 +5,7 @@
@@ -69,7 +106,7 @@ index a17eb58..ac1902b 100644
  
  class SystemBus;
  
-@@ -41,6 +42,13 @@ private:
+@@ -41,6 +42,15 @@ private:
    SystemBus& m_bus;
    std::unique_ptr<sdbus::IProxy> m_loginManager;
    std::unique_ptr<sdbus::IProxy> m_device;
@@ -80,6 +117,8 @@ index a17eb58..ac1902b 100644
 +    std::shared_ptr<bool> done;
 +  };
 +  std::vector<Releasing> m_releasing;
++  // Set when a verification waits on one of those releases: fprintd refuses a new claim until then.
++  bool m_startAfterRelease = false;
  
    AuthenticatedCallback m_onAuthenticated;
    StatusCallback m_onStatus;
