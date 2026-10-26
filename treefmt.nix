@@ -8,6 +8,7 @@
     "*.kdl"
     # Written by sops, which would fight a formatter over the layout
     "hosts/*/secrets.yaml"
+    "home/*/secrets.yaml"
   ];
 
   programs = {
