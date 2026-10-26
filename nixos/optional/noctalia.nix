@@ -14,12 +14,26 @@
     # already.
     recommendedServices.enable = true;
 
-    # After a fingerprint matched, the lock screen waited on fprintd to stop
-    # the reader, a second or more on fw16, before it began to unlock; this
-    # leaves the reader to stop in the background. Drop it once upstream
-    # does the same: https://github.com/noctalia-dev/noctalia/pull/4922.
+    # Two fixes to the lock screen's fingerprint reader, built here until
+    # Noctalia ships them; drop each once it does.
     package = pkgs.noctalia.overrideAttrs (old: {
-      patches = (old.patches or [ ]) ++ [ ./noctalia-async-fingerprint-release.patch ];
+      patches = (old.patches or [ ]) ++ [
+        # Right after resume, before logind has made the session active again,
+        # fprintd refuses to verify, and the lock screen gave up on the finger
+        # for that lock. This retries the refusal for up to five seconds.
+        # Upstream's own pull request, as it stands, without its test.
+        (pkgs.fetchpatch {
+          name = "noctalia-retry-fingerprint-authorisation.patch";
+          url = "https://github.com/noctalia-dev/noctalia/compare/8fd4399e38704afdb3b34963637b5fd86c52e4f4...9cabc9ae045d03557977bd88f3a76708cac8e6c6.diff";
+          includes = [ "src/*" ];
+          hash = "sha256-s7ukWiCOOJO3IfZkGaStQ1cul3mxm/+Fk6+hKHxD8Kk=";
+        })
+        # After a match, the lock screen waited on fprintd to stop the reader,
+        # a second or more on fw16, before it began to unlock; this leaves the
+        # reader to stop in the background. Upstream's fix is larger and not
+        # yet merged: https://github.com/noctalia-dev/noctalia/pull/4922.
+        ./noctalia-async-fingerprint-release.patch
+      ];
     });
   };
 
@@ -29,19 +43,4 @@
   # stack goes without it; only a login on the console loses the finger.
   # Upstream: https://github.com/noctalia-dev/noctalia/issues/3277.
   security.pam.services.login.fprintAuth = false;
-
-  # fprintd lets only an active session verify, and the lock screen asks the
-  # instant the machine resumes, before logind has made the session active
-  # again. Refused, it gives up on the finger for that lock. This lets users
-  # verify regardless, as fw16 did for hyprlock; Dux Shell did without it.
-  security.polkit.extraConfig = ''
-    polkit.addRule(function (action, subject) {
-      if (
-        action.id == "net.reactivated.fprint.device.verify" &&
-        subject.isInGroup("users")
-      ) {
-        return polkit.Result.YES;
-      }
-    });
-  '';
 }

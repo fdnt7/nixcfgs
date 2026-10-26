@@ -1,5 +1,5 @@
 diff --git a/src/auth/fingerprint_authenticator.cpp b/src/auth/fingerprint_authenticator.cpp
-index 23445c3..aa719a8 100644
+index 35a6a45..51a7ffe 100644
 --- a/src/auth/fingerprint_authenticator.cpp
 +++ b/src/auth/fingerprint_authenticator.cpp
 @@ -4,8 +4,10 @@
@@ -13,7 +13,7 @@ index 23445c3..aa719a8 100644
  #include <optional>
  #include <sdbus-c++/Error.h>
  #include <sdbus-c++/IConnection.h>
-@@ -88,7 +90,12 @@ FingerprintAuthenticator::FingerprintAuthenticator(SystemBus& bus) : m_bus(bus)
+@@ -92,7 +94,12 @@ FingerprintAuthenticator::FingerprintAuthenticator(SystemBus& bus) : m_bus(bus)
    }
  }
  
@@ -27,7 +27,7 @@ index 23445c3..aa719a8 100644
  
  void FingerprintAuthenticator::setAuthenticatedCallback(AuthenticatedCallback callback) {
    m_onAuthenticated = std::move(callback);
-@@ -114,6 +121,7 @@ void FingerprintAuthenticator::start() {
+@@ -119,6 +126,7 @@ void FingerprintAuthenticator::start() {
  void FingerprintAuthenticator::stop() {
    m_retryTimer.stop();
    m_active = false;
@@ -35,7 +35,7 @@ index 23445c3..aa719a8 100644
    m_verifying = false;
    m_claiming = false;
    // Release even after verify-disconnected: fprintd also reports libfprint's recoverable TOO_HOT
-@@ -197,7 +205,17 @@ void FingerprintAuthenticator::startVerify(bool isRetry) {
+@@ -228,7 +236,17 @@ void FingerprintAuthenticator::startVerify(bool isRetry) {
    }
    m_verifying = true;
  
@@ -53,7 +53,7 @@ index 23445c3..aa719a8 100644
      if (!createDeviceProxy()) {
        m_verifying = false;
        return;
-@@ -241,31 +259,70 @@ void FingerprintAuthenticator::startVerify(bool isRetry) {
+@@ -276,31 +294,70 @@ void FingerprintAuthenticator::startVerify(bool isRetry) {
        });
  }
  
@@ -131,7 +131,7 @@ index 23445c3..aa719a8 100644
  }
  
  void FingerprintAuthenticator::handleVerifyStatus(const std::string& result, bool done) {
-@@ -291,18 +348,20 @@ void FingerprintAuthenticator::handleVerifyStatus(const std::string& result, boo
+@@ -326,18 +383,20 @@ void FingerprintAuthenticator::handleVerifyStatus(const std::string& result, boo
      kLog.warn("unknown fingerprint verify status: {}", result);
      break;
    case MatchResult::Matched:
@@ -156,7 +156,7 @@ index 23445c3..aa719a8 100644
      }
      break;
    case MatchResult::Retry:
-@@ -327,13 +386,13 @@ void FingerprintAuthenticator::handleVerifyStatus(const std::string& result, boo
+@@ -362,13 +421,13 @@ void FingerprintAuthenticator::handleVerifyStatus(const std::string& result, boo
      emitStatus(i18n::tr("auth.fingerprint.disconnected"), true);
      break;
    case MatchResult::UnknownError:
@@ -173,7 +173,7 @@ index 23445c3..aa719a8 100644
      break;
    }
 diff --git a/src/auth/fingerprint_authenticator.h b/src/auth/fingerprint_authenticator.h
-index a17eb58..b475adc 100644
+index 5d487cb..1e46148 100644
 --- a/src/auth/fingerprint_authenticator.h
 +++ b/src/auth/fingerprint_authenticator.h
 @@ -5,6 +5,7 @@
@@ -184,8 +184,8 @@ index a17eb58..b475adc 100644
  
  class SystemBus;
  
-@@ -33,7 +34,7 @@ private:
-   bool createDeviceProxy();
+@@ -36,7 +37,7 @@ private:
+   bool scheduleAuthorizationRetry(bool claiming, bool isRetry);
    void claimDevice();
    void startVerify(bool isRetry);
 -  void stopVerify();
@@ -193,7 +193,7 @@ index a17eb58..b475adc 100644
    void releaseDevice();
    void handleVerifyStatus(const std::string& result, bool done);
    void emitStatus(const std::string& message, bool isError);
-@@ -41,6 +42,18 @@ private:
+@@ -44,6 +45,18 @@ private:
    SystemBus& m_bus;
    std::unique_ptr<sdbus::IProxy> m_loginManager;
    std::unique_ptr<sdbus::IProxy> m_device;
