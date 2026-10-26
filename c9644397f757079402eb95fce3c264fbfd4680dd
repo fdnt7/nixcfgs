@@ -1,0 +1,44 @@
+fw16: boot to c964439
+
+<<< /nix/store/w8xxzdp3gjzq4b8mrp2lzz5ffp1xjfrb-nixos-system-fw16-26.11.20261023.3ec6363
+>>> /nix/store/rhsix8ilqhgmjv1aspmfrjcvi7i2dz8j-nixos-system-fw16-26.11.20261023.3ec6363
+
+CHANGED
+[D*] zstd                              1.5.7-dev, <unchanged> -> <unchanged>, -220 KiB
+
+ADDED
+[A.] git-minimal                       2.56.0, +57.3 MiB
+[A.] gnuplot                           6.0.5, +3.12 MiB
+[A.] libcerf                           3.8, +424 KiB
+[A.] libqalculate                      5.13.2, +11.2 MiB
+[A+] noctalia                          5.3.0-fish-completions, 5.3.0, +48.9 MiB
+[A.] noctalia-config.toml              <none>
+[A.] noctalia.service                  <none>
+[A.] sdbus-cpp                         2.2.1, +1.32 MiB
+[A.] set-gdfontpath-from-fontconfig.sh <none>
+
+REMOVED
+[R-] accountsservice                   26.27.3, -793 KiB
+[R-] cava                              1.0.0, -188 KiB
+[R.] cpptrace                          1.0.4, -789 KiB
+[R-] dux-shell                         2.0.0, -81.3 MiB
+[R.] hm_dmssettings.json               <none>
+[R.] libdwarf                          2.3.3-lib, -690 KiB
+[R-] matugen                           4.2.0, -11.1 MiB
+[R.] pam_u2f                           1.4.0, -132 KiB
+[R-] quickshell                        0.3.2, -10.4 MiB
+[R.] unit-accounts-daemon.service      <none>
+[R.] unit-dms.service                  <none>
+[R.] wl-clip-persist                   0.5.0-fish-completions, 0.5.0, -3.49 MiB
+[R.] wl-clip-persist.service           <none>
+
+PATHS: 2270 -> 2265 (+48, -53)
+SIZE: 19.0 GiB -> 19.0 GiB
+DIFF: +13.2 MiB
+
+Host: fw16
+From: 95c8c73
+Activation: boot
+Activation-reason: asked for with --boot
+Generation: /nix/store/rhsix8ilqhgmjv1aspmfrjcvi7i2dz8j-nixos-system-fw16-26.11.20261023.3ec6363
+Rebuilt-at: 2026-10-26T18:39:26+07:00
