@@ -12,6 +12,7 @@
     ../f/features/desktop/discord.nix
     ../f/features/desktop/fonts.nix
     ../f/features/desktop/foot.nix
+    ../f/features/desktop/kitty.nix
     ../f/features/desktop/mullvad.nix
     ../f/features/desktop/zed-editor.nix
     ../f/features/desktop/zen-browser.nix
