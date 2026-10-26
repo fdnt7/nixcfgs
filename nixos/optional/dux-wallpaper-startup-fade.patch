@@ -1,0 +1,35 @@
+--- a/quickshell/Modules/WallpaperBackground.qml
++++ b/quickshell/Modules/WallpaperBackground.qml
+@@ -82,6 +82,23 @@
+             id: root
+             anchors.fill: parent
+ 
++            // The first wallpaper of a session fades in from the compositor's background, rather than
++            // appearing at once: later changes have their transition, the first one skips it.
++            opacity: root.actualTransitionType === "none" ? 1 : 0
++            onContentReadyChanged: {
++                if (contentReady && opacity < 1)
++                    startupFade.start();
++            }
++
++            NumberAnimation {
++                id: startupFade
++                target: root
++                property: "opacity"
++                to: 1
++                duration: 1000
++                easing.type: Easing.InOutCubic
++            }
++
+             Rectangle {
+                 anchors.fill: parent
+                 color: SettingsData.effectiveWallpaperBackgroundColor
+@@ -178,7 +195,7 @@
+             readonly property var backingWindow: Window.window
+             readonly property bool showsBackdrop: !source || isColorSource || currentWallpaper.status === Image.Error
+             readonly property bool backdropBusy: showsBackdrop && !(backdropLoader.item?.ready ?? false)
+-            readonly property bool renderActive: backdropBusy || effectActive || overviewBlurActive || pendingWallpaper !== "" || _deferredSource !== "" || changePending || _freezeWaitFrames > 0 || frameAnim.running || currentWallpaper.status === Image.Loading || nextWallpaper.status === Image.Loading || parallaxImage.status === Image.Loading
++            readonly property bool renderActive: startupFade.running || backdropBusy || effectActive || overviewBlurActive || pendingWallpaper !== "" || _deferredSource !== "" || changePending || _freezeWaitFrames > 0 || frameAnim.running || currentWallpaper.status === Image.Loading || nextWallpaper.status === Image.Loading || parallaxImage.status === Image.Loading
+             property int _settleFrames: 3
+ 
+             function invalidate() {
