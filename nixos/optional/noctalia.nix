@@ -29,4 +29,19 @@
   # stack goes without it; only a login on the console loses the finger.
   # Upstream: https://github.com/noctalia-dev/noctalia/issues/3277.
   security.pam.services.login.fprintAuth = false;
+
+  # fprintd lets only an active session verify, and the lock screen asks the
+  # instant the machine resumes, before logind has made the session active
+  # again. Refused, it gives up on the finger for that lock. This lets users
+  # verify regardless, as fw16 did for hyprlock; Dux Shell did without it.
+  security.polkit.extraConfig = ''
+    polkit.addRule(function (action, subject) {
+      if (
+        action.id == "net.reactivated.fprint.device.verify" &&
+        subject.isInGroup("users")
+      ) {
+        return polkit.Result.YES;
+      }
+    });
+  '';
 }
