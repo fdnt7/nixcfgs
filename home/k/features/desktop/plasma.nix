@@ -77,7 +77,7 @@
     hotkeys.commands.terminal = {
       name = "Open a terminal";
       key = "Meta+Return";
-      command = "footclient";
+      command = "kitty --single-instance";
     };
 
     shortcuts = {
