@@ -30,7 +30,7 @@ in
       # The scheme the shell regenerates whenever its theme or its light
       # and dark mode changes. qtengine watches the file, so programs that
       # are running follow along.
-      theme.colorScheme = "${config.xdg.dataHome}/color-schemes/DankMatugen.colors";
+      theme.colorScheme = "${config.xdg.dataHome}/color-schemes/noctalia.colors";
 
       # Open with a double click; qtengine's default is a single one.
       misc.singleClickActivate = false;

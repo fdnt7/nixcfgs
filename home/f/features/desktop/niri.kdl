@@ -41,8 +41,8 @@ layout {
     gaps 8
 
     // What shows until the shell draws its wallpaper, just after login:
-    // black, as the console before it was. The shell cannot fade it in, so
-    // it appears at once.
+    // black, as the console before it was, and what the wallpaper fades in
+    // from.
     background-color "#000000"
 
     center-focused-column "never"
@@ -92,6 +92,14 @@ window-rule {
     open-on-workspace "code"
 }
 
+// The shell's settings window floats, at the size its documentation gives.
+window-rule {
+    match app-id=r#"^dev\.noctalia\.Noctalia$"#
+    open-floating true
+    default-column-width { fixed 1080; }
+    default-window-height { fixed 920; }
+}
+
 // Launchers and what they start. Steam games are "steam_app_<id>".
 window-rule {
     match app-id="^steam$"
@@ -104,13 +112,13 @@ window-rule {
 
 binds {
     // Programs and session. The launcher, clipboard history and lock screen
-    // are the shell's: ../../../../nixos/optional/dms.nix.
+    // are the shell's: ../../../../nixos/optional/noctalia.nix.
     Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty" "--single-instance"; }
-    Mod+D hotkey-overlay-title="Run an Application" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
-    Mod+Alt+V hotkey-overlay-title="Clipboard History" { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn "dms" "ipc" "call" "lock" "lock"; }
+    Mod+D hotkey-overlay-title="Run an Application" { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
+    Mod+Alt+V hotkey-overlay-title="Clipboard History" { spawn "noctalia" "msg" "panel-toggle" "clipboard"; }
+    Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn "noctalia" "msg" "session" "lock"; }
     // Then one key: R reboot, P power off, S suspend, X log out, L lock.
-    Mod+Q hotkey-overlay-title="Power Menu" { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
+    Mod+Q hotkey-overlay-title="Power Menu" { spawn "noctalia" "msg" "panel-toggle" "session"; }
 
     // Applications, by what they are for.
     Mod+Alt+B hotkey-overlay-title="Browser: Zen" { spawn "zen-beta"; }

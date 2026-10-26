@@ -3,7 +3,7 @@
     ./clipboard.nix
     ./cursor.nix
     ./discord.nix
-    ./dms.nix
+    ./noctalia.nix
     ./dolphin.nix
     ./fonts.nix
     ./kitty.nix

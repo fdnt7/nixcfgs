@@ -15,7 +15,7 @@
       Description = "Mullvad VPN client";
       After = [
         "graphical-session.target"
-        "dms.service"
+        "noctalia.service"
       ];
       PartOf = [ "graphical-session.target" ];
     };
