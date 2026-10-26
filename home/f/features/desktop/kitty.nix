@@ -13,10 +13,9 @@
       font_family = "monospace";
       font_size = 9;
     };
-    # The colours the shell writes, and tells kitty to reload when they
-    # change. Until the shell next makes its colours the file isn't there,
-    # which kitty logs and passes over.
-    extraConfig = "include dank-theme.conf";
+    # kitty's own colours. The shell's (`include dank-theme.conf`) were too
+    # high in contrast, and its terminal palette settings only shifted their
+    # hue. Theming waits on the choice of shell: see the Noctalia trial.
   };
 
   # The instance closes with its last window, and starting one takes about
