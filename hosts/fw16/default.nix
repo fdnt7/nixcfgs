@@ -8,7 +8,7 @@
     ../../nixos/users/f.nix
 
     ../../nixos/optional/bluetooth.nix
-    ../../nixos/optional/dms.nix
+    ../../nixos/optional/noctalia.nix
     ../../nixos/optional/fingerprint.nix
     ../../nixos/optional/gaming.nix
     ../../nixos/optional/greetd.nix
