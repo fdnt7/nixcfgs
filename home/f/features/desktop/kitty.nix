@@ -3,9 +3,7 @@
   # The terminal, chosen on 2026-10-26 over foot and Ghostty: with
   # --single-instance, kitty's launcher hands the command line to the
   # running instance in C, before any Python starts, so a window opens as
-  # fast as footclient's; and the shell recolours it when its theme
-  # changes, which it does not do for foot. Ghostty opened its windows a
-  # beat later than either.
+  # fast as footclient's. Ghostty opened its windows a beat later.
   programs.kitty = {
     enable = true;
     settings = {
