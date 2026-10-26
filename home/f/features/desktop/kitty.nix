@@ -13,7 +13,7 @@
     };
     # kitty's own colours. The shell's (`include dank-theme.conf`) were too
     # high in contrast, and its terminal palette settings only shifted their
-    # hue. Theming waits on the choice of shell: see the Noctalia trial.
+    # hue. Theming waits on fw16's choice of shell: see the Noctalia trial.
   };
 
   # The instance closes with its last window, and starting one takes about
