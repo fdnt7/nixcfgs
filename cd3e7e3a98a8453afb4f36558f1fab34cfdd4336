@@ -1,0 +1,20 @@
+fw16: switch to cd3e7e3
+
+<<< /nix/store/ihrgsc1xrdq5vqixw34r766dmi5ssdfc-nixos-system-fw16-26.11.20261023.3ec6363
+>>> /nix/store/a4m2w3wnvfg4kgy7difrf29wkqqz5wj2-nixos-system-fw16-26.11.20261023.3ec6363
+
+ADDED
+[A.] hm_kittydarktheme.auto.conf         <none>
+[A.] hm_kittylighttheme.auto.conf        <none>
+[A.] hm_kittynopreferencetheme.auto.conf <none>
+[A.] kitty-themes                        0-unstable-2026-10-08, +650 KiB
+
+PATHS: 2270 -> 2274 (+11, -7)
+SIZE: 19.0 GiB -> 19.0 GiB
+DIFF: +653 KiB
+
+Host: fw16
+From: 33b7211
+Activation: switch
+Generation: /nix/store/a4m2w3wnvfg4kgy7difrf29wkqqz5wj2-nixos-system-fw16-26.11.20261023.3ec6363
+Rebuilt-at: 2026-10-26T22:15:14+07:00
