@@ -1,0 +1,24 @@
+fw16: switch to 08d344f
+
+<<< /nix/store/a4m2w3wnvfg4kgy7difrf29wkqqz5wj2-nixos-system-fw16-26.11.20261023.3ec6363
+>>> /nix/store/c05n82qzkg07yry9wwwcbqdv9kfibkqn-nixos-system-fw16-26.11.20261023.3ec6363
+
+CHANGED
+[C.] nix.conf             <none> -> <none> ×2
+
+ADDED
+[A.] manifest.json        <none>
+[A.] secrets.yaml         <none>
+[A.] sops-install-secrets 0.0.1, +50.2 MiB
+[A.] sops-nix-user        <none>
+[A.] sops-nix.service     <none>
+
+PATHS: 2274 -> 2280 (+13, -7)
+SIZE: 19.0 GiB -> 19.1 GiB
+DIFF: +50.2 MiB
+
+Host: fw16
+From: cd3e7e3
+Activation: switch
+Generation: /nix/store/c05n82qzkg07yry9wwwcbqdv9kfibkqn-nixos-system-fw16-26.11.20261023.3ec6363
+Rebuilt-at: 2026-10-27T00:05:51+07:00
