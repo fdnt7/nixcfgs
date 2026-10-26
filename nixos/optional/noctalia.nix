@@ -13,4 +13,11 @@
     # already.
     recommendedServices.enable = true;
   };
+
+  # The lock screen checks a password against the `login` stack, where
+  # pam_fprintd comes first and waits about 30 seconds for a finger before
+  # the password is looked at. Noctalia reads the sensor itself, so the
+  # stack goes without it; only a login on the console loses the finger.
+  # Upstream: https://github.com/noctalia-dev/noctalia/issues/3277.
+  security.pam.services.login.fprintAuth = false;
 }
