@@ -1,0 +1,15 @@
+fw16: switch to 722d8ac
+
+<<< /nix/store/dip6x789pvm43hcxmzvpqh062sw9ymjr-nixos-system-fw16-26.11.20261023.3ec6363
+>>> /nix/store/26rnlidcdwx1zx2y4g7i7y8jvc8s2dv6-nixos-system-fw16-26.11.20261023.3ec6363
+
+PATHS: 2265 -> 2265 (+27, -27)
+SIZE: 19.0 GiB -> 19.0 GiB
+DIFF: 0 bytes
+
+Host: fw16
+From: cf64425
+Activation: switch
+Restarted: noctalia.service
+Generation: /nix/store/26rnlidcdwx1zx2y4g7i7y8jvc8s2dv6-nixos-system-fw16-26.11.20261023.3ec6363
+Rebuilt-at: 2026-10-26T20:16:06+07:00
