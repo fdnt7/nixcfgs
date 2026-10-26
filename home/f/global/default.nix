@@ -1,6 +1,9 @@
 # Home configuration shared by every host this user has an account on.
 {
-  imports = [ ./ssh.nix ];
+  imports = [
+    ./secrets.nix
+    ./ssh.nix
+  ];
 
   home = {
     username = "f";
