@@ -1,3 +1,4 @@
+{ osConfig, ... }:
 let
   # How the wallpaper comes in at login, and the lock screen in and out: one
   # picked at random each time, quicker than the default 1.5 seconds. The
@@ -23,6 +24,8 @@ in
   # outlasts a restart. The weather location is set there.
   programs.noctalia = {
     enable = true;
+    # The system's, which carries a fix: ../../../../nixos/optional/noctalia.nix.
+    package = osConfig.programs.noctalia.package;
     # Started with the session, and restarted when these settings change.
     systemd.enable = true;
 
@@ -151,6 +154,19 @@ in
         transition_on_startup = true;
       };
       lockscreen = transition;
+
+      # The power profile follows the charger, as with Dux Shell:
+      # performance on it, charging or full, and balanced on battery. Only
+      # when that changes, so a profile picked by hand stays until then.
+      hooks =
+        let
+          set = profile: "noctalia msg power-set ${profile}";
+        in
+        {
+          battery_charging = set "performance";
+          battery_plugged = set "performance";
+          battery_discharging = set "balanced";
+        };
 
       # The colour scheme Qt programs follow, through ./qt-theme.nix.
       # Nothing else is themed for now.
