@@ -27,6 +27,8 @@ extend-exclude = ["LICENSE"]
 # Ignore "color" in the identifiers qtengine's patch touches
 KColorScheme = "KColorScheme"
 loadColorScheme = "loadColorScheme"
+# and in the one Noctalia's fingerprint patch rests on
+scheduleAuthorizationRetry = "scheduleAuthorizationRetry"
 
 [type.jsonc]
 extend-glob = ["*.jsonc"]
