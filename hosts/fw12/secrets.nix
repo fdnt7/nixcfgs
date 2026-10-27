@@ -1,6 +1,6 @@
 # What would identify this machine's user, kept encrypted in ./secrets.yaml.
 # Edit on this machine with
-#   sudo SOPS_AGE_KEY_CMD="ssh-to-age -private-key -i /persist/etc/ssh/ssh_host_ed25519_key" \
+#   sudo SOPS_AGE_KEY_FILE=/persist/var/lib/sops-nix/key.txt \
 #     sops edit hosts/fw12/secrets.yaml
 # or on fw16, with f's key.
 { config, ... }:
