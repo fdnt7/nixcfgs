@@ -1,0 +1,35 @@
+fw12: boot to 1cafc89
+
+<<< /nix/store/fn62jd2x0pnh39dmdxxdz1ydz6dxx35g-nixos-system-fw12-26.11.20261023.3ec6363
+>>> /nix/store/hz5vnvx6qaclfydfz5g8svf12q5wqxbr-nixos-system-fw12-26.11.20261023.3ec6363
+
+CHANGED
+[D-] iptables                   1.8.13-man, <unchanged> -> <unchanged>, -94.5 KiB
+[C.] man-paths                  -10.0 KiB
+[U+] nftables                   <unchanged> -> 1.1.7_fish-completions, <unchanged>
+[C.] system-path                -32.6 KiB
+
+ADDED
+[A.] nftables-cleanup-deletions <none>
+[A.] nftables-deletions         <none>
+[A.] nftables-ensure-deletions  <none>
+[A.] nftables-rules             <none>
+[A.] nftables-save-deletions    <none>
+[A.] unit-nftables.service      <none>
+
+REMOVED
+[R.] firewall-reload            <none>
+[R.] firewall-start             <none>
+[R.] firewall-stop              <none>
+[R.] unit-firewall.service      <none>
+
+PATHS: 2337 -> 2339 (+35, -33)
+SIZE: 15.5 GiB -> 15.5 GiB
+DIFF: -137 KiB
+
+Host: fw12
+From: 47176bb
+Activation: boot
+Activation-reason: initrd changed
+Generation: /nix/store/hz5vnvx6qaclfydfz5g8svf12q5wqxbr-nixos-system-fw12-26.11.20261023.3ec6363
+Rebuilt-at: 2026-10-28T05:21:03+07:00
