@@ -2,10 +2,12 @@
 let
   tailnet = config.services.tailscale.interfaceName;
 
-  # Mullvad's mark for connections it leaves alone, which its firewall lets
-  # through: a constant in Mullvad's source (talpid-core), and what its own
+  # Mullvad's marks for what it leaves alone: on the connection, which its
+  # firewall lets through, and on the packet, which its routing rule passes
+  # over. Constants in Mullvad's source (talpid-core), and what its own
   # rules match on.
   mullvadExcluded = "0x00000f41";
+  mullvadMeta = "0x6d6f6c65";
 in
 {
   services.tailscale.enable = true;
@@ -27,8 +29,11 @@ in
   # which has no peer for it, and so not around Mullvad.
   #
   # tailscaled's own traffic, the WireGuard and relay traffic carrying the
-  # tailnet, stays in the tunnel, so that what the tailnet sees is
-  # Mullvad's address.
+  # tailnet, is left out of the tunnel as well, so that two hosts find
+  # each other directly, over the local network where they share one;
+  # Tailscale and its peers see the real address. Left in, the direct path
+  # between two Mullvad exits came and went, and without it the relay
+  # carried 1-11 Mbit/s; left out, two hosts on one network had 73-101.
   networking = lib.mkIf config.services.mullvad-vpn.enable {
     # Made each time tailscaled makes the interface: the service NixOS
     # makes for these is bound to the device.
@@ -64,6 +69,16 @@ in
           chain input {
             type filter hook input priority -10; policy accept;
             iifname "${tailnet}" ct mark set ${mullvadExcluded}
+          }
+
+          # tailscaled marks its own sockets so as to route around its own
+          # interface (tsconst in Tailscale's source); this routes them
+          # around Mullvad's too, with Mullvad's own marks on both, as its
+          # split tunnel marks what it leaves out: a route chain, so that
+          # the packet is routed again with them
+          chain tailscaled {
+            type route hook output priority -20; policy accept;
+            meta mark & 0xff0000 == 0x80000 ct mark set ${mullvadExcluded} meta mark set ${mullvadMeta}
           }
         '';
       };
