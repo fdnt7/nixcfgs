@@ -1,0 +1,17 @@
+fw16: switch to 256ad3d
+
+<<< /nix/store/0n5f4yrc1jl1ry4l8c0x7sjbdpg5qc5p-nixos-system-fw16-26.11.20261023.3ec6363
+>>> /nix/store/dd8av7rr9brrz86nddbjzzqikilifca3-nixos-system-fw16-26.11.20261023.3ec6363
+
+REMOVED
+[R.] unit-bluetooth-reconnect-resume.service <none>
+
+PATHS: 2280 -> 2279 (+11, -12)
+SIZE: 19.1 GiB -> 19.1 GiB
+DIFF: -3.04 KiB
+
+Host: fw16
+From: 1b7118a
+Activation: switch
+Generation: /nix/store/dd8av7rr9brrz86nddbjzzqikilifca3-nixos-system-fw16-26.11.20261023.3ec6363
+Rebuilt-at: 2026-10-27T17:11:11+07:00
