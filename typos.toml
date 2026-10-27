@@ -58,3 +58,10 @@ extend-ignore-re = [
   # Ignore "center", "maximize" in niri's actions: alone in a bind's block
   '\{\s*(center-column|center-visible-columns|maximize-column|maximize-window-to-edges)\s*;',
 ]
+
+[type.kitty]
+extend-glob = ["kitty-*.conf"]
+extend-ignore-re = [
+  # Ignore "color" in kitty's options: option names, first on their line
+  '(?m)^(color\d+|cursor_text_color|url_color)\s',
+]
