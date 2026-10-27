@@ -1,17 +1,18 @@
 {
   # fwupd, which nixos-hardware turns on, probes the Audio Expansion Card's
   # DSP for its firmware version whenever it starts (the daily metadata
-  # refresh starts it) and when the card is plugged in. The card sometimes
-  # stops answering mid-probe and then stays dead, without sound, until it
-  # is unplugged or the machine is powered off; a reboot does not reset it,
-  # and its retries at boot hold up the input modules on the same hub.
-  # Seen 2026-10-12 and -16: "failed to get firmware version info: ...
-  # USB error: Operation timed out". Reported:
-  # https://github.com/fwupd/fwupd/issues/11260; drop this once it is
-  # fixed.
+  # refresh starts it) and when the card is plugged in. On fwupd 2.1.6 and
+  # Linux 7.2.9 the card sometimes stopped answering mid-probe and then
+  # stayed dead, without sound, until it was unplugged or the machine was
+  # powered off; a reboot did not reset it. Seen five times 2026-10-12 to
+  # -16: "failed to get firmware version info: ... USB error: Operation
+  # timed out". Reported: https://github.com/fwupd/fwupd/issues/11260.
   #
-  # The plugin only covers this card's DSP and some Sennheiser/EPOS
-  # headsets, so nothing else loses firmware updates. Firmware for the
-  # card itself would have to be applied by hand.
-  services.fwupd.daemonSettings.DisabledPlugins = [ "synaptics_cape" ];
+  # It was worked around with DisabledPlugins = [ "synaptics_cape" ]. On
+  # fwupd 2.1.8 and Linux 7.3.0, 30 daemon restarts and two direct probes
+  # were clean, so the plugin is back on trial from 2026-10-27, in everyday
+  # use (hotplugs, suspends, refreshes). If the card goes silent, leave it
+  # in, report the journal on the issue, then pull it to recover; put the
+  # setting back if it fails again. If it stays clean for a couple of weeks,
+  # say so on the issue and delete this file.
 }
