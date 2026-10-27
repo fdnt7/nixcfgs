@@ -6,5 +6,4 @@
   impermanence = import ./impermanence.nix;
   mullvad-libvirt-lan-sharing = import ./mullvad-libvirt-lan-sharing.nix;
   mullvad-tailscale-split-tunnel = import ./mullvad-tailscale-split-tunnel.nix;
-  secrets = import ./secrets.nix;
 }
