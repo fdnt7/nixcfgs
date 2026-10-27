@@ -36,7 +36,9 @@
 
       # This configuration, under f's public identity and a key of its
       # own, so nothing it publishes ties back to k. The key is f's on
-      # GitHub, for signing and for pushing.
+      # GitHub, for signing and for pushing. Its shared connection gets a
+      # socket of its own too: sockets are told apart by host, port and
+      # user, not by key, so it would otherwise be k's, logged in as k.
       {
         condition = "gitdir:~/.config/nixos/";
         contents = {
@@ -45,7 +47,7 @@
             email = "git@frdl.la";
             signingKey = "~/.ssh/id_ecdsa_fdnt7.pub";
           };
-          core.sshCommand = "ssh -i ~/.ssh/id_ecdsa_fdnt7.pub -o IdentitiesOnly=yes";
+          core.sshCommand = "ssh -i ~/.ssh/id_ecdsa_fdnt7.pub -o IdentitiesOnly=yes -o 'ControlPath=\${XDG_RUNTIME_DIR}/ssh-fdnt7-%C'";
         };
       }
     ];
