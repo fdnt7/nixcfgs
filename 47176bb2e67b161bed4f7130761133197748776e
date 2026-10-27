@@ -1,0 +1,14 @@
+fw12: switch to 47176bb
+
+<<< /nix/store/y1cimma7hb2wdy7ifwdn181gd9mcjn78-nixos-system-fw12-26.11.20261023.3ec6363
+>>> /nix/store/fn62jd2x0pnh39dmdxxdz1ydz6dxx35g-nixos-system-fw12-26.11.20261023.3ec6363
+
+PATHS: 2337 -> 2337 (+3, -3)
+SIZE: 15.5 GiB -> 15.5 GiB
+DIFF: +56 bytes
+
+Host: fw12
+From: 4283fe1
+Activation: switch
+Generation: /nix/store/fn62jd2x0pnh39dmdxxdz1ydz6dxx35g-nixos-system-fw12-26.11.20261023.3ec6363
+Rebuilt-at: 2026-10-28T04:03:45+07:00
