@@ -41,9 +41,11 @@ in
         }
 
         # Tailscale's routes cover only the addresses in the tailnet, so
-        # another in its range, marked above, would go out around Mullvad
-        chain output-guard {
-          type filter hook output priority -5; policy accept;
+        # another in its range, marked above, would go out around Mullvad.
+        # Checked on the way out, as the output hook still names the
+        # interface routed to before the mark.
+        chain postrouting-guard {
+          type filter hook postrouting priority -10; policy accept;
           meta mark ${mullvad.meta} ip daddr 100.64.0.0/10 oifname != "${tailnet}" counter drop
           meta mark ${mullvad.meta} ip6 daddr fd7a:115c:a1e0::/48 oifname != "${tailnet}" counter drop
         }
