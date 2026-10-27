@@ -17,6 +17,7 @@
     ./npm.nix
     ./rbld.nix
     ./ripgrep.nix
+    ./ssh.nix
     ./ssh-tpm-agent.nix
     ./starship.nix
     ./yazi
