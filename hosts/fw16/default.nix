@@ -18,6 +18,7 @@
     ../../nixos/optional/niri.nix
     ../../nixos/optional/pipewire.nix
     ../../nixos/optional/secure-boot.nix
+    ../../nixos/optional/tailscale.nix
     ../../nixos/optional/tpm.nix
 
     ./autologin.nix
