@@ -1,0 +1,18 @@
+fw12: switch to 6ab1ef6
+
+<<< /nix/store/0rrzj8q8mcry6jiznp5kma9b8zdf7bkr-nixos-system-fw12-26.11.20261023.3ec6363
+>>> /nix/store/w0xdkyixiskji2rg9fh77zi4kjk0zawn-nixos-system-fw12-26.11.20261023.3ec6363
+
+ADDED
+[A.] hm_.sshconfig           <none>
+[A.] kitty-breeze-light.conf <none>
+
+PATHS: 2337 -> 2339 (+20, -18)
+SIZE: 15.5 GiB -> 15.5 GiB
+DIFF: +5.09 KiB
+
+Host: fw12
+From: 08d344f
+Activation: switch
+Generation: /nix/store/w0xdkyixiskji2rg9fh77zi4kjk0zawn-nixos-system-fw12-26.11.20261023.3ec6363
+Rebuilt-at: 2026-10-27T13:46:44+07:00
