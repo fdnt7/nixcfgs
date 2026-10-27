@@ -1,0 +1,35 @@
+fw16: boot to 1bd51a3
+
+<<< /nix/store/ijnzyr61lk8j99cs4gdpqv0wknva4qjx-nixos-system-fw16-26.11.20261023.3ec6363
+>>> /nix/store/2pkxc8rpg4dg15pxyx5k1dcrp6w75ma7-nixos-system-fw16-26.11.20261023.3ec6363
+
+CHANGED
+[D-] iptables                   1.8.13-man, <unchanged> -> <unchanged>, -94.5 KiB
+[C.] man-paths                  -10.0 KiB
+[U+] nftables                   <unchanged> -> 1.1.7_fish-completions, <unchanged>
+[C.] system-path                -32.6 KiB
+
+ADDED
+[A.] nftables-cleanup-deletions <none>
+[A.] nftables-deletions         <none>
+[A.] nftables-ensure-deletions  <none>
+[A.] nftables-rules             <none>
+[A.] nftables-save-deletions    <none>
+[A.] unit-nftables.service      <none>
+
+REMOVED
+[R.] firewall-reload            <none>
+[R.] firewall-start             <none>
+[R.] firewall-stop              <none>
+[R.] unit-firewall.service      <none>
+
+PATHS: 2282 -> 2284 (+25, -23)
+SIZE: 19.1 GiB -> 19.1 GiB
+DIFF: -134 KiB
+
+Host: fw16
+From: ac5a101
+Activation: boot
+Activation-reason: initrd changed
+Generation: /nix/store/2pkxc8rpg4dg15pxyx5k1dcrp6w75ma7-nixos-system-fw16-26.11.20261023.3ec6363
+Rebuilt-at: 2026-10-28T04:56:17+07:00
