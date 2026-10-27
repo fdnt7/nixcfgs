@@ -1,0 +1,17 @@
+fw12: switch to d61fbec
+
+<<< /nix/store/vrp5p1v011q1rb03z22n2dcc4mpa1rx5-nixos-system-fw12-26.11.20261023.3ec6363
+>>> /nix/store/pqvj64nrqlj3xpbakw1ainslhbqmr09a-nixos-system-fw12-26.11.20261023.3ec6363
+
+CHANGED
+[C.] sops-install-secrets +703 KiB
+
+PATHS: 2336 -> 2336 (+3, -3)
+SIZE: 15.5 GiB -> 15.5 GiB
+DIFF: +703 KiB
+
+Host: fw12
+From: 51c914c
+Activation: switch
+Generation: /nix/store/pqvj64nrqlj3xpbakw1ainslhbqmr09a-nixos-system-fw12-26.11.20261023.3ec6363
+Rebuilt-at: 2026-10-27T19:30:52+07:00
