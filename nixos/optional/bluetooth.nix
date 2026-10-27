@@ -27,6 +27,12 @@ in
   # At login, once the sound server can take an audio device, and again
   # after waking from sleep. The target is named so that the session does
   # not wait for this: left out, systemd orders the unit before it.
+  #
+  # Both are started by exec rather than as oneshots, as nothing waits
+  # for them to finish: a oneshot's start job stays queued until the
+  # script ends, and systemd refuses a reboot or power-off that would
+  # have to stop it. Restarting just after waking on fw12 logged out and
+  # left a blank console instead of rebooting.
   systemd.user.services.bluetooth-reconnect = {
     description = "Connect trusted Bluetooth devices";
     after = [
@@ -35,7 +41,7 @@ in
     ];
     wantedBy = [ "graphical-session.target" ];
     serviceConfig = {
-      Type = "oneshot";
+      Type = "exec";
       ExecStart = "${reconnect}/bin/bluetooth-reconnect";
     };
   };
@@ -53,7 +59,7 @@ in
       "suspend-then-hibernate.target"
     ];
     serviceConfig = {
-      Type = "oneshot";
+      Type = "exec";
       ExecStart = "${reconnect}/bin/bluetooth-reconnect";
     };
   };
