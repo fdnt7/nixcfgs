@@ -1,0 +1,17 @@
+fw16: switch to d61fbec
+
+<<< /nix/store/cv5flwxx33ghhjf34m4vvpmp88m8qp7b-nixos-system-fw16-26.11.20261023.3ec6363
+>>> /nix/store/qjn969m2vdqs7q1l8jawbqgpsdnlw0qw-nixos-system-fw16-26.11.20261023.3ec6363
+
+CHANGED
+[C.] sops-install-secrets +703 KiB
+
+PATHS: 2279 -> 2279 (+11, -11)
+SIZE: 19.1 GiB -> 19.1 GiB
+DIFF: +703 KiB
+
+Host: fw16
+From: 51c914c
+Activation: switch
+Generation: /nix/store/qjn969m2vdqs7q1l8jawbqgpsdnlw0qw-nixos-system-fw16-26.11.20261023.3ec6363
+Rebuilt-at: 2026-10-27T19:25:58+07:00
