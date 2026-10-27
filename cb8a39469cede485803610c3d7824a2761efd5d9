@@ -1,0 +1,17 @@
+fw16: switch to cb8a394
+
+<<< /nix/store/qjn969m2vdqs7q1l8jawbqgpsdnlw0qw-nixos-system-fw16-26.11.20261023.3ec6363
+>>> /nix/store/x6a66kypp5ds4sbafkdjik5q5z33idym-nixos-system-fw16-26.11.20261023.3ec6363
+
+CHANGED
+[C.] rbld +25.8 KiB
+
+PATHS: 2279 -> 2279 (+13, -13)
+SIZE: 19.1 GiB -> 19.1 GiB
+DIFF: +25.8 KiB
+
+Host: fw16
+From: d61fbec
+Activation: switch
+Generation: /nix/store/x6a66kypp5ds4sbafkdjik5q5z33idym-nixos-system-fw16-26.11.20261023.3ec6363
+Rebuilt-at: 2026-10-27T20:01:23+07:00
