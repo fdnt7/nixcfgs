@@ -1,0 +1,14 @@
+fw12: switch to f5b26bf
+
+<<< /nix/store/sm07xi8s0cfahd5wz8xk8a0nybgipkkq-nixos-system-fw12-26.11.20261023.3ec6363
+>>> /nix/store/g7lfq48is1a7wnadw0g2rcv6p543q5af-nixos-system-fw12-26.11.20261023.3ec6363
+
+PATHS: 2343 -> 2343 (+5, -5)
+SIZE: 15.5 GiB -> 15.5 GiB
+DIFF: +456 bytes
+
+Host: fw12
+From: 92e1596
+Activation: switch
+Generation: /nix/store/g7lfq48is1a7wnadw0g2rcv6p543q5af-nixos-system-fw12-26.11.20261023.3ec6363
+Rebuilt-at: 2026-10-28T06:59:51+07:00
