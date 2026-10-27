@@ -1,0 +1,17 @@
+fw12: switch to cb8a394
+
+<<< /nix/store/pqvj64nrqlj3xpbakw1ainslhbqmr09a-nixos-system-fw12-26.11.20261023.3ec6363
+>>> /nix/store/dy6fpkrns61kjvpdcpb6cs7qm6jgrlmi-nixos-system-fw12-26.11.20261023.3ec6363
+
+CHANGED
+[C.] rbld +25.8 KiB
+
+PATHS: 2336 -> 2336 (+13, -13)
+SIZE: 15.5 GiB -> 15.5 GiB
+DIFF: +25.8 KiB
+
+Host: fw12
+From: d61fbec
+Activation: switch
+Generation: /nix/store/dy6fpkrns61kjvpdcpb6cs7qm6jgrlmi-nixos-system-fw12-26.11.20261023.3ec6363
+Rebuilt-at: 2026-10-27T20:12:07+07:00
