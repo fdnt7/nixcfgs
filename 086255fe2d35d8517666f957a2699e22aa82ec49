@@ -1,0 +1,19 @@
+fw12: switch to 086255f
+
+<<< /nix/store/w0xdkyixiskji2rg9fh77zi4kjk0zawn-nixos-system-fw12-26.11.20261023.3ec6363
+>>> /nix/store/j44n3g6rv4chmav5qmd6i9kl3harf6h0-nixos-system-fw12-26.11.20261023.3ec6363
+
+REMOVED
+[R.] bluetooth-reconnect                     <none>
+[R.] unit-bluetooth-reconnect-resume.service <none>
+[R.] unit-bluetooth-reconnect.service        <none>
+
+PATHS: 2339 -> 2336 (+4, -7)
+SIZE: 15.5 GiB -> 15.5 GiB
+DIFF: -6.07 KiB
+
+Host: fw12
+From: 6ab1ef6
+Activation: switch
+Generation: /nix/store/j44n3g6rv4chmav5qmd6i9kl3harf6h0-nixos-system-fw12-26.11.20261023.3ec6363
+Rebuilt-at: 2026-10-27T15:22:40+07:00
