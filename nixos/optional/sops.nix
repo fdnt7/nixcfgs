@@ -5,7 +5,6 @@
   ...
 }:
 let
-  hostKey = "${config.impermanence.persist}/etc/ssh/ssh_host_ed25519_key";
   keyFile = "${config.impermanence.persist}/var/lib/sops-nix/key.txt";
 in
 {
@@ -20,8 +19,7 @@ in
     age = {
       inherit keyFile;
       generateKey = true;
-      # Until the files are encrypted for the key above as well.
-      sshKeyPaths = [ hostKey ];
+      sshKeyPaths = [ ];
     };
     gnupg.sshKeyPaths = [ ];
   };
