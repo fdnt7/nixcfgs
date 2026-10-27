@@ -1,0 +1,14 @@
+fw12: switch to 0e4da42
+
+<<< /nix/store/dy6fpkrns61kjvpdcpb6cs7qm6jgrlmi-nixos-system-fw12-26.11.20261023.3ec6363
+>>> /nix/store/kgcyjv2fnvpl8dy5c7pxsyxj4455w6iq-nixos-system-fw12-26.11.20261023.3ec6363
+
+PATHS: 2336 -> 2336 (+13, -13)
+SIZE: 15.5 GiB -> 15.5 GiB
+DIFF: +4.92 KiB
+
+Host: fw12
+From: cb8a394
+Activation: switch
+Generation: /nix/store/kgcyjv2fnvpl8dy5c7pxsyxj4455w6iq-nixos-system-fw12-26.11.20261023.3ec6363
+Rebuilt-at: 2026-10-27T22:02:40+07:00
