@@ -1,0 +1,20 @@
+fw12: switch to 08d344f
+
+<<< /nix/store/8h6qbsvbkcg7wvfd51vzdy98z5457wsa-nixos-system-fw12-26.11.20261023.3ec6363
+>>> /nix/store/0rrzj8q8mcry6jiznp5kma9b8zdf7bkr-nixos-system-fw12-26.11.20261023.3ec6363
+
+ADDED
+[A.] hm_kittydarktheme.auto.conf         <none>
+[A.] hm_kittylighttheme.auto.conf        <none>
+[A.] hm_kittynopreferencetheme.auto.conf <none>
+[A.] kitty-themes                        0-unstable-2026-10-08, +650 KiB
+
+PATHS: 2333 -> 2337 (+11, -7)
+SIZE: 15.5 GiB -> 15.5 GiB
+DIFF: +653 KiB
+
+Host: fw12
+From: cfa797b
+Activation: switch
+Generation: /nix/store/0rrzj8q8mcry6jiznp5kma9b8zdf7bkr-nixos-system-fw12-26.11.20261023.3ec6363
+Rebuilt-at: 2026-10-27T13:05:37+07:00
