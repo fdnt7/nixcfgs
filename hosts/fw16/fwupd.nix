@@ -13,6 +13,6 @@
   # were clean, so the plugin is back on trial from 2026-10-27, in everyday
   # use (hotplugs, suspends, refreshes). If the card goes silent, leave it
   # in, report the journal on the issue, then pull it to recover; put the
-  # setting back if it fails again. If it stays clean for a couple of weeks,
-  # say so on the issue and delete this file.
+  # setting back if it fails again. If it stays clean until 2026-11-10, say
+  # so on the issue and delete this file.
 }
