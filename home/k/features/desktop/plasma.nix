@@ -2,7 +2,10 @@
 {
   # Plasma's settings, declared. Only what is set here is written; anything
   # else changed in System Settings stays as it is.
-  imports = [ inputs.plasma-manager.homeModules.plasma-manager ];
+  imports = [
+    inputs.plasma-manager.homeModules.plasma-manager
+    ./kitty-breeze.nix
+  ];
 
   programs.plasma = {
     enable = true;
