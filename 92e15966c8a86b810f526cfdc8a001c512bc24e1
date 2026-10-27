@@ -1,0 +1,24 @@
+fw16: boot to 92e1596
+
+<<< /nix/store/qwppsa6143pfqvzdvmqmsamhvc8wcrnz-nixos-system-fw16-26.11.20261023.3ec6363
+>>> /nix/store/vhxfkzfw0ykgwwdb0jdkh06ghycmr7n7-nixos-system-fw16-26.11.20261023.3ec6363
+
+CHANGED
+[C.] initrd-linux                                      -11.2 KiB
+
+ADDED
+[A.] unit                                              40-tailscale0.link
+[A.] unit-network-addresses-tailscale0.service         <none>
+[A.] unit-script-network-addresses-tailscale0-pre-stop <none>
+[A.] unit-script-network-addresses-tailscale0-start    <none>
+
+PATHS: 2284 -> 2288 (+17, -13)
+SIZE: 19.1 GiB -> 19.1 GiB
+DIFF: -5.89 KiB
+
+Host: fw16
+From: e6a67d9
+Activation: boot
+Activation-reason: initrd changed
+Generation: /nix/store/vhxfkzfw0ykgwwdb0jdkh06ghycmr7n7-nixos-system-fw16-26.11.20261023.3ec6363
+Rebuilt-at: 2026-10-28T06:18:24+07:00
