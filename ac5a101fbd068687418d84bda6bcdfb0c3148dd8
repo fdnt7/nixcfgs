@@ -1,0 +1,19 @@
+fw16: switch to ac5a101
+
+<<< /nix/store/8c2irp8q0rlf6qfyxf8ly1h8vwdk3az5-nixos-system-fw16-26.11.20261023.3ec6363
+>>> /nix/store/ijnzyr61lk8j99cs4gdpqv0wknva4qjx-nixos-system-fw16-26.11.20261023.3ec6363
+
+ADDED
+[A+] tailscale                    1.104.2, +51.3 MiB
+[A.] unit-tailscaled.service      <none>
+[A.] unit-var-lib-tailscale.mount <none>
+
+PATHS: 2279 -> 2282 (+33, -30)
+SIZE: 19.1 GiB -> 19.1 GiB
+DIFF: +51.3 MiB
+
+Host: fw16
+From: 245449f
+Activation: switch
+Generation: /nix/store/ijnzyr61lk8j99cs4gdpqv0wknva4qjx-nixos-system-fw16-26.11.20261023.3ec6363
+Rebuilt-at: 2026-10-28T04:33:07+07:00
