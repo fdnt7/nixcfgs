@@ -26,7 +26,7 @@
       # In the runtime directory: private to the user, gone at logout, and
       # short, as a socket's path must be under 108 bytes.
       ControlPath = "\${XDG_RUNTIME_DIR}/ssh-%C";
-      ControlPersist = "5m";
+      ControlPersist = "yes";
       # A connection that died under a suspend or a change of network is
       # given up within 20 seconds, rather than holding up whatever waits
       # on it.
