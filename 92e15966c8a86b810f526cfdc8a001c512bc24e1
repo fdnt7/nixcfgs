@@ -1,0 +1,21 @@
+fw12: boot to 92e1596
+
+<<< /nix/store/hz5vnvx6qaclfydfz5g8svf12q5wqxbr-nixos-system-fw12-26.11.20261023.3ec6363
+>>> /nix/store/sm07xi8s0cfahd5wz8xk8a0nybgipkkq-nixos-system-fw12-26.11.20261023.3ec6363
+
+ADDED
+[A.] unit                                              40-tailscale0.link
+[A.] unit-network-addresses-tailscale0.service         <none>
+[A.] unit-script-network-addresses-tailscale0-pre-stop <none>
+[A.] unit-script-network-addresses-tailscale0-start    <none>
+
+PATHS: 2339 -> 2343 (+17, -13)
+SIZE: 15.5 GiB -> 15.5 GiB
+DIFF: +6.66 KiB
+
+Host: fw12
+From: 1cafc89
+Activation: boot
+Activation-reason: initrd changed
+Generation: /nix/store/sm07xi8s0cfahd5wz8xk8a0nybgipkkq-nixos-system-fw12-26.11.20261023.3ec6363
+Rebuilt-at: 2026-10-28T06:31:48+07:00
