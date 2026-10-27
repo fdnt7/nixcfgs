@@ -8,7 +8,8 @@ in
   # one is ./kitty-breeze-light.conf. A theme of one's own cannot be named
   # in `autoThemeFiles`, which only looks in kitty-themes, so the files it
   # would write are written here instead. Plasma reports light or dark, so
-  # no preference is only a fallback.
+  # no preference is only a fallback. A change here reaches only a kitty
+  # started after it: ../../../f/features/desktop/kitty.nix says why.
   programs.kitty.autoThemeFiles = lib.mkForce null;
 
   xdg.configFile = {
