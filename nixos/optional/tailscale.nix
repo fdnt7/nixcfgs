@@ -2,60 +2,71 @@
 let
   tailnet = config.services.tailscale.interfaceName;
 
-  # Mullvad's mark for traffic it leaves alone: on the connection, which its
-  # firewall lets through, and on the packet, which its routing rule then
-  # passes over to Tailscale's. Both are constants in Mullvad's source
-  # (talpid-core), and what its own rules match on.
-  mullvad = {
-    ct = "0x00000f41";
-    meta = "0x6d6f6c65";
-  };
+  # Mullvad's mark for connections it leaves alone, which its firewall lets
+  # through: a constant in Mullvad's source (talpid-core), and what its own
+  # rules match on.
+  mullvadExcluded = "0x00000f41";
 in
 {
   services.tailscale.enable = true;
   # The node key and login state.
   environment.persistence.${config.impermanence.persist}.directories = [ "/var/lib/tailscale" ];
 
-  # With Mullvad connected, its routing rule, put ahead of Tailscale's,
-  # sends everything into its tunnel, the tailnet's addresses with the
-  # rest, and its firewall drops what then comes in on the tailnet. So the
-  # tailnet's traffic gets Mullvad's marks, as Mullvad documents for
-  # traffic to leave out of its tunnel. tailscaled's own, the WireGuard and
-  # relay traffic carrying the tailnet, stays in the tunnel, so that what
-  # the tailnet sees is Mullvad's address. Tested on fw16 with Mullvad
-  # 2026.5 and Tailscale 1.104.2, 2026-10-28.
-  networking.nftables = lib.mkIf config.services.mullvad-vpn.enable {
-    # Declared tables are made and replaced on their own; Mullvad's is left
-    # as it is, as the ruleset is not flushed.
-    enable = true;
-    tables.tailscale-mullvad = {
-      family = "inet";
-      content = ''
-        # after conntrack (-200), so that the connection can be marked, and
-        # before Mullvad's filter chains (0); a route chain, so that the
-        # packet is routed again with the mark
-        chain output-mark {
-          type route hook output priority -10; policy accept;
-          ip daddr 100.64.0.0/10 ct mark set ${mullvad.ct} meta mark set ${mullvad.meta}
-          ip6 daddr fd7a:115c:a1e0::/48 ct mark set ${mullvad.ct} meta mark set ${mullvad.meta}
+  # With Mullvad connected, its routing rules sit ahead of any others,
+  # Tailscale's included, and send everything into its tunnel; its
+  # firewall then drops whatever leaves or arrives elsewhere. Tested on
+  # fw16 and fw12 with Mullvad 2026.5 and Tailscale 1.104.2, 2026-10-28.
+  #
+  # Ahead of its own catch-all, Mullvad looks in the main table for any
+  # route more specific than the default, as it does for the local
+  # network: a route there for the tailnet's range takes it to the
+  # tailnet. From the start, so that a connection has the tailnet's
+  # address and interface from its first packet; rerouting each packet
+  # instead lost what a host sent in bulk on a connection it had accepted.
+  # An address in the range outside the tailnet goes to tailscaled too,
+  # which has no peer for it, and so not around Mullvad.
+  #
+  # tailscaled's own traffic, the WireGuard and relay traffic carrying the
+  # tailnet, stays in the tunnel, so that what the tailnet sees is
+  # Mullvad's address.
+  networking = lib.mkIf config.services.mullvad-vpn.enable {
+    # Made each time tailscaled makes the interface: the service NixOS
+    # makes for these is bound to the device.
+    interfaces.${tailnet} = {
+      ipv4.routes = [
+        {
+          address = "100.64.0.0";
+          prefixLength = 10;
         }
+      ];
+      ipv6.routes = [
+        {
+          address = "fd7a:115c:a1e0::";
+          prefixLength = 48;
+        }
+      ];
+    };
 
-        # Tailscale's routes cover only the addresses in the tailnet, so
-        # another in its range, marked above, would go out around Mullvad.
-        # Checked on the way out, as the output hook still names the
-        # interface routed to before the mark.
-        chain postrouting-guard {
-          type filter hook postrouting priority -10; policy accept;
-          meta mark ${mullvad.meta} ip daddr 100.64.0.0/10 oifname != "${tailnet}" counter drop
-          meta mark ${mullvad.meta} ip6 daddr fd7a:115c:a1e0::/48 oifname != "${tailnet}" counter drop
-        }
+    # And Mullvad's mark on the tailnet's connections, both ways, before
+    # its filter chains (0) and after conntrack (-200).
+    nftables = {
+      # Declared tables are made and replaced on their own; Mullvad's is
+      # left as it is, as the ruleset is not flushed.
+      enable = true;
+      tables.tailscale-mullvad = {
+        family = "inet";
+        content = ''
+          chain output {
+            type filter hook output priority -10; policy accept;
+            oifname "${tailnet}" ct mark set ${mullvadExcluded}
+          }
 
-        # connections from the tailnet, before Mullvad's filter drops them
-        chain input-mark {
-          type filter hook input priority -10; policy accept;
-          iifname "${tailnet}" ct mark set ${mullvad.ct}
-        }
-      '';
+          chain input {
+            type filter hook input priority -10; policy accept;
+            iifname "${tailnet}" ct mark set ${mullvadExcluded}
+          }
+        '';
+      };
     };
   };
 }
