@@ -1,0 +1,26 @@
+fw16: switch to 2172704
+
+<<< /nix/store/dmw4xzml4l3fc0gjch4wzhz5i00d44pm-nixos-system-fw16-26.11.20261023.3ec6363
+>>> /nix/store/r0s2y506p02kpbrvgbfh5wvpymalnj75-nixos-system-fw16-26.11.20261023.3ec6363
+
+ADDED
+[A.] X-Restart-Triggers-sshd       <none>
+[A.] f-authorized_keys             <none>
+[A.] ssh-root-provision.conf       <none>
+[A.] sshd.conf-final               <none>
+[A.] unit-script-sshd-keygen-start <none>
+[A.] unit-sshd-.service            <none>
+[A.] unit-sshd-keygen.service      <none>
+[A.] unit-sshd-vsock-.service      <none>
+[A.] unit-sshd-vsock.socket        <none>
+[A.] unit-sshd.service             <none>
+
+PATHS: 2288 -> 2298 (+35, -25)
+SIZE: 19.1 GiB -> 19.1 GiB
+DIFF: +16.6 KiB
+
+Host: fw16
+From: e6a3bc3
+Activation: switch
+Generation: /nix/store/r0s2y506p02kpbrvgbfh5wvpymalnj75-nixos-system-fw16-26.11.20261023.3ec6363
+Rebuilt-at: 2026-10-28T07:36:36+07:00
