@@ -34,22 +34,5 @@
       ServerAliveInterval = 10;
       ServerAliveCountMax = 2;
     };
-
-    # k's machine, over the tailnet, with the key kept on the YubiKey
-    # (application ssh:tailnet), each connection asking for a touch. By
-    # its tailnet address, as MagicDNS is not taking the system's DNS.
-    settings."fw12" = {
-      Hostname = "100.98.146.116";
-      User = "k";
-      IdentityFile = "~/.ssh/id_ed25519_sk_tailnet";
-      IdentitiesOnly = true;
-
-      # Shared as GitHub's is above, so that one touch serves a session.
-      ControlMaster = "auto";
-      ControlPath = "\${XDG_RUNTIME_DIR}/ssh-%C";
-      ControlPersist = "10m";
-      ServerAliveInterval = 10;
-      ServerAliveCountMax = 2;
-    };
   };
 }
