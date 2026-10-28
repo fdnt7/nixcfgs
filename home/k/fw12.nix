@@ -25,4 +25,23 @@
     ./features/desktop/tailscale-systray.nix
     ./features/desktop/xournalpp.nix
   ];
+
+  # f's machine, over the tailnet, as f, for work to run there: with the
+  # key ssh-tpm-agent holds, sealed by this machine's TPM, named by its
+  # public half. By its tailnet address, as MagicDNS is not taking the
+  # system's DNS.
+  programs.ssh.settings."fw16" = {
+    Hostname = "100.127.15.43";
+    User = "f";
+    IdentityFile = "~/.ssh/id_ecdsa_fw16.pub";
+    IdentitiesOnly = true;
+
+    # Shared as GitHub's is (../f/features/cli/ssh.nix), and kept alive,
+    # so that a long session is not given up on a quiet minute.
+    ControlMaster = "auto";
+    ControlPath = "\${XDG_RUNTIME_DIR}/ssh-%C";
+    ControlPersist = "10m";
+    ServerAliveInterval = 10;
+    ServerAliveCountMax = 2;
+  };
 }
