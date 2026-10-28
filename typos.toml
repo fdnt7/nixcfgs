@@ -48,6 +48,8 @@ extend-ignore-re = [
   '(?m)^\s*(programs\.eza\.colors|programs\.zed-editor\.userSettings\.lsp\.rust-analyzer\.initialization_options|theme\.colorScheme)\s*=',
   # Ignore "color" in eza's flag
   '"--color-scale=',
+  # Ignore "authorized" in NixOS's option for a user's SSH keys
+  '\bopenssh\.authorizedKeys\b',
 ]
 
 [type.kdl]
