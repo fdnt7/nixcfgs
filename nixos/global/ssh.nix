@@ -13,6 +13,13 @@
     publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILHRPbXriHM0GNrrVWVzDgiXN1gfyibexrdkH1wPp9+g";
   };
 
+  # fw16's, made by its sshd on 2026-10-28 and read off it then, under its
+  # tailnet address, which ../../home/k/fw12.nix reaches it by.
+  programs.ssh.knownHosts.fw16 = {
+    hostNames = [ "100.127.15.43" ];
+    publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICPb+9NstzFkRQdycYjBxDa+oUbBZfx/gndZg83Hovzy";
+  };
+
   # Every user's shared SSH connections (ControlMaster, as in
   # ../../home/f/features/cli/ssh.nix) are ended before sleep. One left open
   # through it is dead on waking, and the first command to use it waits
