@@ -1,0 +1,26 @@
+fw12: switch to 564b9eb
+
+<<< /nix/store/g7lfq48is1a7wnadw0g2rcv6p543q5af-nixos-system-fw12-26.11.20261023.3ec6363
+>>> /nix/store/4ljd6305njks0bvaq26h01rprjsn5agq-nixos-system-fw12-26.11.20261023.3ec6363
+
+ADDED
+[A.] X-Restart-Triggers-sshd       <none>
+[A.] k-authorized_keys             <none>
+[A.] ssh-root-provision.conf       <none>
+[A.] sshd.conf-final               <none>
+[A.] unit-script-sshd-keygen-start <none>
+[A.] unit-sshd-.service            <none>
+[A.] unit-sshd-keygen.service      <none>
+[A.] unit-sshd-vsock-.service      <none>
+[A.] unit-sshd-vsock.socket        <none>
+[A.] unit-sshd.service             <none>
+
+PATHS: 2343 -> 2353 (+40, -30)
+SIZE: 15.5 GiB -> 15.5 GiB
+DIFF: +16.7 KiB
+
+Host: fw12
+From: f5b26bf
+Activation: switch
+Generation: /nix/store/4ljd6305njks0bvaq26h01rprjsn5agq-nixos-system-fw12-26.11.20261023.3ec6363
+Rebuilt-at: 2026-10-28T07:13:35+07:00
