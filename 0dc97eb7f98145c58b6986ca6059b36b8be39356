@@ -1,0 +1,53 @@
+fw16: boot to 0dc97eb
+
+<<< /nix/store/r0s2y506p02kpbrvgbfh5wvpymalnj75-nixos-system-fw16-26.11.20261023.3ec6363
+>>> /nix/store/flk3rypmnmr25nkhrqray9y7li3qhy0f-nixos-system-fw16-26.11.20261027.31ecbac
+
+CHANGED
+[U.] btop                                                  1.4.7-fish-completions, 1.4.7 -> 1.4.8-fish-completions, 1.4.8, -52.6 KiB
+[U.] claude-code                                           2.1.308-fish-completions, 2.1.308 -> 2.1.311-fish-completions, 2.1.311, +1.47 MiB
+[U.] discord                                               1.0.161-bwrap, 1.0.161-fhsenv-profile, 1.0.161-fhsenv-rootfs, 1.0.161-fish-completions, 1.0.161-init, 1.0.161 -> 1.0.166-bwrap, 1.0.166-fhsenv-profile, 1.0.166-fhsenv-rootfs, 1.0.166-fish-completions, 1.0.166-init, 1.0.166
+[U.] discord-unwrapped                                     1.0.161 -> 1.0.166, +44.0 MiB
+[U.] dix                                                   2.2.0 -> 3.0.0, -753 KiB
+[U.] full-border.yazi                                      0-unstable-2026-09-01 -> 0-unstable-2026-10-23
+[D*] fuse                                                  2.9.9-bin, 2.9.9-man, <unchanged> -> <unchanged>, -92.6 KiB
+[U*] fwupd                                                 2.1.8-lib, 2.1.8-man, 2.1.8 -> 2.1.9-lib, 2.1.9-man, 2.1.9
+[C.] initrd-linux                                          +213 KiB
+[U.] lcevcdec                                              4.2.2-lib -> 4.3.0-lib, +8.03 KiB
+[U.] libcdio-paranoia                                      2.0.2 -> 10.2+2.0.2
+[U.] libtraceevent                                         1.9.0 -> 1.9.1
+[C*] nixos-manual-html                                     +25.9 KiB
+[U.] nixos-system-fw16                                     26.11.20261023.3ec6363 -> 26.11.20261027.31ecbac
+[U.] nss                                                   3.131, <unchanged> -> 3.132, <unchanged>
+[U.] nvidia-open                                           595.104.02-7.3 -> 595.112.07-7.3
+[U*] nvidia-settings                                       595.104.02_fish-completions, 595.104.02 -> 595.112.07_fish-completions, 595.112.07
+[U*] nvidia-x11                                            595.104.02-bin, 595.104.02-firmware, 595.104.02_fish-completions, 595.104.02-lib32, 595.104.02 -> 595.112.07-bin, 595.112.07-firmware, 595.112.07_fish-completions, 595.112.07-lib32, 595.112.07, -20.0 KiB
+[U.] python3.14-onnx-ir                                    0.2.1 -> 1.1.0, +1.24 MiB
+[U*] redis                                                 8.10.2 -> 8.10.3
+[U.] resvg                                                 0.48.1 -> 0.49.0, +66.2 KiB
+[U.] shader-slang                                          2026.19 -> 2026.20, +5.82 MiB
+[C.] source                                                +1.88 MiB
+[U*] strace                                                7.2-man, 7.2 -> 7.3-man, 7.3, +28.0 KiB
+[U.] swayimg                                               5.6-fish-completions, 5.6 -> 5.7-fish-completions, 5.7, +47.0 KiB
+[U.] yt-dlp                                                2026.08.19 -> 2026.10.21, +53.6 KiB
+[U.] zed-editor                                            1.25.2 -> 1.25.3
+[U.] zed-editor-wrapped                                    1.25.2-fish-completions, 1.25.2 -> 1.25.3-fish-completions, 1.25.3
+[D.] zen-beta                                              1.23.4b-fish-completions, 1.23.4b -> 1.24b-fish-completions, 1.24b
+[D.] zen-beta-bin-unwrapped                                1.23.4b -> 1.24b, +1.01 MiB
+
+REMOVED
+[R.] security-wrapper-fusermount-x86_64-unknown-linux-musl <none>, -69.9 KiB
+
+PATHS: 2298 -> 2295 (+157, -160)
+SIZE: 19.1 GiB -> 19.2 GiB
+DIFF: +54.9 MiB
+
+Host: fw16
+From: 2172704
+Activation: boot
+Activation-reason: kernel changed
+Activation-reason: initrd changed
+Activation-reason: kernel-modules changed
+Activation-reason: firmware changed
+Generation: /nix/store/flk3rypmnmr25nkhrqray9y7li3qhy0f-nixos-system-fw16-26.11.20261027.31ecbac
+Rebuilt-at: 2026-10-30T08:51:04+07:00
