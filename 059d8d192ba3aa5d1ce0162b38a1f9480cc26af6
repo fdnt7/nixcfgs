@@ -1,0 +1,7 @@
+fw16: 059d8d1 builds what's running; nothing to activate
+
+Host: fw16
+From: a4f9853
+Activation: none
+Generation: /nix/store/v9kx4y9c2vycjwhmm96sn7dgfzy4x5x0-nixos-system-fw16-26.11.20261030.1c89083
+Rebuilt-at: 2026-10-31T20:54:37+07:00
