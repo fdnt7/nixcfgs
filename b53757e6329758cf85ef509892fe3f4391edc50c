@@ -1,0 +1,109 @@
+fw12: boot to b53757e
+
+<<< /nix/store/6n8nyc1af8da6wnl4igqjgbdk6kdz0n6-nixos-system-fw12-26.11.20261023.3ec6363
+>>> /nix/store/q9lckn2g827lb54hpgagqngnqkxj3657-nixos-system-fw12-26.11.20261030.1c89083
+
+CHANGED
+[U*] aurorae                                               6.8.1 -> 6.8.2
+[U*] bluedevil                                             6.8.1 -> 6.8.2
+[U*] breeze                                                6.8.1-qt5, 6.8.1 -> 6.8.2-qt5, 6.8.2
+[U*] breeze-gtk                                            6.8.1 -> 6.8.2
+[U.] btop                                                  1.4.7-fish-completions, 1.4.7 -> 1.4.8-fish-completions, 1.4.8, -52.6 KiB
+[U.] claude-code                                           2.1.308-fish-completions, 2.1.308 -> 2.1.312-fish-completions, 2.1.312, +1.28 MiB
+[U.] discord                                               1.0.161-bwrap, 1.0.161-fhsenv-profile, 1.0.161-fhsenv-rootfs, 1.0.161-fish-completions, 1.0.161-init, 1.0.161 -> 1.0.166-bwrap, 1.0.166-fhsenv-profile, 1.0.166-fhsenv-rootfs, 1.0.166-fish-completions, 1.0.166-init, 1.0.166
+[U.] discord-unwrapped                                     1.0.161 -> 1.0.166, +44.0 MiB
+[U*] discover                                              6.8.1 -> 6.8.2, -11.1 KiB
+[U.] dix                                                   2.2.0 -> 3.0.0, -753 KiB
+[U*] drkonqi                                               6.8.1 -> 6.8.2
+[D.] ffmpeg                                                7.1.5-data, 7.1.5-lib, <unchanged> -> <unchanged>, -29.3 MiB
+[U.] full-border.yazi                                      0-unstable-2026-09-01 -> 0-unstable-2026-10-23
+[D*] fuse                                                  2.9.9-bin, 2.9.9-man, <unchanged> -> <unchanged>, -92.6 KiB
+[U*] fwupd                                                 2.1.8-lib, 2.1.8-man, 2.1.8 -> 2.1.9-lib, 2.1.9-man, 2.1.9
+[U.] fwupd-efi                                             1.8 -> 1.9
+[C.] haruna                                                +394 KiB
+[C.] ibus                                                  +123 KiB
+[C.] initrd-linux                                          -104 KiB
+[C.] intel-compute-runtime                                 +41.8 KiB
+[U*] kactivitymanagerd                                     6.8.1 -> 6.8.2
+[U*] kde-cli-tools                                         6.8.1_fish-completions, 6.8.1 -> 6.8.2_fish-completions, 6.8.2
+[U*] kde-gtk-config                                        6.8.1 -> 6.8.2
+[U.] kdecoration                                           6.8.1 -> 6.8.2
+[U*] kdeplasma-addons                                      6.8.1 -> 6.8.2
+[U*] kglobalacceld                                         6.8.1 -> 6.8.2
+[U*] kinfocenter                                           6.8.1 -> 6.8.2
+[U.] kirigami-addons                                       1.15.0 -> 1.16.0, +950 KiB
+[U*] kmenuedit                                             6.8.1 -> 6.8.2
+[U*] knighttime                                            6.8.1 -> 6.8.2
+[U.] kpipewire                                             6.8.1 -> 6.8.2
+[U*] krdp                                                  6.8.1 -> 6.8.2
+[U*] kscreen                                               6.8.1 -> 6.8.2
+[U*] kscreenlocker                                         6.8.1 -> 6.8.2
+[U*] ksystemstats                                          6.8.1 -> 6.8.2
+[U*] kwallet-pam                                           6.8.1 -> 6.8.2
+[U.] kwayland                                              6.8.1, <unchanged> -> 6.8.2, <unchanged>
+[U*] kwayland-integration                                  6.8.1 -> 6.8.2
+[U*] kwin                                                  6.8.1 -> 6.8.2, +13.8 KiB
+[U*] kwrited                                               6.8.1 -> 6.8.2
+[U.] layer-shell-qt                                        6.8.1 -> 6.8.2
+[C.] libetebase                                            -199 KiB
+[U*] libkscreen                                            6.8.1 -> 6.8.2
+[U*] libksysguard                                          6.8.1 -> 6.8.2
+[U*] libplasma                                             6.8.1 -> 6.8.2
+[U.] libtraceevent                                         1.9.0 -> 1.9.1
+[U.] libtracefs                                            1.8.3 -> 1.8.4
+[C.] libvlc                                                -18.6 KiB
+[U.] mariadb-server                                        11.4.12 -> 11.4.13, +70.6 MiB
+[U.] mesa                                                  26.2.5 -> 26.2.6, +65.5 KiB
+[U*] milou                                                 6.8.1 -> 6.8.2
+[U.] mpvqt                                                 1.1.1 -> 1.2.1, +53.7 KiB
+[C*] nixos-manual-html                                     +36.7 KiB
+[U.] nixos-system-fw12                                     26.11.20261023.3ec6363 -> 26.11.20261030.1c89083
+[U*] ocean-sound-theme                                     6.8.1 -> 6.8.2
+[U*] plasma-activities                                     6.8.1 -> 6.8.2
+[U.] plasma-activities-stats                               6.8.1 -> 6.8.2
+[U*] plasma-browser-integration                            6.8.1 -> 6.8.2
+[U*] plasma-desktop                                        6.8.1 -> 6.8.2, +30.5 KiB
+[U*] plasma-integration                                    6.8.1-qt5, 6.8.1 -> 6.8.2-qt5, 6.8.2
+[U*] plasma-keyboard                                       6.8.1 -> 6.8.2
+[U*] plasma-login-manager                                  6.8.1 -> 6.8.2
+[U.] plasma-nano                                           6.8.1 -> 6.8.2
+[U*] plasma-nm                                             6.8.1 -> 6.8.2
+[U*] plasma-pa                                             6.8.1 -> 6.8.2, +8.43 KiB
+[U.] plasma-sdk                                            6.8.1 -> 6.8.2
+[U*] plasma-systemmonitor                                  6.8.1 -> 6.8.2
+[U*] plasma-workspace                                      6.8.1-sessions, 6.8.1 -> 6.8.2-sessions, 6.8.2, +28.6 KiB
+[U*] plasma-workspace-wallpapers                           6.8.1 -> 6.8.2
+[U.] plasma5support                                        6.8.1 -> 6.8.2
+[U*] polkit-kde-agent                                      1-6.8.1 -> 1-6.8.2
+[U*] powerdevil                                            6.8.1 -> 6.8.2
+[U*] qqc2-breeze-style                                     6.8.1 -> 6.8.2, -13.0 KiB
+[U.] resvg                                                 0.48.1 -> 0.49.0, +66.2 KiB
+[U.] shader-slang                                          2026.19 -> 2026.20, +5.82 MiB
+[C.] source                                                +2.11 MiB
+[U*] spectacle                                             6.8.1_fish-completions, 6.8.1 -> 6.8.2_fish-completions, 6.8.2
+[U*] strace                                                7.2-man, 7.2 -> 7.3-man, 7.3, +28.0 KiB
+[U*] systemsettings                                        6.8.1 -> 6.8.2
+[U*] tailscale                                             1.104.2 -> 1.104.4, +274 KiB
+[U*] union                                                 6.8.1 -> 6.8.2
+[U.] wine-mono                                             10.0.0-x86.msi -> 10.4.1-x86.msi, +986 KiB
+[U*] xdg-desktop-portal-kde                                6.8.1 -> 6.8.2
+[U.] zed-editor                                            1.25.2 -> 1.26.2, +4.32 MiB
+[U.] zed-editor-wrapped                                    1.25.2-fish-completions, 1.25.2 -> 1.26.2-fish-completions, 1.26.2
+[D.] zen-beta                                              1.23.4b-fish-completions, 1.23.4b -> 1.24b-fish-completions, 1.24b
+[D.] zen-beta-bin-unwrapped                                1.23.4b -> 1.24b, +1.01 MiB
+
+REMOVED
+[R.] security-wrapper-fusermount-x86_64-unknown-linux-musl <none>, -69.9 KiB
+
+PATHS: 2353 -> 2348 (+248, -253)
+SIZE: 15.5 GiB -> 15.6 GiB
+DIFF: +102 MiB
+
+Host: fw12
+From: c5eb23d
+Activation: boot
+Activation-reason: kernel changed
+Activation-reason: initrd changed
+Activation-reason: kernel-modules changed
+Generation: /nix/store/q9lckn2g827lb54hpgagqngnqkxj3657-nixos-system-fw12-26.11.20261030.1c89083
+Rebuilt-at: 2026-11-01T05:50:06+07:00
