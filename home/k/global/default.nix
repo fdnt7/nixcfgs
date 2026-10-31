@@ -16,6 +16,14 @@
 
   xdg.enable = true;
 
+  # GitHub as k, and only as k: left to offer every key the agent holds, a
+  # bare ssh was refused with k's own and then accepted with fdnt7's, and
+  # logged in as fdnt7. The repository below names its key for itself.
+  programs.ssh.settings."github.com" = {
+    IdentityFile = "~/.ssh/id_ecdsa.pub";
+    IdentitiesOnly = true;
+  };
+
   # Who commits, and with which key, is kept out of this public repository:
   # the name, both addresses and the allowed-signers line for k's own key
   # are encrypted, in ../../../hosts/fw12/secrets.nix. The signing key is
