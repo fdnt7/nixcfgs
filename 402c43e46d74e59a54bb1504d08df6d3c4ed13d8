@@ -1,0 +1,20 @@
+fw16: switch to 402c43e
+
+<<< /nix/store/v9kx4y9c2vycjwhmm96sn7dgfzy4x5x0-nixos-system-fw16-26.11.20261030.1c89083
+>>> /nix/store/hbh0yhfi4rrcnfkclfn9wvsfbig3d6ii-nixos-system-fw16-26.11.20261030.1c89083
+
+CHANGED (2)
+[C.] index-x86_64-linux -1.50 MiB
+[C*] networkmanager     1.58.1 ×2, 1.58.1-man, <unchanged> -> 1.58.1 ×4, 1.58.1-man ×2, <unchanged>, +44.3 MiB
+
+REMOVED (1)
+[R.] libpng             1.2.59, 1.2.59-man, -731 KiB
+
+PATHS: 2296 -> 2297 (+37, -36)
+SIZE: 19.2 GiB -> 19.2 GiB (+42.1 MiB)
+
+Host: fw16
+From: 235f9d2
+Activation: switch
+Generation: /nix/store/hbh0yhfi4rrcnfkclfn9wvsfbig3d6ii-nixos-system-fw16-26.11.20261030.1c89083
+Rebuilt-at: 2026-11-01T23:00:20+07:00
