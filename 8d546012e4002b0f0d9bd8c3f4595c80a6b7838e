@@ -1,0 +1,32 @@
+fw16: boot to 8d54601
+
+<<< /nix/store/hbh0yhfi4rrcnfkclfn9wvsfbig3d6ii-nixos-system-fw16-26.11.20261030.1c89083
+>>> /nix/store/gizqn20vi7ic329f1qf4d2j82b46rqpn-nixos-system-fw16-26.11.20261101.0bb2eed
+
+CHANGED (12)
+[U.] claude-code       2.1.312, 2.1.312-fish-completions -> 2.1.316, 2.1.316-fish-completions, +33.1 MiB
+[U.] discord           1.0.166, 1.0.166-bwrap, 1.0.166-fhsenv-profile, 1.0.166-fhsenv-rootfs, 1.0.166-fish-completions, 1.0.166-init -> 1.0.168, 1.0.168-bwrap, 1.0.168-fhsenv-profile, 1.0.168-fhsenv-rootfs, 1.0.168-fish-completions, 1.0.168-init
+[U.] discord-unwrapped 1.0.166 -> 1.0.168, -21.0 MiB
+[U.] initrd-linux      7.3 -> 7.3.1, +55.2 KiB
+[U.] libraw            0.22.2-lib -> 0.22.3-lib
+[U.] linux             7.3, 7.3-modules ×2 -> 7.3.1, 7.3.1-modules ×2, +11.4 KiB
+[C*] networkmanager    1.58.1 ×4, 1.58.1-man ×2, <unchanged> -> 1.58.1 ×2, 1.58.1-man, <unchanged>, -44.3 MiB
+[U.] nixos-system-fw16 26.11.20261030.1c89083 -> 26.11.20261101.0bb2eed
+[U.] nvidia-open       595.112.07-7.3 -> 595.112.07-7.3.1
+[U.] openjdk           25.0.4.1+1, <unchanged> -> 25.0.5.0.3+1, <unchanged>, +904 KiB
+[U*] wireplumber       0.5.18, 0.5.18-doc, 0.5.18_fish-completions -> 0.5.19, 0.5.19-doc, 0.5.19_fish-completions, +43.1 KiB
+[U.] xfsprogs          7.1.1, 7.1.1-bin -> 7.2.1, 7.2.1-bin, +135 KiB
+
+PATHS: 2297 -> 2294 (+165, -168)
+SIZE: 19.2 GiB -> 19.2 GiB (-31.1 MiB)
+
+NOTE: 2 hidden (--full to show)
+
+Host: fw16
+From: 402c43e
+Activation: boot
+Activation-reason: kernel changed
+Activation-reason: initrd changed
+Activation-reason: kernel-modules changed
+Generation: /nix/store/gizqn20vi7ic329f1qf4d2j82b46rqpn-nixos-system-fw16-26.11.20261101.0bb2eed
+Rebuilt-at: 2026-11-02T21:53:43+07:00
