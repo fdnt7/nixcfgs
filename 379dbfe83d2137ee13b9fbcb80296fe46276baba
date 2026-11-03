@@ -1,0 +1,13 @@
+fw16: switch to 379dbfe
+
+<<< /nix/store/gizqn20vi7ic329f1qf4d2j82b46rqpn-nixos-system-fw16-26.11.20261101.0bb2eed
+>>> /nix/store/axjv8b5qz03ln37cshjxl5hsg0babygg-nixos-system-fw16-26.11.20261101.0bb2eed
+
+PATHS: 2294 -> 2294 (+11, -11)
+SIZE: 19.2 GiB -> 19.2 GiB (+4.59 KiB)
+
+Host: fw16
+From: 8d54601
+Activation: switch
+Generation: /nix/store/axjv8b5qz03ln37cshjxl5hsg0babygg-nixos-system-fw16-26.11.20261101.0bb2eed
+Rebuilt-at: 2026-11-03T22:23:35+07:00
