@@ -1,0 +1,29 @@
+fw16: switch to 3be4cee
+
+<<< /nix/store/axjv8b5qz03ln37cshjxl5hsg0babygg-nixos-system-fw16-26.11.20261101.0bb2eed
+>>> /nix/store/ihsvxcngjzlw6qlscb13lzyj0yx53jim-nixos-system-fw16-26.11.20261103.1d06008
+
+CHANGED (8)
+[U.] claude-code                2.1.316, 2.1.316-fish-completions -> 2.1.317, 2.1.317-fish-completions, +2.96 MiB
+[U.] nixos-system-fw16          26.11.20261101.0bb2eed -> 26.11.20261103.1d06008
+[U.] python3.14-hf-xet          1.6.0 -> 1.8.0, -852 KiB
+[U.] python3.14-huggingface-hub 1.30.0 -> 2.4.0, +734 KiB
+[U.] python3.14-tokenizers      0.23.2 -> 0.23.3, +8.97 KiB
+[U.] squashfuse                 0.6.3 -> 0.6.5
+[U.] tevent                     0.17.1 -> 0.17.2
+[U.] yt-dlp                     2026.10.21 -> 2026.10.26, -12.4 KiB
+
+ADDED (2)
+[A.] python3.14-httpcore2       2.13.1, +1.11 MiB
+[A.] python3.14-httpx2          2.13.1, +1.48 MiB
+
+PATHS: 2294 -> 2296 (+78, -76)
+SIZE: 19.2 GiB -> 19.2 GiB (+5.47 MiB)
+
+NOTE: 2 hidden (--full to show)
+
+Host: fw16
+From: 379dbfe
+Activation: switch
+Generation: /nix/store/ihsvxcngjzlw6qlscb13lzyj0yx53jim-nixos-system-fw16-26.11.20261103.1d06008
+Rebuilt-at: 2026-11-04T21:53:50+07:00
