@@ -15,6 +15,7 @@
     ./qt-theme.nix
     ./spotify.nix
     ./swayimg.nix
+    ./tailscale-systray.nix
     ./zathura.nix
     ./touchpad.nix
     ./zed-editor.nix
