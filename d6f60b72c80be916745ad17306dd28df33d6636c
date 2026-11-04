@@ -1,0 +1,16 @@
+fw16: switch to d6f60b7
+
+<<< /nix/store/ihsvxcngjzlw6qlscb13lzyj0yx53jim-nixos-system-fw16-26.11.20261103.1d06008
+>>> /nix/store/qgwyrfk4y7qbghvzc0in0pkfib5jzx7m-nixos-system-fw16-26.11.20261103.1d06008
+
+ADDED (1)
+[A.] tailscale-systray.service <none>
+
+PATHS: 2296 -> 2297 (+8, -7)
+SIZE: 19.2 GiB -> 19.2 GiB (+1.66 KiB)
+
+Host: fw16
+From: 3be4cee
+Activation: switch
+Generation: /nix/store/qgwyrfk4y7qbghvzc0in0pkfib5jzx7m-nixos-system-fw16-26.11.20261103.1d06008
+Rebuilt-at: 2026-11-05T02:17:37+07:00
