@@ -1,0 +1,16 @@
+fw16: switch to 2840b67
+
+<<< /nix/store/qgwyrfk4y7qbghvzc0in0pkfib5jzx7m-nixos-system-fw16-26.11.20261103.1d06008
+>>> /nix/store/hig8rw6n7cmbq0j0zjb9phi8bjkmmfnw-nixos-system-fw16-26.11.20261103.1d06008
+
+REMOVED (1)
+[R.] discord-settings <none>
+
+PATHS: 2297 -> 2296 (+11, -12)
+SIZE: 19.2 GiB -> 19.2 GiB (-808 bytes)
+
+Host: fw16
+From: d6f60b7
+Activation: switch
+Generation: /nix/store/hig8rw6n7cmbq0j0zjb9phi8bjkmmfnw-nixos-system-fw16-26.11.20261103.1d06008
+Rebuilt-at: 2026-11-05T03:19:59+07:00
