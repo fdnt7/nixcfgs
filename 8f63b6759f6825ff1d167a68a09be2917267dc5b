@@ -1,0 +1,7 @@
+fw16: 8f63b67 builds what's running; nothing to activate
+
+Host: fw16
+From: 2840b67
+Activation: none
+Generation: /nix/store/hig8rw6n7cmbq0j0zjb9phi8bjkmmfnw-nixos-system-fw16-26.11.20261103.1d06008
+Rebuilt-at: 2026-11-05T12:18:34+07:00
