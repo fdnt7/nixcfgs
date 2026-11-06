@@ -1,0 +1,7 @@
+fw16: ec27d43 builds what's running; nothing to activate
+
+Host: fw16
+From: eed4ebe
+Activation: none
+Generation: /nix/store/hig8rw6n7cmbq0j0zjb9phi8bjkmmfnw-nixos-system-fw16-26.11.20261103.1d06008
+Rebuilt-at: 2026-11-06T20:05:54+07:00
