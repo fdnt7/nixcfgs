@@ -1,0 +1,13 @@
+fw16: switch to d9dd1ad
+
+<<< /nix/store/hig8rw6n7cmbq0j0zjb9phi8bjkmmfnw-nixos-system-fw16-26.11.20261103.1d06008
+>>> /nix/store/z037qpn5zsgvh9w9w0xcc0dqv826s83z-nixos-system-fw16-26.11.20261103.1d06008
+
+PATHS: 2296 -> 2296 (+13, -13)
+SIZE: 19.2 GiB -> 19.2 GiB (+32 bytes)
+
+Host: fw16
+From: ec27d43
+Activation: switch
+Generation: /nix/store/z037qpn5zsgvh9w9w0xcc0dqv826s83z-nixos-system-fw16-26.11.20261103.1d06008
+Rebuilt-at: 2026-11-07T00:13:46+07:00
