@@ -1,0 +1,206 @@
+fw12: boot to c5a549e
+
+<<< /nix/store/q9lckn2g827lb54hpgagqngnqkxj3657-nixos-system-fw12-26.11.20261030.1c89083
+>>> /nix/store/wi6qkmqdjgw6z19yir6js3yfs5jnh5ai-nixos-system-fw12-26.11.20261107.f4a03c0
+
+CHANGED (177)
+[U.] adwaita-icon-theme            50.0 -> 51.0, -279 KiB
+[U*] akonadi                       26.08.2 -> 26.08.3
+[U.] akonadi-calendar              26.08.2 -> 26.08.3
+[U*] akonadi-contacts              26.08.2 -> 26.08.3
+[U*] akonadi-import-wizard         26.08.2 -> 26.08.3
+[U.] akonadi-mime                  26.08.2 -> 26.08.3
+[U*] akonadi-search                26.08.2 -> 26.08.3
+[U*] akonadiconsole                26.08.2 -> 26.08.3
+[U.] akregator                     26.08.2 -> 26.08.3, +9.40 KiB
+[C.] appstream                     1.1.3 ×2 -> 1.1.3, -6.33 MiB
+[U*] ark                           26.08.2, 26.08.2_fish-completions -> 26.08.3, 26.08.3_fish-completions
+[U*] at-spi2-core                  2.60.6 ×2 -> 2.62.0 ×2, -20.0 KiB
+[U*] baloo-widgets                 26.08.2 -> 26.08.3
+[U.] brotli                        1.2.0-lib ×3 -> 1.2.1-lib ×2, -970 KiB
+[U*] btrfs-progs                   7.1, 7.1-man -> 7.3, 7.3-man, -153 KiB
+[U.] bubblewrap                    0.12.0 -> 0.13.1
+[U.] c-ares                        1.34.8 -> 1.34.9, +8.77 KiB
+[U.] cairo                         1.18.4 ×2 -> 1.18.6 ×2, -247 KiB
+[U.] calendarsupport               26.08.2 -> 26.08.3
+[U.] claude-code                   2.1.312, 2.1.312-fish-completions -> 2.1.318, 2.1.318-fish-completions, +42.2 MiB
+[U*] curl                          8.22.0 ×2, 8.22.0-bin, 8.22.0-man -> 8.23.0 ×2, 8.23.0-bin, 8.23.0-man, -208 KiB
+[U*] dconf                         0.49.0, 0.49.0-lib ×2, 0.49.0-man -> 51.0, 51.0-lib ×2, 51.0-man, +19.1 KiB
+[U.] discord                       1.0.166, 1.0.166-bwrap, 1.0.166-fhsenv-profile, 1.0.166-fhsenv-rootfs, 1.0.166-fish-completions, 1.0.166-init -> 1.0.168, 1.0.168-bwrap, 1.0.168-fhsenv-profile, 1.0.168-fhsenv-rootfs, 1.0.168-fish-completions, 1.0.168-init
+[U.] discord-unwrapped             1.0.166 -> 1.0.168, -21.0 MiB
+[U*] dolphin                       26.08.2 -> 26.08.3, +28.5 KiB
+[U*] dolphin-plugins               26.08.2 -> 26.08.3
+[C.] electron-unwrapped            +1.48 MiB
+[U*] elisa                         26.08.2 -> 26.08.3
+[U.] ethtool                       7.1 -> 7.2
+[U.] eventviews                    26.08.2 -> 26.08.3
+[U.] fd                            10.5.0 -> 10.5.2, +56.3 KiB
+[U*] ffmpegthumbs                  26.08.2 -> 26.08.3
+[U.] fftw-double                   <unchanged> -> 3.3.11-dev, <unchanged>, +211 KiB
+[U.] fribidi                       1.0.17 ×2 -> 1.0.18 ×2
+[U.] glib                          2.88.3 ×2, 2.88.3-bin, 2.88.3-dev -> 2.90.0 ×2, 2.90.0-bin, 2.90.0-dev, +15.6 KiB
+[U.] glib-networking               2.80.1 -> 2.90.0, +58.5 KiB
+[U.] gnome-desktop                 44.5 -> 51.0, -227 KiB
+[U.] gnome-settings-daemon         50.1-gsettings-schemas -> 51.0-gsettings-schemas
+[U.] grantleetheme                 26.08.2 -> 26.08.3
+[U.] gsettings-desktop-schemas     50.1 ×2 -> 51.0 ×2, +1.14 MiB
+[U.] gst-libav                     1.28.7 -> 1.28.8
+[U.] gst-plugins-bad               1.28.7 ×2 -> 1.28.8 ×2, +13.1 KiB
+[U.] gst-plugins-base              1.28.7 ×2 -> 1.28.8 ×2, -75.5 KiB
+[U.] gst-plugins-good              1.28.7 ×2 -> 1.28.8 ×2, +8.59 KiB
+[U.] gst-plugins-ugly              1.28.7 -> 1.28.8
+[U.] gstreamer                     1.28.7 ×2 -> 1.28.8 ×2, -11.7 KiB
+[U.] gtk4                          4.22.4 ×2 -> 4.24.0 ×2, +2.41 MiB
+[U*] gwenview                      26.08.2 -> 26.08.3, +30.2 KiB
+[U.] haruna                        1.8.1, 1.8.1-fish-completions -> 1.9.0, 1.9.0-fish-completions, +1.01 MiB
+[U.] hunspell                      1.7.3 -> 1.7.5, -299 KiB
+[U.] imagemagick                   7.1.2-34 -> 7.1.2-35, -8.52 KiB
+[U.] incidenceeditor               26.08.2 -> 26.08.3
+[C.] index-x86_64-linux            -8.55 MiB
+[U.] initrd-linux                  7.3 -> 7.3.3, -182 KiB
+[U.] intel-compute-runtime         26.31.39395.13 -> 26.40.40196.8, +704 KiB
+[U.] intel-graphics-compiler       2.40.13 -> 2.42.6, +33.6 MiB
+[U.] jansson                       2.15.0 ×2 -> 2.15.1 ×2
+[U.] json-c                        0.18 ×2 -> 0.19 ×2, +15.6 KiB
+[U.] kaccounts-integration         26.08.2 -> 26.08.3
+[U.] kaddressbook                  26.08.2 -> 26.08.3
+[U*] kate                          26.08.2, 26.08.2_fish-completions -> 26.08.3, 26.08.3_fish-completions, +8.21 KiB
+[U.] kcalutils                     26.08.2 -> 26.08.3
+[U*] kde-inotify-survey            26.08.2 -> 26.08.3, +21.2 KiB
+[U.] kdegraphics-mobipocket        26.08.2 -> 26.08.3
+[U*] kdegraphics-thumbnailers      26.08.2 -> 26.08.3
+[U*] kdepim-runtime                26.08.2 -> 26.08.3, +13.9 KiB
+[U*] khelpcenter                   26.08.2 -> 26.08.3
+[U.] kidentitymanagement           26.08.2 -> 26.08.3
+[U.] kimap                         26.08.2 -> 26.08.3
+[U*] kio-admin                     26.08.2 -> 26.08.3
+[U*] kio-extras                    26.08.2 -> 26.08.3
+[U.] kitty                         0.49.2, 0.49.2-fish-completions, 0.49.2-terminfo -> 0.50.0, 0.50.0-fish-completions, 0.50.0-terminfo, +4.66 MiB
+[U.] kldap                         26.08.2 -> 26.08.3
+[U*] kmail                         26.08.2 -> 26.08.3
+[U*] kmail-account-wizard          26.08.2 -> 26.08.3
+[U.] kmailtransport                26.08.2 -> 26.08.3
+[U.] kmbox                         26.08.2 -> 26.08.3
+[U*] konsole                       26.08.2 -> 26.08.3
+[U*] kontact                       26.08.2 -> 26.08.3, +417 KiB
+[U.] kontactinterface              26.08.2 -> 26.08.3
+[U.] korganizer                    26.08.2 -> 26.08.3
+[U.] kpimtextedit                  26.08.2 -> 26.08.3
+[U.] ksmtp                         26.08.2 -> 26.08.3
+[U.] ktnef                         26.08.2 -> 26.08.3
+[U*] kunifiedpush                  26.08.2 -> 26.08.3
+[U*] kwalletmanager                26.08.2 -> 26.08.3
+[U.] libadwaita                    1.9.3 ×2 -> 1.10.0 ×2, +173 KiB
+[U.] libajantv2                    17.5.0 ×2 -> 18.0.0 ×2, +833 KiB
+[U.] libaom                        3.15.1 ×2 -> 3.15.2 ×2
+[U.] libarchive                    3.8.9-lib ×2 -> 3.8.10-lib ×2, -108 KiB
+[U.] libass                        0.17.4 ×2 -> 0.17.5 ×2, +8.70 KiB
+[U.] libcerf                       3.8 -> 3.9, -11.8 KiB
+[U.] libde265                      1.1.2 ×2 -> 1.1.3 ×2, +33.9 KiB
+[U.] libgravatar                   26.08.2 -> 26.08.3
+[U.] libheif                       1.23.6-lib -> 1.23.7-lib, +49.2 KiB
+[U.] libkdcraw                     26.08.2 -> 26.08.3
+[U.] libkdepim                     26.08.2 -> 26.08.3
+[U.] libkexiv2                     26.08.2 -> 26.08.3
+[U.] libkgapi                      26.08.2 -> 26.08.3, +10.4 KiB
+[U.] libkleo                       26.08.2 -> 26.08.3
+[U.] libksieve                     26.08.2 -> 26.08.3
+[U.] libmad                        0.15.1b ×2 -> 0.16.5 ×2, +285 KiB
+[U.] libnotify                     0.8.8, 0.8.8-man -> 0.8.9, 0.8.9-man
+[U.] libplacebo                    7.360.1, <unchanged> -> 7.387.0, <unchanged>, +148 KiB
+[U.] libpsl                        0.21.5 ×2 -> 0.23.3 ×2
+[U.] libraw                        0.22.2-lib -> 0.22.3-lib
+[U.] librsvg                       2.62.3 ×2 -> 2.63.0 ×2, +66.3 KiB
+[U.] libsamplerate                 <unchanged> -> 0.2.2-dev, <unchanged>
+[U.] libsecret                     0.21.7 -> 0.21.8.2
+[U.] libsodium                     1.0.22-unstable-2026-09-28 -> 1.0.22-unstable-2026-10-15
+[D.] libuv                         1.53.0-dev, <unchanged> -> <unchanged>, -111 KiB
+[U.] libxtst                       1.2.5 ×2 -> 1.2.6 ×2
+[U.] linux                         7.3, 7.3-modules ×2 -> 7.3.3, 7.3.3-modules ×2, +63.2 KiB
+[U.] linux-headers                 7.2 -> 7.3, +70.4 KiB
+[U.] linux-headers-static          7.2 -> 7.3, +70.4 KiB
+[U.] luajit                        2.1.1785763465, 2.1.1785763465-env -> 2.1.1791890110, 2.1.1791890110-env, +9.20 KiB
+[U.] mailcommon                    26.08.2 -> 26.08.3, +24.5 KiB
+[U.] mailimporter                  26.08.2 -> 26.08.3
+[U*] merkuro                       26.08.2 -> 26.08.3
+[U.] messagelib                    26.08.2 -> 26.08.3
+[U.] mimetreeparser                26.08.2 -> 26.08.3
+[U.] mpv                           0.41.0 -> 0.42.0, +483 KiB
+[C.] nh-unwrapped                  -3.14 MiB
+[C.] nix-index                     -1.83 MiB
+[U.] nixd                          2.9.3, 2.9.3-fish-completions -> 2.9.4, 2.9.4-fish-completions
+[U.] nixf                          2.9.3 -> 2.9.4
+[U.] nixos-system-fw12             26.11.20261030.1c89083 -> 26.11.20261107.f4a03c0
+[U.] nixt                          2.9.3 -> 2.9.4
+[U.] nodejs                        24.21.0, <unchanged> -> 24.22.2, <unchanged>, +81.1 KiB
+[U.] nodejs-slim                   24.21.0, 24.21.0-corepack, 24.21.0-npm, <unchanged> -> 24.22.2, 24.22.2-corepack, 24.22.2-npm, <unchanged>, +2.28 MiB
+[U.] nss                           3.112.5 ×2, 3.112.5-man -> 3.125 ×2, 3.125-man, +292 KiB
+[U*] okular                        26.08.2, 26.08.2_fish-completions -> 26.08.3, 26.08.3_fish-completions, +81.8 KiB
+[U.] openexr                       3.5.1 ×2 -> 3.5.2 ×2, +8.84 KiB
+[U.] openjdk-minimal-jre           21.0.12.1+1 -> 21.0.13.0.2+1, +287 KiB
+[D.] openssl                       3.5.9-dev, <unchanged> -> <unchanged>, -1.99 MiB
+[U*] orca                          50.2, 50.2_fish-completions -> 51.0, 51.0_fish-completions, +10.6 MiB
+[U.] pango                         1.57.1 ×2, 1.57.1-bin -> 1.58.2 ×2, 1.58.2-bin, +25.9 KiB
+[U*] patch                         2.8, 2.8_fish-completions -> 2.8.1, 2.8.1_fish-completions
+[U.] pcsclite                      2.4.1-lib ×2 -> 2.5.2-lib ×2, +8.51 KiB
+[U.] perl5.42.3-DBI                1.653 -> 1.656
+[U.] pimcommon                     26.08.2 -> 26.08.3
+[U*] pipewire                      1.6.9 ×2, 1.6.9-dev, 1.6.9-doc, 1.6.9-man -> 1.6.11 ×2, 1.6.11-dev, 1.6.11-doc, 1.6.11-man, +37.9 KiB
+[U.] python3                       3.14.8 ×2, 3.14.8-env ×4 -> 3.14.10 ×2, 3.14.10-env ×4, +795 KiB
+[U.] python3.14-certifi            2026.07.22 -> 2026.10.23
+[U.] python3.14-dnspython          2.8.0 ×2 -> 2.9.0 ×2, +640 KiB
+[U.] python3.14-markdown           3.10.3 ×2 -> 3.11.0 ×2, +11.7 KiB
+[U.] python3.14-pygobject          3.56.3, 3.56.3-dev -> 3.58.0, 3.58.0-dev
+[U.] python3.14-setproctitle       1.3.7 -> 1.3.8
+[U*] qrca                          26.08.2 -> 26.08.3
+[C.] rbld                          -1.24 MiB
+[U.] s2n-tls                       1.7.9 -> 1.7.12, +38.6 KiB
+[U.] samba                         4.23.10 ×2 -> 4.25.1 ×2, +315 KiB
+[U.] shader-slang                  2026.20 -> 2026.21, +167 KiB
+[U.] simdjson                      4.6.11 -> 5.0.5, +209 KiB
+[U.] simdutf                       9.2.1 -> 9.3.3, +52.6 KiB
+[C.] sops-install-secrets          -1.62 MiB
+[U.] sqlite                        3.53.3 ×2 -> 3.54.0 ×2, +168 KiB
+[U.] squashfuse                    0.6.3 -> 0.6.5, -184 KiB
+[C.] ssh-tpm-agent                 +2.41 MiB
+[U*] tailscale                     1.104.4 -> 1.104.5, +28.5 KiB
+[U.] tesseract                     5.5.3 -> 5.5.4, +43.9 KiB
+[U.] tevent                        0.17.1 ×2 -> 0.17.2 ×2, +8.82 KiB
+[U.] tinysparql                    3.11.1 ×2 -> 3.12.0 ×2, +37.8 KiB
+[U.] tpm2-tss                      4.2.0 -> 4.2.1, +12.2 KiB
+[U.] tree-sitter                   0.26.11 -> 0.27.1-lib, -11.3 MiB
+[U.] tzdata                        2026e ×2 -> 2026f ×2
+[U.] unbound                       1.26.1-lib ×2 -> 1.26.2-lib ×2
+[U.] wayland-protocols             1.49 -> 1.50
+[U*] wireplumber                   0.5.18, 0.5.18-doc, 0.5.18_fish-completions -> 0.5.19, 0.5.19-doc, 0.5.19_fish-completions, +43.2 KiB
+[U.] xfsprogs                      7.1.1, 7.1.1-bin -> 7.2.1, 7.2.1-bin, +135 KiB
+[U.] xkeyboard-config              2.48 ×2 -> 2.49 ×2, +266 KiB
+[U.] zanshin                       26.08.2 -> 26.08.3
+[U.] zed-editor                    1.26.2 -> 1.27.0, -2.82 MiB
+[U.] zed-editor-wrapped            1.26.2, 1.26.2-fish-completions -> 1.27.0, 1.27.0-fish-completions
+[U.] zen-beta                      1.24b, 1.24b-fish-completions -> 1.24.1b, 1.24.1b-fish-completions
+[U.] zen-beta-bin-unwrapped        1.24b -> 1.24.1b, +31.0 KiB
+[U.] zvbi                          0.2.45 ×2 -> 0.2.46 ×2
+
+ADDED (3)
+[A.] aws-lc                        5.12.0, +5.14 MiB
+[A.] ministream                    0.99.1 ×2, +138 KiB
+[A.] unit-systemd-pcrextend.socket <none>
+
+REMOVED (1)
+[R.] discord-settings              <none>
+
+PATHS: 2348 -> 2343 (+2309, -2314)
+SIZE: 15.6 GiB -> 15.6 GiB (+45.9 MiB)
+
+NOTE: 62 hidden (--full to show)
+
+Host: fw12
+From: b53757e
+Activation: boot
+Activation-reason: kernel changed
+Activation-reason: initrd changed
+Activation-reason: kernel-modules changed
+Activation-reason: firmware changed
+Generation: /nix/store/wi6qkmqdjgw6z19yir6js3yfs5jnh5ai-nixos-system-fw12-26.11.20261107.f4a03c0
+Rebuilt-at: 2026-11-10T08:04:54+07:00
