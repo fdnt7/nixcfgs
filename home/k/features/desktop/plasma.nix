@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ config, inputs, ... }:
 {
   # Plasma's settings, declared. Only what is set here is written; anything
   # else changed in System Settings stays as it is.
@@ -110,4 +110,9 @@
     # would leave it. Plasma 6 still reads this from kded5rc.
     configFile.kded5rc."Module-browserintegrationflatpakintegrator".autoload = false;
   };
+
+  # On trial: Plasma copies its GTK settings to ~/.gtkrc-2.0 at every
+  # login. Its writer is believed to follow this variable when it names a
+  # single file. If ~/.gtkrc-2.0 still comes back, take this out again.
+  home.sessionVariables.GTK2_RC_FILES = "${config.xdg.configHome}/gtk-2.0/gtkrc";
 }
