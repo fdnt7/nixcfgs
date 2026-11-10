@@ -1,0 +1,21 @@
+fw16: switch to c5a549e
+
+<<< /nix/store/552zyma790gkwxz48z6lxcrsdcbmb84q-nixos-system-fw16-26.11.20261107.f4a03c0
+>>> /nix/store/1pfyckc266mql532zvy1iva012a3mp5f-nixos-system-fw16-26.11.20261107.f4a03c0
+
+ADDED (3)
+[A.] compute-authorized_keys    <none>
+[A.] unit-user                  400.slice
+[A.] unit-var-lib-compute.mount <none>
+
+REMOVED (1)
+[R.] f-authorized_keys          <none>
+
+PATHS: 2900 -> 2902 (+23, -21)
+SIZE: 20.7 GiB -> 20.7 GiB (+2.33 KiB)
+
+Host: fw16
+From: 4c3fc0d
+Activation: switch
+Generation: /nix/store/1pfyckc266mql532zvy1iva012a3mp5f-nixos-system-fw16-26.11.20261107.f4a03c0
+Rebuilt-at: 2026-11-10T07:46:17+07:00
