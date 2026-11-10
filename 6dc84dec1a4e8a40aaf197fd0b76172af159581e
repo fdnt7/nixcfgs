@@ -1,0 +1,13 @@
+fw12: switch to 6dc84de
+
+<<< /nix/store/wi6qkmqdjgw6z19yir6js3yfs5jnh5ai-nixos-system-fw12-26.11.20261107.f4a03c0
+>>> /nix/store/hcjkr6lri4hzcgf09ifjx8ydblq29biv-nixos-system-fw12-26.11.20261107.f4a03c0
+
+PATHS: 2343 -> 2343 (+7, -7)
+SIZE: 15.6 GiB -> 15.6 GiB (+184 bytes)
+
+Host: fw12
+From: c5a549e
+Activation: switch
+Generation: /nix/store/hcjkr6lri4hzcgf09ifjx8ydblq29biv-nixos-system-fw12-26.11.20261107.f4a03c0
+Rebuilt-at: 2026-11-11T01:30:56+07:00
