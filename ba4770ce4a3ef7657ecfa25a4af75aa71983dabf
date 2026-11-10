@@ -1,0 +1,13 @@
+fw12: switch to ba4770c
+
+<<< /nix/store/hcjkr6lri4hzcgf09ifjx8ydblq29biv-nixos-system-fw12-26.11.20261107.f4a03c0
+>>> /nix/store/nxa00f000bpxmv4g5ik9na2igkv6lc3a-nixos-system-fw12-26.11.20261107.f4a03c0
+
+PATHS: 2343 -> 2343 (+16, -16)
+SIZE: 15.6 GiB -> 15.6 GiB (+200 bytes)
+
+Host: fw12
+From: 6dc84de
+Activation: switch
+Generation: /nix/store/nxa00f000bpxmv4g5ik9na2igkv6lc3a-nixos-system-fw12-26.11.20261107.f4a03c0
+Rebuilt-at: 2026-11-11T01:36:32+07:00
