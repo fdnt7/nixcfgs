@@ -1,0 +1,284 @@
+fw16: boot to 4c3fc0d
+
+<<< /nix/store/z037qpn5zsgvh9w9w0xcc0dqv826s83z-nixos-system-fw16-26.11.20261103.1d06008
+>>> /nix/store/552zyma790gkwxz48z6lxcrsdcbmb84q-nixos-system-fw16-26.11.20261107.f4a03c0
+
+CHANGED (259)
+[U.] abseil-cpp                    20260817.0 ×3, <unchanged> -> 20260817.0-testing, 20260817.0 ×4, <unchanged>, +3.07 MiB
+[U.] adwaita-icon-theme            50.0 -> 51.0, -279 KiB
+[C.] alsa-lib                      1.2.16.1 ×2 -> 1.2.16.1 ×3, +1.83 MiB
+[C.] appstream                     1.1.3 -> 1.1.3 ×2, +6.72 MiB
+[U.] at-spi2-core                  <unchanged> -> 2.62.0, <unchanged>, +2.29 MiB
+[C.] avahi                         0.8 ×2 -> 0.8 ×3, +1.59 MiB
+[U.] baloo-widgets                 26.08.2 -> 26.08.3
+[C.] bash                          5.3p20 ×2 -> 5.3p20 ×4, +3.61 MiB
+[C*] bash-interactive              5.3p20 ×3, 5.3p20-man ×2, <unchanged> -> 5.3p20 ×6, 5.3p20-man ×3, <unchanged>, +21.4 MiB
+[C.] binutils                      2.46, 2.46-lib -> 2.46 ×2, 2.46-lib ×2, +36.2 MiB
+[C*] bluez                         5.87 ×2, <unchanged> -> 5.87 ×3, <unchanged>, +9.74 MiB
+[U.] brotli                        1.2.0-lib ×3, <unchanged> -> 1.2.1-lib ×2, 1.2.0-lib ×2, <unchanged>, +902 KiB
+[U*] btrfs-progs                   7.1, 7.1-man -> 7.3, 7.3-man, -153 KiB
+[U.] bubblewrap                    <unchanged> -> 0.13.1, <unchanged>, +112 KiB
+[U.] c-ares                        1.34.8 -> 1.34.9, +8.77 KiB
+[U.] cairo                         1.18.4 ×2 -> 1.18.6 ×2, 1.18.4, +1.87 MiB
+[U.] claude-code                   2.1.317, 2.1.317-fish-completions -> 2.1.318, 2.1.318-fish-completions, +6.15 MiB
+[C.] container-init                <none> -> <none> ×2, +1.82 MiB
+[C.] coreutils                     9.12 ×2 -> 9.12 ×4, +3.50 MiB
+[C.] cups                          2.4.19, 2.4.19-lib, 2.4.19-man -> 2.4.19 ×2, 2.4.19-lib ×2, 2.4.19-man ×2, +13.6 MiB
+[U*] curl                          8.22.0-bin ×2, 8.22.0-man ×2, <unchanged> -> 8.23.0 ×3, 8.23.0-bin, 8.23.0-man, 8.22.0-bin, 8.22.0-man, <unchanged>, +3.58 MiB
+[C.] dav1d                         1.5.3 ×2 -> 1.5.3 ×3, +2.53 MiB
+[C.] db                            4.8.30 ×2, <unchanged> -> 4.8.30 ×4, <unchanged>, +7.59 MiB
+[C*] dbus                          1.16.2, 1.16.2-lib ×2, 1.16.2-man, <unchanged> -> 1.16.2 ×2, 1.16.2-lib ×4, 1.16.2-man ×2, <unchanged>, +1.54 MiB
+[U*] dconf                         0.49.0, 0.49.0-man, 0.49.0-lib ×2 -> 51.0, 51.0-man, 51.0-lib ×2, 0.49.0-lib, +352 KiB
+[C*] diffutils                     3.12, <unchanged> -> 3.12 ×2, <unchanged>, +1.56 MiB
+[C.] dnsmasq                       2.93 ×2 -> 2.93 ×4, +1.34 MiB
+[U.] dolphin                       26.08.2, 26.08.2-fish-completions -> 26.08.3, 26.08.3-fish-completions, +28.5 KiB
+[C.] duktape                       2.7.0 ×2 -> 2.7.0 ×4, +2.47 MiB
+[U*] dux-shell                     2.0.0 -> 2.1.1, +1.71 MiB
+[C.] e2fsprogs                     1.47.4, 1.47.4-bin, <unchanged> -> 1.47.4 ×2, 1.47.4-bin ×2, <unchanged>, +6.27 MiB
+[C.] electron-unwrapped            +1.48 MiB
+[C.] elfutils                      0.195 ×2 -> 0.195 ×4, +8.00 MiB
+[U.] ethtool                       <unchanged> -> 7.2 ×2, <unchanged>, +2.18 MiB
+[U.] fd                            10.5.0 -> 10.5.2, +56.3 KiB
+[C.] fdk-aac                       2.0.3 ×2 -> 2.0.3 ×3, +1.57 MiB
+[C.] ffado                         2.5.0 ×2 -> 2.5.0 ×3, +3.39 MiB
+[C.] ffmpeg-headless               9.0.2-data ×2, 9.0.2-lib ×2, <unchanged> -> 9.0.2-data ×3, 9.0.2-lib ×3, <unchanged>, +33.7 MiB
+[U.] ffmpegthumbs                  26.08.2, 26.08.2-fish-completions -> 26.08.3, 26.08.3-fish-completions
+[U.] fftw-double                   3.3.11 ×2 -> 3.3.11-dev, 3.3.11 ×3, +4.09 MiB
+[C.] fftw-single                   3.3.11 ×2 -> 3.3.11 ×3, +4.11 MiB
+[C.] file                          5.48 ×2, 5.48-man -> 5.48 ×3, 5.48-man ×2, +10.6 MiB
+[C*] findutils                     4.11.0, <unchanged> -> 4.11.0 ×2, <unchanged>, +1.84 MiB
+[C.] flite                         2.2-lib -> 2.2-lib ×2, +60.5 MiB
+[C*] fontconfig                    2.18.3 ×2, 2.18.3-bin, 2.18.3-lib ×2, <unchanged> -> 2.18.3 ×3, 2.18.3-bin ×2, 2.18.3-lib ×3, <unchanged>, +1.93 MiB
+[C.] freeglut                      3.8.0 -> 3.8.0 ×2, +1.30 MiB
+[C.] freepats                      20060219 -> 20060219 ×2, +31.8 MiB
+[C.] freetype                      2.14.3 ×2 -> 2.14.3 ×3, +2.12 MiB
+[U.] fribidi                       1.0.17 ×2 -> 1.0.18 ×2, 1.0.17, +165 KiB
+[C.] game-music-emu                0.6.5 -> 0.6.5 ×2, +1.24 MiB
+[C*] gawk                          5.4.1, 5.4.1-man, <unchanged> -> 5.4.1 ×2, 5.4.1-man ×2, <unchanged>, +3.47 MiB
+[C.] gcc                           16.2.0-lib ×2, 16.2.0-libgcc ×2, <unchanged> -> 16.2.0-lib ×4, 16.2.0-libgcc ×4, <unchanged>, +18.0 MiB
+[U.] gcr                           4.4.0.1, <unchanged> -> 4.4.1, <unchanged>, +31.8 KiB
+[C.] gdk-pixbuf                    2.44.8, 2.44.8-man -> 2.44.8 ×2, 2.44.8-man ×2, +2.87 MiB
+[U.] glib                          2.88.3-dev, <unchanged> -> 2.90.0-dev, 2.90.0 ×2, 2.90.0-bin, <unchanged>, +31.9 MiB
+[U.] glib-networking               2.80.1 -> 2.90.0, +58.5 KiB
+[C*] glibc                         2.44-57 ×2, 2.44-57-bin ×2, <unchanged> -> 2.44-57 ×4, 2.44-57-bin ×4, <unchanged>, +72.7 MiB
+[C*] glibc-locales                 2.44-57 ×2 -> 2.44-57 ×3, +223 MiB
+[C.] glu                           9.0.3 -> 9.0.3 ×2, +1.52 MiB
+[U.] glycin-loaders                2.1.5 -> 2.2.1, +1.29 MiB
+[C.] gmp-with-cxx                  6.3.0 ×4 -> 6.3.0 ×8, +2.81 MiB
+[U.] gnome-autoar                  0.4.5 -> 0.5.2, -24.0 KiB
+[U.] gnome-desktop                 44.5 -> 51.0, -227 KiB
+[U.] gnome-settings-daemon         50.1-gsettings-schemas -> 51.0-gsettings-schemas
+[C*] gnused                        4.10 ×2, <unchanged> -> 4.10 ×4, <unchanged>, +1.42 MiB
+[C*] gnutar                        1.35, <unchanged> -> 1.35 ×2, <unchanged>, +2.73 MiB
+[C.] gnutls                        3.8.13 ×2 -> 3.8.13 ×4, +7.18 MiB
+[C.] gobject-introspection         1.86.0 -> 1.86.0 ×2, +1.19 MiB
+[U.] gsettings-desktop-schemas     <unchanged> -> 51.0, <unchanged>, +6.75 MiB
+[U.] gst-plugins-bad               <unchanged> -> 1.28.8, <unchanged>, +17.3 MiB
+[U.] gst-plugins-base              1.28.7 ×2 -> 1.28.8 ×2, 1.28.7, +8.94 MiB
+[U.] gst-plugins-good              1.28.7 -> 1.28.8
+[U.] gstreamer                     1.28.7 ×2, <unchanged> -> 1.28.8 ×2, 1.28.7, <unchanged>, +6.18 MiB
+[C.] gtk+3                         3.24.52 -> 3.24.52 ×2, +42.0 MiB
+[U.] gtk4                          <unchanged> -> 4.24.0, <unchanged>, +31.9 MiB
+[C.] harfbuzz                      14.5.1 ×2 -> 14.5.1 ×3, +4.09 MiB
+[U.] hunspell                      1.7.3 -> 1.7.5, -299 KiB
+[C.] hwdata                        0.412 ×2 -> 0.412 ×4, +20.2 MiB
+[C.] icu4c                         78.3 ×2 -> 78.3 ×3, +39.7 MiB
+[U.] imagemagick                   7.1.2-34 -> 7.1.2-35, -8.54 KiB
+[U.] immich                        3.3.5 -> 3.3.6, -50.1 KiB
+[U.] immich-machine-learning       3.3.5 -> 3.3.6
+[C.] index-x86_64-linux            -7.05 MiB
+[U.] initrd-linux                  7.3.1 -> 7.3.3, +125 KiB
+[C.] iptables                      1.8.13 ×2, 1.8.13-lib ×2 -> 1.8.13 ×4, 1.8.13-lib ×4, +5.20 MiB
+[C.] iso-codes                     4.20.1 ×2 -> 4.20.1 ×3, +22.6 MiB
+[U.] jansson                       <unchanged> -> 2.15.1 ×2, <unchanged>, +281 KiB
+[U.] jellyfin-ffmpeg               8.1.3-1-bin, 8.1.3-1-data, 8.1.3-1-lib -> 8.1.3-2-bin, 8.1.3-2-data, 8.1.3-2-lib, -509 KiB
+[U.] json-c                        <unchanged> -> 0.19 ×2, <unchanged>, +491 KiB
+[U.] kdegraphics-mobipocket        26.08.2 -> 26.08.3
+[U.] kdegraphics-thumbnailers      26.08.2, 26.08.2-fish-completions -> 26.08.3, 26.08.3-fish-completions
+[U.] kio-extras                    26.08.2, 26.08.2-fish-completions -> 26.08.3, 26.08.3-fish-completions
+[U.] kitty                         0.49.2, 0.49.2-fish-completions, 0.49.2-terminfo -> 0.50.0, 0.50.0-fish-completions, 0.50.0-terminfo, +4.66 MiB
+[C.] krb5                          1.22.2-lib ×2, <unchanged> -> 1.22.2-lib ×4, <unchanged>, +5.59 MiB
+[U.] libadwaita                    <unchanged> -> 1.10.0, <unchanged>, +3.16 MiB
+[U.] libajantv2                    <unchanged> -> 18.0.0, <unchanged>, +13.8 MiB
+[U.] libaom                        3.15.1 ×2 -> 3.15.2 ×2, 3.15.1, +8.43 MiB
+[U.] libarchive                    <unchanged> -> 3.8.10-lib, <unchanged>, +939 KiB
+[U.] libass                        0.17.4 ×2 -> 0.17.5 ×2, 0.17.4, +266 KiB
+[C.] libbluray                     1.4.1 ×2 -> 1.4.1 ×3, +1.14 MiB
+[C.] libbpf                        1.8.0 ×2 -> 1.8.0 ×4, +4.32 MiB
+[C.] libcamera                     0.7.2 ×2 -> 0.7.2 ×3, +7.28 MiB
+[C*] libcap                        2.78, 2.78-lib ×2, 2.78-man, <unchanged> -> 2.78 ×2, 2.78-lib ×4, 2.78-man ×2, <unchanged>, +2.24 MiB
+[U.] libcloudproviders             0.4.0 -> 0.4.1
+[U.] libde265                      <unchanged> -> 1.1.3, <unchanged>, +1.02 MiB
+[C.] libdrm                        2.4.134 ×2, 2.4.134-bin ×2, 2.4.134-dev ×2 -> 2.4.134 ×4, 2.4.134-bin ×4, 2.4.134-dev ×4, +3.83 MiB
+[C.] libdvdread                    7.0.1 -> 7.0.1 ×3, +1.02 MiB
+[C.] libepoxy                      1.5.10 -> 1.5.10 ×2, +1.67 MiB
+[C.] libevent                      2.1.13 ×2 -> 2.1.13 ×4, +1.78 MiB
+[C.] libglvnd                      1.7.0 ×2, <unchanged> -> 1.7.0 ×4, <unchanged>, +4.57 MiB
+[U.] libglycin                     2.1.5 -> 2.2.1, +557 KiB
+[U.] libglycin-gtk4                2.1.5 -> 2.2.1, -9.84 KiB
+[U.] libheif                       1.23.6-lib -> 1.23.7-lib, +49.2 KiB
+[C.] libical                       3.0.20 ×2 -> 3.0.20 ×3, +3.94 MiB
+[C.] libjpeg-turbo                 3.2.0 ×2, <unchanged> -> 3.2.0 ×3, <unchanged>, +2.26 MiB
+[U.] libkdcraw                     26.08.2 -> 26.08.3
+[U.] libkexiv2                     26.08.2 -> 26.08.3
+[U.] libmad                        0.15.1b ×2 -> 0.16.5 ×2, 0.15.1b, +428 KiB
+[C.] libmbim                       1.34.0 ×2 -> 1.34.0 ×4, +3.03 MiB
+[U.] libmikmod                     3.3.13, 3.3.13-man -> 3.3.16, 3.3.16-man
+[C.] libmpg123                     1.33.7 ×2, <unchanged> -> 1.33.7 ×3, <unchanged>, +1.10 MiB
+[C.] libmysofa                     1.3.5 ×2 -> 1.3.5 ×3, +1.43 MiB
+[C.] libnl                         3.12.0 ×2 -> 3.12.0 ×4, +3.08 MiB
+[U.] libnotify                     0.8.8, 0.8.8-man -> 0.8.9, 0.8.9-man
+[C.] libopenmpt                    0.8.9 ×2 -> 0.8.9 ×3, +3.31 MiB
+[C.] libpcap                       1.10.7-lib ×2 -> 1.10.7-lib ×4, +1.69 MiB
+[U.] libplacebo                    7.360.1 -> 7.387.0, +148 KiB
+[U.] libpsl                        <unchanged> -> 0.23.3 ×2, <unchanged>, +227 KiB
+[C.] libpulseaudio                 17.0 ×2 -> 17.0 ×3, +4.72 MiB
+[C.] libqmi                        1.38.0 ×2, <unchanged> -> 1.38.0 ×4, <unchanged>, +15.6 MiB
+[U.] librsvg                       <unchanged> -> 2.63.0, <unchanged>, +15.7 MiB
+[U.] libsamplerate                 0.2.2 ×2 -> 0.2.2-dev, 0.2.2 ×3, +1.51 MiB
+[U.] libsecret                     <unchanged> -> 0.21.8.2, <unchanged>, +675 KiB
+[C.] libselinux                    3.11 ×2 -> 3.11 ×4, +1.36 MiB
+[U.] libsodium                     1.0.22-unstable-2026-09-28 -> 1.0.22-unstable-2026-10-15
+[C.] libsoup                       3.8.0 -> 3.8.0 ×2, +1.22 MiB
+[C.] libunistring                  1.4.2 ×2 -> 1.4.2 ×4, +3.95 MiB
+[D.] libuv                         1.53.0-dev, 1.53.0 ×2 -> 1.53.0 ×3, +179 KiB
+[C.] libvmaf                       3.0.0 ×2 -> 3.0.0 ×3, +2.68 MiB
+[C.] libvorbis                     1.3.7 ×2 -> 1.3.7 ×3, +1.08 MiB
+[C.] libvpx                        1.17.0 ×2, <unchanged> -> 1.17.0 ×3, <unchanged>, +8.58 MiB
+[C.] libwebp                       1.6.0 ×4 -> 1.6.0 ×6, +3.42 MiB
+[C.] libx11                        1.8.14 ×2, 1.8.14-man -> 1.8.14 ×4, 1.8.14-man ×2, +6.14 MiB
+[C.] libxcb                        1.17.0 ×2, 1.17.0-man -> 1.17.0 ×4, 1.17.0-man ×2, +3.84 MiB
+[C.] libxkbcommon                  1.13.2 -> 1.13.2 ×2, +1.07 MiB
+[C.] libxml2                       2.15.4 ×2 -> 2.15.4 ×3, +1.46 MiB
+[U.] libxtst                       <unchanged> -> 1.2.6, <unchanged>, +118 KiB
+[C.] libyuv                        1908 ×2 -> 1908 ×3, +3.88 MiB
+[U.] linux                         7.3.1, 7.3.1-modules ×2 -> 7.3.3, 7.3.3-modules ×2, +51.9 KiB
+[U.] linux-headers                 7.2 -> 7.3, +70.4 KiB
+[U.] linux-headers-static          7.2 -> 7.3, +70.4 KiB
+[C*] linux-pam                     1.7.2 ×2, <unchanged> -> 1.7.2 ×4, <unchanged>, +3.67 MiB
+[C.] llvm                          -115 MiB
+[U.] localsearch                   3.11.1 -> 3.12.0, -186 KiB
+[C.] lttng-ust                     2.15.1 ×2 -> 2.15.1 ×3, +1.84 MiB
+[U.] luajit                        2.1.1785763465, 2.1.1785763465-env -> 2.1.1791890110, 2.1.1791890110-env, +9.20 KiB
+[C.] mbedtls                       3.6.7 ×2 -> 3.6.7 ×3, +12.8 MiB
+[C.] mesa                          -1.39 MiB
+[C*] modemmanager                  1.24.2 ×2, <unchanged> -> 1.24.2 ×4, <unchanged>, +27.2 MiB
+[C.] mpg123                        1.33.7 ×2 -> 1.33.7 ×3, +1.15 MiB
+[U.] mpv                           0.41.0, 0.41.0-dev, 0.41.0-doc, 0.41.0-man -> 0.42.0, 0.42.0-dev, 0.42.0-doc, 0.42.0-man, +503 KiB
+[U.] mpv-with-scripts              0.41.0, 0.41.0-fish-completions -> 0.42.0, 0.42.0-fish-completions
+[U.] nautilus                      50.2.2 -> 51.0.1, +96.5 KiB
+[C*] ncurses                       6.6 ×2, <unchanged> -> 6.6 ×4, <unchanged>, +7.39 MiB
+[C.] nettle                        3.10.2 ×2 -> 3.10.2 ×4, +1.41 MiB
+[C*] networkmanager                1.58.1 ×2, 1.58.1-man, <unchanged> -> 1.58.1 ×4, 1.58.1-man ×2, <unchanged>, +44.3 MiB
+[C*] nftables                      1.1.7 ×2, <unchanged> -> 1.1.7 ×4, <unchanged>, +2.53 MiB
+[U.] ngtcp2                        1.23.0 ×2, <unchanged> -> 1.26.0, 1.23.0 ×4, <unchanged>, +1.65 MiB
+[C.] nh-unwrapped                  -3.14 MiB
+[C.] nix-index                     -1.83 MiB
+[U.] nixos-system-fw16             26.11.20261103.1d06008 -> 26.11.20261107.f4a03c0
+[U.] nodejs                        24.21.0, <unchanged> -> 24.22.2, <unchanged>, +81.1 KiB
+[U.] nodejs-slim                   24.21.0, 24.21.0-corepack, 24.21.0-npm, <unchanged> -> 24.22.2, 24.22.2-corepack, 24.22.2-npm, <unchanged>, +2.28 MiB
+[U.] nss                           <unchanged> -> 3.125, 3.125-man, <unchanged>, +4.35 MiB
+[U.] nvidia-open                   595.112.07-7.3.1 -> 595.112.07-7.3.3
+[C.] openal-soft                   1.24.3 -> 1.24.3 ×2, +2.91 MiB
+[U.] openexr                       <unchanged> -> 3.5.2, <unchanged>, +4.78 MiB
+[C.] openh264                      2.6.0 -> 2.6.0 ×2, +1.30 MiB
+[U.] openjdk                       21.0.12.1+1, <unchanged> -> 21.0.13.0.2+1, <unchanged>, +1006 KiB
+[C.] openjpeg                      2.5.4 ×2 -> 2.5.4 ×3, +1.64 MiB
+[D.] openssl                       3.5.9-dev, 3.5.9 ×2, <unchanged> -> 3.5.9 ×4, <unchanged>, +15.0 MiB
+[C.] orc                           0.4.44 ×2 -> 0.4.44 ×3, +1.35 MiB
+[C.] p11-kit                       0.26.5 ×2, 0.26.5-bin -> 0.26.5 ×4, 0.26.5-bin ×2, +12.0 MiB
+[U.] pango                         1.57.1 ×2, <unchanged> -> 1.58.2 ×2, 1.58.2-bin, 1.57.1, <unchanged>, +1.07 MiB
+[U*] patch                         2.8, 2.8_fish-completions -> 2.8.1, 2.8.1_fish-completions
+[C.] pciutils                      3.15.0, 3.15.0-man -> 3.15.0 ×2, 3.15.0-man ×2, +2.05 MiB
+[C.] pcre2                         10.49 ×2 -> 10.49 ×4, +4.10 MiB
+[U.] pcsclite                      2.4.1-lib -> 2.5.2-lib
+[C*] perl                          5.42.3, 5.42.3-man, <unchanged> -> 5.42.3 ×2, 5.42.3-man ×2, <unchanged>, +58.8 MiB
+[U*] pipewire                      1.6.9-dev, 1.6.9-doc, 1.6.9 ×2, <unchanged> -> 1.6.11-dev, 1.6.11-doc, 1.6.11 ×2, 1.6.11-man, 1.6.9, <unchanged>, +17.1 MiB
+[C*] polkit                        127 ×2, <unchanged> -> 127 ×4, <unchanged>, +1.22 MiB
+[C.] ppp                           2.5.2 ×2 -> 2.5.2 ×4, +1.93 MiB
+[C*] procps                        4.0.7, <unchanged> -> 4.0.7 ×2, <unchanged>, +2.32 MiB
+[U.] python3                       3.14.8-env ×2, 3.14.8 ×2 -> 3.14.10-env ×2, 3.14.10 ×2, 3.14.8, +138 MiB
+[U.] python3.14-aiohttp            <unchanged> -> 3.14.5, <unchanged>, +4.95 MiB
+[C.] python3.14-anyio              4.15.1 -> 4.15.1 ×2, +2.28 MiB
+[U.] python3.14-brotli             <unchanged> -> 1.2.1, <unchanged>, +48.9 KiB
+[U.] python3.14-certifi            <unchanged> -> 2026.10.23, <unchanged>, +483 KiB
+[C.] python3.14-cffi               2.1.1 -> 2.1.1 ×2, +1.48 MiB
+[C.] python3.14-cryptography       50.0.2 -> 50.0.2 ×2, +6.45 MiB
+[U.] python3.14-dnspython          2.8.0 -> 2.9.0, +320 KiB
+[U.] python3.14-filelock           3.32.4 -> 4.2.4, +779 KiB
+[C.] python3.14-hf-xet             -1.15 MiB
+[C.] python3.14-httpcore           1.0.9 -> 1.0.9 ×2, +1.07 MiB
+[C.] python3.14-httpx              0.28.1 -> 0.28.1 ×2, +1.08 MiB
+[U.] python3.14-idna               <unchanged> -> 3.20, <unchanged>, +705 KiB
+[U.] python3.14-markdown           3.10.3 -> 3.11.0
+[U.] python3.14-numpy              2.5.3 -> 2.5.4, +68.1 KiB
+[U.] python3.14-pillow             12.3.0 -> 13.0.0, -33.6 KiB
+[U.] python3.14-pygobject          3.56.3 -> 3.58.0
+[U.] python3.14-python-dotenv      1.2.3 -> 1.2.4
+[U.] python3.14-shapely            2.1.2 -> 2.2.0, +283 KiB
+[U.] python3.14-typing-inspection  0.4.3 -> 0.4.4
+[C.] python3.14-urllib3            2.7.0 -> 2.7.0 ×2, +1.46 MiB
+[U.] python3.14-watchfiles         1.2.0 -> 1.3.0
+[U.] python3.14-yarl               <unchanged> -> 1.25.1, <unchanged>, +601 KiB
+[C.] rbld                          -1.24 MiB
+[C.] rdma-core                     65.0 ×2 -> 65.0 ×4, +8.64 MiB
+[C.] roc-toolkit                   0.4.0 ×2 -> 0.4.0 ×3, +8.05 MiB
+[U.] s2n-tls                       1.7.9 -> 1.7.12, +38.6 KiB
+[U.] samba                         4.23.10 -> 4.25.1, +105 KiB
+[C.] sdl3                          3.4.18-lib -> 3.4.18-lib ×2, +4.82 MiB
+[U.] shader-slang                  2026.20 -> 2026.21, +167 KiB
+[C*] shadow                        4.20.3, 4.20.3-man, 4.20.3-su -> 4.20.3 ×2, 4.20.3-man ×2, 4.20.3-su ×2, +5.43 MiB
+[C*] shared-mime-info              2.5.1, <unchanged> -> 2.5.1 ×2, <unchanged>, +9.41 MiB
+[U.] simdjson                      4.6.11 -> 5.0.5, +209 KiB
+[U.] simdutf                       9.2.1 -> 9.3.3, +52.6 KiB
+[C.] slang                         2.3.3 ×2 -> 2.3.3 ×4, +5.36 MiB
+[C.] sops-install-secrets          -1.62 MiB
+[U.] sqlite                        3.53.3 ×2 -> 3.54.0 ×2, 3.53.3, +6.07 MiB
+[C.] srt                           1.5.6 ×2 -> 1.5.6 ×3, +6.70 MiB
+[C.] ssh-tpm-agent                 +2.41 MiB
+[C.] svt-av1                       4.1.0 ×2 -> 4.1.0 ×3, +7.48 MiB
+[C.] systemd-minimal               262 ×2 -> 262 ×4, +40.3 MiB
+[C.] systemd-minimal-libs          262 ×2 -> 262 ×4, +4.71 MiB
+[U*] tailscale                     1.104.4 -> 1.104.5, +28.5 KiB
+[U.] tinysparql                    <unchanged> -> 3.12.0, <unchanged>, +4.93 MiB
+[U.] tpm2-tss                      4.2.0 -> 4.2.1, +12.2 KiB
+[U.] tree-sitter                   0.26.11 -> 0.27.1-lib, -11.3 MiB
+[U.] tzdata                        2026e ×2 -> 2026f ×2, 2026e, +2.03 MiB
+[U.] unbound                       <unchanged> -> 1.26.2-lib ×2, <unchanged>, +2.47 MiB
+[C.] util-linux-minimal            2.42.4, 2.42.4-bin, 2.42.4-lib ×2, 2.42.4-login ×2, 2.42.4-man, 2.42.4-mount ×2, 2.42.4-swap ×2 -> 2.42.4 ×2, 2.42.4-bin ×2, 2.42.4-lib ×4, 2.42.4-login ×4, 2.42.4-man ×2, 2.42.4-mount ×4, 2.42.4-swap ×4, +14.7 MiB
+[C.] vectorchord                   -2.08 MiB
+[C.] vulkan-loader                 1.4.363.0 ×2 -> 1.4.363.0 ×4, +1.56 MiB
+[C.] webrtc-audio-processing       1.3, 2.1 ×2 -> 1.3 ×2, 2.1 ×3, +2.86 MiB
+[C.] x264                          0-unstable-2025-09-10-lib ×2 -> 0-unstable-2025-09-10-lib ×3, +2.38 MiB
+[C.] x265                          4.2 ×2 -> 4.2 ×3, +23.8 MiB
+[U*] xdg-desktop-portal-gnome      50.0, 50.0-fish-completions -> 51.0, 51.0-fish-completions, +45.3 KiB
+[U.] xkeyboard-config              <unchanged> -> 2.49, <unchanged>, +10.5 MiB
+[C.] xorgproto                     2025.1 -> 2025.1 ×2, +1.64 MiB
+[C*] xz                            5.8.4 ×2, 5.8.4-bin, 5.8.4-man, <unchanged> -> 5.8.4 ×4, 5.8.4-bin ×2, 5.8.4-man ×2, <unchanged>, +2.33 MiB
+[U.] zed-editor                    1.26.2 -> 1.27.0, -2.82 MiB
+[U.] zed-editor-wrapped            1.26.2, 1.26.2-fish-completions -> 1.27.0, 1.27.0-fish-completions
+[U.] zen-beta                      1.24b, 1.24b-fish-completions -> 1.24.1b, 1.24.1b-fish-completions
+[U.] zen-beta-bin-unwrapped        1.24b -> 1.24.1b, +31.0 KiB
+[C.] zenity                        4.2.2 -> 4.2.2 ×2, +8.88 MiB
+[C*] zstd                          1.5.7 ×2, <unchanged> -> 1.5.7 ×4, <unchanged>, +2.30 MiB
+[U.] zvbi                          0.2.45 ×2 -> 0.2.46 ×2, 0.2.45, +1.04 MiB
+[C.] zxing-cpp                     3.1.1 -> 3.1.1 ×2, +1.90 MiB
+
+ADDED (2)
+[A.] ministream                    0.99.1, +68.0 KiB
+[A.] unit-systemd-pcrextend.socket <none>
+
+PATHS: 2296 -> 2900 (+2218, -1614)
+SIZE: 19.2 GiB -> 20.7 GiB (+1.53 GiB)
+
+NOTE: 310 hidden (--full to show)
+
+Host: fw16
+From: d9dd1ad
+Activation: boot
+Activation-reason: kernel changed
+Activation-reason: initrd changed
+Activation-reason: kernel-modules changed
+Activation-reason: firmware changed
+Generation: /nix/store/552zyma790gkwxz48z6lxcrsdcbmb84q-nixos-system-fw16-26.11.20261107.f4a03c0
+Rebuilt-at: 2026-11-10T07:21:08+07:00
