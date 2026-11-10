@@ -1,5 +1,33 @@
 # Home configuration shared by every host this user has an account on.
-{ config, osConfig, ... }:
+{
+  config,
+  lib,
+  osConfig,
+  pkgs,
+  ...
+}:
+let
+  # All the ssh settings there are for git in this configuration's
+  # repository, which runs ssh on this file in place of ~/.ssh/config: with
+  # that one unread, k's key is in no list ssh could take it from, whatever
+  # the host is called. The connection to GitHub is the one f's settings
+  # make, read from their file, on a socket of its own: sockets are told
+  # apart by host, port and user, not by key, so it would otherwise be
+  # k's, logged in as k.
+  sshAsFdnt7 =
+    let
+      github = (import ../../f/features/cli/ssh.nix).programs.ssh.settings."github.com" // {
+        ControlPath = "\${XDG_RUNTIME_DIR}/ssh-fdnt7-%C";
+      };
+    in
+    pkgs.writeText "ssh-config-fdnt7" ''
+      Host github.com
+      ${lib.concatStrings (lib.mapAttrsToList (name: value: "  ${name} ${toString value}\n") github)}
+      Host *
+        IdentityFile ~/.ssh/id_ecdsa_fdnt7.pub
+        IdentitiesOnly yes
+    '';
+in
 {
   home = {
     username = "k";
@@ -20,30 +48,15 @@
 
   xdg.enable = true;
 
-  # GitHub as k, and only as k: left to offer every key the agent holds, a
-  # bare ssh was refused with k's own and then accepted with fdnt7's, and
-  # logged in as fdnt7.
-  programs.ssh.settings."github.com" = {
-    IdentityFile = "~/.ssh/id_ecdsa.pub";
-    IdentitiesOnly = true;
-  };
-
-  # GitHub as fdnt7, under a name of its own, which the repository below
-  # reaches it by. Naming fdnt7's key on ssh's command line was not enough:
-  # that adds to the keys the host above lists, and ssh offers those the
-  # agent holds in the agent's order, k's first, which GitHub accepts and
-  # then refuses the push. The connection is otherwise the one f's
-  # settings make to GitHub, read from their file as this option cannot
-  # be read back while it is being set, on a socket of its own: sockets
-  # are told apart by host, port and user, not by key, so it would
-  # otherwise be k's, logged in as k.
-  programs.ssh.settings."github.com-fdnt7" =
-    (import ../../f/features/cli/ssh.nix).programs.ssh.settings."github.com"
-    // {
-      IdentityFile = "~/.ssh/id_ecdsa_fdnt7.pub";
-      IdentitiesOnly = true;
-      ControlPath = "\${XDG_RUNTIME_DIR}/ssh-fdnt7-%C";
-    };
+  # Two accounts on GitHub, never to be taken for one another: k's
+  # everywhere, and fdnt7's in this configuration's repository alone.
+  #
+  # Everywhere: ssh offers a host only the keys named for it, or k's own
+  # where none is, and never whatever else the agent holds. Left to offer
+  # them all, a bare ssh to GitHub was once refused with k's key, accepted
+  # with fdnt7's, and logged in as fdnt7.
+  programs.ssh.settings."*".IdentitiesOnly = true;
+  programs.ssh.settings."github.com".IdentityFile = "~/.ssh/id_ecdsa.pub";
 
   # Who commits, and with which key, is kept out of this public repository:
   # the name, both addresses and the allowed-signers line for k's own key
@@ -65,8 +78,11 @@
 
       # This configuration, under f's public identity and a key of its
       # own, so nothing it publishes ties back to k. The key is f's on
-      # GitHub, for signing and for pushing: every GitHub remote here is
-      # reached as github.com-fdnt7, the host above that offers only it.
+      # GitHub, for signing and for pushing, and the only key git's ssh is
+      # given here. Naming it with ssh -i was not enough: that adds to the
+      # keys ~/.ssh/config lists for the host, and ssh offers those the
+      # agent holds in the agent's order, k's first, which GitHub accepts
+      # and then refuses the push.
       {
         condition = "gitdir:~/.config/nixos/";
         contents = {
@@ -75,7 +91,7 @@
             email = "git@frdl.la";
             signingKey = "~/.ssh/id_ecdsa_fdnt7.pub";
           };
-          url."git@github.com-fdnt7:".insteadOf = "git@github.com:";
+          core.sshCommand = "ssh -F ${sshAsFdnt7}";
         };
       }
     ];
