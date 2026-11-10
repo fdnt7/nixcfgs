@@ -1,0 +1,16 @@
+fw12: switch to 3591548
+
+<<< /nix/store/garyil8shyla0738gzdsa0rkhcg3r01q-nixos-system-fw12-26.11.20261107.f4a03c0
+>>> /nix/store/l604nvnczb5a49igacf5anc1q9p8y8j3-nixos-system-fw12-26.11.20261107.f4a03c0
+
+ADDED (1)
+[A.] ssh-config-fdnt7 <none>
+
+PATHS: 2343 -> 2344 (+11, -10)
+SIZE: 15.6 GiB -> 15.6 GiB (+368 bytes)
+
+Host: fw12
+From: 66f08b0
+Activation: switch
+Generation: /nix/store/l604nvnczb5a49igacf5anc1q9p8y8j3-nixos-system-fw12-26.11.20261107.f4a03c0
+Rebuilt-at: 2026-11-11T02:21:34+07:00
