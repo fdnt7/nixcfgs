@@ -14,7 +14,13 @@
       "git-firefly"
     ];
     extraPackages = [
-      pkgs.zed-discord-presence
+      # nixpkgs' cargo hook stopped crates building the libgit2 they vendor,
+      # and this package was not given nixpkgs' own in its place. To drop
+      # once nixpkgs builds it again.
+      (pkgs.zed-discord-presence.overrideAttrs (old: {
+        nativeBuildInputs = old.nativeBuildInputs ++ [ pkgs.pkg-config ];
+        buildInputs = old.buildInputs ++ [ pkgs.libgit2 ];
+      }))
       pkgs.zed-wakatime-ls
     ];
 
