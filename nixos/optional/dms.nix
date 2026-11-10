@@ -23,6 +23,15 @@
         "-d"
         ".."
       ];
+      # The window draws frames only while this condition holds, so the fade
+      # joins it. Substituted, not patched: upstream keeps adding terms to
+      # the line, and a hunk on it stopped applying with 2.1.1.
+      postPatch = ''
+        substituteInPlace ../quickshell/Modules/WallpaperBackground.qml \
+          --replace-fail \
+            'readonly property bool renderActive: ' \
+            'readonly property bool renderActive: startupFade.running || '
+      '';
     };
   };
 
