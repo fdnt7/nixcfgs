@@ -22,6 +22,7 @@
     ../../nixos/optional/tpm.nix
 
     ./autologin.nix
+    ./compute.nix
     ./filesystems.nix
     ./fwupd.nix
     ./graphics.nix
