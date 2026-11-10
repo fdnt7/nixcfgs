@@ -103,5 +103,11 @@
       AC.powerProfile = "performance";
       battery.powerProfile = "balanced";
     };
+
+    # Plasma's browser integration writes ~/.var/app/<browser>/ stubs for
+    # Flatpak browsers at every login. None are used here, so the background
+    # service that writes them stays off, as its switch in System Settings
+    # would leave it. Plasma 6 still reads this from kded5rc.
+    configFile.kded5rc."Module-browserintegrationflatpakintegrator".autoload = false;
   };
 }
