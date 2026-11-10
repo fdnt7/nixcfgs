@@ -1,0 +1,13 @@
+fw12: switch to 66f08b0
+
+<<< /nix/store/nxa00f000bpxmv4g5ik9na2igkv6lc3a-nixos-system-fw12-26.11.20261107.f4a03c0
+>>> /nix/store/garyil8shyla0738gzdsa0rkhcg3r01q-nixos-system-fw12-26.11.20261107.f4a03c0
+
+PATHS: 2343 -> 2343 (+13, -13)
+SIZE: 15.6 GiB -> 15.6 GiB (+1.29 KiB)
+
+Host: fw12
+From: ba4770c
+Activation: switch
+Generation: /nix/store/garyil8shyla0738gzdsa0rkhcg3r01q-nixos-system-fw12-26.11.20261107.f4a03c0
+Rebuilt-at: 2026-11-11T01:43:46+07:00
