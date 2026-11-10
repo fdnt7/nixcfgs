@@ -26,13 +26,13 @@
     ./features/desktop/xournalpp.nix
   ];
 
-  # f's machine, over the tailnet, as f, for work to run there: with the
-  # key ssh-tpm-agent holds, sealed by this machine's TPM, named by its
-  # public half. By its tailnet address, as MagicDNS is not taking the
-  # system's DNS.
+  # f's machine, over the tailnet, as the account it keeps for work sent
+  # to it (../../hosts/fw16/compute.nix): with the key ssh-tpm-agent
+  # holds, sealed by this machine's TPM, named by its public half. By its
+  # tailnet address, as MagicDNS is not taking the system's DNS.
   programs.ssh.settings."fw16" = {
     Hostname = "100.127.15.43";
-    User = "f";
+    User = "compute";
     IdentityFile = "~/.ssh/id_ecdsa_fw16.pub";
     IdentitiesOnly = true;
 
