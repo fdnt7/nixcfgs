@@ -1,5 +1,5 @@
 # Home configuration shared by every host this user has an account on.
-{ osConfig, ... }:
+{ config, osConfig, ... }:
 {
   home = {
     username = "k";
@@ -9,6 +9,10 @@
     # directories, and each feature points its program at them where the
     # program needs to be told.
     preferXdgDirectories = true;
+
+    # elan, Lean's toolchain manager, is not installed from here, so no
+    # feature speaks for it: left alone it keeps its toolchains in ~/.elan.
+    sessionVariables.ELAN_HOME = "${config.xdg.dataHome}/elan";
 
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
     stateVersion = "26.11";
