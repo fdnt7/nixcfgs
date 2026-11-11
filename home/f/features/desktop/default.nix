@@ -1,6 +1,7 @@
 {
   imports = [
     ./ark.nix
+    ./claude-desktop.nix
     ./clipboard.nix
     ./cursor.nix
     ./discord.nix
