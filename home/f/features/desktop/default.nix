@@ -6,6 +6,7 @@
     ./dms.nix
     ./dolphin.nix
     ./fonts.nix
+    ./imv.nix
     ./kitty.nix
     ./mime-apps.nix
     ./mpv.nix
@@ -14,7 +15,6 @@
     ./niri.nix
     ./qt-theme.nix
     ./spotify.nix
-    ./swayimg.nix
     ./tailscale-systray.nix
     ./zathura.nix
     ./touchpad.nix
