@@ -9,6 +9,7 @@
 
     # Plasma brings its own shell, file manager, viewers and clipboard, so
     # only the programs are taken from f's desktop features.
+    ../f/features/desktop/claude-desktop.nix
     ../f/features/desktop/discord.nix
     ../f/features/desktop/fonts.nix
     ../f/features/desktop/kitty.nix
