@@ -1,0 +1,57 @@
+fw16: switch to f61d9dd
+
+<<< /nix/store/8xl79gnqiy7n15ksyy234sg2z4bz7056-nixos-system-fw16-26.11.20261107.f4a03c0
+>>> /nix/store/zxzp12bc3bqfndg0s5vc7pn5f7q4j816-nixos-system-fw16-26.11.20261107.f4a03c0
+
+CHANGED (2)
+[C.] openssl                         3.5.9-bin, 3.5.9-man, <unchanged> -> 3.5.9-bin ×2, 3.5.9-man ×2, <unchanged>, +5.18 MiB
+[C.] sdl3                            3.4.18-lib ×2 -> 3.4.18-lib ×3, +4.82 MiB
+
+ADDED (36)
+[A.] OVMF                            202608-fd, +8.00 MiB
+[A.] brltty                          6.9.1, +9.89 MiB
+[A.] capstone                        5.0.9, +29.6 MiB
+[A.] claude-desktop                  <none>, 5.1231.0, +624 MiB
+[A.] claude-desktop-bwrap            <none>
+[A.] claude-desktop-fhsenv-profile   <none>
+[A.] claude-desktop-fhsenv-rootfs    <none>, +3.51 MiB
+[A.] claude-desktop-fish-completions <none>
+[A.] claude-desktop-init             <none>
+[A.] claude-desktop-ovmf-compat      <none>
+[A.] docker                          29.9.2, +36.0 MiB
+[A.] docker-buildx                   0.38.1, +70.9 MiB
+[A.] docker-compose                  5.7.0, +29.1 MiB
+[A.] docker-containerd               29.9.2, +97.7 MiB
+[A.] docker-runc                     29.9.2, +10.9 MiB
+[A.] docker-tini                     29.9.2, +809 KiB
+[A.] dtc                             1.8.1, +568 KiB
+[A.] fuse-overlayfs                  1.18, +126 KiB
+[A.] gfxstream                       0.1.2, +8.09 MiB
+[A.] git-minimal                     2.56.0, +57.3 MiB
+[A.] libcacard                       2.8.2, +142 KiB
+[A.] libiscsi                        1.20.3, +563 KiB
+[A.] libslirp                        4.9.6, +175 KiB
+[A.] moby                            29.9.2, +107 MiB
+[A.] qemu-host-cpu-only              11.1.2, 11.1.2-ga, +398 MiB
+[A.] rootlesskit                     2.3.6, +27.8 MiB
+[A.] rutabaga_gfx                    0.1.6, +10.4 MiB
+[A.] slirp4netns                     1.3.7, +93.1 KiB
+[A.] spice                           0.16.0, +1.46 MiB
+[A.] tcl                             8.6.16, +7.54 MiB
+[A.] usbredir                        0.15.0, +138 KiB
+[A.] uv                              0.13.5, +46.2 MiB
+[A.] vde2                            2.3.3, +736 KiB
+[A.] virglrenderer                   1.3.0, +3.97 MiB
+[A.] virtiofsd                       1.14.0, +2.90 MiB
+[A.] vte                             0.84.1, +1.88 MiB
+
+PATHS: 2906 -> 2949 (+54, -11)
+SIZE: 20.8 GiB -> 22.3 GiB (+1.57 GiB)
+
+NOTE: 2 hidden (--full to show)
+
+Host: fw16
+From: e7b86d0
+Activation: switch
+Generation: /nix/store/zxzp12bc3bqfndg0s5vc7pn5f7q4j816-nixos-system-fw16-26.11.20261107.f4a03c0
+Rebuilt-at: 2026-11-12T04:51:01+07:00
