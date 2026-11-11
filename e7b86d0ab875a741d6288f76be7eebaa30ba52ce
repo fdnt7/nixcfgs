@@ -1,0 +1,24 @@
+fw16: switch to e7b86d0
+
+<<< /nix/store/3dkg5bn4m88cjgwg5f821d2lj6f26k4i-nixos-system-fw16-26.11.20261107.f4a03c0
+>>> /nix/store/8xl79gnqiy7n15ksyy234sg2z4bz7056-nixos-system-fw16-26.11.20261107.f4a03c0
+
+ADDED (3)
+[A.] ark      26.08.3, 26.08.3-fish-completions, +6.29 MiB
+[A.] imv      5.0.1, 5.0.1-fish-completions, 5.0.1-man, +393 KiB
+[A.] kpty     6.31.0, +207 KiB
+
+REMOVED (2)
+[R.] libsixel 1.10.5, -601 KiB
+[R.] swayimg  5.7, 5.7-fish-completions, -1.93 MiB
+
+PATHS: 2902 -> 2906 (+19, -15)
+SIZE: 20.7 GiB -> 20.8 GiB (+4.70 MiB)
+
+NOTE: 3 hidden (--full to show)
+
+Host: fw16
+From: ef2f5ca
+Activation: switch
+Generation: /nix/store/8xl79gnqiy7n15ksyy234sg2z4bz7056-nixos-system-fw16-26.11.20261107.f4a03c0
+Rebuilt-at: 2026-11-12T00:50:33+07:00
