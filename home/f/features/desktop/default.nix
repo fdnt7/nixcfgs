@@ -1,5 +1,6 @@
 {
   imports = [
+    ./ark.nix
     ./clipboard.nix
     ./cursor.nix
     ./discord.nix
