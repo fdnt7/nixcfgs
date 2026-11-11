@@ -1,0 +1,7 @@
+fw16: c4511a4 builds what's running; nothing to activate
+
+Host: fw16
+From: da8fb40
+Activation: none
+Generation: /nix/store/xadgcgnywxkcvv8qcy7dcda033s4qfwp-nixos-system-fw16-26.11.20261107.f4a03c0
+Rebuilt-at: 2026-11-11T19:49:28+07:00
