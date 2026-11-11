@@ -4,6 +4,12 @@
   inputs = {
     # catppuccin.url = "github:catppuccin/nix";
 
+    # Anthropic's own .deb, repackaged for Nix and bumped with each release.
+    claude-desktop = {
+      url = "github:aaddrick/claude-desktop-debian";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Home manager
     # home-manager.url = "github:nix-community/home-manager/release-23.11";
     home-manager = {
