@@ -1,0 +1,15 @@
+fw16: switch to c47f33c
+
+<<< /nix/store/xadgcgnywxkcvv8qcy7dcda033s4qfwp-nixos-system-fw16-26.11.20261107.f4a03c0
+>>> /nix/store/ix09rq9vi1sld18r2sq9qlm393xhkg0p-nixos-system-fw16-26.11.20261107.f4a03c0
+
+PATHS: 2902 -> 2902 (+13, -13)
+SIZE: 20.7 GiB -> 20.7 GiB (+9.71 KiB)
+
+NOTE: 1 hidden (--full to show)
+
+Host: fw16
+From: c4511a4
+Activation: switch
+Generation: /nix/store/ix09rq9vi1sld18r2sq9qlm393xhkg0p-nixos-system-fw16-26.11.20261107.f4a03c0
+Rebuilt-at: 2026-11-11T21:11:37+07:00
