@@ -1,0 +1,30 @@
+fw16: switch to 95875e5
+
+<<< /nix/store/zxzp12bc3bqfndg0s5vc7pn5f7q4j816-nixos-system-fw16-26.11.20261107.f4a03c0
+>>> /nix/store/4p3a87icjhngqd5fj7kjs03179cymhq6-nixos-system-fw16-26.11.20261109.177d054
+
+CHANGED (14)
+[U.] claude-desktop            5.1231.0, <unchanged> -> 5.1231.2, <unchanged>
+[U.] ddcutil                   2.2.7 -> 3.0.2, +183 KiB
+[U.] electron                  43.8.3 -> 43.8.7
+[U.] electron-unwrapped        43.8.3 -> 43.8.7, -16.9 KiB
+[U.] fzf                       0.74.5 -> 0.75.0, +13.2 KiB
+[U*] mtools                    4.0.49, 4.0.49-info, 4.0.49-man -> 4.0.50, 4.0.50-info, 4.0.50-man
+[U.] nixos-system-fw16         26.11.20261107.f4a03c0 -> 26.11.20261109.177d054
+[D.] nodejs                    22.23.4, <unchanged> -> <unchanged>, -820 KiB
+[D.] nodejs-slim               22.23.4, 22.23.4-corepack, 22.23.4-npm, <unchanged> -> <unchanged>, -85.0 MiB
+[U.] openjdk                   17.0.20.1+1, <unchanged> -> 17.0.21.0.3+1, <unchanged>, +667 KiB
+[U.] perl5.42.3-Image-ExifTool 13.59 -> 13.60, +71.8 KiB
+[U.] uv                        0.13.5 -> 0.13.7, -323 KiB
+[U.] zathura                   2026.10.4, 2026.10.4-bin, 2026.10.4-dev, 2026.10.4-man -> 2026.10.23, 2026.10.23-bin, 2026.10.23-dev, 2026.10.23-man, +8.52 KiB
+[U.] zathura-with-plugins      2026.10.4, 2026.10.4-fish-completions -> 2026.10.23, 2026.10.23-fish-completions
+
+PATHS: 2949 -> 2945 (+116, -120)
+SIZE: 22.3 GiB -> 22.2 GiB (-85.2 MiB)
+
+Host: fw16
+From: f61d9dd
+Activation: switch
+Restarted: mullvad-vpn-gui.service
+Generation: /nix/store/4p3a87icjhngqd5fj7kjs03179cymhq6-nixos-system-fw16-26.11.20261109.177d054
+Rebuilt-at: 2026-11-12T10:33:51+07:00
