@@ -1,0 +1,61 @@
+fw16: boot to 152b095
+
+<<< /nix/store/4p3a87icjhngqd5fj7kjs03179cymhq6-nixos-system-fw16-26.11.20261109.177d054
+>>> /nix/store/r0rp4vsv96al036d8iyyxs9a35qaggcg-nixos-system-fw16-26.11.20261111.d4f25a3
+
+CHANGED (37)
+[U.] breeze                  6.8.2, 6.8.2-fish-completions -> 6.8.3, 6.8.3-fish-completions
+[U.] claude-code             2.1.318, 2.1.318-fish-completions -> 2.1.321, 2.1.321-fish-completions, +3.91 MiB
+[U.] claude-desktop          5.1231.2, <unchanged> -> 5.11492.0, <unchanged>, +6.67 MiB
+[U*] dux-shell               2.1.1 -> 2.1.2
+[U.] electron                43.8.7 -> 45.2.3
+[U.] electron-unwrapped      43.8.7 -> 45.2.3, -44.3 MiB
+[U.] initrd-linux            7.3.3 -> 7.3.4, -107 KiB
+[U.] kactivitymanagerd       6.8.2 -> 6.8.3
+[U.] kdecoration             6.8.2 -> 6.8.3
+[U.] kitty-themes            0-unstable-2026-10-08 -> 0-unstable-2026-11-05, +14.7 KiB
+[U.] lcevcdec                4.3.0-lib -> 4.3.1-lib
+[U.] linux                   7.3.3, 7.3.3-modules ×2 -> 7.3.4, 7.3.4-modules ×2, +45.7 KiB
+[U.] mesa                    26.2.6 ×2 -> 26.3.0 ×2, -3.50 MiB
+[C*] mullvad-vpn             -32.3 MiB
+[U*] nix                     2.34.9 ×2, 2.34.9-doc, 2.34.9-man -> 2.35.6 ×2, 2.35.6-doc, 2.35.6-man, +760 KiB
+[U.] nix-cmd                 2.34.9 -> 2.35.6, +11.1 KiB
+[U.] nix-expr                2.34.9 -> 2.35.6, +33.4 KiB
+[U.] nix-fetchers            2.34.9 -> 2.35.6, +50.9 KiB
+[U.] nix-flake               2.34.9 -> 2.35.6
+[U.] nix-main                2.34.9 -> 2.35.6
+[U.] nix-manual              2.34.9, 2.34.9-man -> 2.35.6, 2.35.6-man, +1.39 MiB
+[U.] nix-nswrapper           2.34.9 -> 2.35.6, -8.74 KiB
+[U.] nix-store               2.34.9 -> 2.35.6, +915 KiB
+[U.] nix-util                2.34.9 -> 2.35.6, +201 KiB
+[U.] nixos-system-fw16       26.11.20261109.177d054 -> 26.11.20261111.d4f25a3
+[U.] noto-fonts              2026.10.01, 2026.10.01-fish-completions -> 2026.11.01, 2026.11.01-fish-completions
+[U.] nss                     3.132, <unchanged> -> 3.133, <unchanged>
+[U.] nvidia-open             595.112.07-7.3.3 -> 595.112.07-7.3.4
+[C.] openvino                +1.55 MiB
+[U.] plasma-activities       6.8.2 -> 6.8.3
+[U.] plasma-activities-stats 6.8.2 -> 6.8.3
+[U.] postgresql              17.11, 17.11-lib, 17.11-man -> 17.12, 17.12-lib, 17.12-man, +98.7 KiB
+[U*] postgresql-and-plugins  17.11, 17.11_fish-completions -> 17.12, 17.12_fish-completions
+[U.] qtengine                0.2.3, 0.2.3-fish-completions -> 0.2.4, 0.2.4-fish-completions
+[U.] xwayland                24.1.14 -> 24.1.15
+[U.] zen-beta                1.24.1b, 1.24.1b-fish-completions -> 1.24.2b, 1.24.2b-fish-completions
+[U.] zen-beta-bin-unwrapped  1.24.1b -> 1.24.2b, +5.30 MiB
+
+ADDED (2)
+[A.] level-zero              1.34.0, +7.77 MiB
+[A.] mimalloc                3.5.3, +1.03 MiB
+
+PATHS: 2945 -> 2947 (+176, -174)
+SIZE: 22.2 GiB -> 22.2 GiB (-50.4 MiB)
+
+NOTE: 2 hidden (--full to show)
+
+Host: fw16
+From: 95875e5
+Activation: boot
+Activation-reason: kernel changed
+Activation-reason: initrd changed
+Activation-reason: kernel-modules changed
+Generation: /nix/store/r0rp4vsv96al036d8iyyxs9a35qaggcg-nixos-system-fw16-26.11.20261111.d4f25a3
+Rebuilt-at: 2026-11-13T09:49:03+07:00
