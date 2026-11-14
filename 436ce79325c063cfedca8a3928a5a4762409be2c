@@ -1,0 +1,16 @@
+fw16: switch to 436ce79
+
+<<< /nix/store/r0rp4vsv96al036d8iyyxs9a35qaggcg-nixos-system-fw16-26.11.20261111.d4f25a3
+>>> /nix/store/ki7xibmyaply8z4wvwz85xn1id3c19pg-nixos-system-fw16-26.11.20261111.d4f25a3
+
+CHANGED (1)
+[U.] claude-desktop 5.11492.0, <unchanged> -> 5.11492.5, <unchanged>, +295 KiB
+
+PATHS: 2947 -> 2947 (+17, -17)
+SIZE: 22.2 GiB -> 22.2 GiB (+295 KiB)
+
+Host: fw16
+From: 152b095
+Activation: switch
+Generation: /nix/store/ki7xibmyaply8z4wvwz85xn1id3c19pg-nixos-system-fw16-26.11.20261111.d4f25a3
+Rebuilt-at: 2026-11-14T09:21:38+07:00
