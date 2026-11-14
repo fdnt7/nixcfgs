@@ -1,0 +1,15 @@
+fw16: switch to ec1ee9b
+
+<<< /nix/store/ki7xibmyaply8z4wvwz85xn1id3c19pg-nixos-system-fw16-26.11.20261111.d4f25a3
+>>> /nix/store/6wfvcklchb7m4wnfads6w8k4wrfnjgaw-nixos-system-fw16-26.11.20261111.d4f25a3
+
+PATHS: 2947 -> 2947 (+11, -11)
+SIZE: 22.2 GiB -> 22.2 GiB (+144 KiB)
+
+NOTE: 1 hidden (--full to show)
+
+Host: fw16
+From: 436ce79
+Activation: switch
+Generation: /nix/store/6wfvcklchb7m4wnfads6w8k4wrfnjgaw-nixos-system-fw16-26.11.20261111.d4f25a3
+Rebuilt-at: 2026-11-15T01:17:32+07:00
